@@ -1,6 +1,12 @@
 import { Route, Routes } from 'react-router-dom';
 import SharedLayout from 'components/SharedLayout/SharedLayout';
-import FirstPage from 'pages/FirstPage/FirstPage';
+import WelcomePage from 'pages/WelcomePage/WelcomePage';
+import SignUpPage from 'pages/SignUpPage/SignUpPage';
+import SignInPage from 'pages/SignInPage/SignInPage';
+import DiaryPage from './pages/DiaryPage/DiaryPage';
+import ProductsPage from './pages/ProductsPage/ProductsPage';
+import ExercisesPage from './pages/ExercisesPage/ExercisesPage';
+import ProfilePage from './pages/ProfilePage/ProfilePage';
 import SecondPage from 'pages/SecondPage/SecondPage';
 import HalfPage from 'pages/HalfPage/HalfPage';
 import ErrorPage from 'pages/ErrorPage/ErrorPage';
@@ -14,7 +20,13 @@ function App() {
     <AppWrapper>
       <Routes>
         <Route path="/" element={<SharedLayout />}>
-          <Route path="/first" element={<FirstPage />} />
+          <Route path="/welcome" element={<WelcomePage />} />
+          <Route path="/signUp" element={<SignUpPage />} />
+          <Route path="/signIn" element={<SignInPage />} />
+          <Route path="/diary" element={<DiaryPage />} />
+          <Route path="/products" element={<ProductsPage />} />
+          <Route path="/exercises" element={<ExercisesPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
           <Route path="/second" element={<SecondPage />}>
             <Route path=":half" element={<HalfPage />} />
           </Route>
