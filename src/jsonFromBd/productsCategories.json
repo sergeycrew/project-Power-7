@@ -1,0 +1,114 @@
+[{
+  "_id": {
+    "$oid": "65e1c02cf5886fc9ad5f5fb9"
+  },
+  "title": "alcoholic drinks"
+},
+{
+  "_id": {
+    "$oid": "65e1c02cf5886fc9ad5f5fba"
+  },
+  "title": "berries"
+},
+{
+  "_id": {
+    "$oid": "65e1c02cf5886fc9ad5f5fbb"
+  },
+  "title": "cereals"
+},
+{
+  "_id": {
+    "$oid": "65e1c02cf5886fc9ad5f5fbc"
+  },
+  "title": "dairy"
+},
+{
+  "_id": {
+    "$oid": "65e1c02cf5886fc9ad5f5fbd"
+  },
+  "title": "dried fruits"
+},
+{
+  "_id": {
+    "$oid": "65e1c02cf5886fc9ad5f5fbe"
+  },
+  "title": "eggs"
+},
+{
+  "_id": {
+    "$oid": "65e1c02cf5886fc9ad5f5fbf"
+  },
+  "title": "fish"
+},
+{
+  "_id": {
+    "$oid": "65e1c02cf5886fc9ad5f5fc0"
+  },
+  "title": "flour"
+},
+{
+  "_id": {
+    "$oid": "65e1c02cf5886fc9ad5f5fc1"
+  },
+  "title": "fruits"
+},
+{
+  "_id": {
+    "$oid": "65e1c02cf5886fc9ad5f5fc2"
+  },
+  "title": "meat"
+},
+{
+  "_id": {
+    "$oid": "65e1c02cf5886fc9ad5f5fc3"
+  },
+  "title": "mushrooms"
+},
+{
+  "_id": {
+    "$oid": "65e1c02cf5886fc9ad5f5fc4"
+  },
+  "title": "nuts"
+},
+{
+  "_id": {
+    "$oid": "65e1c02cf5886fc9ad5f5fc5"
+  },
+  "title": "oils and fats"
+},
+{
+  "_id": {
+    "$oid": "65e1c02cf5886fc9ad5f5fc6"
+  },
+  "title": "poppy"
+},
+{
+  "_id": {
+    "$oid": "65e1c02cf5886fc9ad5f5fc7"
+  },
+  "title": "sausage"
+},
+{
+  "_id": {
+    "$oid": "65e1c02cf5886fc9ad5f5fc8"
+  },
+  "title": "seeds"
+},
+{
+  "_id": {
+    "$oid": "65e1c02cf5886fc9ad5f5fc9"
+  },
+  "title": "sesame"
+},
+{
+  "_id": {
+    "$oid": "65e1c02cf5886fc9ad5f5fca"
+  },
+  "title": "soft drinks"
+},
+{
+  "_id": {
+    "$oid": "65e1c02cf5886fc9ad5f5fcb"
+  },
+  "title": "vegetables and herbs"
+}]
