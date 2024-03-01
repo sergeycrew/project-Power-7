@@ -5,7 +5,7 @@ import App from './App.jsx';
 //import './index.css';
 import { ThemeProvider } from 'styled-components';
 import { theme } from './components/Theme.js';
-import {GlobalStyle} from "./styles/globalStyle.jsx"
+import {GlobalStyle} from "./styles/globalStyles.jsx"
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -15,5 +15,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <GlobalStyle/>
       </ThemeProvider>
     </BrowserRouter>
-  </React.StrictMode>,
+  </React.StrictMode>
 );
