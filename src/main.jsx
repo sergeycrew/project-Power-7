@@ -9,7 +9,7 @@ import {GlobalStyle} from "./styles/GlobalStyle.jsx"
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter basename="/Power-Pulse-7">
+    <BrowserRouter basename="/project-Power-7">
       <ThemeProvider theme={theme}>
         <App />
         <GlobalStyle/>

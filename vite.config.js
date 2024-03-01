@@ -12,5 +12,5 @@ export default defineConfig({
       assets: '/src/assets',
     },
   },
-  base: '/Power-Pulse-7',
+  base: '/project-Power-7',
 });
