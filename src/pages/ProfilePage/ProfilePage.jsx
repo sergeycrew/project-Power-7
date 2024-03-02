@@ -1,4 +1,6 @@
 import * as s from './ProfilePage.styled';
+// import * as Yup from 'yup';
+// import { Formik, Field, ErrorMessage } from 'formik';
 
 const ProfilePage = () => {
   return (
