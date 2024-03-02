@@ -46,7 +46,6 @@ code {
 
 a {
     text-decoration: none;
-    color: currentColor;
   }
 
 p {
@@ -74,8 +73,6 @@ h6 {
 
 h2{
         font-family: 'RobotoBold';
-    color: #EFEDE8;
-
 }
 
 img {
