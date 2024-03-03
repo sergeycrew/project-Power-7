@@ -38,10 +38,20 @@ export const StyledForm = styled(Form)`
 `;
 
 export const Container = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 500px;
+    width: 100%;
+  margin: 0 auto;
+
+  @media screen and (min-width: 375px) {
+    width: 375px;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 768px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    width: 1440px;
+  }
 `;
 
 export const Title = styled.h1`
