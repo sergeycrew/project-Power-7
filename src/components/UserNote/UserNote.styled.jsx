@@ -29,6 +29,6 @@ export const Container = styled.div`
 export const Svg = styled.svg`
   width: 24px;
   height: 24px;
-  fill: ${p => p.theme.colors.orangeLightColor};
-  stroke: ${p => p.theme.colors.orangeLightColor};
+  /* fill: ${p => p.theme.colors.orangeLightColor}; */
+  /* stroke: ${p => p.theme.colors.orangeLightColor}; */
 `;
