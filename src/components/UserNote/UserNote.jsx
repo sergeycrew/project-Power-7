@@ -6,7 +6,7 @@ const UserNote = () => {
     return (
     <s.Container>
     <s.Svg >
-            <use href={`${sprite}#icon-attention`}></use>
+            <use href={`${sprite}#icon-exclamation`}></use>
           </s.Svg>
     <s.Text>
     We understand that each individual is unique, so the entire approach to diet is relative and tailored to your unique body and goals.
