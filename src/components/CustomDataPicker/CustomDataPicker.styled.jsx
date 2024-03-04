@@ -7,7 +7,7 @@ export const CalendarGlobalStyles = createGlobalStyle`
 
   }
   .react-datepicker {
-    position: absolute;
+    position: reletive;
     left: 50%;
     top: 50%;
     transform: translate(-1%, 0%);

@@ -7,8 +7,8 @@ import * as s from './UserForm.styled';
 // import { useDispatch, useSelector } from 'react-redux';
 // import {selectUser} from '../../redux/auth/authSelectors';
 import user from '../../jsonFromBd/userParams.json'
-// import { CustomDataPicker } from '../CustomDataPicker/CustomDataPicker';
 import { CustomDataPicker } from '../UserDataPicker/UserDataPicker';
+// import { CustomDataPicker } from '../UserDataPicker/UserDataPicker';
 
 
 
@@ -160,10 +160,12 @@ const UserForm = () => {
           </s.WrappInput>
           <CustomDataPicker
           selectedDate={formik.values.birthday}
+       
               setSelectedDate={date => {
                 const formattedDate = parseISO(date.toISOString());
                 formik.setFieldValue('birthday', formattedDate);
               }}/>
+             
         </s.WrappInputFields>
       </s.StyledForm>)}
     </Formik>
