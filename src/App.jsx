@@ -1,39 +1,37 @@
 import { Route, Routes } from 'react-router-dom';
-import SharedLayout from 'components/SharedLayout/SharedLayout';
-import WelcomePage from 'pages/WelcomePage/WelcomePage';
-import SignUpPage from 'pages/SignUpPage/SignUpPage';
-import SignInPage from 'pages/SignInPage/SignInPage';
-import DiaryPage from './pages/DiaryPage/DiaryPage';
-import ProductsPage from './pages/ProductsPage/ProductsPage';
-import ExercisesPage from './pages/ExercisesPage/ExercisesPage';
-import ProfilePage from './pages/ProfilePage/ProfilePage';
-import SecondPage from 'pages/SecondPage/SecondPage';
-import HalfPage from 'pages/HalfPage/HalfPage';
-import ErrorPage from 'pages/ErrorPage/ErrorPage';
-import { AppWrapper } from './App.styled';
+import { lazy } from 'react';
+
+import MainLayout from './components/MainLayout/MainLayout';
+
+const WelcomePage = lazy(() => import('pages/WelcomePage/WelcomePage'));
+const SignUpPage = lazy(() => import('pages/SignUpPage/SignUpPage'));
+const SignInPage = lazy(() => import('pages/SignInPage/SignInPage'));
+const ProfilePage = lazy(() => import('pages/ProfilePage/ProfilePage'));
+const DiaryPage = lazy(() => import('pages/DiaryPage/DiaryPage'));
+const ProductsPage = lazy(() => import('pages/ProductsPage/ProductsPage'));
+const ExercisesPage = lazy(() => import('pages/ExercisesPage/ExercisesPage'));
+const ErrorPage = lazy(() => import('pages/ErrorPage/ErrorPage'));
+
 
 const test = import.meta.env.VITE_API_TEST;
 
 function App() {
   console.log(test);
   return (
-    <AppWrapper>
+    <>
       <Routes>
-        <Route path="/" element={<SharedLayout />}>
-          <Route path="/welcome" element={<WelcomePage />} />
+        <Route path="/" element={<MainLayout />}>
+          <Route index element={<WelcomePage />} />
           <Route path="/signUp" element={<SignUpPage />} />
           <Route path="/signIn" element={<SignInPage />} />
           <Route path="/diary" element={<DiaryPage />} />
           <Route path="/products" element={<ProductsPage />} />
           <Route path="/exercises" element={<ExercisesPage />} />
           <Route path="/profile" element={<ProfilePage />} />
-          <Route path="/second" element={<SecondPage />}>
-            <Route path=":half" element={<HalfPage />} />
-          </Route>
-          <Route path="*" element={<ErrorPage />} />
         </Route>
+         <Route path="*" element={<ErrorPage />} />
       </Routes>
-    </AppWrapper>
+    </>
   );
 }
 export default App;
