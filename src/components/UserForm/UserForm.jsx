@@ -1,11 +1,15 @@
 // radiobuttons
 import * as Yup from 'yup';
+import { parseISO } from 'date-fns';
 import { Formik, Field, ErrorMessage } from 'formik';
 import * as s from './UserForm.styled';
 
 // import { useDispatch, useSelector } from 'react-redux';
 // import {selectUser} from '../../redux/auth/authSelectors';
 import user from '../../jsonFromBd/userParams.json'
+// import { CustomDataPicker } from '../CustomDataPicker/CustomDataPicker';
+import { CustomDataPicker } from '../UserDataPicker/UserDataPicker';
+
 
 
 
@@ -74,8 +78,8 @@ const UserForm = () => {
       .required('Desired weight is required'),
     birthday: Yup.date().required('Birthday is required'),
   });
-
-//   const formattedDate = parseISO(user.birthday);
+//   const userBirth = new Date(user.birthday)//////////
+  const formattedDate = parseISO(user.birthday);
 
   const initialValues = {
     name: user.name ,
@@ -143,6 +147,24 @@ const UserForm = () => {
               </s.WrappInput>
             </s.Wrapper>
           </s.WrappInputFields>
+          <s.WrappInputFields>
+          <s.WrappInput>
+            <Field
+              type="number"
+              name="desiredWeight"
+              id="desiredWeight"
+              placeholder=""
+              as={s.InputField}
+            />
+            <label htmlFor="desiredWeight">Desired Weight</label>
+          </s.WrappInput>
+          <CustomDataPicker
+          selectedDate={formik.values.birthday}
+              setSelectedDate={date => {
+                const formattedDate = parseISO(date.toISOString());
+                formik.setFieldValue('birthday', formattedDate);
+              }}/>
+        </s.WrappInputFields>
       </s.StyledForm>)}
     </Formik>
   );

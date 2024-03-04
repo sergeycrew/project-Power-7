@@ -98,38 +98,49 @@ export const InputField = styled.input`
   color: #efede8;
   &::-webkit-inner-spin-button,
   &::-webkit-outer-spin-button {
-    -webkit-appearance: none;
+    display: none; /* Скрываем стандартные кнопки ввода */
+  }
+
+  /* &::before,
+  &::after {
+    content: '';
     position: absolute;
     right: 0;
     width: 30px;
-    height: 100%;
-    background-color: #6c757d;
+    height: 30px;
+    background-color: ${(p) => p.theme.colors.orangeColor}; /* Цвет кнопок
     color: #fff;
     border: none;
     cursor: pointer;
     outline: none;
     transition: background-color 0.3s ease;
+  } */ 
+
+  /* &::before {
+    top: 0;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/></svg>');
+    background-repeat: no-repeat;
+    background-position: center;
   }
 
-  &::-webkit-inner-spin-button::before,
-  &::-webkit-outer-spin-button::before {
-    content: '+';
-    display: inline-block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  &::after {
+    bottom: 0;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>');
+    background-repeat: no-repeat;
+    background-position: center;
   }
 
-  &::-webkit-inner-spin-button::after,
-  &::-webkit-outer-spin-button::after {
-    content: '-';
-    display: inline-block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  &:focus {
+    outline: none;
+    border-color: ${(p) => p.theme.colors.orangeColor};
+    box-shadow: 0 0 5px ${(p) => p.theme.colors.orangeColor};
   }
+
+  &:hover::before,
+  &:hover::after {
+    background-color: ${(p) => p.theme.colors.orangeHoverColor}; /* Цвет кнопок при наведении */
+  /* }  */
+
   &:focus,
   &:hover {
     outline: none;
