@@ -58,6 +58,7 @@ export const UplSvg = styled.svg`
   }`
 
   export const Label = styled.label`
+  cursor: pointer;
     position: relative;
   top: -13px;
   left: 0px;
