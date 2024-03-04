@@ -2,7 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 // import { toast } from 'react-toastify';
 
-// axios.defaults.baseURL = '';
+// axios.defaults.baseURL = 'https://backend-power-pulse-7.onrender.com/';
 
 const setAuthHeader = (token) => {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
@@ -16,7 +16,7 @@ export const signUp = createAsyncThunk(
   'auth/signup',
   async (credentials, { rejectWithValue }) => {
     try {
-      const response = await axios.post('/users/signup', credentials);
+      const response = await axios.post('/api/users/register', credentials);
       setAuthHeader(response.data.token);
       return response.data;
     } catch (error) {
@@ -29,7 +29,7 @@ export const logIn = createAsyncThunk(
   'auth/signin',
   async (credentials, { rejectWithValue }) => {
     try {
-      const response = await axios.post('/users/signin', credentials);
+      const response = await axios.post('/api/users/signin', credentials);
       setAuthHeader(response.data.token);
       return response.data;
     } catch (error) {
@@ -42,7 +42,7 @@ export const logOut = createAsyncThunk(
   'auth/logout',
   async (_, { rejectWithValue }) => {
     try {
-      await axios.post('/users/logout');
+      await axios.post('/api/users/logout');
       clearAuthHeader();
     } catch (error) {
       return rejectWithValue(error.message);
@@ -62,10 +62,39 @@ export const refreshUser = createAsyncThunk(
 
     try {
       setAuthHeader(persistedToken);
-      const { data } = await axios.get('/users/current');
+      const { data } = await axios.get('/api/users/current');
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
   }
 );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+export const updateUserParams = createAsyncThunk(
+  '/api/users/update',
+  async ()
+)
+
+// usersRouter.put(
+//   '/update',
+//   authMiddlewares,
+//   validateBody(bodyUserUpdateSchema),
+//   ctrl.updateUser

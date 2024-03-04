@@ -12,7 +12,7 @@ const UserCard = () => {
         <s.AvatarContainer>
         <s.UserSvg><use href={`${sprite}#icon-user`}></use></s.UserSvg>
         </s.AvatarContainer>
-<input type="file" id="fileInput" name="fileInput" style={{ display: 'none' }}></input>
+<input type="file" accept=".jpg, .jpeg" id="fileInput" name="fileInput" style={{ display: 'none' }}></input>
 <s.Label htmlFor="fileInput" >
         
         <s.UplSvg>

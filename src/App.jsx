@@ -7,8 +7,6 @@ import DiaryPage from './pages/DiaryPage/DiaryPage';
 import ProductsPage from './pages/ProductsPage/ProductsPage';
 import ExercisesPage from './pages/ExercisesPage/ExercisesPage';
 import ProfilePage from './pages/ProfilePage/ProfilePage';
-import SecondPage from 'pages/SecondPage/SecondPage';
-import HalfPage from 'pages/HalfPage/HalfPage';
 import ErrorPage from 'pages/ErrorPage/ErrorPage';
 import { AppWrapper } from './App.styled';
 
@@ -27,9 +25,6 @@ function App() {
           <Route path="/products" element={<ProductsPage />} />
           <Route path="/exercises" element={<ExercisesPage />} />
           <Route path="/profile" element={<ProfilePage />} />
-          <Route path="/second" element={<SecondPage />}>
-            <Route path=":half" element={<HalfPage />} />
-          </Route>
           <Route path="*" element={<ErrorPage />} />
         </Route>
       </Routes>
