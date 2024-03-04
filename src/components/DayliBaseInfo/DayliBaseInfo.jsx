@@ -4,12 +4,13 @@ import sprite from '../../images/sprite.svg';
 
 const DailyBaseInfo = ({ iconId, text, value }) => {
   return (
-    <s.Container >
-<s.Wrap>
-<s.Svg>
-        <use href={`${sprite}#${iconId}`}></use>
-      </s.Svg>
-      <s.Text>{text}</s.Text></s.Wrap>
+    <s.Container>
+      <s.Wrap>
+        <s.Svg>
+          <use href={`${sprite}#${iconId}`}></use>
+        </s.Svg>
+        <s.Text>{text}</s.Text>
+      </s.Wrap>
       <s.Amount>{value}</s.Amount>
     </s.Container>
   );
