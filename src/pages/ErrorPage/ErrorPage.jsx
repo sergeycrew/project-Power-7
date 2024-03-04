@@ -1,4 +1,4 @@
-import Logo from 'components/Logo';
+import {Logo} from 'components/Logo/Logo';
 import { Container, Title } from './ErrorPage.styled';
 //import { Container } from 'styles/container';
 
