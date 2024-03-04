@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 export const HeaderContainer = styled.div`
   padding: 20px;
+  background-color: #0000ff
 `;
 
 export const Navigation = styled.nav`

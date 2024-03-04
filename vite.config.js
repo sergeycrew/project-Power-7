@@ -10,6 +10,7 @@ export default defineConfig({
       components: '/src/components',
       pages: '/src/pages',
       assets: '/src/assets',
+      images: '/src/images',
     },
   },
   base: '/project-Power-7',
