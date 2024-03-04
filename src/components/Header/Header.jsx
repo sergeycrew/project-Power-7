@@ -1,11 +1,16 @@
 import * as s from './Header.styled';
 import sprite from 'assets/sprite.svg';
+import {Logo} from 'components/Logo/Logo';
+import {Logout} from 'components/Logout/Logout';
 
 export const Header = () => {
 
   return (
     <s.HeaderContainer>
       <s.Navigation>
+        <div><Logo /></div>
+        <div><Logout/></div>
+        
         <s.StyledLink to="/welcome">
         <s.IconWrapper>
           <use href={`${sprite}#icon-logo`} />
@@ -13,7 +18,8 @@ export const Header = () => {
       Welcome page
       </s.StyledLink>
       <s.StyledLink to="/diary">
-    Diary
+          Diary
+          
     </s.StyledLink>
     <s.StyledLink to="/products">
     Products
