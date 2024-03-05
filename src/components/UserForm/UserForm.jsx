@@ -23,6 +23,7 @@ import RadioOption from '../UserRadio/UserRadio';
 const UserForm = () => {
     const dispatch = useDispatch();
     const user = useSelector(selectUser);
+    console.log(user)
 
     const bloodOpt = [
         { id: '1', value: '1', label: '1' },

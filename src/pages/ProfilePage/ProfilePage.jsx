@@ -1,10 +1,21 @@
+import { useDispatch } from 'react-redux';
 import DailyBaseInfo from '../../components/DayliBaseInfo/DayliBaseInfo';
 import UserCard from '../../components/UserCard/UserCard';
 import UserForm from '../../components/UserForm/UserForm';
 import UserNote from '../../components/UserNote/UserNote';
 import * as s from './ProfilePage.styled';
+import { useEffect } from 'react';
+import { currentUser } from '../../redux/auth/authOperation';
+
 
 const ProfilePage = () => {
+
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+      dispatch(currentUser());
+    }, [dispatch]);
+  
   return (
     <s.Container>
       <s.Title>Profile Setings</s.Title>

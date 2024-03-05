@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 
 axios.defaults.baseURL = 'https://backend-power-pulse-7.onrender.com/api/';
 
-const temptoken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWU1MDk4OWQxNTIyZWExMmEyYjE4YTMiLCJ0eXBlIjoiYWNjZXNzIiwiaWF0IjoxNzA5NjQwMzc5LCJleHAiOjE3MDk3MjMxNzl9.ngrNvjhTdTTrlEi6bZatbsZ0tyHYtqQjs30q9TxayAg';
+const temptoken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWU3NDhhOTY2MmE1YTUzNGNhNjI4MTIiLCJ0eXBlIjoiYWNjZXNzIiwiaWF0IjoxNzA5NjU2MjUwLCJleHAiOjE3MDk3MzkwNTB9.tO0F8cqQ-DCzboHx8z0DF8iQhiYLyRplYPBqmGw6Oe4';
 
 
 const setAuthHeader = (token) => {
@@ -77,12 +77,12 @@ export const currentUser = createAsyncThunk(
     const state = thunkAPI.getState();
     const persistedToken = state.auth.token;
 
-    if (persistedToken === null) {
-      return thunkAPI.rejectWithValue('Unable to fetch user');
-    }
+    // if (persistedToken === null) {
+    //   return thunkAPI.rejectWithValue('Unable to fetch user');
+    // }
 
     try {
-      setAuthHeader(persistedToken);
+      setAuthHeader(temptoken);
 
       const { data } = await axios.get('users/current');
 
