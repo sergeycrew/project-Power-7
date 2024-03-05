@@ -1,4 +1,5 @@
 import { createGlobalStyle, styled } from 'styled-components';
+import sprite from '../../images/sprite/sprite.svg';
 // import 'react-datepicker/dist/react-datepicker.css';
 
 export const WrappInput = styled.div`
@@ -48,7 +49,7 @@ export const CalendarGlobalStyles = createGlobalStyle`
     
   }
   .react-datepicker {
-    width: 201px;
+    // width: 201px;
     position: absolute;
     left: -52px;
     top: 50%;
@@ -201,6 +202,7 @@ export const CalendarGlobalStyles = createGlobalStyle`
     align-items: center;
     justify-content: space-between;
     color: white;
+    gap: 5px;
   }
   .react-datepicker__day {
     display: flex;
@@ -251,4 +253,15 @@ export const CalendarGlobalStyles = createGlobalStyle`
   .react-datepicker__triangle {
     display: none;
   }
+
+  .WrappInput:hover .calendar-icon use,
+  .WrappInput:focus .calendar-icon use {
+    content: url('${sprite}#icon-calendar');
+  }
+
+  .WrappInput .calendar-icon use,
+  .WrappInput .calendar-icon use {
+    content: url('${sprite}#icon-calendar-white');
+  }
+  
 `;

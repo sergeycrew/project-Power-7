@@ -8,7 +8,7 @@ import "react-datepicker/dist/react-datepicker-cssmodules.css";
 // import * as s from './UserDataPicker.styled'
 // import 'react-datepicker/dist/react-datepicker.css';
 
-export const CustomDataPicker = ({ selectedDate, setSelectedDate, }) => {
+export const CustomDataPicker = ({ selectedDate, setSelectedDate, isOpen }) => {
 //   const [selectedDate, setSelectedDate] = useState(new Date());
 const handleDateChange = date => {
     setSelectedDate(date); }
@@ -18,8 +18,8 @@ const handleDateChange = date => {
 
     <WrappInput>  
     <label htmlFor="datePicker">Date of birth</label>
-      <IconSvg width="18" height="18">
-        <use href={`${sprite}#icon-calendar-white`} ></use>
+      <IconSvg width="18" height="18" >
+        <use href={isOpen ? `${sprite}#icon-calendar` : `${sprite}#icon-calendar-white`} ></use>
       </IconSvg>
     
       <DatePicker
@@ -29,6 +29,7 @@ const handleDateChange = date => {
         dateFormat={'dd.MM.yyyy'}
         calendarStartDay={1}
         formatWeekDay={(dayOfWeek) => dayOfWeek.substring(0, 2)}
+        open={isOpen}
        
       />
 
