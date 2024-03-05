@@ -5,6 +5,8 @@ export const theme = {
     orangeLightColor: '#ef8964',
     biegeColor: '#efa082',
     whiteColor: '#efede8',
+    greyColor: 'EFEDE8',
+    
     // accent colors
     accentColor: 'rgba(239, 237, 232, 0.3)',
     hoverColor: '#e6533c',
@@ -12,6 +14,7 @@ export const theme = {
     errorColor: '#d80027',
 
     //product cart
+    
     recommendedColor: '#419B09',
     notRecommendedColor: '#E9101D',
     cardBgColor: 'rgba(239, 237, 232, 0.05)',
@@ -23,6 +26,8 @@ export const theme = {
     sd: '4px',
     ld: '12px',
   },
+
+  
 
   spacing: (value) => `${value * 4}px`,
 };

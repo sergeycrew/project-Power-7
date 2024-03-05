@@ -1,5 +1,5 @@
 //import { useDispatch } from 'react-redux';
-import { LogoutButtonLink, Text } from './Logout.styled';
+import { LogoutButtonLink, Text, LogoWrapper, LogOutIcon } from './Logout.styled';
 import sprite from 'images/sprite/sprite.svg';
 
 //import { logOut } from 'redux/auth/authOperations';
@@ -12,14 +12,17 @@ export const Logout = () => {
   // };
 
   return (
-    <LogoutButtonLink
+    <LogoWrapper>
+      <LogoutButtonLink
       //onClick={handleClick}
     >
       <Text>Logout</Text>
-      <svg width="20" height="20" >
+        <LogOutIcon>
         <use href={`${sprite}#logout`} />
-      </svg>
+      </LogOutIcon>
     </LogoutButtonLink>
+    </LogoWrapper>
+    
   );
 };
 
