@@ -1,0 +1,1 @@
+const e="/project-Power-7/assets/hero-tablet-1x-aa5449da.png",s="/project-Power-7/assets/hero-tablet-2x-2500ed2d.png",t="/project-Power-7/assets/hero-desktop-1x-b62653ab.png",o="/project-Power-7/assets/hero-desktop-2x-90fc6b87.png";export{s as a,e as b,t as c,o as d};

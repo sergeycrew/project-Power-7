@@ -1,4 +1,4 @@
-import{u as o,L as s,j as i,C as r,s as a}from"./index-1a96b8bd.js";const d="/project-Power-7/assets/bg-mobile-1x-014f5a2c.png",p="/project-Power-7/assets/bg-mobile-2x-ba0edaad.png",x="/project-Power-7/assets/hero-tablet-1x-aa5449da.png",c="/project-Power-7/assets/hero-tablet-2x-2500ed2d.png",h="/project-Power-7/assets/hero-desktop-1x-b62653ab.png",l="/project-Power-7/assets/hero-desktop-2x-90fc6b87.png",g=o.div`
+import{u as o,L as r,j as i,C as a,s}from"./index-e4868729.js";import{b as d,a as p,c as x,d as h}from"./hero-desktop-2x-c0317d06.js";const c="/project-Power-7/assets/bg-mobile-1x-014f5a2c.png",l="/project-Power-7/assets/bg-mobile-2x-ba0edaad.png",g=o.div`
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -7,18 +7,18 @@ import{u as o,L as s,j as i,C as r,s as a}from"./index-1a96b8bd.js";const d="/pr
 
   background-repeat: no-repeat;
   background-position: bottom right;
-  background-image: image-set(url(${d}) 1x, url(${p}) 2x);
+  background-image: image-set(url(${c}) 1x, url(${l}) 2x);
 
   @media screen and (min-width: 768px) {
     gap: 64px;
     padding-top: 189px;
-    background-image: image-set(url(${x}) 1x, url(${c}) 2x);
+    background-image: image-set(url(${d}) 1x, url(${p}) 2x);
   }
 
   @media screen and (min-width: 1440px) {
     padding-top: 200px;
     background-size: contain;
-    background-image: image-set(url(${h}) 1x, url(${l}) 2x);
+    background-image: image-set(url(${x}) 1x, url(${h}) 2x);
   }
 `,m=o.div`
   padding: 0 20px;
@@ -79,7 +79,7 @@ import{u as o,L as s,j as i,C as r,s as a}from"./index-1a96b8bd.js";const d="/pr
   @media screen and (min-width: 1440px) {
     padding: 0 96px;
   }
-`,t=o.li`
+`,n=o.li`
   width: 136px;
   height: 42px;
   border-radius: ${e=>e.theme.radii.ld};
@@ -112,7 +112,7 @@ import{u as o,L as s,j as i,C as r,s as a}from"./index-1a96b8bd.js";const d="/pr
       width: 182px;
     }
   }
-`,n=o(s)`
+`,t=o(r)`
   font-weight: 500;
   font-size: 16px;
   line-height: 1.12;
@@ -127,4 +127,4 @@ import{u as o,L as s,j as i,C as r,s as a}from"./index-1a96b8bd.js";const d="/pr
     font-size: 20px;
     line-height: 1.2;
   }
-`,j=()=>i.jsx(r,{children:i.jsxs(g,{children:[i.jsxs(m,{children:[i.jsx(u,{children:i.jsx("use",{href:`${a}#slogan-line`})}),i.jsx(b,{children:"Transforming your body shape with Power Pulse"})]}),i.jsxs(w,{children:[i.jsx(t,{children:i.jsx(n,{to:"/signUp",children:"Sign Up"})}),i.jsx(t,{children:i.jsx(n,{to:"/signIn",children:"Sign In"})})]})]})});export{j as default};
+`,k=()=>i.jsx(a,{children:i.jsxs(g,{children:[i.jsxs(m,{children:[i.jsx(u,{children:i.jsx("use",{href:`${s}#slogan-line`})}),i.jsx(b,{children:"Transforming your body shape with Power Pulse"})]}),i.jsxs(w,{children:[i.jsx(n,{children:i.jsx(t,{to:"/signUp",children:"Sign Up"})}),i.jsx(n,{children:i.jsx(t,{to:"/signIn",children:"Sign In"})})]})]})});export{k as default};

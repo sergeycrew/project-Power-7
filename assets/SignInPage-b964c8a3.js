@@ -1,4 +1,4 @@
-import{u as f,L as o,j as t}from"./index-1a96b8bd.js";const a=f.div`
+import{u as f,L as o,j as t}from"./index-e4868729.js";const a=f.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -40,4 +40,4 @@ import{u as f,L as o,j as t}from"./index-1a96b8bd.js";const a=f.div`
       0 0 40px #00baff,
       0 0 80px #00baff;
   }
-`,n=()=>t.jsxs(a,{children:[t.jsx(x,{children:"Sign Up"}),t.jsx(e,{to:"/signIn",children:"Sign In"})]});export{n as default};
+`,n=()=>t.jsxs(a,{children:[t.jsx(x,{children:"Sign In"}),t.jsx(e,{to:"/signUp",children:"Sign Up"})]});export{n as default};
