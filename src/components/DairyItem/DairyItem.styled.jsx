@@ -31,7 +31,7 @@ export const ItemWrapper = styled.li`
   }
 `;
 
-export const DairyItemTitle = styled.p`
+export const DairyItemTitle = styled.h2`
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 14px;
@@ -50,8 +50,7 @@ export const LinkText = styled.span`
   font-weight: 500;
   font-size: 14px;
   line-height: 129%;
-  /* color: #e6533c; */
-  color: ${theme.colors.hoverColor};
+  color: ${(p) => p.theme.colors.hoverColor};
 
   @media screen and (min-width: 768px) {
     font-size: 16px;

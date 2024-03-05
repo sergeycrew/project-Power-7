@@ -19,20 +19,22 @@ const commonMediaStyles = `
     padding: 8px 14px;
 `;
 
-export const ProductsContainer = styled.div`
-  @media screen and (min-width: 768px) {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
+export const ProductsContainer = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
 
-  @media screen and (min-width: 1440px) {
-    padding: 0 16px;
+  @media screen and (min-width: 768px) {
+    gap: 8px;
   }
 `;
 
-export const ListItem = styled.div`
-  margin-bottom: 16px;
+export const ListItem = styled.li`
+  /* margin-bottom: 16px;
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 8px;
+  } */
 `;
 
 export const DayItemTitle = styled.p`
@@ -40,9 +42,89 @@ export const DayItemTitle = styled.p`
   font-weight: 400;
   font-size: 12px;
   line-height: 150%;
-  /* color: #ef8964; */
-  color: ${theme.colors.orangeLightColor};
+  color: ${(p) => p.theme.colors.orangeLightColor};
   margin-bottom: 8px;
+`;
+
+export const DayItemContent = styled.p`
+  border: 1px solid ${(p) => p.theme.colors.accentColor};
+  border-radius: 12px;
+  padding: 10px 14px;
+  height: 38px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 129%;
+  color: ${(p) => p.theme.colors.whiteColor};
+
+  @media screen and (min-width: 768px) {
+    height: 40px;
+    font-size: 16px;
+    line-height: 150%;
+    padding: 8px 14px;
+  }
+
+  &:nth-of-type(1) {
+    width: 297px;
+
+    @media screen and (min-width: 768px) {
+      width: 204px;
+    }
+
+    @media screen and (min-width: 1440px) {
+      width: 212px;
+    }
+  }
+
+  &:nth-of-type(2) {
+    width: 297px;
+
+    @media screen and (min-width: 768px) {
+      width: 128px;
+    }
+
+    @media screen and (min-width: 1440px) {
+      width: 166px;
+    }
+  }
+
+  &:nth-of-type(3) {
+    width: 81px;
+
+    @media screen and (min-width: 768px) {
+      width: 90px;
+    }
+
+    @media screen and (min-width: 1440px) {
+      width: 105px;
+    }
+  }
+
+  &:nth-of-type(4) {
+    width: 80px;
+
+    @media screen and (min-width: 768px) {
+      width: 90px;
+    }
+
+    @media screen and (min-width: 1440px) {
+      width: 105px;
+    }
+  }
+
+  &:nth-of-type(5) {
+    width: 76px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    @media screen and (min-width: 768px) {
+      width: 80px;
+    }
+
+    @media screen and (min-width: 1440px) {
+      width: 110px;
+    }
+  }
 `;
 
 export const DayProductTitleContent = styled.p`
@@ -123,17 +205,7 @@ export const RecomendalDot = styled.span`
   border-radius: 10px;
   width: 14px;
   height: 14px;
-  background-color: #419b09;
-`;
-
-export const LastItemWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 16px;
-
-  @media screen and (min-width: 768px) {
-    gap: 8px;
-  }
+  background-color: ${(p) => p.theme.colors.recommendedColor};
 `;
 
 export const DeleteButton = styled.button`
@@ -148,5 +220,4 @@ export const DeleteIcon = styled.svg`
   height: 20px;
   width: 20px;
   fill: ${(p) => p.theme.colors.orangeLightColor};
-  /* fill: #ef8964; */
 `;

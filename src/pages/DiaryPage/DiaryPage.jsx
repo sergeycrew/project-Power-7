@@ -30,6 +30,7 @@ const DiaryPage = () => {
           <s.DairyItemContainer>
             <DairyItem title="Products" link="Add products" to="/products">
               <DayProductItem></DayProductItem>
+              <DayProductItem></DayProductItem>
             </DairyItem>
             <DairyItem title="Exercises" link="Add exercises" to="/exercises">
               <DayExerciseItem></DayExerciseItem>
