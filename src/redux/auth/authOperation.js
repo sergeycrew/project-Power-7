@@ -4,6 +4,9 @@ import { toast } from 'react-toastify';
 
 axios.defaults.baseURL = 'https://backend-power-pulse-7.onrender.com/api/';
 
+
+const temptoken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWU3NDhhOTY2MmE1YTUzNGNhNjI4MTIiLCJ0eXBlIjoiYWNjZXNzIiwiaWF0IjoxNzA5NjU2MjUwLCJleHAiOjE3MDk3MzkwNTB9.tO0F8cqQ-DCzboHx8z0DF8iQhiYLyRplYPBqmGw6Oe4';
+
 const setAuthHeader = (token) => {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
 };
@@ -68,12 +71,12 @@ export const currentUser = createAsyncThunk(
     const state = thunkAPI.getState();
     const persistedToken = state.auth.token;
 
-    if (persistedToken === null) {
-      return thunkAPI.rejectWithValue('Unable to fetch user');
-    }
+    // if (persistedToken === null) {
+    //   return thunkAPI.rejectWithValue('Unable to fetch user');
+    // }
 
     try {
-      setAuthHeader(persistedToken);
+      setAuthHeader(temptoken);
 
       const { data } = await axios.get('users/current');
 
@@ -84,10 +87,33 @@ export const currentUser = createAsyncThunk(
   }
 );
 
-export const updateUserParams = createAsyncThunk('/api/users/update', async());
 
-// usersRouter.put(
-//   '/update',
-//   authMiddlewares,
-//   validateBody(bodyUserUpdateSchema),
-//   ctrl.updateUser
+// export const getUserParams = createAsyncThunk(
+//   'users/params',
+//   async(_, thunkAPI) => {
+//     const state = thunkAPI.getState();
+//     const persistedToken = state.auth.token;
+
+//     if (persistedToken === null) {
+//       return thunkAPI.rejectWithValue('Unable to fetch user');
+//     }
+  
+//   } 
+// )
+
+
+export const updateUserParams = createAsyncThunk(
+  'users/update',
+  async (params, thunkAPI) => {
+    try {
+      const { data } = await axios.put('users/update', params)
+      return data;
+      
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+)
+
+
+

@@ -1,9 +1,22 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { register, logIn, logOut, currentUser } from './authOperation';
+import {
+  register,
+  logIn,
+  logOut,
+  currentUser,
+  updateUserParams,
+} from './authOperation';
 
 const initialUser = {
   name: '',
   email: '',
+  height:'',
+  currentWeight: '',
+  desiredWeight: '',
+  birthday: '01.01.1900',
+  blood: 1,
+  sex: 'male',
+  levelActivity: 1,
 };
 
 const initialState = {
@@ -57,10 +70,26 @@ const handleCurrentUserRejected = (state, { payload }) => {
 };
 
 const handleCurrentUserFulfilled = (state, { payload }) => {
-  state.user = payload.user;
-  state.token = payload.token;
+  state.user = payload;
+  // state.token = payload.token;
   state.isLoggedIn = true;
   state.isRefreshing = false;
+  state.error = null;
+};
+
+const handleUpdateUserParamsPending = (state) => {
+  state.error = null;
+};
+const handleUpdateUserParamsRejected = (state, { payload }) => {
+  state.isLoggedIn = true;
+  state.goToParams = false;
+  state.error = payload;
+};
+const handleUpdateUserParamsFulfilled = (state, { payload }) => {
+  state.user = payload.user;
+  state.isLoggedIn = true;
+  state.goToParams = false;
+  state.token = payload.token;
   state.error = null;
 };
 
@@ -83,7 +112,11 @@ const authSlice = createSlice({
 
       .addCase(currentUser.pending, handleCurrentUserPending)
       .addCase(currentUser.rejected, handleCurrentUserRejected)
-      .addCase(currentUser.fulfilled, handleCurrentUserFulfilled),
+      .addCase(currentUser.fulfilled, handleCurrentUserFulfilled)
+
+      .addCase(updateUserParams.pending, handleUpdateUserParamsPending)
+      .addCase(updateUserParams.rejected, handleUpdateUserParamsRejected)
+      .addCase(updateUserParams.fulfilled, handleUpdateUserParamsFulfilled),
 });
 
 export const authReducer = authSlice.reducer;
