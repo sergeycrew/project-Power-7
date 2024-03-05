@@ -2,7 +2,10 @@ import * as s from './DayliBaseInfo.styled';
 // import { PropTypes } from '@mui/material';
 import sprite from '../../images/sprite.svg';
 
-const DailyBaseInfo = ({ iconId, text, value }) => {
+const DailyBaseInfo = ({ iconId, text, value=0 }) => {
+
+
+
   return (
     <s.Container>
       <s.Wrap>
@@ -11,7 +14,7 @@ const DailyBaseInfo = ({ iconId, text, value }) => {
         </s.Svg>
         <s.Text>{text}</s.Text>
       </s.Wrap>
-      <s.Amount>{value}</s.Amount>
+      <s.Amount>{Math.round(value)}</s.Amount>
     </s.Container>
   );
 };

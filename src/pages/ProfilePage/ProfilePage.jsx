@@ -33,7 +33,7 @@ const ProfilePage = () => {
             <DailyBaseInfo
               iconId="icon-fork-knife"
               text="Daily calorie intake"
-              value={Math.round(user.bmr)}
+              value={user.bmr}
             />
             <DailyBaseInfo
               iconId="icon-dumbbell"

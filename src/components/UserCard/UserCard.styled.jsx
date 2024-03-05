@@ -31,6 +31,8 @@ display: flex;
 
 export const Avatar = styled.img`
 border-radius: 100px;
+width: 100%;
+height: 100%;
 `;
 
 export const UplBtn = styled.div`

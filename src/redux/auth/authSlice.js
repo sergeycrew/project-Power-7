@@ -108,7 +108,7 @@ const handleUpdateUserAvatarRejected = (state, { payload }) => {
   state.error = payload;
 };
 const handleUpdateUserAvatarFulfilled = (state, { payload }) => {
-  state.user = payload;
+  state.user.avatarUrl = payload;
   state.isLoggedIn = true;
   state.goToParams = false;
   // state.token = payload.token;
