@@ -1,19 +1,4 @@
-import{u as t,L as d,j as i,s as r}from"./index-5caca344.js";const s=t.div`
-  width: 100%;
-  margin: 0 auto;
-
-  @media screen and (min-width: 375px) {
-    width: 375px;
-  }
-
-  @media screen and (min-width: 768px) {
-    width: 768px;
-  }
-
-  @media screen and (min-width: 1440px) {
-    width: 1440px;
-  }
-`,a="/project-Power-7/assets/bg-mobile-1x-014f5a2c.png",p="/project-Power-7/assets/bg-mobile-2x-ba0edaad.png",x="/project-Power-7/assets/hero-tablet-1x-aa5449da.png",c="/project-Power-7/assets/hero-tablet-2x-2500ed2d.png",h="/project-Power-7/assets/hero-desktop-1x-b62653ab.png",l="/project-Power-7/assets/hero-desktop-2x-90fc6b87.png",g=t.div`
+import{u as o,L as s,j as i,C as r,s as a}from"./index-a9f6d1db.js";const d="/project-Power-7/assets/bg-mobile-1x-014f5a2c.png",p="/project-Power-7/assets/bg-mobile-2x-ba0edaad.png",x="/project-Power-7/assets/hero-tablet-1x-aa5449da.png",c="/project-Power-7/assets/hero-tablet-2x-2500ed2d.png",h="/project-Power-7/assets/hero-desktop-1x-b62653ab.png",l="/project-Power-7/assets/hero-desktop-2x-90fc6b87.png",g=o.div`
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -22,7 +7,7 @@ import{u as t,L as d,j as i,s as r}from"./index-5caca344.js";const s=t.div`
 
   background-repeat: no-repeat;
   background-position: bottom right;
-  background-image: image-set(url(${a}) 1x, url(${p}) 2x);
+  background-image: image-set(url(${d}) 1x, url(${p}) 2x);
 
   @media screen and (min-width: 768px) {
     gap: 64px;
@@ -35,7 +20,7 @@ import{u as t,L as d,j as i,s as r}from"./index-5caca344.js";const s=t.div`
     background-size: contain;
     background-image: image-set(url(${h}) 1x, url(${l}) 2x);
   }
-`,m=t.div`
+`,m=o.div`
   padding: 0 20px;
   position: relative;
 
@@ -46,7 +31,7 @@ import{u as t,L as d,j as i,s as r}from"./index-5caca344.js";const s=t.div`
   @media screen and (min-width: 1440px) {
     padding: 0 96px;
   }
-`,w=t.h1`
+`,b=o.h1`
   position: relative;
   z-index: 1;
   max-width: 335px;
@@ -63,7 +48,7 @@ import{u as t,L as d,j as i,s as r}from"./index-5caca344.js";const s=t.div`
     font-size: 70px;
     line-height: 1.11;
   }
-`,b=t.svg`
+`,u=o.svg`
   width: 98px;
   height: 35px;
   stroke-width: 2px;
@@ -81,7 +66,7 @@ import{u as t,L as d,j as i,s as r}from"./index-5caca344.js";const s=t.div`
   @media screen and (min-width: 1440px) {
     left: 80px;
   }
-`,u=t.ul`
+`,w=o.ul`
   display: flex;
   gap: 14px;
   padding: 0 20px;
@@ -94,7 +79,7 @@ import{u as t,L as d,j as i,s as r}from"./index-5caca344.js";const s=t.div`
   @media screen and (min-width: 1440px) {
     padding: 0 96px;
   }
-`,o=t.li`
+`,t=o.li`
   width: 136px;
   height: 42px;
   border-radius: ${e=>e.theme.radii.ld};
@@ -127,7 +112,7 @@ import{u as t,L as d,j as i,s as r}from"./index-5caca344.js";const s=t.div`
       width: 182px;
     }
   }
-`,n=t(d)`
+`,n=o(s)`
   font-weight: 500;
   font-size: 16px;
   line-height: 1.12;
@@ -142,4 +127,4 @@ import{u as t,L as d,j as i,s as r}from"./index-5caca344.js";const s=t.div`
     font-size: 20px;
     line-height: 1.2;
   }
-`,j=()=>i.jsx(s,{children:i.jsxs(g,{children:[i.jsxs(m,{children:[i.jsx(b,{children:i.jsx("use",{href:`${r}#slogan-line`})}),i.jsx(w,{children:"Transforming your body shape with Power Pulse"})]}),i.jsxs(u,{children:[i.jsx(o,{children:i.jsx(n,{to:"/signUp",children:"Sign Up"})}),i.jsx(o,{children:i.jsx(n,{to:"/signIn",children:"Sign In"})})]})]})});export{j as default};
+`,j=()=>i.jsx(r,{children:i.jsxs(g,{children:[i.jsxs(m,{children:[i.jsx(u,{children:i.jsx("use",{href:`${a}#slogan-line`})}),i.jsx(b,{children:"Transforming your body shape with Power Pulse"})]}),i.jsxs(w,{children:[i.jsx(t,{children:i.jsx(n,{to:"/signUp",children:"Sign Up"})}),i.jsx(t,{children:i.jsx(n,{to:"/signIn",children:"Sign In"})})]})]})});export{j as default};
