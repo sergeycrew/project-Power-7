@@ -17,6 +17,7 @@ export const CustomDataPicker = ({ selectedDate, setSelectedDate }) => {
 
   const handleDateChange = (date) => {
     setSelectedDate(date);
+    closeCalendar();
   };
   // const toggleCalendar = () => {
   //     setIsOpen(prev => !prev);
@@ -55,6 +56,14 @@ export const CustomDataPicker = ({ selectedDate, setSelectedDate }) => {
         open={isOpen}
         onClickOutside={closeCalendar}
         cursor="pointer"
+
+        // popperModifiers={{
+        //               preventOverflow: {
+        //                 enabled: true,
+        //                 escapeWithReference: false,
+        //                 boundariesElement: 'viewport',
+        //               },
+        //             }}
         
         // onClick={toggleCalendar}
       />
@@ -62,25 +71,6 @@ export const CustomDataPicker = ({ selectedDate, setSelectedDate }) => {
       <CalendarGlobalStyles />
     </WrappInput>
 
-    // <Container>
-    //       <DatePicker
-    //       selected={selectedDate}
-    //         onChange={handleDateChange}
-    //         dateFormat="dd.MM.yyyy"
-    //         calendarStartDay={1}
-    //         formatWeekDay={day => day.substring(0, 1)}
-    //         open={isOpen}
-    //         customInput={<div style={{ display: 'none' }} />}
-    //         popperModifiers={{
-    //           preventOverflow: {
-    //             enabled: true,
-    //             escapeWithReference: false,
-    //             boundariesElement: 'viewport',
-    //           },
-    //         }}
-    //       />
-    //       <CalendarGlobalStyles />
-    //       </Container>
   );
 };
 

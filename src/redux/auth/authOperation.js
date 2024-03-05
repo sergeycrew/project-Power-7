@@ -91,31 +91,31 @@ export const currentUser = createAsyncThunk(
   }
 );
 
+// export const getUserParams = createAsyncThunk(
+//   'users/params',
+//   async(_, thunkAPI) => {
+//     const state = thunkAPI.getState();
+//     const persistedToken = state.auth.token;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//     if (persistedToken === null) {
+//       return thunkAPI.rejectWithValue('Unable to fetch user');
+//     }
+  
+//   } 
+// )
 
 
 export const updateUserParams = createAsyncThunk(
-  '/api/users/update',
-  async ()
+  'users/update',
+  async (params, thunkAPI) => {
+    try {
+      const { data } = await axios.put('users/update', params)
+      return data;
+      
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
 )
 
-// usersRouter.put(
-//   '/update',
-//   authMiddlewares,
-//   validateBody(bodyUserUpdateSchema),
-//   ctrl.updateUser
+

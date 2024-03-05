@@ -4,10 +4,13 @@ import { parseISO } from 'date-fns';
 import { Formik, Field, ErrorMessage } from 'formik';
 import * as s from './UserForm.styled';
 
-// import { useDispatch, useSelector } from 'react-redux';
-// import {selectUser} from '../../redux/auth/authSelectors';
-import user from '../../jsonFromBd/userParams.json'
+import { useDispatch, useSelector } from 'react-redux';
+import {selectUser} from '../../redux/auth/authSelectors';
+import { updateUserParams } from '../../redux/auth/authOperation';
+
+// import user from '../../jsonFromBd/userParams.json'
 import { CustomDataPicker } from '../UserDataPicker/UserDataPicker';
+import RadioOption from '../UserRadio/UserRadio';
 // import { CustomDataPicker } from '../CustomDataPicker/CustomDataPicker';
 
 
@@ -18,7 +21,8 @@ import { CustomDataPicker } from '../UserDataPicker/UserDataPicker';
 // levelActivity - number; allowed values 1, 2, 3, 4, 5; required
 
 const UserForm = () => {
-    // const dispatch = useDispatch();
+    const dispatch = useDispatch();
+    const user = useSelector(selectUser);
 
     const bloodOpt = [
         { id: '1', value: '1', label: '1' },
@@ -79,7 +83,7 @@ const UserForm = () => {
     birthday: Yup.date().required('Birthday is required'),
   });
 //   const userBirth = new Date(user.birthday)//////////
-  const formattedDate = parseISO(user.birthday);
+//   const formattedDate = parseISO(user.birthday);
 
   const initialValues = {
     name: user.name ,
@@ -88,8 +92,14 @@ const UserForm = () => {
     desiredWeight: user.desiredWeight ,
     birthday: user.birthday ,
     blood: (user.blood ?? '1').toString() ,
-    sex: user.sex ,
+    sex: user.sex ?? 'male' ,
     levelActivity: (user.levelActivity ?? '1').toString() ,
+  };
+  const handleSubmit = values => {
+    const sendData = {
+      ...values,
+    };
+    dispatch(updateUserParams(sendData));
   };
 
   return (
@@ -97,7 +107,7 @@ const UserForm = () => {
       initialValues={initialValues
       }
       validationSchema={ValidationSchema}
-    //   onSubmit={handleSubmit}
+      onSubmit={handleSubmit}
     >{formik => (
       <s.StyledForm>
       
@@ -163,12 +173,62 @@ const UserForm = () => {
         //   isOpen={true}
        
               setSelectedDate={date => {
-                const formattedDate = parseISO(date.toISOString());
-                formik.setFieldValue('birthday', formattedDate);
+                // const formattedDate = parseISO(date.toISOString());
+                formik.setFieldValue('birthday', date.toISOString());
               }}/>
               
              
         </s.WrappInputFields>
+
+
+        <s.WrapperRadio>
+            <div style={{ display: 'flex', marginRight: '20px' }}>
+              <div style={{ display: 'flex', marginRight: '20px' }}>
+                {bloodOpt.map(option => (
+                  <RadioOption
+                    key={option.id}
+                    id={option.id}
+                    name="blood"
+                    value={option.value}
+                    checked={formik.values.blood === option.value}
+                    label={option.label}
+                    onChange={() => formik.setFieldValue('blood', option.value)}
+                  />
+                ))}
+              </div>
+
+              <div style={{ display: 'flex' }}>
+                {sexOpt.map(option => (
+                  <RadioOption
+                    key={option.id}
+                    id={option.id}
+                    name="sex"
+                    value={option.value}
+                    checked={formik.values.sex === option.value}
+                    label={option.label}
+                    onChange={() => formik.setFieldValue('sex', option.value)}
+                  />
+                ))}
+              </div>
+            </div>
+
+            <s.WrapperLevel>
+              {actOpt.map(option => (
+                <RadioOption
+                  key={option.id}
+                  id={option.id}
+                  name="levelActivity"
+                  value={option.value}
+                  checked={formik.values.levelActivity === option.value}
+                  label={option.label}
+                  onChange={() =>
+                    formik.setFieldValue('levelActivity', option.value)
+                  }
+                />
+              ))}
+            </s.WrapperLevel>
+          </s.WrapperRadio>
+          <s.Button type="submit">Save</s.Button>
       </s.StyledForm>)}
     </Formik>
   );
