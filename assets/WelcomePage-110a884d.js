@@ -1,23 +1,21 @@
-import{u as f,L as o,j as t}from"./index-0df8298d.js";const a=f.div`
-  display: flex;
+import{u as o,L as a,j as f}from"./index-d3bab89a.js";const e=o.div`
+  /* display: flex;
   justify-content: center;
-  align-items: center;
-  padding-top: 500px;
-`,x=f.h1`
+  align-items: center; */
+  padding-top: 128px;
+  background-color: #040404;
+`,n=o.h1`
   margin: 0;
-  margin-right: 10px;
-  color: #ffffff;
-  text-shadow:
+  /* margin-right: 10px; */
+  color: #efede8;
+  margin-bottom: 40px;
+  /* text-shadow:
     0 0 5px #00baff,
     0 0 10px #00baff,
     0 0 20px #00baff,
     0 0 40px #00baff,
-    0 0 80px #00baff;
-`;f.img`
-  width: 40px;
-  height: 40px;
-  object-fit: cover;
-`;const e=f(o)`
+    0 0 80px #00baff; */
+`,t=o(a)`
   padding: 8px 16px;
   color: #ffffff; /* White text color */
   text-shadow:
@@ -40,4 +38,4 @@ import{u as f,L as o,j as t}from"./index-0df8298d.js";const a=f.div`
       0 0 40px #00baff,
       0 0 80px #00baff;
   }
-`,n=()=>t.jsxs(a,{children:[t.jsx(x,{children:"Sign Up"}),t.jsx(e,{to:"/signIn",children:"Sign In"})]});export{n as default};
+`,s=()=>f.jsxs(e,{children:[f.jsx(n,{children:"Transforming your body shape with Power Pulse"}),f.jsx(t,{to:"/signUp",children:"Sign Up"}),f.jsx(t,{to:"/signIn",children:"Sign In"})]});export{s as default};
