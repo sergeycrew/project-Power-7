@@ -11,6 +11,7 @@ export default defineConfig({
       pages: '/src/pages',
       assets: '/src/assets',
       images: '/src/images',
+      styles: '/src/styles',
     },
   },
   base: '/project-Power-7',
