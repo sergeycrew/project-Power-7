@@ -87,14 +87,14 @@ const UserForm = () => {
 //   const formattedDate = parseISO(user.birthday);
 
   const initialValues = {
-    name: user.name ,
-    height: user.height ,
-    currentWeight: user.currentWeight ,
-    desiredWeight: user.desiredWeight ,
-    birthday: user.birthday ,
-    blood: (user.blood ?? '1').toString() ,
-    sex: user.sex ?? 'male' ,
-    levelActivity: (user.levelActivity ?? '1').toString() ,
+    name: user.name || 'Name',
+    height: user.height || '150',
+    currentWeight: user.currentWeight || '35',
+    desiredWeight: user.desiredWeight || '35',
+    birthday: user.birthday || '2005-01-01',
+    blood: (user.blood ?? '1').toString() || '1',
+    sex: user.sex || 'male',
+    levelActivity: (user.levelActivity ?? '1').toString() || '1',
   };
   const handleSubmit = values => {
     const sendData = {
@@ -121,6 +121,7 @@ const UserForm = () => {
                 type="text"
                 placeholder="Your name"
                 as={s.Input}
+                // defaultValue={user.name}
               />
             </div>
             <div>

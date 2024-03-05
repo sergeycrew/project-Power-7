@@ -70,8 +70,8 @@ const handleCurrentUserRejected = (state, { payload }) => {
 };
 
 const handleCurrentUserFulfilled = (state, { payload }) => {
-  state.user = payload.user;
-  state.token = payload.token;
+  state.user = payload;
+  // state.token = payload.token;
   state.isLoggedIn = true;
   state.isRefreshing = false;
   state.error = null;
