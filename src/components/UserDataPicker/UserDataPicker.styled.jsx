@@ -1,4 +1,5 @@
 import { createGlobalStyle, styled } from 'styled-components';
+import sprite from '../../images/sprite/sprite.svg';
 // import 'react-datepicker/dist/react-datepicker.css';
 
 export const WrappInput = styled.div`
@@ -18,6 +19,14 @@ export const WrappInput = styled.div`
       transform 0.2s;
     color: ${(p) => p.theme.colors.accentColor};
   }
+  /* &:hover .calendar-icon use,
+  &:focus .calendar-icon use {
+    content: url('${sprite}#icon-calendar');
+  }
+
+  .calendar-icon use {
+    content: url('${sprite}#icon-calendar-white');
+  } */
 
 `;
 export const TitleWrapper = styled.button`
@@ -44,12 +53,12 @@ export const IconSvg = styled.svg`
 
 export const CalendarGlobalStyles = createGlobalStyle`
  .react-datepicker__wrapper {
-    position: relative;
+    // position: relative;
     
   }
   .react-datepicker {
-    width: 201px;
-    position: absolute;
+    // width: 201px;
+    position: reletive;
     left: -52px;
     top: 50%;
     transform: translate(-15%, 0%);
@@ -88,6 +97,7 @@ export const CalendarGlobalStyles = createGlobalStyle`
     react-datepicker__day--today {
     outline: none;
     border: none;
+    // cursor: pointer;
   }
   .react-datepicker__current-month {
     color: #efede8;
@@ -114,8 +124,26 @@ export const CalendarGlobalStyles = createGlobalStyle`
   .react-datepicker__navigation {
     margin-top: 14px;
     color: white;
-    z-index: 999;
+    // z-index: 999;
     
+  }
+  .react-datepicker-popper {
+    z-index: 1;
+  
+    // Eliminating extra space at the bottom of the container
+    line-height: 0;
+  
+    &[data-placement^="bottom"] {
+      .react-datepickertriangle {
+        @extend %triangle-arrow-up;
+      }
+    }
+  
+    &[data-placement^="top"] {
+      .react-datepickertriangle {
+        @extend %triangle-arrow-down;
+      }
+    }
   }
 
 
@@ -201,6 +229,7 @@ export const CalendarGlobalStyles = createGlobalStyle`
     align-items: center;
     justify-content: space-between;
     color: white;
+    gap: 5px;
   }
   .react-datepicker__day {
     display: flex;
@@ -221,6 +250,7 @@ export const CalendarGlobalStyles = createGlobalStyle`
   }
   .react-datepicker__month {
     display: flex;
+    // cursor: pointer;
     gap: 5px;
     flex-direction: column;
     justify-content: space-between;
@@ -236,6 +266,7 @@ export const CalendarGlobalStyles = createGlobalStyle`
     background-color: white;
   }
   .react-datepicker__day:hover {
+    cursor: pointer;
     border-radius: 50%;
     background-color: white;
     color: #ef8964;
@@ -251,4 +282,15 @@ export const CalendarGlobalStyles = createGlobalStyle`
   .react-datepicker__triangle {
     display: none;
   }
+
+//   .WrappInput:hover .calendar-icon use,
+//   .WrappInput:focus .calendar-icon use {
+//     content: url('${sprite}#icon-calendar');
+//   }
+
+//   .WrappInput .calendar-icon use,
+//   .WrappInput .calendar-icon use {
+//     content: url('${sprite}#icon-calendar-white');
+//   }
+  
 `;
