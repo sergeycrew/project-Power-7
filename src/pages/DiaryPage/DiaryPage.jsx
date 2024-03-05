@@ -4,6 +4,7 @@ import { DairyItem } from '../../components/DairyItem/DairyItem';
 import { DayDashboard } from '../../components/DayDashboard/DayDashboard';
 import { DayProductItem } from '../../components/DayProducts/DayProductsItem';
 import { DayExerciseItem } from '../../components/DayExercises/DayExercisesItem';
+import { DaySwitch } from '../../components/DaySwitch/DaySwitch';
 
 const DiaryPage = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -21,6 +22,7 @@ const DiaryPage = () => {
   }, []);
   return (
     <s.Container>
+      <DaySwitch />
       <s.Title>Diary</s.Title>
 
       {windowWidth >= 768 ? (
