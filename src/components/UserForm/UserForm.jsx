@@ -8,7 +8,7 @@ import * as s from './UserForm.styled';
 // import {selectUser} from '../../redux/auth/authSelectors';
 import user from '../../jsonFromBd/userParams.json'
 import { CustomDataPicker } from '../UserDataPicker/UserDataPicker';
-// import { CustomDataPicker } from '../UserDataPicker/UserDataPicker';
+// import { CustomDataPicker } from '../CustomDataPicker/CustomDataPicker';
 
 
 

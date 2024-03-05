@@ -17,7 +17,7 @@ export const Container = styled.div`
 `;
 
 export const Title = styled.h2`
-  color: #efede8;
+   color: #efede8;
   font-family: 'RobotoBold';
   font-size: 24px;
   line-height: 28px;

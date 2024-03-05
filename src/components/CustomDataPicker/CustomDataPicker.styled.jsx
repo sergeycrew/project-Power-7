@@ -1,8 +1,8 @@
 import { createGlobalStyle } from 'styled-components';
-import 'react-datepicker/dist/react-datepicker.css';
+// import 'react-datepicker/dist/react-datepicker.css-cssmodules.css';
 
 export const CalendarGlobalStyles = createGlobalStyle`
-  .react-datepicker__wrapper {
+.react-datepicker__wrapper {
     position: relative;
 
   }
