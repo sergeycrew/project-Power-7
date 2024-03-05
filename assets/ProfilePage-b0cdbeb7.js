@@ -1,4 +1,4 @@
-var ho=Object.defineProperty;var mo=(r,n,e)=>n in r?ho(r,n,{enumerable:!0,configurable:!0,writable:!0,value:e}):r[n]=e;var D=(r,n,e)=>(mo(r,typeof n!="symbol"?n+"":n,e),e);import{u as T,j as b,g as go,b as O,c as br,R as xr,e as m,i as yo,s as ze,d as wo,a as Dr,f as wt,h as vo,k as bo}from"./index-e4868729.js";import{i as _t}from"./sprite-c7b8fad8.js";import{F as xo,c as Do,b as ko,e as Kt,f as _o,d as Co,a as ht}from"./index.esm-9b89dc38.js";const Mo=T.p`
+var ho=Object.defineProperty;var mo=(r,n,e)=>n in r?ho(r,n,{enumerable:!0,configurable:!0,writable:!0,value:e}):r[n]=e;var D=(r,n,e)=>(mo(r,typeof n!="symbol"?n+"":n,e),e);import{u as T,j as b,g as go,b as O,c as br,R as xr,e as m,i as yo,s as ze,d as wo,a as Dr,f as wt,h as vo,k as bo}from"./index-c840d31c.js";import{i as _t}from"./sprite-997bc288.js";import{F as xo,c as Do,b as ko,e as Kt,f as _o,d as Co,a as ht}from"./index.esm-c2fde6b8.js";const Mo=T.p`
   color: rgba(239, 237, 232, 0.8);
   font-family: 'RobotoRegular';
   font-size: 14px;
@@ -366,12 +366,12 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   right: 14px;
 `,Zc=wo`
  .react-datepicker__wrapper {
-    position: relative;
+    // position: relative;
     
   }
   .react-datepicker {
     // width: 201px;
-    position: absolute;
+    position: reletive;
     left: -52px;
     top: 50%;
     transform: translate(-15%, 0%);
@@ -437,8 +437,26 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   .react-datepicker__navigation {
     margin-top: 14px;
     color: white;
-    z-index: 999;
+    // z-index: 999;
     
+  }
+  .react-datepicker-popper {
+    z-index: 1;
+  
+    // Eliminating extra space at the bottom of the container
+    line-height: 0;
+  
+    &[data-placement^="bottom"] {
+      .react-datepickertriangle {
+        @extend %triangle-arrow-up;
+      }
+    }
+  
+    &[data-placement^="top"] {
+      .react-datepickertriangle {
+        @extend %triangle-arrow-down;
+      }
+    }
   }
 
 

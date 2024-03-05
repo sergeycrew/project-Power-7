@@ -1,4 +1,4 @@
-import{u as i,L as m,a as h,j as o,r as x,C as g}from"./index-e4868729.js";import{b as u,a as w,c as b,d as f}from"./hero-desktop-2x-c0317d06.js";import{F as j,a as $,E as S,c as k,b as t,d as C}from"./index.esm-9b89dc38.js";const v="/project-Power-7/assets/signup-mob-1x-303147fd.png",z="/project-Power-7/assets/signup-mob-2x-3ba63a27.png",y=i.div`
+import{u as i,L as m,a as h,j as o,r as x,C as g}from"./index-c840d31c.js";import{b as u,a as w,c as b,d as f}from"./hero-desktop-2x-c0317d06.js";import{F as j,a as $,E as S,c as k,b as t,d as C}from"./index.esm-c2fde6b8.js";const v="/project-Power-7/assets/signup-mob-1x-303147fd.png",z="/project-Power-7/assets/signup-mob-2x-3ba63a27.png",y=i.div`
   position: relative;
   height: 100vh;
   /* width: 100%; */
