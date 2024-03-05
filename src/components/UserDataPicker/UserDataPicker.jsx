@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import {
   CalendarGlobalStyles,
@@ -48,12 +48,14 @@ export const CustomDataPicker = ({ selectedDate, setSelectedDate }) => {
       <DatePicker
         selected={selectedDate}
         onChange={handleDateChange}
-        customInput={<InputField style={{ cursor: 'pointer' }} />}
+        customInput={<InputField style={{ cursor: 'text' }} />}
         dateFormat={'dd.MM.yyyy'}
         calendarStartDay={1}
         formatWeekDay={(dayOfWeek) => dayOfWeek.substring(0, 2)}
         open={isOpen}
         onClickOutside={closeCalendar}
+        cursor="pointer"
+        
         // onClick={toggleCalendar}
       />
 

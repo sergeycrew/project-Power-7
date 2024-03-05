@@ -96,50 +96,13 @@ export const InputField = styled.input`
   border: 1px solid rgba(239, 237, 232, 0.3);
   background-color: transparent;
   color: #efede8;
+  /* cursor: text; */
   &::-webkit-inner-spin-button,
   &::-webkit-outer-spin-button {
     display: none; /* Скрываем стандартные кнопки ввода */
   }
 
-  /* &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    right: 0;
-    width: 30px;
-    height: 30px;
-    background-color: ${(p) => p.theme.colors.orangeColor}; /* Цвет кнопок
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    outline: none;
-    transition: background-color 0.3s ease;
-  } */ 
-
-  /* &::before {
-    top: 0;
-    background-image: url('data:image/svg+xml;utf8,<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/></svg>');
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-
-  &::after {
-    bottom: 0;
-    background-image: url('data:image/svg+xml;utf8,<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>');
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-
-  &:focus {
-    outline: none;
-    border-color: ${(p) => p.theme.colors.orangeColor};
-    box-shadow: 0 0 5px ${(p) => p.theme.colors.orangeColor};
-  }
-
-  &:hover::before,
-  &:hover::after {
-    background-color: ${(p) => p.theme.colors.orangeHoverColor}; /* Цвет кнопок при наведении */
-  /* }  */
+ 
 
   &:focus,
   &:hover {
