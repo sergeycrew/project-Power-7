@@ -5,6 +5,7 @@ import {
   logOut,
   currentUser,
   updateUserParams,
+  updateUserAvatar,
 } from './authOperation';
 
 const initialUser = {
@@ -17,6 +18,7 @@ const initialUser = {
   blood: 1,
   sex: 'male',
   levelActivity: 1,
+  avatarUrl: '',
 };
 
 const initialState = {
@@ -86,10 +88,30 @@ const handleUpdateUserParamsRejected = (state, { payload }) => {
   state.error = payload;
 };
 const handleUpdateUserParamsFulfilled = (state, { payload }) => {
-  state.user = payload.user;
+  state.user = payload;
   state.isLoggedIn = true;
   state.goToParams = false;
-  state.token = payload.token;
+  // state.token = payload.token;
+  state.error = null;
+};
+
+
+
+
+
+const handleUpdateUserAvatarPending = (state) => {
+  state.error = null;
+};
+const handleUpdateUserAvatarRejected = (state, { payload }) => {
+  state.isLoggedIn = true;
+  state.goToParams = false;
+  state.error = payload;
+};
+const handleUpdateUserAvatarFulfilled = (state, { payload }) => {
+  state.user = payload;
+  state.isLoggedIn = true;
+  state.goToParams = false;
+  // state.token = payload.token;
   state.error = null;
 };
 
@@ -116,7 +138,11 @@ const authSlice = createSlice({
 
       .addCase(updateUserParams.pending, handleUpdateUserParamsPending)
       .addCase(updateUserParams.rejected, handleUpdateUserParamsRejected)
-      .addCase(updateUserParams.fulfilled, handleUpdateUserParamsFulfilled),
+      .addCase(updateUserParams.fulfilled, handleUpdateUserParamsFulfilled)
+
+      .addCase(updateUserAvatar.pending, handleUpdateUserAvatarPending)
+      .addCase(updateUserAvatar.rejected, handleUpdateUserAvatarRejected)
+      .addCase(updateUserAvatar.fulfilled, handleUpdateUserAvatarFulfilled)
 });
 
 export const authReducer = authSlice.reducer;

@@ -43,8 +43,8 @@ export const Container = styled.div`
 export const Svg = styled.svg`
   width: 16px;
   height: 16px;
-  fill: ${p => p.theme.colors.orangeLightColor};
-  stroke: ${p => p.theme.colors.orangeLightColor};
+  /* fill: ${p => p.theme.colors.orangeLightColor};
+  stroke: ${p => p.theme.colors.orangeLightColor}; */
 `;
 
 export const Amount = styled.p`

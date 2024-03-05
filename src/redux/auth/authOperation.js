@@ -88,18 +88,20 @@ export const currentUser = createAsyncThunk(
 );
 
 
-// export const getUserParams = createAsyncThunk(
-//   'users/params',
-//   async(_, thunkAPI) => {
-//     const state = thunkAPI.getState();
-//     const persistedToken = state.auth.token;
-
-//     if (persistedToken === null) {
-//       return thunkAPI.rejectWithValue('Unable to fetch user');
-//     }
-  
-//   } 
-// )
+export const updateUserAvatar = createAsyncThunk(
+  'users/updateAvatar',
+  async (file, thunkAPI) => {
+    try {
+      const formData = new FormData();
+      formData.append('avatar', file);
+      const { data } = await axios.patch('users/updateAvatar', formData)
+      return data;
+      
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+)
 
 
 export const updateUserParams = createAsyncThunk(

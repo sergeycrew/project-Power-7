@@ -97,10 +97,10 @@ const UserForm = () => {
     levelActivity: (user.levelActivity ?? '1').toString() || '1',
   };
   const handleSubmit = values => {
-    const sendData = {
-      ...values,
-    };
-    dispatch(updateUserParams(sendData));
+    // const sendData = {
+    //   ...values,
+    // };
+    dispatch(updateUserParams(values));
   };
 
   return (

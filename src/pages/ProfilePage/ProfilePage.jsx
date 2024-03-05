@@ -1,4 +1,4 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import DailyBaseInfo from '../../components/DayliBaseInfo/DayliBaseInfo';
 import UserCard from '../../components/UserCard/UserCard';
 import UserForm from '../../components/UserForm/UserForm';
@@ -7,13 +7,16 @@ import * as s from './ProfilePage.styled';
 import { useEffect } from 'react';
 import { currentUser } from '../../redux/auth/authOperation';
 import { useAuth } from '../../hooks/useAuth';
+import { selectUser } from '../../redux/auth/authSelectors';
 
 const ProfilePage = () => {
+    const user = useSelector(selectUser);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(currentUser());
   }, [dispatch]);
+
 
   const { isRefreshing } = useAuth();
 
@@ -30,12 +33,12 @@ const ProfilePage = () => {
             <DailyBaseInfo
               iconId="icon-fork-knife"
               text="Daily calorie intake"
-              value="100"
+              value={Math.round(user.bmr)}
             />
             <DailyBaseInfo
               iconId="icon-dumbbell"
               text="Daily physical activity"
-              value="0"
+              value={user.timeSport}
             />
           </s.WrappInfo>
           <UserNote />

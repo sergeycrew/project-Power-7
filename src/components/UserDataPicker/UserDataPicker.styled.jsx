@@ -177,6 +177,7 @@ export const CalendarGlobalStyles = createGlobalStyle`
   .react-datepicker__navigation-icon{
   position: relative;
   top: -1px;
+  z-index:2;
 
   width: 0;
   
