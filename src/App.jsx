@@ -1,4 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
+
 import { lazy } from 'react';
 
 import MainLayout from './components/MainLayout/MainLayout';
@@ -11,6 +12,7 @@ const DiaryPage = lazy(() => import('pages/DiaryPage/DiaryPage'));
 const ProductsPage = lazy(() => import('pages/ProductsPage/ProductsPage'));
 const ExercisesPage = lazy(() => import('pages/ExercisesPage/ExercisesPage'));
 const ErrorPage = lazy(() => import('pages/ErrorPage/ErrorPage'));
+
 
 
 const test = import.meta.env.VITE_API_TEST;
@@ -28,6 +30,8 @@ function App() {
           <Route path="/products" element={<ProductsPage />} />
           <Route path="/exercises" element={<ExercisesPage />} />
           <Route path="/profile" element={<ProfilePage />} />
+
+
         </Route>
          <Route path="*" element={<ErrorPage />} />
       </Routes>

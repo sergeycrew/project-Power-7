@@ -1,0 +1,18 @@
+{
+    "name": "John Doe",
+    "email": "john.doe@example.com",
+    "password": "mySecretPassword",
+    "token": "myAccessToken",
+    "avatarUrl": "https://example.com/avatar.jpg",
+    "height": 175,
+    "currentWeight": 70,
+    "desiredWeight": 65,
+    "birthday": "1990-01-01",
+    "blood": 1,
+    "sex": "male",
+    "levelActivity": 3,
+    "bmr": 1800,
+    "timeSport": 110
+  
+  }
+  

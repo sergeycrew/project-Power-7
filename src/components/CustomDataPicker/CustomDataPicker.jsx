@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import DatePicker from 'react-datepicker';
-import { CalendarGlobalStyles } from './DaySwitch.styled';
+import { CalendarGlobalStyles } from './CustomDataPicker.styled';
+import "react-datepicker/dist/react-datepicker-cssmodules.css";
 
 export const CustomDataPicker = ({ customInput }) => {
   const [selectedDate, setSelectedDate] = useState(new Date());
@@ -8,6 +9,7 @@ export const CustomDataPicker = ({ customInput }) => {
   return (
     <>
       <DatePicker
+      wrapperClassName="datePicker"
         selected={selectedDate}
         onChange={(date) => {
           setSelectedDate(date);

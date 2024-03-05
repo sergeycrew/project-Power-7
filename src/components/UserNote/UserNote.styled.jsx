@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Text = styled.p`
   /* color: ${p => p.theme.colors.whiteColor}; */
-  color: rgba(239, 237, 232, 0.3);
+  color: ${p => p.theme.colors.accentColor};
   font-family: 'RobotoRegular';
   font-size: 14px;
   font-style: normal;
@@ -12,23 +12,31 @@ export const Text = styled.p`
 `;
 
 export const Container = styled.div`
-  margin-left: 20px;
-  margin-right: 20px;
-
-  @media screen and (min-width: 768px) and (max-width: 1439px) {
-    margin-left: 32px;
-    margin-right: 32px;
-  }
-
-  @media screen and (min-width: 1440px) {
-    margin-left: 96px;
-    margin-right: 96px;
-  }
+  display: flex;
+  justify-content: center;
 `;
 
 export const Svg = styled.svg`
   width: 24px;
   height: 24px;
-  /* fill: ${p => p.theme.colors.orangeLightColor}; */
-  /* stroke: ${p => p.theme.colors.orangeLightColor}; */
+`;
+
+export const WrappSvg = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  width: 24px;
+  height: 24px;
+  background-color: var(--beige-color);
+`;
+
+export const Wrapp = styled.div`
+  display: flex;
+  gap: 8px;
+  margin-top: 40px;
+
+  @media screen and (min-width: 768px) {
+    width: 440px;
+  }
 `;
