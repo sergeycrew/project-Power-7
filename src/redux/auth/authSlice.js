@@ -1,50 +1,67 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { signUp, logIn, logOut, refreshUser } from './authOperation';
+import { register, logIn, logOut, currentUser } from './authOperation';
+
+const initialUser = {
+  name: '',
+  email: '',
+};
 
 const initialState = {
-  user: { name: null, email: null },
+  user: initialUser,
   token: null,
   isLoggedIn: false,
   isRefreshing: false,
+  error: null,
 };
 
 const handlePending = (state) => {
-  return state;
+  state.error = null;
 };
-const handleRejected = (state) => {
-  return state;
+
+const handleRejected = (state, { payload }) => {
+  state.error = payload;
 };
 
 const handleRegisterFulfilled = (state, { payload }) => {
   state.user = payload.user;
   state.token = payload.token;
   state.isLoggedIn = true;
+  state.error = null;
 };
 
 const handleLogInFulfilled = (state, { payload }) => {
   state.user = payload.user;
   state.token = payload.token;
   state.isLoggedIn = true;
+  state.error = null;
 };
 
 const handleLogOutFulfilled = (state) => {
-  state.user = { name: null, email: null };
+  state.user = initialUser;
   state.token = null;
   state.isLoggedIn = false;
+  state.error = null;
 };
 
 const handleCurrentUserPending = (state) => {
   state.isRefreshing = true;
+  state.error = null;
 };
 
-const handleCurrentUserRejected = (state) => {
+const handleCurrentUserRejected = (state, { payload }) => {
+  state.user = initialUser;
+  state.token = null;
+  state.isLoggedIn = false;
   state.isRefreshing = false;
+  state.error = payload;
 };
 
 const handleCurrentUserFulfilled = (state, { payload }) => {
-  state.user = payload;
+  state.user = payload.user;
+  state.token = payload.token;
   state.isLoggedIn = true;
   state.isRefreshing = false;
+  state.error = null;
 };
 
 const authSlice = createSlice({
@@ -52,9 +69,9 @@ const authSlice = createSlice({
   initialState,
   extraReducers: (builder) =>
     builder
-      .addCase(signUp.pending, handlePending)
-      .addCase(signUp.rejected, handleRejected)
-      .addCase(signUp.fulfilled, handleRegisterFulfilled)
+      .addCase(register.pending, handlePending)
+      .addCase(register.rejected, handleRejected)
+      .addCase(register.fulfilled, handleRegisterFulfilled)
 
       .addCase(logIn.pending, handlePending)
       .addCase(logIn.rejected, handleRejected)
@@ -64,9 +81,9 @@ const authSlice = createSlice({
       .addCase(logOut.rejected, handleRejected)
       .addCase(logOut.fulfilled, handleLogOutFulfilled)
 
-      .addCase(refreshUser.pending, handleCurrentUserPending)
-      .addCase(refreshUser.rejected, handleCurrentUserRejected)
-      .addCase(refreshUser.fulfilled, handleCurrentUserFulfilled),
+      .addCase(currentUser.pending, handleCurrentUserPending)
+      .addCase(currentUser.rejected, handleCurrentUserRejected)
+      .addCase(currentUser.fulfilled, handleCurrentUserFulfilled),
 });
 
 export const authReducer = authSlice.reducer;
