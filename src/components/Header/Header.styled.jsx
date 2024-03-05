@@ -1,78 +1,52 @@
-import { Link } from 'react-router-dom';
+
 import styled from 'styled-components';
 
-export const HeaderContainer = styled.div`
-  padding: 20px;
-  background-color: #0000ff
-`;
-
-export const Navigation = styled.nav`
+export const HeaderBar = styled.header`
   display: flex;
-  justify-content: center;
   align-items: center;
-`;
+  width: 100%;
+  padding-inline: 20px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  margin-inline: auto;
+  background-color: ${p => p.theme.colors.blackColor};
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
 
-export const StyledLink = styled(Link)`
-  padding: 8px 16px;
-  color: #ffffff; /* White text color */
-  text-shadow:
-    0 0 5px #00baff,
-    0 0 10px #00baff,
-    0 0 20px #00baff,
-    0 0 40px #00baff,
-    0 0 80px #00baff;
-  transition:
-    color 0.3s,
-    text-shadow 0.3s;
-
-  &:hover,
-  &:focus {
-    color: #00baff; /* Blue text color on hover/focus */
-    text-shadow:
-      0 0 5px #00baff,
-      0 0 10px #00baff,
-      0 0 20px #00baff,
-      0 0 40px #00baff,
-      0 0 80px #00baff;
+  @media screen and (min-width: 375px) {
+    width: 375px;
+    @media screen and (min-width: 768px) {
+      width: 768px;
+      padding-inline: 32px;
+      padding-top: 19px;
+      padding-bottom: 19px;
+    }
+  }
+  @media screen and (min-width: 1440px) {
+    padding-inline: 90px;
+    width: 1440px;
   }
 `;
 
-export const IconWrapper = styled.svg`
-  width: ${(props) => props.size || '12px'};
-  height: ${(props) => props.size || '12px'};
-  fill: ${(props) => props.color || '#ffffff'};
-  display: inline-block;
-  margin-right: 5px;
-  box-shadow:
-    0 0 5px #00baff,
-    0 0 10px #00baff,
-    0 0 20px #00baff,
-    0 0 40px #00baff,
-    0 0 80px #00baff;
-`;
-export const LogoutBtn = styled.button`
- padding: 8px 16px;
-  color: #ffffff; /* White text color */
-  text-shadow:
-    0 0 5px #00baff,
-    0 0 10px #00baff,
-    0 0 20px #00baff,
-    0 0 40px #00baff,
-    0 0 80px #00baff;
-  transition:
-    color 0.3s,
-    text-shadow 0.3s;
-
-  &:hover,
-  &:focus {
-    color: #00baff; /* Blue text color on hover/focus */
-    text-shadow:
-      0 0 5px #00baff,
-      0 0 10px #00baff,
-      0 0 20px #00baff,
-      0 0 40px #00baff,
-      0 0 80px #00baff;
+export const LogoWrap = styled.div`
+  display: flex;
+  align-items: center;
+  width: 126px;
+  height: 13px;
+  @media screen and (min-width: 1440px) {
+    height: 17px;
+    width: 152px;
   }
-
-  
+`;
+export const HideLogout = styled.div`
+  display: block;
+  @media screen and (min-width: 1440px) {
+    width: 78px;
+    height: 24px;
+  }
+  @media screen and (max-width: 1439px) {
+    display: none;
+  }
 `;
