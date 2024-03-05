@@ -1,13 +1,13 @@
 import { createGlobalStyle } from 'styled-components';
-import 'react-datepicker/dist/react-datepicker.css';
+// import 'react-datepicker/dist/react-datepicker.css-cssmodules.css';
 
 export const CalendarGlobalStyles = createGlobalStyle`
-  .react-datepicker__wrapper {
+.react-datepicker__wrapper {
     position: relative;
 
   }
   .react-datepicker {
-    position: absolute;
+    position: reletive;
     left: 50%;
     top: 50%;
     transform: translate(-1%, 0%);
