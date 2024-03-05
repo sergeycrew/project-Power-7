@@ -5,7 +5,7 @@ import icon from '../../images/sprite/sprite.svg';
 const WelcomePage = () => {
   return (
     <Container>
-      <welcome.Container>
+      <welcome.MainContainer>
         <welcome.TitleWrap>
           <welcome.Icon>
             <use href={`${icon}#slogan-line`}></use>
@@ -22,7 +22,7 @@ const WelcomePage = () => {
             <welcome.StyledLink to="/signIn">Sign In</welcome.StyledLink>
           </welcome.ListItem>
         </welcome.LinkList>
-      </welcome.Container>
+      </welcome.MainContainer>
     </Container>
   );
 };
