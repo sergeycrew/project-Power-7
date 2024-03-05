@@ -19,6 +19,14 @@ export const WrappInput = styled.div`
       transform 0.2s;
     color: ${(p) => p.theme.colors.accentColor};
   }
+  &:hover .calendar-icon use,
+  &:focus .calendar-icon use {
+    content: url('${sprite}#icon-calendar');
+  }
+
+  .calendar-icon use {
+    content: url('${sprite}#icon-calendar-white');
+  }
 
 `;
 export const TitleWrapper = styled.button`
@@ -254,14 +262,14 @@ export const CalendarGlobalStyles = createGlobalStyle`
     display: none;
   }
 
-  .WrappInput:hover .calendar-icon use,
-  .WrappInput:focus .calendar-icon use {
-    content: url('${sprite}#icon-calendar');
-  }
+//   .WrappInput:hover .calendar-icon use,
+//   .WrappInput:focus .calendar-icon use {
+//     content: url('${sprite}#icon-calendar');
+//   }
 
-  .WrappInput .calendar-icon use,
-  .WrappInput .calendar-icon use {
-    content: url('${sprite}#icon-calendar-white');
-  }
+//   .WrappInput .calendar-icon use,
+//   .WrappInput .calendar-icon use {
+//     content: url('${sprite}#icon-calendar-white');
+//   }
   
 `;

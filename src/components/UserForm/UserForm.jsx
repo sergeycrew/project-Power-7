@@ -160,11 +160,13 @@ const UserForm = () => {
           </s.WrappInput>
           <CustomDataPicker
           selectedDate={formik.values.birthday}
+        //   isOpen={true}
        
               setSelectedDate={date => {
                 const formattedDate = parseISO(date.toISOString());
                 formik.setFieldValue('birthday', formattedDate);
               }}/>
+              
              
         </s.WrappInputFields>
       </s.StyledForm>)}
