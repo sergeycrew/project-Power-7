@@ -53,12 +53,12 @@ export const IconSvg = styled.svg`
 
 export const CalendarGlobalStyles = createGlobalStyle`
  .react-datepicker__wrapper {
-    position: relative;
+    // position: relative;
     
   }
   .react-datepicker {
     // width: 201px;
-    position: absolute;
+    position: reletive;
     left: -52px;
     top: 50%;
     transform: translate(-15%, 0%);
@@ -124,8 +124,26 @@ export const CalendarGlobalStyles = createGlobalStyle`
   .react-datepicker__navigation {
     margin-top: 14px;
     color: white;
-    z-index: 999;
+    // z-index: 999;
     
+  }
+  .react-datepicker-popper {
+    z-index: 1;
+  
+    // Eliminating extra space at the bottom of the container
+    line-height: 0;
+  
+    &[data-placement^="bottom"] {
+      .react-datepickertriangle {
+        @extend %triangle-arrow-up;
+      }
+    }
+  
+    &[data-placement^="top"] {
+      .react-datepickertriangle {
+        @extend %triangle-arrow-down;
+      }
+    }
   }
 
 
