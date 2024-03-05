@@ -21,7 +21,7 @@ const initialUser = {
 
 const initialState = {
   user: initialUser,
-  token: "",
+  token: null,
   isLoggedIn: false,
   isRefreshing: false,
   error: null,

@@ -5,6 +5,8 @@ import { toast } from 'react-toastify';
 
 axios.defaults.baseURL = 'https://backend-power-pulse-7.onrender.com/api/';
 
+const temptoken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWU1MDk4OWQxNTIyZWExMmEyYjE4YTMiLCJ0eXBlIjoiYWNjZXNzIiwiaWF0IjoxNzA5NjQwMzc5LCJleHAiOjE3MDk3MjMxNzl9.ngrNvjhTdTTrlEi6bZatbsZ0tyHYtqQjs30q9TxayAg';
+
 
 const setAuthHeader = (token) => {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
