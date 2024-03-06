@@ -1,4 +1,4 @@
-import{u as o,L as r,j as i,C as a,s}from"./index-0346cf93.js";import{b as d,a as p,c as x,d as h}from"./hero-desktop-2x-c0317d06.js";const c="/project-Power-7/assets/bg-mobile-1x-014f5a2c.png",l="/project-Power-7/assets/bg-mobile-2x-ba0edaad.png",g=o.div`
+import{u as o,L as r,j as i,C as a,s}from"./index-dfbb16d1.js";import{b as d,a as p,c as x,d as h}from"./hero-desktop-2x-c0317d06.js";const c="/project-Power-7/assets/bg-mobile-1x-014f5a2c.png",l="/project-Power-7/assets/bg-mobile-2x-ba0edaad.png",g=o.div`
   height: 100vh;
   display: flex;
   flex-direction: column;
