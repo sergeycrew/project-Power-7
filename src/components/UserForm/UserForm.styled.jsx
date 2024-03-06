@@ -29,7 +29,8 @@ export const SectionTitle = styled.p`
   }
 `;
 export const Input = styled.input`
-  width: 335px;
+  max-width: 335px;
+  width: 100%;
   padding: 14px;
   margin-bottom: 14px;
   align-items: center;
@@ -46,7 +47,7 @@ export const Input = styled.input`
   }
 
   @media screen and (min-width: 768px) and (max-width: 1439px) {
-    width: 341px;
+    max-width: 341px;
   }
 `;
 export const WrappInputFields = styled.div`
@@ -88,7 +89,8 @@ export const WrappInput = styled.div`
 `;
 
 export const InputField = styled.input`
-  width: 165px;
+  max-width: 165px;
+  width: 100%;
   padding: 14px;
   align-items: center;
   gap: 10px;
@@ -115,6 +117,7 @@ export const WrapperRadio = styled.div`
   margin-top: 30px;
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
 
   @media screen and (min-width: 1440px) {
     display: block;
@@ -201,7 +204,7 @@ export const WrapperLevel = styled.div`
 `;
 
 export const Button = styled.button`
-  margin: 40px 0px 80px 20px;
+  margin: 40px 0px 44px 20px;
   padding: 12px 40px;
   border-radius: 12px;
   background: ${(p) => p.theme.colors.orangeColor};
@@ -213,13 +216,13 @@ export const Button = styled.button`
   }
 
   @media screen and (min-width: 768px) {
-    margin: 40px 0px 64px 0;
+    margin: 40px 0px 54px 0;
     padding: 16px 50px;
   }
 `;
 
 export const ButtonVerify = styled.button`
-  margin: 40px 0px 80px 20px;
+  margin: 40px 0px 44px 20px;
   /* margin-left: 10px ; */
   padding: 12px 40px;
   border-radius: 12px;
@@ -235,9 +238,8 @@ export const ButtonVerify = styled.button`
     cursor: default;
     display: none;
   }
-
   @media screen and (min-width: 768px) {
-    margin: 40px 0px 64px 70px;
+    margin: 40px 0px 54px 20px;
     padding: 16px 50px;
   }
 `;

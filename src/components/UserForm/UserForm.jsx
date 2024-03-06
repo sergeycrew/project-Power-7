@@ -1,6 +1,5 @@
 // radiobuttons
 import * as Yup from 'yup';
-import { parseISO } from 'date-fns';
 import { Formik, Field, ErrorMessage } from 'formik';
 import * as s from './UserForm.styled';
 
@@ -110,39 +109,40 @@ const UserForm = () => {
   };
 
   const sendVerify = () => {
-    // const sendData = {
-    //   ...values,
-    // };
+   startTimer()
     const email = user.email;
-    dispatch(userVerifyAgain(email));
-    // setBtnActive(false);
+    console.log({email})
+    // dispatch(userVerifyAgain({email}));
+   
   };
  
-//   const startTimer = () => {
-//     setButtonDisabled(true);
-//     setRemainingTime(5); // Устанавливаем начальное время таймера в секундах
-//     setTimer(
-//       setInterval(() => {
-//         setRemainingTime(prevTime => {
-//           if (prevTime === 1) {
-//             clearInterval(timer);
-//             setButtonDisabled(false);
-//             return null;
-//           } else {
-//             return prevTime - 1;
-//           }
-//         });
-//       }, 1000) // Обновляем таймер каждую секунду
-//     );
-//   };
+    const [timer, setTimer] = useState(null);
+    const [buttonDisabled, setButtonDisabled] = useState(false);
+    const [remainingTime, setRemainingTime] = useState(null);
+    const [timerExpired, setTimerExpired] = useState(false);
 
-///button verify
+  
+    const startTimer = () => {
+        
+      setButtonDisabled(true);
+      setRemainingTime(60); 
+      setTimer(
+        setInterval(() => {
+          setRemainingTime(prevTime => {
+            if (prevTime === 1) {
+              clearInterval(timer);
+              setButtonDisabled(false);
+              setTimerExpired(true);
+              return null;
+            } else {
+              return prevTime - 1;
+            }
+          });
+        }, 1000) 
+      );
+    };
 
-// const [isVerify, setIsVerify] = useState(false);
-// const verifyed = user.verify;
-
-
-
+    const verifyBtnContant = buttonDisabled ? `Try again in ${remainingTime}` : (timerExpired ? 'Send again' : 'Verify')
 
 
 
@@ -159,7 +159,7 @@ const UserForm = () => {
       
         
           <s.Container>
-            <div>
+            <div style={{ width: '100%' }}>
               <s.SectionTitle>Name</s.SectionTitle>
               <Field
                 name="name"
@@ -170,7 +170,7 @@ const UserForm = () => {
                 // defaultValue={user.name}
               />
             </div>
-            <div>
+            <div style={{ width: '100%' }}>
             <s.SectionTitle>Email</s.SectionTitle>
               <s.Input
                 type="text"
@@ -281,11 +281,11 @@ const UserForm = () => {
           <div style={{ display: 'flex' , justifyContent: 'flex-start'}}>
           <s.Button type="submit" disabled={!btnActive}>Save</s.Button>
           <s.ButtonVerify type="submit" 
-        //    disabled={buttonDisabled}
+           disabled={buttonDisabled}
            onClick={sendVerify}
            style={{ display: user.verify ? 'none' : 'inline-block' }}
            >
-           ver
+           {verifyBtnContant}
            </s.ButtonVerify>
           </div>
       </s.StyledForm>)}
@@ -293,4 +293,3 @@ const UserForm = () => {
   );
 };
 export default UserForm;
-// {buttonDisabled ? `Remaining Time: ${remainingTime}` : 'Verify'}

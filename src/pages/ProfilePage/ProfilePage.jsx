@@ -39,6 +39,7 @@ const ProfilePage = () => {
               iconId="icon-dumbbell"
               text="Daily physical activity"
               value={user.timeSport}
+              amoutName='min'
             />
           </s.WrappInfo>
           <UserNote />
