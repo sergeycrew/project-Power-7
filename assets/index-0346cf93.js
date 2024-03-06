@@ -160,7 +160,7 @@ to {
   animation: ${_k} 2.5s cubic-bezier(0.35, 0.04, 0.63, 0.95) infinite;
 `;V.svg`
   transform-origin: 50% 65%;
-`;const Pk=()=>O.jsx(kk,{color:"${(p) => p.theme.colors.orangeColor}",visible:!0,height:200,width:200,ariaLabel:"infinity-spin-loading"}),Rk=V.main`
+`;const Pk=()=>O.jsx(kk,{color:"${(p) => p.theme.colors.orangeColor}",visible:!0,height:200,width:200,ariaLabel:"infinity-spin-loading"}),Rk=V.div`
   background-color: ${e=>e.theme.colors.blackColor};
   width: 100%;
   min-height: 100vh;
@@ -321,27 +321,21 @@ height: 20px;
   align-items: center;
   width: 100%;
   padding-inline: 20px;
-  padding-top: 12px;
-  padding-bottom: 12px;
+  padding: 20px 24px;
   margin-inline: auto;
   background-color: ${e=>e.theme.colors.blackColor};
-  position: fixed;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 10;
+;
 
-  @media screen and (min-width: 375px) {
-    width: 375px;
     @media screen and (min-width: 768px) {
-      width: 768px;
       padding-inline: 32px;
-      padding-top: 19px;
-      padding-bottom: 19px;
+      padding: 30px 34px;
+      
     }
-  }
+  
   @media screen and (min-width: 1440px) {
     padding-inline: 90px;
-    width: 1440px;
+    padding: 30px 90px;
+    
   }
 `,qk=V.div`
   display: flex;
@@ -361,7 +355,7 @@ height: 20px;
   @media screen and (max-width: 1439px) {
     display: none;
   }
-`,eC=()=>O.jsx(Xk,{children:O.jsxs(Jk,{children:[O.jsx(qk,{children:O.jsx(Vy,{})}),O.jsx(Wk,{}),O.jsx(Yk,{}),O.jsx(Zk,{children:O.jsx(Bk,{})})]})}),tC=()=>O.jsxs(O.Fragment,{children:[O.jsx(eC,{}),O.jsx(Rk,{children:O.jsx(R.Suspense,{fallback:O.jsx(Pk,{}),children:O.jsx(o0,{})})}),O.jsx("footer",{})]}),nC=R.lazy(()=>cn(()=>import("./WelcomePage-d99d3327.js"),["assets/WelcomePage-d99d3327.js","assets/hero-desktop-2x-c0317d06.js"])),rC=R.lazy(()=>cn(()=>import("./SignUpPage-8f58e0d3.js"),["assets/SignUpPage-8f58e0d3.js","assets/hero-desktop-2x-c0317d06.js","assets/index.esm-c2fde6b8.js"])),oC=R.lazy(()=>cn(()=>import("./SignInPage-9b66dc1d.js"),[])),iC=R.lazy(()=>cn(()=>import("./ProfilePage-b0cdbeb7.js"),["assets/ProfilePage-b0cdbeb7.js","assets/sprite-997bc288.js","assets/index.esm-c2fde6b8.js","assets/ProfilePage-b861e09b.css"])),lC=R.lazy(()=>cn(()=>import("./DiaryPage-c2cb3520.js"),["assets/DiaryPage-c2cb3520.js","assets/sprite-997bc288.js"])),sC=R.lazy(()=>cn(()=>import("./ProductsPage-7ab737f2.js"),["assets/ProductsPage-7ab737f2.js","assets/index.esm-c2fde6b8.js"])),uC=R.lazy(()=>cn(()=>import("./ExercisesPage-7451e312.js"),[])),aC=R.lazy(()=>cn(()=>import("./ErrorPage-b03626b3.js"),[])),cC="";function fC(){return console.log(cC),O.jsx(O.Fragment,{children:O.jsxs(l0,{children:[O.jsxs(st,{path:"/",element:O.jsx(tC,{}),children:[O.jsx(st,{index:!0,element:O.jsx(nC,{})}),O.jsx(st,{path:"/signUp",element:O.jsx(rC,{})}),O.jsx(st,{path:"/signIn",element:O.jsx(oC,{})}),O.jsx(st,{path:"/diary",element:O.jsx(lC,{})}),O.jsx(st,{path:"/products",element:O.jsx(sC,{})}),O.jsx(st,{path:"/exercises",element:O.jsx(uC,{})}),O.jsx(st,{path:"/profile",element:O.jsx(iC,{})})]}),O.jsx(st,{path:"*",element:O.jsx(aC,{})})]})})}const dC={colors:{blackColor:"#040404",orangeColor:"#e6533c",orangeLightColor:"#ef8964",biegeColor:"#efa082",whiteColor:"#efede8",greyColor:"EFEDE8",accentColor:"rgba(239, 237, 232, 0.3)",hoverColor:"#e6533c",successtColor:"#3cbf61",errorColor:"#d80027",recommendedColor:"#419B09",notRecommendedColor:"#E9101D",cardBgColor:"rgba(239, 237, 232, 0.05)",cardBorderColor:"rgba(239, 237, 232, 0.2)",captionColor:"rgba(239, 237, 232, 0.4)"},radii:{sd:"4px",ld:"12px"},spacing:e=>`${e*4}px`},pC="/project-Power-7/assets/Roboto-Regular-4e147ab6.ttf",hC="/project-Power-7/assets/Roboto-Medium-9d0d55a3.ttf",mC="/project-Power-7/assets/Roboto-Bold-ec685a46.ttf",yC=gk`
+`,eC=()=>O.jsx(Xk,{children:O.jsxs(Jk,{children:[O.jsx(qk,{children:O.jsx(Vy,{})}),O.jsx(Wk,{}),O.jsx(Yk,{}),O.jsx(Zk,{children:O.jsx(Bk,{})})]})}),tC=()=>O.jsxs(Rk,{children:[O.jsx(eC,{}),O.jsx("main",{children:O.jsx(R.Suspense,{fallback:O.jsx(Pk,{}),children:O.jsx(o0,{})})}),O.jsx("footer",{})]}),nC=R.lazy(()=>cn(()=>import("./WelcomePage-83ede255.js"),["assets/WelcomePage-83ede255.js","assets/hero-desktop-2x-c0317d06.js"])),rC=R.lazy(()=>cn(()=>import("./SignUpPage-29d85ebe.js"),["assets/SignUpPage-29d85ebe.js","assets/hero-desktop-2x-c0317d06.js","assets/index.esm-a13394fd.js"])),oC=R.lazy(()=>cn(()=>import("./SignInPage-cb9c665c.js"),[])),iC=R.lazy(()=>cn(()=>import("./ProfilePage-535d84fe.js"),["assets/ProfilePage-535d84fe.js","assets/sprite-8d49a9f6.js","assets/index.esm-a13394fd.js","assets/ProfilePage-b861e09b.css"])),lC=R.lazy(()=>cn(()=>import("./DiaryPage-4658d218.js"),["assets/DiaryPage-4658d218.js","assets/sprite-8d49a9f6.js"])),sC=R.lazy(()=>cn(()=>import("./ProductsPage-13fd2485.js"),[])),uC=R.lazy(()=>cn(()=>import("./ExercisesPage-c24852d0.js"),[])),aC=R.lazy(()=>cn(()=>import("./ErrorPage-4f718e2b.js"),[])),cC="";function fC(){return console.log(cC),O.jsx(O.Fragment,{children:O.jsxs(l0,{children:[O.jsxs(st,{path:"/",element:O.jsx(tC,{}),children:[O.jsx(st,{index:!0,element:O.jsx(nC,{})}),O.jsx(st,{path:"/signUp",element:O.jsx(rC,{})}),O.jsx(st,{path:"/signIn",element:O.jsx(oC,{})}),O.jsx(st,{path:"/diary",element:O.jsx(lC,{})}),O.jsx(st,{path:"/products",element:O.jsx(sC,{})}),O.jsx(st,{path:"/exercises",element:O.jsx(uC,{})}),O.jsx(st,{path:"/profile",element:O.jsx(iC,{})})]}),O.jsx(st,{path:"*",element:O.jsx(aC,{})})]})})}const dC={colors:{blackColor:"#040404",orangeColor:"#e6533c",orangeLightColor:"#ef8964",biegeColor:"#efa082",whiteColor:"#efede8",greyColor:"EFEDE8",accentColor:"rgba(239, 237, 232, 0.3)",hoverColor:"#e6533c",successtColor:"#3cbf61",errorColor:"#d80027",recommendedColor:"#419B09",notRecommendedColor:"#E9101D",cardBgColor:"rgba(239, 237, 232, 0.05)",cardBorderColor:"rgba(239, 237, 232, 0.2)",captionColor:"rgba(239, 237, 232, 0.4)"},radii:{sd:"4px",ld:"12px"},spacing:e=>`${e*4}px`},pC="/project-Power-7/assets/Roboto-Regular-4e147ab6.ttf",hC="/project-Power-7/assets/Roboto-Medium-9d0d55a3.ttf",mC="/project-Power-7/assets/Roboto-Bold-ec685a46.ttf",yC=gk`
 
     @font-face {
         font-family: 'RobotoRegular';
