@@ -1,16 +1,16 @@
 // radiobuttons
 import * as Yup from 'yup';
-import { parseISO } from 'date-fns';
 import { Formik, Field, ErrorMessage } from 'formik';
 import * as s from './UserForm.styled';
 
 import { useDispatch, useSelector } from 'react-redux';
 import {selectUser} from '../../redux/auth/authSelectors';
-import { updateUserParams } from '../../redux/auth/authOperation';
+import { updateUserParams, userVerifyAgain } from '../../redux/auth/authOperation';
 
 // import user from '../../jsonFromBd/userParams.json'
 import { CustomDataPicker } from '../UserDataPicker/UserDataPicker';
 import RadioOption from '../UserRadio/UserRadio';
+import { useState } from 'react';
 // import { CustomDataPicker } from '../CustomDataPicker/CustomDataPicker';
 
 
@@ -97,11 +97,54 @@ const UserForm = () => {
     levelActivity: (user.levelActivity ?? '1').toString() || '1',
   };
   const handleSubmit = values => {
-    const sendData = {
-      ...values,
-    };
-    dispatch(updateUserParams(sendData));
+    // const sendData = {
+    //   ...values,
+    // };
+    dispatch(updateUserParams(values));
+    setBtnActive(false);
   };
+  const [btnActive, setBtnActive] = useState(false);
+  const handleChanger = (e) => {
+    setBtnActive(true);
+  };
+
+  const sendVerify = () => {
+   startTimer()
+    const email = user.email;
+    console.log({email})
+    dispatch(userVerifyAgain({email}));
+   
+  };
+ 
+    const [timer, setTimer] = useState(null);
+    const [buttonDisabled, setButtonDisabled] = useState(false);
+    const [remainingTime, setRemainingTime] = useState(null);
+    const [timerExpired, setTimerExpired] = useState(false);
+
+  
+    const startTimer = () => {
+        
+      setButtonDisabled(true);
+      setRemainingTime(60); 
+      setTimer(
+        setInterval(() => {
+          setRemainingTime(prevTime => {
+            if (prevTime === 1) {
+              clearInterval(timer);
+              setButtonDisabled(false);
+              setTimerExpired(true);
+              return null;
+            } else {
+              return prevTime - 1;
+            }
+          });
+        }, 1000) 
+      );
+    };
+
+    const verifyBtnContant = buttonDisabled ? `Try again in ${remainingTime}` : (timerExpired ? 'Send again' : 'Verify')
+
+
 
   return (
     <Formik
@@ -109,22 +152,26 @@ const UserForm = () => {
       }
       validationSchema={ValidationSchema}
       onSubmit={handleSubmit}
+    //   handleChange = {(e)=> handleChanger(e)}
     >{formik => (
-      <s.StyledForm>
+      <s.StyledForm
+      onChange={handleChanger}>
       
         
           <s.Container>
-            <div>
-              <s.SectionTitle>Basic info</s.SectionTitle>
+            <div style={{ width: '100%' }}>
+              <s.SectionTitle>Name</s.SectionTitle>
               <Field
                 name="name"
                 type="text"
                 placeholder="Your name"
                 as={s.Input}
+                
                 // defaultValue={user.name}
               />
             </div>
-            <div>
+            <div style={{ width: '100%' }}>
+            <s.SectionTitle>Email</s.SectionTitle>
               <s.Input
                 type="text"
                 name="email"
@@ -133,6 +180,7 @@ const UserForm = () => {
                 readOnly
                 disabled
               />
+      
             </div>
           </s.Container>
           <s.WrappInputFields>
@@ -230,7 +278,16 @@ const UserForm = () => {
               ))}
             </s.WrapperLevel>
           </s.WrapperRadio>
-          <s.Button type="submit">Save</s.Button>
+          <div style={{ display: 'flex' , justifyContent: 'flex-start'}}>
+          <s.Button type="submit" disabled={!btnActive}>Save</s.Button>
+          <s.ButtonVerify type="submit" 
+           disabled={buttonDisabled}
+           onClick={sendVerify}
+           style={{ display: user.verify ? 'none' : 'inline-block' }}
+           >
+           {verifyBtnContant}
+           </s.ButtonVerify>
+          </div>
       </s.StyledForm>)}
     </Formik>
   );

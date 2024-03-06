@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 axios.defaults.baseURL = 'https://backend-power-pulse-7.onrender.com/api/';
 
 
-const temptoken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWU3NDhhOTY2MmE1YTUzNGNhNjI4MTIiLCJ0eXBlIjoiYWNjZXNzIiwiaWF0IjoxNzA5NjU2MjUwLCJleHAiOjE3MDk3MzkwNTB9.tO0F8cqQ-DCzboHx8z0DF8iQhiYLyRplYPBqmGw6Oe4';
+const temptoken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWU3YWY1MTQwZmI2ZjdmNDRkOGJmOGYiLCJ0eXBlIjoiYWNjZXNzIiwiaWF0IjoxNzA5NzQyNzkzLCJleHAiOjE3MDk4MjU1OTN9.cPR4Cz8wSDqtjENdqpJxs5AlmbjMRwVqxpezsGA3HuM';
 
 const setAuthHeader = (token) => {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
@@ -88,18 +88,22 @@ export const currentUser = createAsyncThunk(
 );
 
 
-// export const getUserParams = createAsyncThunk(
-//   'users/params',
-//   async(_, thunkAPI) => {
-//     const state = thunkAPI.getState();
-//     const persistedToken = state.auth.token;
+export const updateUserAvatar = createAsyncThunk(
+  'users/updateAvatar',
+  async (file, thunkAPI) => {
+    try {
+      const formData = new FormData();
+      formData.append('avatar', file);
 
-//     if (persistedToken === null) {
-//       return thunkAPI.rejectWithValue('Unable to fetch user');
-//     }
-  
-//   } 
-// )
+      const { data } = await axios.patch('users/updateAvatar', formData)
+      return URL.createObjectURL(file);
+      // return data;
+      
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+)
 
 
 export const updateUserParams = createAsyncThunk(
@@ -115,5 +119,18 @@ export const updateUserParams = createAsyncThunk(
   }
 )
 
+export const userVerifyAgain = createAsyncThunk(
+  'users/verifyAgain',
+  async (creds, thunkAPI) => {
+    try {
+      const { data } = await axios.post('users/verifyAgain', creds)
+      return data;
+      
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+)
+// credentials
 
 

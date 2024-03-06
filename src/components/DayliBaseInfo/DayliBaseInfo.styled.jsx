@@ -13,7 +13,8 @@ export const Text = styled.p`
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  width: 165px;
+  max-width: 165px;
+  width: 100%;
   height: 96px;
   padding: 14px;
   align-items: flex-start;
@@ -24,7 +25,7 @@ export const Container = styled.div`
   background-color: ${p => p.theme.colors.orangeColor};
 
   @media screen and (min-width: 768px) and (max-width: 1439px) {
-    width: 209px;
+    max-width: 209px;
     height: 108px;
     padding: 14px 18px;
     align-items: flex-start;
@@ -32,7 +33,7 @@ export const Container = styled.div`
   }
 
   @media screen and (min-width: 1440px) {
-    width: 214px;
+    max-width: 214px;
     height: 108px;
     padding: 14px 18px;
     align-items: flex-start;
@@ -43,16 +44,19 @@ export const Container = styled.div`
 export const Svg = styled.svg`
   width: 16px;
   height: 16px;
-  fill: ${p => p.theme.colors.orangeLightColor};
-  stroke: ${p => p.theme.colors.orangeLightColor};
+  /* fill: ${p => p.theme.colors.orangeLightColor};
+  stroke: ${p => p.theme.colors.orangeLightColor}; */
 `;
 
 export const Amount = styled.p`
  color: ${p => p.theme.colors.whiteColor};
   font-family: 'RobotoBold';
-  font-size: 24px;
+  font-size: 18px;
   line-height: 1.3;
   margin-top: auto;
+  @media screen and (min-width: 768px) {
+    font-size: 24px;
+  }
 `;
 
 export const Wrap = styled.div`

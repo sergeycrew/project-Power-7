@@ -36,9 +36,7 @@ export const CustomDataPicker = ({ selectedDate, setSelectedDate }) => {
   return (
     <WrappInput>
       <label htmlFor="datePicker">Date of birth</label>
-      <IconSvg width="18" height="18" 
-      onClick={toggleCalendar} 
-      cursor="pointer">
+      <IconSvg width="18" height="18" onClick={toggleCalendar} cursor="pointer">
         <use
           href={
             isOpen ? `${sprite}#icon-calendar` : `${sprite}#icon-calendar-white`
@@ -64,13 +62,12 @@ export const CustomDataPicker = ({ selectedDate, setSelectedDate }) => {
         //                 boundariesElement: 'viewport',
         //               },
         //             }}
-        
+
         // onClick={toggleCalendar}
       />
 
       <CalendarGlobalStyles />
     </WrappInput>
-
   );
 };
 
