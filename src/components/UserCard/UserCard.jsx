@@ -30,12 +30,12 @@ const UserCard = () => {
         </s.AvatarContainer>
         <div style={{ position:'relative' }}>
 <input type="file" accept=".jpg, .jpeg" id="fileInput" name="fileInput" style={{ display: 'none' }} onChange={handleFileChange}
-disabled={!user.verify}
+// disabled={!user.verify}
 >
 </input>
 <s.Label 
 htmlFor="fileInput"
-// style={{ display: !user.verify ? 'none' : 'inline-block' }}
+style={{ display: user.verify ? 'none' : 'inline-block' }}
 // disabled={!user.verify}
 >
         

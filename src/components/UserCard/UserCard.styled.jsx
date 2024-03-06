@@ -66,16 +66,13 @@ export const UplSvg = styled.svg`
   cursor: pointer;
 position: absolute;
   top: -13px;
-  left: -15px;
+  left: -12px;
+  /* right: -17px; */
 
-  &:disabled{
-    /* color: rgba(239, 237, 232, 0.6); */
-    cursor: default;
-    /* display: none; */
-  }
+ 
 
   @media screen and (min-width: 768px) {
-    width: 32px;
+    left: -14.5px;
     height: 32px;
     top: -17.5px;
   }
