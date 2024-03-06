@@ -58,7 +58,7 @@ export const ExercisesCategories = ({ query }) => {
 
     const CategoriesList = async () => {
       try {
-        const allCategories = await getExercisesCategory(); // to do //
+        const allCategories = await getExercisesCategory(); 
         const categories = filterArrayByQuery(allCategories, query);
         setExercisesCategories(categories);
       } catch (error) {

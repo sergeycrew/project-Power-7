@@ -27,4 +27,3 @@ export const Container = styled.div`
     padding: 84px 96px 0 96px;
   }
 `;
-
