@@ -26,7 +26,7 @@ const ProfilePage = () => {
   return isRefreshing ? (
     <b>Refreshing user...</b>
   ) : 
-    (<Container>
+    (
        <s.Container>
       <s.Title>Profile Setings</s.Title>
       <s.Wrapper>
@@ -52,7 +52,7 @@ const ProfilePage = () => {
         </s.WrappForm>
       </s.Wrapper>
     </s.Container>
-  </Container>
+
   );
 };
 
