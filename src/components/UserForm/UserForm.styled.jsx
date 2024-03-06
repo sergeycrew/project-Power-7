@@ -205,10 +205,39 @@ export const Button = styled.button`
   padding: 12px 40px;
   border-radius: 12px;
   background: ${(p) => p.theme.colors.orangeColor};
-  color: rgba(239, 237, 232, 0.6);
+  color: #EFEDE8;
+
+  &:disabled{
+    color: rgba(239, 237, 232, 0.6);
+    cursor: default;
+  }
 
   @media screen and (min-width: 768px) {
     margin: 40px 0px 64px 0;
+    padding: 16px 50px;
+  }
+`;
+
+export const ButtonVerify = styled.button`
+  margin: 40px 0px 80px 20px;
+  /* margin-left: 10px ; */
+  padding: 12px 40px;
+  border-radius: 12px;
+  background: ${(p) => p.theme.colors.orangeColor};
+  color: #EFEDE8;
+  
+  /* .hidden {
+  display: none;
+} */
+
+  &:disabled{
+    color: rgba(239, 237, 232, 0.6);
+    cursor: default;
+    display: none;
+  }
+
+  @media screen and (min-width: 768px) {
+    margin: 40px 0px 64px 70px;
     padding: 16px 50px;
   }
 `;

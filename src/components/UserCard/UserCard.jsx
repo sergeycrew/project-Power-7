@@ -28,14 +28,24 @@ const UserCard = () => {
         <s.AvatarContainer>
       {avatarShown}
         </s.AvatarContainer>
-<input type="file" accept=".jpg, .jpeg" id="fileInput" name="fileInput" style={{ display: 'none' }} onChange={handleFileChange}></input>
-<s.Label htmlFor="fileInput" >
+        <div style={{ position:'relative' }}>
+<input type="file" accept=".jpg, .jpeg" id="fileInput" name="fileInput" style={{ display: 'none' }} onChange={handleFileChange}
+disabled={!user.verify}
+>
+</input>
+<s.Label 
+htmlFor="fileInput"
+// style={{ display: !user.verify ? 'none' : 'inline-block' }}
+// disabled={!user.verify}
+>
         
-        <s.UplSvg>
+        <s.UplSvg
+        // disabled={!user.verify}
+        >
         <use href={`${sprite}#icon-add-avatar`}></use>
         </s.UplSvg>
         </s.Label>
-        
+        </div>
         
         <s.UserName>{user.name}</s.UserName>
         <s.SubTitle>User</s.SubTitle>

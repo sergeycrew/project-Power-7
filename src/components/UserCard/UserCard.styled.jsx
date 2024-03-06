@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
+  position: relative;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -53,6 +54,8 @@ export const UplSvg = styled.svg`
   /* top: -13px; */
   left: 0px;
 
+  
+
   @media screen and (min-width: 768px) {
     width: 32px;
     height: 32px;
@@ -61,9 +64,15 @@ export const UplSvg = styled.svg`
 
   export const Label = styled.label`
   cursor: pointer;
-    position: relative;
+position: absolute;
   top: -13px;
-  left: 0px;
+  left: -15px;
+
+  &:disabled{
+    /* color: rgba(239, 237, 232, 0.6); */
+    cursor: default;
+    /* display: none; */
+  }
 
   @media screen and (min-width: 768px) {
     width: 32px;
@@ -73,6 +82,7 @@ export const UplSvg = styled.svg`
   `
 
 export const UserName = styled.p`
+margin-top: 32px;
   color: ${p => p.theme.colors.whiteColor};
   font-family: 'RobotoRegular';
   @media screen and (min-width: 768px) {

@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 axios.defaults.baseURL = 'https://backend-power-pulse-7.onrender.com/api/';
 
 
-const temptoken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWU3NDhhOTY2MmE1YTUzNGNhNjI4MTIiLCJ0eXBlIjoiYWNjZXNzIiwiaWF0IjoxNzA5NjU2MjUwLCJleHAiOjE3MDk3MzkwNTB9.tO0F8cqQ-DCzboHx8z0DF8iQhiYLyRplYPBqmGw6Oe4';
+const temptoken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWU3YWY1MTQwZmI2ZjdmNDRkOGJmOGYiLCJ0eXBlIjoiYWNjZXNzIiwiaWF0IjoxNzA5NjgyNTc2LCJleHAiOjE3MDk3NjUzNzZ9.FAGKmziBB561Iaz4PbfyysplteCTZZAnoZtRTMdth9E';
 
 const setAuthHeader = (token) => {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
@@ -119,5 +119,18 @@ export const updateUserParams = createAsyncThunk(
   }
 )
 
+export const userVerifyAgain = createAsyncThunk(
+  '/verifyAgain',
+  async (creds, thunkAPI) => {
+    try {
+      const { data } = await axios.post('users/verifyAgain', creds)
+      return data;
+      
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+)
+// credentials
 
 

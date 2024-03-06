@@ -6,11 +6,12 @@ import * as s from './UserForm.styled';
 
 import { useDispatch, useSelector } from 'react-redux';
 import {selectUser} from '../../redux/auth/authSelectors';
-import { updateUserParams } from '../../redux/auth/authOperation';
+import { updateUserParams, userVerifyAgain } from '../../redux/auth/authOperation';
 
 // import user from '../../jsonFromBd/userParams.json'
 import { CustomDataPicker } from '../UserDataPicker/UserDataPicker';
 import RadioOption from '../UserRadio/UserRadio';
+import { useState } from 'react';
 // import { CustomDataPicker } from '../CustomDataPicker/CustomDataPicker';
 
 
@@ -101,7 +102,32 @@ const UserForm = () => {
     //   ...values,
     // };
     dispatch(updateUserParams(values));
+    setBtnActive(false);
   };
+  const [btnActive, setBtnActive] = useState(false);
+  const handleChanger = (e) => {
+    setBtnActive(true);
+  };
+
+  const sendVerify = () => {
+    // const sendData = {
+    //   ...values,
+    // };
+    const email = user.email;
+    dispatch(userVerifyAgain(email));
+    // setBtnActive(false);
+  };
+ 
+
+///button verify
+
+// const [isVerify, setIsVerify] = useState(false);
+// const verifyed = user.verify;
+
+
+
+
+
 
   return (
     <Formik
@@ -109,22 +135,26 @@ const UserForm = () => {
       }
       validationSchema={ValidationSchema}
       onSubmit={handleSubmit}
+    //   handleChange = {(e)=> handleChanger(e)}
     >{formik => (
-      <s.StyledForm>
+      <s.StyledForm
+      onChange={handleChanger}>
       
         
           <s.Container>
             <div>
-              <s.SectionTitle>Basic info</s.SectionTitle>
+              <s.SectionTitle>Name</s.SectionTitle>
               <Field
                 name="name"
                 type="text"
                 placeholder="Your name"
                 as={s.Input}
+                
                 // defaultValue={user.name}
               />
             </div>
             <div>
+            <s.SectionTitle>Email</s.SectionTitle>
               <s.Input
                 type="text"
                 name="email"
@@ -133,6 +163,7 @@ const UserForm = () => {
                 readOnly
                 disabled
               />
+      
             </div>
           </s.Container>
           <s.WrappInputFields>
@@ -230,7 +261,14 @@ const UserForm = () => {
               ))}
             </s.WrapperLevel>
           </s.WrapperRadio>
-          <s.Button type="submit">Save</s.Button>
+          <div style={{ display: 'flex' , justifyContent: 'flex-start'}}>
+          <s.Button type="submit" disabled={!btnActive}>Save</s.Button>
+          <s.ButtonVerify type="submit" 
+           disabled={user.verify}
+           onClick={sendVerify}
+        //    style={{ display: user.verify ? 'none' : 'inline-block' }}
+           >Verify</s.ButtonVerify>
+          </div>
       </s.StyledForm>)}
     </Formik>
   );

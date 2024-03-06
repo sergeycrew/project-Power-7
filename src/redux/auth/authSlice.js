@@ -6,6 +6,7 @@ import {
   currentUser,
   updateUserParams,
   updateUserAvatar,
+  userVerifyAgain,
 } from './authOperation';
 
 const initialUser = {
@@ -115,6 +116,23 @@ const handleUpdateUserAvatarFulfilled = (state, { payload }) => {
   state.error = null;
 };
 
+const handleUserVerifyAgainPending = (state) => {
+  state.error = null;
+};
+const handleUserVerifyAgainRejected = (state, { payload }) => {
+  state.isLoggedIn = true;
+  state.goToParams = false;
+  state.error = payload;
+};
+const handleUserVerifyAgainFulfilled = (state, { payload }) => {
+  state.user = payload.user.email;
+  // state.user = payload.user;
+  state.isLoggedIn = true;
+  state.goToParams = false;
+  // state.token = payload.token;
+  state.error = null;
+};
+
 const authSlice = createSlice({
   name: 'auth',
   initialState,
@@ -143,6 +161,10 @@ const authSlice = createSlice({
       .addCase(updateUserAvatar.pending, handleUpdateUserAvatarPending)
       .addCase(updateUserAvatar.rejected, handleUpdateUserAvatarRejected)
       .addCase(updateUserAvatar.fulfilled, handleUpdateUserAvatarFulfilled)
+
+      .addCase(userVerifyAgain.pending, handleUserVerifyAgainPending)
+      .addCase(userVerifyAgain.rejected, handleUserVerifyAgainRejected)
+      .addCase(userVerifyAgain.fulfilled, handleUserVerifyAgainFulfilled)
 });
 
 export const authReducer = authSlice.reducer;
