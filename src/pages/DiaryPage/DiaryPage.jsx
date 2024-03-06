@@ -1,17 +1,16 @@
 import { useEffect, useState } from 'react';
 import * as s from './DiaryPage.styled';
-import { DairyItem } from '../../components/DairyItem/DairyItem';
+import { DiaryItem } from '../../components/DiaryItem/DiaryItem';
 import { DayDashboard } from '../../components/DayDashboard/DayDashboard';
 import { DayProductItem } from '../../components/DayProducts/DayProductsItem';
 import { DayExerciseItem } from '../../components/DayExercises/DayExercisesItem';
 import { DaySwitch } from '../../components/DaySwitch/DaySwitch';
 
 const DiaryPage = () => {
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   useEffect(() => {
     const handleResize = () => {
-      setWindowWidth(window.innerWidth);
+      setIsMobile(window.innerWidth < 768);
     };
 
     window.addEventListener('resize', handleResize);
@@ -22,34 +21,40 @@ const DiaryPage = () => {
   }, []);
   return (
     <s.Container>
-      <DaySwitch />
-      <s.Title>Diary</s.Title>
+      <s.TitleWrapper>
+        <DaySwitch />
+        <s.Title>Diary</s.Title>
+      </s.TitleWrapper>
 
-      {windowWidth >= 768 ? (
-        <s.DairyCommonContainer>
-          <s.DairyItemContainer>
-            <DairyItem title="Products" link="Add products" to="/products">
-              <DayProductItem></DayProductItem>
-              <DayProductItem></DayProductItem>
-            </DairyItem>
-            <DairyItem title="Exercises" link="Add exercises" to="/exercises">
-              <DayExerciseItem></DayExerciseItem>
-            </DairyItem>
-          </s.DairyItemContainer>
-          <DayDashboard></DayDashboard>
-        </s.DairyCommonContainer>
-      ) : (
+      {isMobile ? (
         <>
           <DayDashboard></DayDashboard>
-          <s.DairyItemContainer>
-            <DairyItem title="Products" link="Add products" to="/products">
-              <DayProductItem></DayProductItem>
-            </DairyItem>
-            <DairyItem title="Exercises" link="Add exercises" to="/exercises">
+          <s.DiaryItemContainer>
+            <DiaryItem title="Products" link="Add products" to="/products">
+              {/* {arr.map(({ id, value }) => (
+                <DayProductItem key={id} isMobile={isMobile}></DayProductItem>
+              ))} */}
+              <DayProductItem isMobile={isMobile}></DayProductItem>
+              <DayProductItem isMobile={isMobile}></DayProductItem>
+            </DiaryItem>
+            <DiaryItem title="Exercises" link="Add exercises" to="/exercises">
               <DayExerciseItem></DayExerciseItem>
-            </DairyItem>
-          </s.DairyItemContainer>
+            </DiaryItem>
+          </s.DiaryItemContainer>
         </>
+      ) : (
+        <s.DiaryCommonContainer>
+          <s.DiaryItemContainer>
+            <DiaryItem title="Products" link="Add products" to="/products">
+              <DayProductItem isMobile={isMobile}></DayProductItem>
+              <DayProductItem isMobile={isMobile}></DayProductItem>
+            </DiaryItem>
+            <DiaryItem title="Exercises" link="Add exercises" to="/exercises">
+              <DayExerciseItem></DayExerciseItem>
+            </DiaryItem>
+          </s.DiaryItemContainer>
+          <DayDashboard></DayDashboard>
+        </s.DiaryCommonContainer>
       )}
     </s.Container>
   );

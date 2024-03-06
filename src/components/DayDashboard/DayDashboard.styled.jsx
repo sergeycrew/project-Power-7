@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-// import { theme } from '../../styles/Theme';
 
 export const DashboardList = styled.ul`
   display: flex;
@@ -37,7 +36,6 @@ export const CommonInformation = styled.p`
   font-weight: 400;
   font-size: 14px;
   line-height: 129%;
-  /* color: rgba(239, 237, 232, 0.3); */
   color: ${(p) => p.theme.colors.accentColor};
 
   @media screen and (min-width: 768px) {

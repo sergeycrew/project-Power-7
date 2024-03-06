@@ -1,17 +1,23 @@
 import { forwardRef, useState } from 'react';
 import { format } from 'date-fns';
 import DatePicker from 'react-datepicker';
-import { CalendarGlobalStyles, Wrapper } from './DaySwitch.styled';
-import 'react-datepicker/dist/react-datepicker-cssmodules.css';
+import * as s from './DaySwitch.styled';
+import { CalendarGlobalStyles } from '../UserDataPicker/UserDataPicker.styled';
+import icons from '../../images/sprite/sprite.svg';
 
 export const DaySwitch = () => {
   const [selectedDate, setSelectedDate] = useState(Date.now());
 
   const CustomInput = forwardRef(({ onClick }, ref) => {
     return (
-      <Wrapper onClick={onClick} ref={ref}>
-        {format(selectedDate, 'dd/MM/yyyy')}
-      </Wrapper>
+      <s.DateContainer>
+        <s.Wrapper onClick={onClick} ref={ref}>
+          {format(selectedDate, 'dd/MM/yyyy')}
+        </s.Wrapper>
+        <s.CalendarIcon>
+          <use href={`${icons}#icon-calendar`}></use>
+        </s.CalendarIcon>
+      </s.DateContainer>
     );
   });
 

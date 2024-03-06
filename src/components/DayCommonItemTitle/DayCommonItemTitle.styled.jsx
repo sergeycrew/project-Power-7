@@ -7,4 +7,6 @@ export const ItemCommonTitle = styled.h3`
   line-height: 150%;
   color: ${(p) => p.theme.colors.orangeLightColor};
   margin-bottom: 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;

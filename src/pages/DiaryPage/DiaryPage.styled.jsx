@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { theme } from '../../styles/Theme';
 
 export const Container = styled.div`
   margin: 0 auto;
@@ -19,21 +18,27 @@ export const Container = styled.div`
 `;
 
 export const Title = styled.h1`
-  padding: 40px 0;
   font-weight: 700;
   font-size: 24px;
   line-height: 117%;
-  /* color: #efede8; */
-  color: ${theme.colors.whiteColor};
+  color: ${(p) => p.theme.colors.whiteColor};
 
   @media screen and (min-width: 768px) {
-    padding: 72px 0 32px 0;
+    /* padding: 72px 0 32px 0; */
     font-size: 32px;
     line-height: 137%;
   }
 `;
 
-export const DairyItemContainer = styled.ul`
+export const TitleWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row-reverse;
+  padding: 40px 0 40px 0;
+`;
+
+export const DiaryItemContainer = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -43,7 +48,7 @@ export const DairyItemContainer = styled.ul`
   }
 `;
 
-export const DairyCommonContainer = styled.div`
+export const DiaryCommonContainer = styled.div`
   @media screen and (min-width: 1440px) {
     display: flex;
     gap: 32px;

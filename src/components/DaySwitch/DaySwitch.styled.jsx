@@ -2,18 +2,32 @@ import { createGlobalStyle, styled } from 'styled-components';
 import 'react-datepicker/dist/react-datepicker-cssmodules.css';
 
 export const Wrapper = styled.button`
-  width: 239px;
+  /* width: 239px; */
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
-  font-size: 24px;
-  line-height: 133%;
+  font-size: 18px;
+  line-height: 111%;
   color: #efede8;
   text-align: center;
-  /* text-transform: uppercase; */
-  justify-content: space-around;
-  align-items: center;
   background: none;
   border: none;
+
+  @media screen and (min-width: 1440px) {
+    font-size: 24px;
+    line-height: 133%;
+  }
+`;
+
+export const CalendarIcon = styled.svg`
+  width: 20px;
+  height: 20px;
+`;
+
+export const DateContainer = styled.div`
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 8px;
 `;
 
 export const CalendarGlobalStyles = createGlobalStyle`

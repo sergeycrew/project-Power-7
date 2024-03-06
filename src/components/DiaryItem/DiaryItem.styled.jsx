@@ -31,7 +31,7 @@ export const ItemWrapper = styled.li`
   }
 `;
 
-export const DairyItemTitle = styled.h2`
+export const DiaryItemTitle = styled.h2`
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 14px;
