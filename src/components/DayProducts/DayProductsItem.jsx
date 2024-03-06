@@ -1,6 +1,6 @@
 import { DayCommonItemTitle } from '../DayCommonItemTitle/DayCommonItemTitle';
 import * as s from './DayProductsItem.styled';
-import icons from '../../images/sprite.svg';
+import icons from '../../images/sprite/sprite.svg';
 // import { useEffect, useRef, useState } from 'react';
 
 export const DayProductItem = () => {
@@ -53,7 +53,7 @@ export const DayProductItem = () => {
       </s.ProductsContainer>
       <s.DeleteButton>
         <s.DeleteIcon>
-          <use href={`${icons}#icon-trash`}></use>
+          <use href={`${icons}#trash`}></use>
         </s.DeleteIcon>
       </s.DeleteButton>
     </s.ItemProductWrapper>

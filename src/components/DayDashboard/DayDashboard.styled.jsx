@@ -6,17 +6,14 @@ export const DashboardList = styled.ul`
   column-gap: 13px;
   row-gap: 20px;
   width: 335px;
-  margin-bottom: 20px;
 
   @media screen and (min-width: 768px) {
     width: 593px;
     gap: 16px;
-    margin-bottom: 32px;
   }
 
   @media screen and (min-width: 1440px) {
     width: 390px;
-    margin-bottom: 48px;
   }
 `;
 
@@ -51,9 +48,15 @@ export const SvgInfo = styled.svg`
 `;
 
 export const DashboardWrapper = styled.div`
-  padding-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 
   @media screen and (min-width: 768px) {
-    padding-bottom: 0;
+    gap: 32px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    gap: 48px;
   }
 `;

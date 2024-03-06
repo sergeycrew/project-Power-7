@@ -1,5 +1,5 @@
 import * as s from './DiaryItem.styled';
-import icons from '../../images/sprite.svg';
+import icons from '../../images/sprite/sprite.svg';
 
 export const DiaryItem = ({ title, link, to, children }) => {
   return (
@@ -9,7 +9,7 @@ export const DiaryItem = ({ title, link, to, children }) => {
         <s.LinkToOtherPage to={to}>
           <s.LinkText>{link}</s.LinkText>
           <s.ArrowIcon>
-            <use href={`${icons}#icon-arrow-right`}></use>
+            <use href={`${icons}#icon-arrow`}></use>
           </s.ArrowIcon>
         </s.LinkToOtherPage>
       </s.TitleWrapper>

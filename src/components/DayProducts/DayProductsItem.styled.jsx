@@ -284,7 +284,6 @@ export const DeleteIcon = styled.svg`
 export const ItemProductWrapper = styled.div`
   display: flex;
   align-items: last baseline;
-  /* justify-content: space-between; */
   margin-bottom: 40px;
 
   &:last-child {

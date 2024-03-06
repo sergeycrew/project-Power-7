@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import toast from 'react-hot-toast';
+import { toast } from 'react-toastify';
 
 const setAuthHeader = (token) => {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
@@ -27,9 +27,9 @@ export const deleteProduct = createAsyncThunk(
   '/deldiaryproduct',
   async (productId, thunkAPI) => {
     try {
-      //  const state = thunkAPI.getState();
-      //  const storedToken = state.auth.token;
-      //  setAuthHeader(storedToken);
+      const state = thunkAPI.getState();
+      const storedToken = state.auth.token;
+      setAuthHeader(storedToken);
       const response = await axios.delete(`/deldiaryproduct/${productId}`);
       toast.success('A product has been successfully deleted!');
       return response.data;
@@ -44,10 +44,11 @@ export const deleteExercise = createAsyncThunk(
   '/deldiaryexercisest',
   async (exerciseId, thunkAPI) => {
     try {
-      //  const state = thunkAPI.getState();
-      //  const storedToken = state.auth.token;
-      //  setAuthHeader(storedToken);
+      const state = thunkAPI.getState();
+      const storedToken = state.auth.token;
+      setAuthHeader(storedToken);
       const response = await axios.delete(`/deldiaryexercisest/${exerciseId}`);
+      toast.success('An exercise has been successfully deleted!');
       return response.data;
     } catch (error) {
       toast.error('Oops, something went wrong! Try again later.');

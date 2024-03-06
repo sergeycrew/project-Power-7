@@ -24,7 +24,7 @@ export const Title = styled.h1`
   color: ${(p) => p.theme.colors.whiteColor};
 
   @media screen and (min-width: 768px) {
-    /* padding: 72px 0 32px 0; */
+    padding: 72px 0 32px 0;
     font-size: 32px;
     line-height: 137%;
   }
@@ -44,13 +44,25 @@ export const DiaryItemContainer = styled.ul`
   gap: 40px;
 
   @media screen and (min-width: 768px) {
-    margin-bottom: 64px;
+    gap: 32px;
   }
 `;
 
 export const DiaryCommonContainer = styled.div`
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 40px;
+  padding-bottom: 80px;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: column;
+    gap: 64px;
+    padding-bottom: 64px;
+  }
+
   @media screen and (min-width: 1440px) {
-    display: flex;
+    flex-direction: row;
     gap: 32px;
+    padding-bottom: 68px;
   }
 `;

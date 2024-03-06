@@ -2,20 +2,44 @@ import { createGlobalStyle, styled } from 'styled-components';
 import 'react-datepicker/dist/react-datepicker-cssmodules.css';
 
 export const Wrapper = styled.button`
-  /* width: 239px; */
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
   font-size: 18px;
   line-height: 111%;
-  color: #efede8;
+  color: ${(p) => p.theme.colors.whiteColor};
   text-align: center;
   background: none;
   border: none;
+  padding: 0;
 
-  @media screen and (min-width: 1440px) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  @media screen and (min-width: 768px) {
     font-size: 24px;
     line-height: 133%;
+    align-items: baseline;
   }
+`;
+
+export const SwitchButton = styled.button`
+  background: none;
+  border: none;
+  padding: 0;
+`;
+
+export const SwitchButtonIcon = styled.svg`
+  width: 16px;
+  height: 16px;
+`;
+
+export const SwitchButtonWrapper = styled.ul`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
 `;
 
 export const CalendarIcon = styled.svg`
@@ -25,9 +49,13 @@ export const CalendarIcon = styled.svg`
 
 export const DateContainer = styled.div`
   display: flex;
-  align-items: baseline;
-  justify-content: center;
-  gap: 8px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  @media screen and (min-width: 768px) {
+    gap: 40px;
+  }
 `;
 
 export const CalendarGlobalStyles = createGlobalStyle`

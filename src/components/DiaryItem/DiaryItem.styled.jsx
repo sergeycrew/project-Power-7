@@ -1,15 +1,14 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { theme } from '../../styles/Theme';
 
 export const ItemWrapper = styled.li`
-  border: 1px solid rgba(239, 237, 232, 0.2);
+  border: 1px solid ${(p) => p.theme.colors.cardBorderColor};
   border-radius: 12px;
   padding: 16px;
   width: 335px;
   min-height: 335px;
   max-height: 824px;
-  background: rgba(239, 237, 232, 0.05);
+  background: ${(p) => p.theme.colors.cardBgColor};
   /* overflow-y: scroll; */
 
   /* $::-webkit-scrollbar {
@@ -73,5 +72,5 @@ export const ArrowIcon = styled.svg`
   width: 16px;
   height: 16px;
 
-  fill: ${theme.colors.hoverColor};
+  fill: ${(p) => p.theme.colors.hoverColor};
 `;

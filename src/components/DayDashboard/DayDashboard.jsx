@@ -1,4 +1,4 @@
-import icons from '../../images/sprite.svg';
+import icons from '../../images/sprite/sprite.svg';
 import { DashboardCard } from './DashboardCard/DashboardCard';
 import * as s from './DayDashboard.styled';
 
@@ -23,32 +23,32 @@ export const DayDashboard = () => {
         ))} */}
         <DashboardCard
           subtitle="Daily calorie intake"
-          icon={`${icons}#icon-fork-knife`}
+          icon={`${icons}#food`}
         ></DashboardCard>
         <DashboardCard
           subtitle="Daily physical activity"
-          icon={`${icons}#icon-dumbbell`}
+          icon={`${icons}#dumbbell`}
         ></DashboardCard>
         <DashboardCard
           subtitle="Сalories consumed"
-          icon={`${icons}#icon-apple`}
+          icon={`${icons}#apple`}
         ></DashboardCard>
         <DashboardCard
           subtitle="Сalories burned"
-          icon={`${icons}#icon-fire`}
+          icon={`${icons}#fire`}
         ></DashboardCard>
         <DashboardCard
           subtitle="Calories remaining"
-          icon={`${icons}#icon-bubble`}
+          icon={`${icons}#bubble`}
         ></DashboardCard>
         <DashboardCard
           subtitle="Sports remaining"
-          icon={`${icons}#icon-running-figure`}
+          icon={`${icons}#figure`}
         ></DashboardCard>
       </s.DashboardList>
       <s.InfoWrapper>
         <s.SvgInfo>
-          <use href={`${icons}#icon-attention`}></use>
+          <use href={`${icons}#exclamation`}></use>
         </s.SvgInfo>
         <s.CommonInformation>
           Record all your meals in the calorie diary every day. This will help

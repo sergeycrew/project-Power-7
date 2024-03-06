@@ -5,14 +5,17 @@ import {
   deleteProduct,
 } from './diaryOperations';
 
+
 const diaryState = {
-  date: '',
-  burnedCalories: 0,
-  consumedCalories: 0,
-  products: [],
-  exercises: [],
-  isLoading: false,
-  error: null,
+  currentDate: new Date().toISOString(),
+  diaryInfo: {
+    burnedCalories: 0,
+    consumedCalories: 0,
+    products: [],
+    exercises: [],
+    isLoading: false,
+    error: null,
+  },
 };
 
 const handlePending = (state) => {
@@ -26,36 +29,50 @@ const handleRejected = (state, action) => {
 };
 
 const handleFetchAllFulfilled = (state, { payload }) => {
-  state.isLoading = false;
-  state.error = null;
-  state.date = payload.data.date;
-  state.burnedCalories = payload.data.burnedCalories;
-  state.consumedCalories = payload.data.consumedCalories;
-  state.products = payload.data.products;
-  state.exercises = payload.data.exercises;
+  state.diaryInfo.isLoading = false;
+  state.diaryInfo.error = null;
+  state.diaryInfo.burnedCalories = payload.data.burnedCalories;
+  state.diaryInfo.consumedCalories = payload.data.consumedCalories;
+  state.diaryInfo.products = payload.data.products;
+  state.diaryInfo.exercises = payload.data.exercises;
 };
 
 const handleDeleteProductFulfilled = (state, action) => {
   state.isLoading = false;
   state.error = null;
-  const index = state.products.findIndex(
+  const index = state.diaryInfo.products.findIndex(
     (product) => product.id === action.payload.id
   );
-  state.products.splice(index, 1);
+  state.diaryInfo.products.splice(index, 1);
 };
 
 const handleDeleteExerciseFulfilled = (state, action) => {
   state.isLoading = false;
   state.error = null;
-  const index = state.exercises.findIndex(
+  const index = state.diaryInfo.exercises.findIndex(
     (exercise) => exercise.id === action.payload.id
   );
-  state.exercises.splice(index, 1);
+  state.diaryInfo.exercises.splice(index, 1);
 };
 
 export const diarySlice = createSlice({
   name: 'diary',
   initialState: diaryState,
+  reducers: {
+    changeCalendarDay(state, action) {
+      state.currentDate = action.payload;
+    },
+    previousDay(state) {
+      let date = new Date(state.currentDate);
+      date.setDate(date.getDate() - 1);
+      state.currentDate = date.toISOString();
+    },
+    nextDay(state) {
+      let date = new Date(state.currentDate);
+      date.setDate(date.getDate() + 1);
+      state.currentDate = date.toISOString();
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchAllDairyInfo.pending, handlePending)
@@ -71,3 +88,6 @@ export const diarySlice = createSlice({
 });
 
 export const diaryReducer = diarySlice.reducer;
+export const { changeCalendarDay } = diarySlice.actions;
+export const { previousDay } = diarySlice.actions;
+export const { nextDay } = diarySlice.actions;

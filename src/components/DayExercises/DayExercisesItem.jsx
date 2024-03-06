@@ -1,5 +1,5 @@
 import * as s from './DayExercisesItem.styled';
-import icons from '../../images/sprite.svg';
+import icons from '../../images/sprite/sprite.svg';
 import { DayCommonItemTitle } from '../DayCommonItemTitle/DayCommonItemTitle';
 
 export const DayExerciseItem = () => {
@@ -33,7 +33,7 @@ export const DayExerciseItem = () => {
       </s.ProductsContainer>
       <s.DeleteButton>
         <s.DeleteIcon>
-          <use href={`${icons}#icon-trash`}></use>
+          <use href={`${icons}#trash`}></use>
         </s.DeleteIcon>
       </s.DeleteButton>
     </s.ItemExerciseWrapper>
