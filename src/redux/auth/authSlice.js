@@ -10,7 +10,7 @@ import {
 const initialUser = {
   name: '',
   email: '',
-  height:'',
+  height: '',
   currentWeight: '',
   desiredWeight: '',
   birthday: '01.01.1900',

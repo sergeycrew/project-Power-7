@@ -7,7 +7,7 @@ import * as s from './ProfilePage.styled';
 import { useEffect } from 'react';
 import { currentUser } from '../../redux/auth/authOperation';
 import { useAuth } from '../../hooks/useAuth';
-
+import { Container } from 'styles/container'
 const ProfilePage = () => {
   const dispatch = useDispatch();
 
@@ -20,8 +20,8 @@ const ProfilePage = () => {
   return isRefreshing ? (
     <b>Refreshing user...</b>
   ) : 
-  (
-    <s.Container>
+    (<Container>
+       <s.Container>
       <s.Title>Profile Setings</s.Title>
       <s.Wrapper>
         <div>
@@ -45,6 +45,7 @@ const ProfilePage = () => {
         </s.WrappForm>
       </s.Wrapper>
     </s.Container>
+  </Container>
   );
 };
 
