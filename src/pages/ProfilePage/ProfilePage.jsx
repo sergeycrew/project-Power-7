@@ -1,4 +1,4 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import DailyBaseInfo from '../../components/DayliBaseInfo/DayliBaseInfo';
 import UserCard from '../../components/UserCard/UserCard';
 import UserForm from '../../components/UserForm/UserForm';
@@ -7,21 +7,27 @@ import * as s from './ProfilePage.styled';
 import { useEffect } from 'react';
 import { currentUser } from '../../redux/auth/authOperation';
 import { useAuth } from '../../hooks/useAuth';
+import { selectUser } from '../../redux/auth/authSelectors';
+
+
+import { Container } from 'styles/container'
 
 const ProfilePage = () => {
+    const user = useSelector(selectUser);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(currentUser());
   }, [dispatch]);
 
+
   const { isRefreshing } = useAuth();
 
   return isRefreshing ? (
     <b>Refreshing user...</b>
   ) : 
-  (
-    <s.Container>
+    (<Container>
+       <s.Container>
       <s.Title>Profile Setings</s.Title>
       <s.Wrapper>
         <div>
@@ -30,12 +36,13 @@ const ProfilePage = () => {
             <DailyBaseInfo
               iconId="icon-fork-knife"
               text="Daily calorie intake"
-              value="100"
+              value={user.bmr}
             />
             <DailyBaseInfo
               iconId="icon-dumbbell"
               text="Daily physical activity"
-              value="0"
+              value={user.timeSport}
+              amoutName='min'
             />
           </s.WrappInfo>
           <UserNote />
@@ -45,6 +52,7 @@ const ProfilePage = () => {
         </s.WrappForm>
       </s.Wrapper>
     </s.Container>
+  </Container>
   );
 };
 
