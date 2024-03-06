@@ -54,7 +54,7 @@ export const CustomModal = ({
       >
         <CloseModalBtn type="button" onClick={onClose}>
           <svg width="20" height="20" stroke="white">
-            <use href={icons + '#icon-closemodal'} />
+          <use href={icons + '#icon-x'} />
           </svg>
         </CloseModalBtn>
         {children}

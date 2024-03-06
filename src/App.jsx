@@ -1,13 +1,18 @@
 import { Route, Routes, Navigate } from 'react-router-dom';
-import WelcomePage from 'pages/WelcomePage/WelcomePage';
-import SignUpPage from 'pages/SignUpPage/SignUpPage';
-import SignInPage from 'pages/SignInPage/SignInPage';
-import DiaryPage from './pages/DiaryPage/DiaryPage';
-import ProductsPage from './pages/ProductsPage/ProductsPage';
-import ExercisesPage from './pages/ExercisesPage/ExercisesPage';
-import ProfilePage from './pages/ProfilePage/ProfilePage';
-import ErrorPage from 'pages/ErrorPage/ErrorPage';
+
+import { lazy } from 'react';
+
 import MainLayout from './components/MainLayout/MainLayout';
+
+const WelcomePage = lazy(() => import('pages/WelcomePage/WelcomePage'));
+const SignUpPage = lazy(() => import('pages/SignUpPage/SignUpPage'));
+const SignInPage = lazy(() => import('pages/SignInPage/SignInPage'));
+const ProfilePage = lazy(() => import('pages/ProfilePage/ProfilePage'));
+const DiaryPage = lazy(() => import('pages/DiaryPage/DiaryPage'));
+const ProductsPage = lazy(() => import('pages/ProductsPage/ProductsPage'));
+const ExercisesPage = lazy(() => import('pages/ExercisesPage/ExercisesPage'));
+const ErrorPage = lazy(() => import('pages/ErrorPage/ErrorPage'));
+
 import { ExercisesCategories } from './components/ExercisesCategories/ExercisesCategories';
 import { ExercisesListByCategory } from './components/ExercisesList/ExercisesList';
 
@@ -42,4 +47,4 @@ function App() {
     </>
   );
 }
-export default App;          
+export default App;
