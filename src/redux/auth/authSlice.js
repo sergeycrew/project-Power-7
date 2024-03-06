@@ -125,8 +125,8 @@ const handleUserVerifyAgainRejected = (state, { payload }) => {
   state.error = payload;
 };
 const handleUserVerifyAgainFulfilled = (state, { payload }) => {
-  state.user = payload.user.email;
-  // state.user = payload.user;
+  // state.user = payload.user.email;
+  state.user = payload.user;
   state.isLoggedIn = true;
   state.goToParams = false;
   // state.token = payload.token;

@@ -120,7 +120,7 @@ export const updateUserParams = createAsyncThunk(
 )
 
 export const userVerifyAgain = createAsyncThunk(
-  '/verifyAgain',
+  'users/verifyAgain',
   async (creds, thunkAPI) => {
     try {
       const { data } = await axios.post('users/verifyAgain', creds)

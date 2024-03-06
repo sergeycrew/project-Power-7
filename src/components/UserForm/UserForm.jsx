@@ -118,6 +118,23 @@ const UserForm = () => {
     // setBtnActive(false);
   };
  
+//   const startTimer = () => {
+//     setButtonDisabled(true);
+//     setRemainingTime(5); // Устанавливаем начальное время таймера в секундах
+//     setTimer(
+//       setInterval(() => {
+//         setRemainingTime(prevTime => {
+//           if (prevTime === 1) {
+//             clearInterval(timer);
+//             setButtonDisabled(false);
+//             return null;
+//           } else {
+//             return prevTime - 1;
+//           }
+//         });
+//       }, 1000) // Обновляем таймер каждую секунду
+//     );
+//   };
 
 ///button verify
 
@@ -264,13 +281,16 @@ const UserForm = () => {
           <div style={{ display: 'flex' , justifyContent: 'flex-start'}}>
           <s.Button type="submit" disabled={!btnActive}>Save</s.Button>
           <s.ButtonVerify type="submit" 
-           disabled={user.verify}
+        //    disabled={buttonDisabled}
            onClick={sendVerify}
-        //    style={{ display: user.verify ? 'none' : 'inline-block' }}
-           >Verify</s.ButtonVerify>
+           style={{ display: user.verify ? 'none' : 'inline-block' }}
+           >
+           ver
+           </s.ButtonVerify>
           </div>
       </s.StyledForm>)}
     </Formik>
   );
 };
 export default UserForm;
+// {buttonDisabled ? `Remaining Time: ${remainingTime}` : 'Verify'}
