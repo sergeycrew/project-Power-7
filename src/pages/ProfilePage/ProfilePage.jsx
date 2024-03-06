@@ -9,6 +9,9 @@ import { currentUser } from '../../redux/auth/authOperation';
 import { useAuth } from '../../hooks/useAuth';
 import { selectUser } from '../../redux/auth/authSelectors';
 
+
+import { Container } from 'styles/container'
+
 const ProfilePage = () => {
     const user = useSelector(selectUser);
   const dispatch = useDispatch();
@@ -23,8 +26,8 @@ const ProfilePage = () => {
   return isRefreshing ? (
     <b>Refreshing user...</b>
   ) : 
-  (
-    <s.Container>
+    (<Container>
+       <s.Container>
       <s.Title>Profile Setings</s.Title>
       <s.Wrapper>
         <div>
@@ -49,6 +52,7 @@ const ProfilePage = () => {
         </s.WrappForm>
       </s.Wrapper>
     </s.Container>
+  </Container>
   );
 };
 

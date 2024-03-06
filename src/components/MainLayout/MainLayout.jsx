@@ -6,15 +6,17 @@ import { Header } from '../Header/Header';
 
 const MainLayout = () => {
   return (
-    <>
-      <Header />
+    
       <Layout>
+      <Header />
+      <main>
         <Suspense fallback={<Loader />}>
           <Outlet />
         </Suspense>
-      </Layout>
-      <footer></footer>
-    </>
+      </main>
+        <footer></footer>
+        </Layout>
+    
   );
 };
 
