@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Layout = styled.main`
+export const Layout = styled.div`
   background-color: ${(p) => p.theme.colors.blackColor};
   width: 100%;
   min-height: 100vh;

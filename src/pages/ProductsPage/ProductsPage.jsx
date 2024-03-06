@@ -1,5 +1,5 @@
 import { ProductList } from '../../components/ProductList/ProductList';
-import { ProductFilters } from '../../components/ProductsFilters/ProductsFilters';
+//import { ProductFilters } from '../../components/ProductsFilters/ProductsFilters';
 import * as s from './ProductsPage.styled';
 
 const ProductsPage = () => {
@@ -7,7 +7,7 @@ const ProductsPage = () => {
     <div>
       <s.Container>
         <s.Title>Products</s.Title>
-        <ProductFilters />
+        {/* <ProductFilters /> */}
       </s.Container>
       <ProductList />
     </div>

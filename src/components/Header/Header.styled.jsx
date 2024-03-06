@@ -6,27 +6,21 @@ export const HeaderBar = styled.header`
   align-items: center;
   width: 100%;
   padding-inline: 20px;
-  padding-top: 12px;
-  padding-bottom: 12px;
+  padding: 20px 24px;
   margin-inline: auto;
   background-color: ${p => p.theme.colors.blackColor};
-  position: fixed;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 10;
+;
 
-  @media screen and (min-width: 375px) {
-    width: 375px;
     @media screen and (min-width: 768px) {
-      width: 768px;
       padding-inline: 32px;
-      padding-top: 19px;
-      padding-bottom: 19px;
+      padding: 30px 34px;
+      
     }
-  }
+  
   @media screen and (min-width: 1440px) {
     padding-inline: 90px;
-    width: 1440px;
+    padding: 30px 90px;
+    
   }
 `;
 
