@@ -42,8 +42,11 @@ function App() {
           <Route path="/profile" element={<ProfilePage />} />
 
 
-          </Route>
-         <Route path="*" element={<ErrorPage />} />
+
+
+
+          <Route path="*" element={<ErrorPage />} />
+        </Route>
 
       </Routes>
     </>
