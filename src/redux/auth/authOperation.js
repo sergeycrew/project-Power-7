@@ -4,8 +4,8 @@ import { toast } from 'react-toastify';
 
 axios.defaults.baseURL = 'https://backend-power-pulse-7.onrender.com/api/';
 
-
-const temptoken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWU3YWY1MTQwZmI2ZjdmNDRkOGJmOGYiLCJ0eXBlIjoiYWNjZXNzIiwiaWF0IjoxNzA5NzQyNzkzLCJleHAiOjE3MDk4MjU1OTN9.cPR4Cz8wSDqtjENdqpJxs5AlmbjMRwVqxpezsGA3HuM';
+const temptoken =
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWU3YWY1MTQwZmI2ZjdmNDRkOGJmOGYiLCJ0eXBlIjoiYWNjZXNzIiwiaWF0IjoxNzA5NzQyNzkzLCJleHAiOjE3MDk4MjU1OTN9.cPR4Cz8wSDqtjENdqpJxs5AlmbjMRwVqxpezsGA3HuM';
 
 const setAuthHeader = (token) => {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
@@ -87,7 +87,6 @@ export const currentUser = createAsyncThunk(
   }
 );
 
-
 export const updateUserAvatar = createAsyncThunk(
   'users/updateAvatar',
   async (file, thunkAPI) => {
@@ -95,42 +94,36 @@ export const updateUserAvatar = createAsyncThunk(
       const formData = new FormData();
       formData.append('avatar', file);
 
-      const { data } = await axios.patch('users/updateAvatar', formData)
+      const { data } = await axios.patch('users/updateAvatar', formData);
       return URL.createObjectURL(file);
       // return data;
-      
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
   }
-)
-
+);
 
 export const updateUserParams = createAsyncThunk(
   'users/update',
   async (params, thunkAPI) => {
     try {
-      const { data } = await axios.put('users/update', params)
+      const { data } = await axios.put('users/update', params);
       return data;
-      
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
   }
-)
+);
 
 export const userVerifyAgain = createAsyncThunk(
   'users/verifyAgain',
   async (creds, thunkAPI) => {
     try {
-      const { data } = await axios.post('users/verifyAgain', creds)
+      const { data } = await axios.post('users/verifyAgain', creds);
       return data;
-      
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
   }
-)
+);
 // credentials
-
-

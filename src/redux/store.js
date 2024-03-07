@@ -11,6 +11,8 @@ import {
   REGISTER,
 } from 'redux-persist';
 import { authReducer } from './auth/authSlice';
+import { productFilterReducer } from './products/productFilterSlice';
+import { productListReducer } from './products/productListSlice';
 
 const authPersistConfig = {
   key: 'auth',
@@ -20,6 +22,8 @@ const authPersistConfig = {
 
 export const rootReducer = combineReducers({
   auth: persistReducer(authPersistConfig, authReducer),
+  productFilter: productFilterReducer,
+  productList: productListReducer,
 });
 
 export const store = configureStore({
