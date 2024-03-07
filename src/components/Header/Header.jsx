@@ -21,7 +21,7 @@ export const Header = () => {
   const isWideScreen = window.innerWidth >= 1440;
   const headerStyle = {
     borderBottom: isLoggedIn ? '1px solid rgba(239, 237, 232, 0.2)' : '0',
-    position: isLoggedIn ? 'static' : 'absolute',
+    // position: isLoggedIn ? 'static' : 'absolute',
     backgroundColor:
       isWideScreen && !isLoggedIn ? 'transparent' : 'rgba(4, 4, 4, 1)',
   };
