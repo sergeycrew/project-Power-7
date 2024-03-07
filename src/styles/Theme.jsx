@@ -6,6 +6,7 @@ export const theme = {
     biegeColor: '#efa082',
     whiteColor: '#efede8',
     greyColor: 'EFEDE8',
+    modalOverlay: 'rgba(4, 4, 4, 0.4)',
     
     // accent colors
     accentColor: 'rgba(239, 237, 232, 0.3)',
@@ -20,6 +21,7 @@ export const theme = {
     cardBgColor: 'rgba(239, 237, 232, 0.05)',
     cardBorderColor: 'rgba(239, 237, 232, 0.2)',
     captionColor: 'rgba(239, 237, 232, 0.4)',
+    fornCaptionColor: 'rgba(239, 237, 232, 0.5)',
   },
 
   radii: {

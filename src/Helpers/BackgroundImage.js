@@ -6,6 +6,8 @@ import bg_desk_1x from '../images/desktopImages/hero-desktop-1x.png';
 import bg_desk_2x from '../images/desktopImages/hero-desktop-2x.png';
 import signup_mob_1x from '../images/mobileImages/signup-mob-1x.png';
 import signup_mob_2x from '../images/mobileImages/signup-mob-2x.png';
+import error_mob_1x from '../images/mobileImages/hero-mobile-1x.png';
+import error_mob_2x from '../images/mobileImages/hero-mobile-2x.png';
 
 export {
   bg_mob_1x,
@@ -16,4 +18,6 @@ export {
   bg_desk_2x,
   signup_mob_1x,
   signup_mob_2x,
+  error_mob_1x,
+  error_mob_2x,
 };
