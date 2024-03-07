@@ -96,7 +96,7 @@ export const ExercisesCategories = ({ query }) => {
               <PaginationBtn onClick={() => changeCurrentPage(n)}> 
                 {n === currentPage ? (
                   <svg width="14" height="14">
-                    <use href={icons + '#icon-pagination'} />
+                    <use href={icons + '#icon-apple'} />
                   </svg>
                 ) : (
                   <svg width="14" height="14">

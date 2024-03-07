@@ -21,6 +21,7 @@ export const theme = {
     cardBgColor: 'rgba(239, 237, 232, 0.05)',
     cardBorderColor: 'rgba(239, 237, 232, 0.2)',
     captionColor: 'rgba(239, 237, 232, 0.4)',
+    fornCaptionColor: 'rgba(239, 237, 232, 0.5)',
   },
 
   radii: {
