@@ -1,48 +1,39 @@
 import { DayCommonItemTitle } from '../DayCommonItemTitle/DayCommonItemTitle';
 import * as s from './DayProductsItem.styled';
 import icons from '../../images/sprite/sprite.svg';
-// import { useEffect, useRef, useState } from 'react';
 
-export const DayProductItem = () => {
-  // const isMounted = useRef(false);
-  // console.log(isMounted);
-  // const [firstRender, setFirstRender] = useState(true);
-
-  // useEffect(() => {
-  //   if (isMounted.current) {
-  //     // Логіка, яка виконається після пізнішого рендерингу компонента
-  //     console.log(isMounted);
-  //   } else {
-  //     // Логіка, яка виконається після першого рендерингу компонента
-  //     console.log('Компонент зарендерився!');
-  //     isMounted.current = true;
-  //     setFirstRender(false);
-  //   }
-  // }, []);
-
+export const DayProductItem = ({ isFirstItem }) => {
   return (
     <s.ItemProductWrapper>
       <s.ProductsContainer>
         <s.ListItem>
-          {/* {(isMobile || firstRender) && ( */}
-          <DayCommonItemTitle>Title</DayCommonItemTitle>
-          {/* )} */}
+          <DayCommonItemTitle isFirstItem={isFirstItem}>
+            Title
+          </DayCommonItemTitle>
           <s.DayItemContent>Black bread</s.DayItemContent>
         </s.ListItem>
         <s.ListItem>
-          <DayCommonItemTitle>Category</DayCommonItemTitle>
+          <DayCommonItemTitle isFirstItem={isFirstItem}>
+            Category
+          </DayCommonItemTitle>
           <s.DayItemContent>Black bread</s.DayItemContent>
         </s.ListItem>
         <s.ListItem>
-          <DayCommonItemTitle>Calories</DayCommonItemTitle>
+          <DayCommonItemTitle isFirstItem={isFirstItem}>
+            Calories
+          </DayCommonItemTitle>
           <s.DayItemContent>200</s.DayItemContent>
         </s.ListItem>
         <s.ListItem>
-          <DayCommonItemTitle>Weight</DayCommonItemTitle>
+          <DayCommonItemTitle isFirstItem={isFirstItem}>
+            Weight
+          </DayCommonItemTitle>
           <s.DayItemContent>200</s.DayItemContent>
         </s.ListItem>
         <s.ListItem>
-          <DayCommonItemTitle>Recommend</DayCommonItemTitle>
+          <DayCommonItemTitle isFirstItem={isFirstItem}>
+            Recommend
+          </DayCommonItemTitle>
           <s.DayItemContent
             style={{ display: 'flex', alignItems: 'center', gap: '8px' }}
           >

@@ -2,32 +2,44 @@ import * as s from './DayExercisesItem.styled';
 import icons from '../../images/sprite/sprite.svg';
 import { DayCommonItemTitle } from '../DayCommonItemTitle/DayCommonItemTitle';
 
-export const DayExerciseItem = () => {
+export const DayExerciseItem = ({ isFirstItem }) => {
   return (
     <s.ItemExerciseWrapper>
       <s.ProductsContainer>
         <s.ListItem>
-          <DayCommonItemTitle>Body Part</DayCommonItemTitle>
+          <DayCommonItemTitle isFirstItem={isFirstItem}>
+            Body Part
+          </DayCommonItemTitle>
           <s.DayExerciseItemContent>Waist</s.DayExerciseItemContent>
         </s.ListItem>
         <s.ListItem>
-          <DayCommonItemTitle>Equipment</DayCommonItemTitle>
+          <DayCommonItemTitle isFirstItem={isFirstItem}>
+            Equipment
+          </DayCommonItemTitle>
           <s.DayExerciseItemContent>Black bread</s.DayExerciseItemContent>
         </s.ListItem>
         <s.ListItem>
-          <DayCommonItemTitle>Name</DayCommonItemTitle>
+          <DayCommonItemTitle isFirstItem={isFirstItem}>
+            Name
+          </DayCommonItemTitle>
           <s.DayExerciseItemContent>Black bread</s.DayExerciseItemContent>
         </s.ListItem>
         <s.ListItem>
-          <DayCommonItemTitle>Target</DayCommonItemTitle>
+          <DayCommonItemTitle isFirstItem={isFirstItem}>
+            Target
+          </DayCommonItemTitle>
           <s.DayExerciseItemContent>200</s.DayExerciseItemContent>
         </s.ListItem>
         <s.ListItem>
-          <DayCommonItemTitle>Burned cal..</DayCommonItemTitle>
+          <DayCommonItemTitle isFirstItem={isFirstItem}>
+            Burned cal..
+          </DayCommonItemTitle>
           <s.DayExerciseItemContent>200</s.DayExerciseItemContent>
         </s.ListItem>
         <s.ListItem>
-          <DayCommonItemTitle>Time</DayCommonItemTitle>
+          <DayCommonItemTitle isFirstItem={isFirstItem}>
+            Time
+          </DayCommonItemTitle>
           <s.DayExerciseItemContent>200</s.DayExerciseItemContent>
         </s.ListItem>
       </s.ProductsContainer>

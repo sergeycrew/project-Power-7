@@ -69,3 +69,14 @@ export const DiaryCommonContainer = styled.div`
     padding-bottom: 68px;
   }
 `;
+
+export const NotFoundText = styled.p`
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 129%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: ${(p) => p.theme.colors.accentColor};
+`;

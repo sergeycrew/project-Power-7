@@ -12,25 +12,13 @@ import { selectCurrentDate } from '../../redux/diary/diarySelectors';
 const DiaryPage = () => {
   const dispatch = useDispatch();
   const currentDate = useSelector(selectCurrentDate);
-  // const currentDateObj = {
-  //   date: currentDate
-  // };
 
-  // const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   useEffect(() => {
     const currentDateObj = {
       date: currentDate,
     };
 
-    // const handleResize = () => {
-    //   setIsMobile(window.innerWidth < 768);
-    // };
-    dispatch(fetchAllDairyInfo(JSON.stringify(currentDateObj)));
-    // window.addEventListener('resize', handleResize);
-
-    // return () => {
-    //   window.removeEventListener('resize', handleResize);
-    // };
+    dispatch(fetchAllDairyInfo(currentDateObj));
   }, [dispatch, currentDate]);
   return (
     <s.Container>
@@ -41,12 +29,16 @@ const DiaryPage = () => {
       <s.DiaryCommonContainer>
         <s.DiaryItemContainer>
           <DiaryItem title="Products" link="Add products" to="/products">
-            <DayProductItem></DayProductItem>
-            <DayProductItem></DayProductItem>
-            {/* <DayProductItem isMobile={isMobile}></DayProductItem> */}
+            {/* <s.NotFoundText>Not found products</s.NotFoundText> */}
+            <DayProductItem isFirstItem={true}></DayProductItem>
+            <DayProductItem isFirstItem={false}></DayProductItem>
+            <DayProductItem isFirstItem={false}></DayProductItem>
+            <DayProductItem isFirstItem={false}></DayProductItem>
           </DiaryItem>
           <DiaryItem title="Exercises" link="Add exercises" to="/exercises">
-            <DayExerciseItem></DayExerciseItem>
+            {/* <s.NotFoundText>Not found exercises</s.NotFoundText> */}
+            <DayExerciseItem isFirstItem={true}></DayExerciseItem>
+            <DayExerciseItem isFirstItem={false}></DayExerciseItem>
           </DiaryItem>
         </s.DiaryItemContainer>
         <DayDashboard></DayDashboard>

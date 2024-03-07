@@ -6,23 +6,26 @@ export const ItemWrapper = styled.li`
   border-radius: 12px;
   padding: 16px;
   width: 335px;
+  height: 100%;
   min-height: 335px;
   max-height: 824px;
   background: ${(p) => p.theme.colors.cardBgColor};
-  /* overflow-y: scroll; */
-
-  /* $::-webkit-scrollbar {
-    width: 8px;
+  position: relative;
+  overflow: hidden;
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    width: 6px;
+    max-height: 60px;
   }
-
-  .book-category-list::-webkit-scrollbar-thumb {
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(239, 237, 232, 0.1);
     border-radius: 12px;
-    background: var(--scroll-bar-color);
-  } */
+  }
 
   @media screen and (min-width: 768px) {
     width: 704px;
     min-height: 234px;
+    max-height: 234px;
   }
 
   @media screen and (min-width: 1440px) {
