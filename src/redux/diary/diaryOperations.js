@@ -7,17 +7,17 @@ const setAuthHeader = (token) => {
 };
 
 const tempToken =
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWU1ZmY3YTIwODNjOWEyY2I2NTk4NjUiLCJ0eXBlIjoiYWNjZXNzIiwiaWF0IjoxNzA5ODI3Mjk1LCJleHAiOjE3MDk5MTAwOTV9.KsSi9BRpOYbln1xns904WEXqT-rzB_b6YkBViHq0OZE';
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWU3YWY1MTQwZmI2ZjdmNDRkOGJmOGYiLCJ0eXBlIjoiYWNjZXNzIiwiaWF0IjoxNzA5ODI4MDgxLCJleHAiOjE3MDk5MTA4ODF9.XZ5zY65k5DHoNxhW4HSo2FkecylMGw74PZzTxIM21rc';
 
 export const fetchAllDairyInfo = createAsyncThunk(
   '/diary/alldaydiary',
   async (date, thunkAPI) => {
     try {
-      // const state = thunkAPI.getState();
+      const state = thunkAPI.getState();
       // const storedToken = state.auth.token;
       // setAuthHeader(storedToken);
       setAuthHeader(tempToken);
-      const response = await axios.post('/api/diary/alldaydiary', date);
+      const response = await axios.post('diary/alldaydiary', date);
       console.log(response.data);
       return response.data;
     } catch (error) {
@@ -31,9 +31,9 @@ export const deleteProduct = createAsyncThunk(
   '/diary/deldiaryproduct',
   async (productId, thunkAPI) => {
     try {
-      const state = thunkAPI.getState();
-      const storedToken = state.auth.token;
-      setAuthHeader(storedToken);
+      // const state = thunkAPI.getState();
+      // const storedToken = state.auth.token;
+      // setAuthHeader(storedToken);
       const response = await axios.delete(
         `/diary/deldiaryproduct/${productId}`
       );
@@ -50,9 +50,9 @@ export const deleteExercise = createAsyncThunk(
   '/diary/deldiaryexercisest',
   async (exerciseId, thunkAPI) => {
     try {
-      const state = thunkAPI.getState();
-      const storedToken = state.auth.token;
-      setAuthHeader(storedToken);
+      // const state = thunkAPI.getState();
+      // const storedToken = state.auth.token;
+      // setAuthHeader(storedToken);
       const response = await axios.delete(
         `/diary/deldiaryexercisest/${exerciseId}`
       );
