@@ -9,6 +9,8 @@ export const HeaderBar = styled.header`
   margin-inline: auto;
 
   background-color: ${(p) => p.theme.colors.blackColor};
+  position: relative;
+
   @media screen and (min-width: 768px) {
     padding-inline: 32px;
     padding: 30px 34px;
