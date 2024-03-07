@@ -5,19 +5,19 @@ import axios from 'axios';
 // axios.defaults.baseURL = BASE_URL;
 
 export const getExercisesCategory = async () => {
-  const res = await axios.get(`/api/exercises/`);
+  const res = await axios.get(`exercises/`);
 
   return res.data;
 };
 
 export const getAllExercises = async () => {
-  const res = await axios.get('/api/exercises/all');
+  const res = await axios.get('exercises/all');
 
   return res.data;
 };
 
 export const addWorkout = async (workout) => {
-  const res = await axios.post('/api/diary/workout', workout);
+  const res = await axios.post('diary/workout', workout);
 
   return res.data;
 };
