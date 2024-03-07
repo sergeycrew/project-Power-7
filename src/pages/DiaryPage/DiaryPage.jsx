@@ -12,12 +12,20 @@ import { selectCurrentDate } from '../../redux/diary/diarySelectors';
 const DiaryPage = () => {
   const dispatch = useDispatch();
   const currentDate = useSelector(selectCurrentDate);
+  // const currentDateObj = {
+  //   date: currentDate
+  // };
+
   // const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   useEffect(() => {
+    const currentDateObj = {
+      date: currentDate,
+    };
+
     // const handleResize = () => {
     //   setIsMobile(window.innerWidth < 768);
     // };
-    dispatch(fetchAllDairyInfo(currentDate));
+    dispatch(fetchAllDairyInfo(JSON.stringify(currentDateObj)));
     // window.addEventListener('resize', handleResize);
 
     // return () => {

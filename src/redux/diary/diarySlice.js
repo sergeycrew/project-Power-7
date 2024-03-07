@@ -5,9 +5,12 @@ import {
   deleteProduct,
 } from './diaryOperations';
 
+const currentTimeInMilliseconds = Date.now();
+const currentTimeISOString = new Date(currentTimeInMilliseconds).toISOString();
 
 const diaryState = {
-  currentDate: new Date().toISOString(),
+  // currentDate: new Date().toISOString(),
+  currentDate: currentTimeISOString,
   diaryInfo: {
     burnedCalories: 0,
     consumedCalories: 0,

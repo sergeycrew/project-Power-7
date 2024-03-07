@@ -24,7 +24,6 @@ export const Title = styled.h1`
   color: ${(p) => p.theme.colors.whiteColor};
 
   @media screen and (min-width: 768px) {
-    padding: 72px 0 32px 0;
     font-size: 32px;
     line-height: 137%;
   }
@@ -36,6 +35,10 @@ export const TitleWrapper = styled.div`
   align-items: center;
   flex-direction: row-reverse;
   padding: 40px 0 40px 0;
+
+  @media screen and (min-width: 768px) {
+    padding: 52px 0 32px 0;
+  }
 `;
 
 export const DiaryItemContainer = styled.ul`

@@ -58,39 +58,6 @@ export const DaySwitch = () => {
 
   CustomInput.displayName = 'CustomInput';
 
-  // const currentDate = useSelector(selectCurrentDate);
-  // // const [selectedDate, setSelectedDate] = useState(Date.now());
-  // const dispatch = useDispatch();
-
-  // const CustomInput = forwardRef(({ onClick }, ref) => {
-  //   return (
-  //     <s.Wrapper onClick={onClick} ref={ref}>
-  //       {format(selectedDate, 'dd/MM/yyyy')}
-  //       <s.CalendarIcon>
-  //         <use href={`${icons}#icon-calendar`}></use>
-  //       </s.CalendarIcon>
-  //     </s.Wrapper>
-  //   );
-  // });
-
-  // //   console.log(selectedDate);
-  // CustomInput.displayName = 'CustomInput';
-
-  //  return (
-  //    <>
-  //      <DatePicker
-  //        selected={selectedDate}
-  //        onChange={(date) => {
-  //          setSelectedDate(date);
-  //        }}
-  //        customInput={<CustomInput />}
-  //        dateFormat={'dd MM yyyy'}
-  //        calendarStartDay={1}
-  //      />
-  //      <CalendarGlobalStyles />
-  //    </>
-  //  );
-
   return (
     <>
       <DatePicker
@@ -106,3 +73,36 @@ export const DaySwitch = () => {
     </>
   );
 };
+
+// const currentDate = useSelector(selectCurrentDate);
+// // const [selectedDate, setSelectedDate] = useState(Date.now());
+// const dispatch = useDispatch();
+
+// const CustomInput = forwardRef(({ onClick }, ref) => {
+//   return (
+//     <s.Wrapper onClick={onClick} ref={ref}>
+//       {format(selectedDate, 'dd/MM/yyyy')}
+//       <s.CalendarIcon>
+//         <use href={`${icons}#icon-calendar`}></use>
+//       </s.CalendarIcon>
+//     </s.Wrapper>
+//   );
+// });
+
+// //   console.log(selectedDate);
+// CustomInput.displayName = 'CustomInput';
+
+//  return (
+//    <>
+//      <DatePicker
+//        selected={selectedDate}
+//        onChange={(date) => {
+//          setSelectedDate(date);
+//        }}
+//        customInput={<CustomInput />}
+//        dateFormat={'dd MM yyyy'}
+//        calendarStartDay={1}
+//      />
+//      <CalendarGlobalStyles />
+//    </>
+//  );
