@@ -12,14 +12,14 @@ import { GlobalStyle } from './styles/globalStyles.jsx';
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}> 
-    <BrowserRouter basename="/project-Power-7">
-      <ThemeProvider theme={theme}>
-        <App />
-        <GlobalStyle />
-      </ThemeProvider>
-    </BrowserRouter>
-     </PersistGate>
-    </Provider> 
+      <PersistGate loading={null} persistor={persistor}>
+        <BrowserRouter basename="/project-Power-7">
+          <ThemeProvider theme={theme}>
+            <App />
+            <GlobalStyle />
+          </ThemeProvider>
+        </BrowserRouter>
+      </PersistGate>
+    </Provider>
   </React.StrictMode>
 );
