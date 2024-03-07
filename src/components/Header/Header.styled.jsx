@@ -8,9 +8,7 @@ export const HeaderBar = styled.header`
   padding-inline: 20px;
   padding: 20px 24px;
   margin-inline: auto;
-  background-color: ${p => p.theme.colors.blackColor};
-  position: relative;
-  
+  z-index: 10;
 ;
 
     @media screen and (min-width: 768px) {
