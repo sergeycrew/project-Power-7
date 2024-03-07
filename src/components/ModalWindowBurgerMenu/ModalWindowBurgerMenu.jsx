@@ -38,7 +38,7 @@ export const ModalWindowMenuUser = ({ closeModal }) => {
           </UserNavLinkModal>
         </UserNavModalWindow>
         <LogoutModalWindowWrapper>
-          <Logout color="#efede8"/>
+          <Logout color="#efede8" closeModal={closeModal}/>
         </LogoutModalWindowWrapper>
       </WrapperModalWindowUserMenu>
     </>
