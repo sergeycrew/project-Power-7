@@ -10,12 +10,15 @@ import {
   Decor,
   TopInfoWrapper,
   Caption,
+  SvgIcon,
+  TitleWrapper,
+  SvgArrow,
 } from './ProductsItem.styled';
+import sprite from '../../images/sprite.svg';
 // import { Link } from 'react-router-dom';
 
 export const ProductCard = ({
   product: { id, title, calories, category, weight, recommended = true },
-  onDelete,
 }) => {
   //   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -33,10 +36,20 @@ export const ProductCard = ({
         <Text>
           <b>{recommended ? 'Recommended' : 'Not recommended'}</b>
         </Text>
-        <Button>Add</Button>
+        <Button>
+          Add
+          <SvgArrow>
+            <use href={`${sprite}#icon-arrow-right`}></use>
+          </SvgArrow>
+        </Button>
       </TopInfoWrapper>
 
-      <Title>{title}</Title>
+      <TitleWrapper>
+        <SvgIcon>
+          <use href={`${sprite}#icon-run-exercises`}></use>
+        </SvgIcon>
+        <Title>{title}</Title>
+      </TitleWrapper>
 
       <MetaWrapper>
         <Caption>Calories:</Caption> <Text>{calories}</Text>

@@ -1,28 +1,31 @@
-//import { useDispatch } from 'react-redux';
-import { LogoutButtonLink, Text, LogoWrapper, LogOutIcon } from './Logout.styled';
+import { useDispatch } from 'react-redux';
+import {
+  LogoutButtonLink,
+  Text,
+  LogoWrapper,
+  LogOutIcon,
+} from './Logout.styled';
+
 import sprite from 'images/sprite/sprite.svg';
 
-//import { logOut } from 'redux/auth/authOperations';
+import { logOut } from '../../redux/auth/authOperation';
 
-export const Logout = () => {
-  //const dispatch = useDispatch();
+export const Logout = ({ color, closeModal }) => {
+  const dispatch = useDispatch();
 
-  // const handleClick = () => {
-  //   dispatch(logOut());
-  // };
+  const handleClick = () => {
+    dispatch(logOut());
+    closeModal();
+  };
 
   return (
     <LogoWrapper>
-      <LogoutButtonLink
-      //onClick={handleClick}
-    >
-      <Text>Logout</Text>
-        <LogOutIcon>
-        <use href={`${sprite}#logout`} />
-      </LogOutIcon>
-    </LogoutButtonLink>
+      <LogoutButtonLink to="/" onClick={handleClick}>
+        <Text>Logout</Text>
+        <LogOutIcon style={{ '--color1': color }}>
+          <use href={`${sprite}#logout`} />
+        </LogOutIcon>
+      </LogoutButtonLink>
     </LogoWrapper>
-    
   );
 };
-

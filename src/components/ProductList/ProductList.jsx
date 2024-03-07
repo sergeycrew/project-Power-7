@@ -1,12 +1,14 @@
-import products from '../../jsonFromBd/products.json';
 import { ProductCard } from '../ProductsItem/ProductsItem';
 import { List } from './ProductList.styled';
+import { useSelector } from 'react-redux';
+import { selectProducts } from '../../redux/products/productsSelectors';
 
 export const ProductList = () => {
+  const products = useSelector(selectProducts);
   return (
     <List>
       {products.map((product) => (
-        <li key={product._id.$oid}>
+        <li key={product._id}>
           <ProductCard product={product} />
         </li>
       ))}
