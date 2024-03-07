@@ -1,4 +1,4 @@
-//import { useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import {
   IconSettings,
   IconUserAvatar,
@@ -8,10 +8,10 @@ import {
 } from './UserBar.styled';
 
 import sprite from 'images/sprite/sprite.svg';
-//import { selectUser } from 'redux/auth/authSelectors';
+import { selectUser } from '../../redux/auth/authSelectors';
 
 export const UserBar = () => {
-  //const user = useSelector(selectUser);
+  const user = useSelector(selectUser);
 
   return (
     <UserBarSection >
@@ -22,10 +22,13 @@ export const UserBar = () => {
         
       </UserLink>
       <UserAvatar>
+        {user.avatarUrl ? (
+          <img src={user.avatarUrl} alt="avatar" />
+        ) : (
           <IconUserAvatar>
             <use href={`${sprite}#user`} />
           </IconUserAvatar>
-        
+        )}
       </UserAvatar>
     </UserBarSection>
   );

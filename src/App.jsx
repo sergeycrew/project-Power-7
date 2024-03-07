@@ -31,6 +31,7 @@ function App() {
           <Route path="/products" element={<ProductsPage />} />
           <Route path="/exercises" element={<ExercisesPage />}>
             <Route index element={<Navigate to="bodyPart" />} />
+
             <Route path="bodyPart" element={<ExercisesCategories query={'Body parts'} />}/>
             <Route path="bodyPart/:filter" element={<ExercisesListByCategory />} />
             <Route path="target" element={<ExercisesCategories query={'Muscles'} />} />
@@ -43,6 +44,7 @@ function App() {
 
           </Route>
          <Route path="*" element={<ErrorPage />} />
+
       </Routes>
     </>
   );

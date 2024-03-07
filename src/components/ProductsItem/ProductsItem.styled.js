@@ -51,10 +51,26 @@ export const Text = styled.p`
 `;
 
 export const Button = styled.button`
-  margin: 0;
+  display: flex;
+  align-items: center;
+  padding: 0;
   border: none;
   color: ${(p) => p.theme.colors.hoverColor};
-  background-color: ${(p) => p.theme.colors.cardBgColor};
+  background: transparent;
+`;
+
+export const SvgArrow = styled.svg`
+  margin-left: ${(p) => p.theme.spacing(2)};
+  width: 16px;
+  height: 16px;
+`;
+
+export const TitleWrapper = styled.div`
+  display: flex;
+  column-gap: ${(p) => p.theme.spacing(4)};
+  height: 32px;
+  overflow-y: hidden;
+  margin-bottom: ${(p) => p.theme.spacing(2)};
 `;
 
 export const Title = styled.p`
@@ -64,12 +80,18 @@ export const Title = styled.p`
   }
 `;
 
+export const SvgIcon = styled.svg`
+  width: 24px;
+  height: 24px;
+`;
+
 export const MetaWrapper = styled.div`
   display: flex;
-  word-wrap: break-word;
+  height: 18px;
+  overflow-y: hidden;
 `;
 
 export const Caption = styled.p`
-  margin-right: 4px;
+  margin-right: ${(p) => p.theme.spacing(1)};
   color: ${(p) => p.theme.colors.captionColor};
 `;
