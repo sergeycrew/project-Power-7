@@ -17,6 +17,13 @@ import * as api from './apiAuth/apiAuth';
 //   axios.defaults.headers.common.Authorization = '';
 // };
 
+// const setToken = (token) => {
+//   if (token) {
+//     return (axios.defaults.headers.common.authorization = `Bearer ${token}`);
+//   }
+//   axios.defaults.headers.common.authorization = '';
+// };
+
 export const register = createAsyncThunk(
   'auth/signup',
   async (data, { rejectWithValue }) => {
@@ -81,15 +88,15 @@ export const logOut = createAsyncThunk(
 
 export const currentUser = createAsyncThunk(
   'auth/current',
-  async (_, { rejectWithValue, getState }) => {
+  async (_, { rejectWithValue }) => {
     // const state = thunkAPI.getState();
     // const persistedToken = state.auth.token;
     // if (persistedToken === null) {
     //   return thunkAPI.rejectWithValue('Unable to fetch user');
     // }
     try {
-      const { auth } = getState();
-      const result = await api.getCurrent(auth.token);
+      const result = await api.getCurrent();
+      console.log(result);
       return result;
       // setAuthHeader(temptoken);
       // setAuthHeader(persistedToken);
@@ -148,3 +155,17 @@ export const userVerifyAgain = createAsyncThunk(
   }
 );
 // credentials
+
+export const refreshUser = createAsyncThunk(
+  'users/refresh',
+  async (_, thunkApi) => {
+    const state = thunkApi.getState();
+    const persistorToken = state.auth.token;
+    if (persistorToken === null) {
+      return thunkApi.rejectWithValue('Unable to fetch user');
+    }
+    // setAuthToken(persistorToken);
+    const result = await api.refresh(persistorToken);
+    return result.token;
+  }
+);

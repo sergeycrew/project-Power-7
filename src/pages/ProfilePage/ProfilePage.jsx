@@ -15,42 +15,42 @@ const ProfilePage = () => {
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(currentUser());
-  }, [dispatch]);
+  const { isRefreshing, isLoggedIn } = useAuth();
 
-  const { isRefreshing } = useAuth();
+  useEffect(() => {
+    if (isLoggedIn) {
+      dispatch(currentUser());
+    }
+  }, [dispatch, isLoggedIn]);
 
   return isRefreshing ? (
     <b>Refreshing user...</b>
   ) : (
-
-      <s.Container>
-        <s.Title>Profile Setings</s.Title>
-        <s.Wrapper>
-          <div>
-            <UserCard />
-            <s.WrappInfo>
-              <DailyBaseInfo
-                iconId="icon-fork-knife"
-                text="Daily calorie intake"
-                value={user.bmr}
-              />
-              <DailyBaseInfo
-                iconId="icon-dumbbell"
-                text="Daily physical activity"
-                value={user.timeSport}
-                amoutName="min"
-              />
-            </s.WrappInfo>
-            <UserNote />
-          </div>
-          <s.WrappForm>
-            <UserForm />
-          </s.WrappForm>
-        </s.Wrapper>
-      </s.Container>
- 
+    <s.Container>
+      <s.Title>Profile Setings</s.Title>
+      <s.Wrapper>
+        <div>
+          <UserCard />
+          <s.WrappInfo>
+            <DailyBaseInfo
+              iconId="icon-fork-knife"
+              text="Daily calorie intake"
+              value={user.bmr}
+            />
+            <DailyBaseInfo
+              iconId="icon-dumbbell"
+              text="Daily physical activity"
+              value={user.timeSport}
+              amoutName="min"
+            />
+          </s.WrappInfo>
+          <UserNote />
+        </div>
+        <s.WrappForm>
+          <UserForm />
+        </s.WrappForm>
+      </s.Wrapper>
+    </s.Container>
   );
 };
 

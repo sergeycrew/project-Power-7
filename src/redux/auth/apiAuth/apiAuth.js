@@ -12,23 +12,28 @@ const setToken = (token) => {
   axios.defaults.headers.common.authorization = '';
 };
 
-axios.interceptors.response.use(
-  (response) => response,
-  async (error) => {
-    if (error.response.status == 401) {
-      const refreshToken = localStorage.getItem('persist:auth');
-      try {
-        const { data } = await axios.post('/auth/refresh', { refreshToken });
-        setToken(data.accessToken);
-        localStorage.setItem('persist:auth', data.refreshToken);
-        return axios(error.config);
-      } catch (error) {
-        return Promise.reject(error);
-      }
-    }
-    return Promise.reject(error);
-  }
-);
+// axios.interceptors.response.use(
+//   (response) => response,
+//   async (error) => {
+//     if (error.response.status === 401) {
+//       const token = localStorage.getItem('persist:auth');
+//       const refreshToken = JSON.parse(token).token.split('"')[1];
+//       console.log(refreshToken.split('"')[1]);
+//       try {
+//         const data = await axios.post('/users/refresh', {
+//           refreshToken,
+//         });
+//         console.log(data.tokens.accessToken);
+//         setToken(data.tokens.accessToken);
+//         localStorage.setItem('persist:auth', data.tokens.refreshToken);
+//         return axios(error.config);
+//       } catch (error) {
+//         return Promise.reject(error);
+//       }
+//     }
+//     return Promise.reject(error);
+//   }
+// );
 
 export const register = async (data) => {
   const { data: result } = await axios.post('/users/register', data);
@@ -48,14 +53,26 @@ export const logout = async () => {
   return data;
 };
 
-export const getCurrent = async (token) => {
+export const getCurrent = async () => {
   try {
-    setToken(token);
     const { data } = await axios.get('/users/current');
     return data;
   } catch (error) {
     setToken();
     throw error;
+  }
+};
+
+export const refresh = async (persistorToken) => {
+  try {
+    const tokens = await axios.post('/users/refresh', {
+      refreshToken: persistorToken,
+    });
+    console.log(tokens);
+    setToken(tokens.data.accessToken);
+    return { token: tokens.data.refreshToken };
+  } catch (error) {
+    return;
   }
 };
 
