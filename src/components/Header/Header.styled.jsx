@@ -8,7 +8,9 @@ export const HeaderBar = styled.header`
   padding: 20px 24px;
   margin-inline: auto;
   z-index: 10;
+
 ;
+
 
   @media screen and (min-width: 768px) {
     padding-inline: 32px;
