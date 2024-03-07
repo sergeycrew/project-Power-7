@@ -24,7 +24,9 @@ export const fetchProducts = createAsyncThunk(
     console.dir(params);
     try {
       // setAuthHeader(temptoken);
+
       const response = await axios.get('products/all', { params });
+
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
