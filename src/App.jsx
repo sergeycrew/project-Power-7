@@ -57,8 +57,8 @@ function App() {
             />
           </Route>
           <Route path="/profile" element={<ProfilePage />} />
+          <Route path="*" element={<ErrorPage />} />
         </Route>
-        <Route path="*" element={<ErrorPage />} />
       </Routes>
     </>
   );
