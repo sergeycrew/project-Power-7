@@ -11,6 +11,7 @@ import {
   REGISTER,
 } from 'redux-persist';
 import { authReducer } from './auth/authSlice';
+import { exercisesReducer } from './exercises/slice';
 
 const authPersistConfig = {
   key: 'auth',
@@ -20,6 +21,7 @@ const authPersistConfig = {
 
 export const rootReducer = combineReducers({
   auth: persistReducer(authPersistConfig, authReducer),
+  exercises: exercisesReducer,
 });
 
 export const store = configureStore({
