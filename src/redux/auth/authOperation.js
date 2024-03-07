@@ -6,7 +6,7 @@ axios.defaults.baseURL = 'https://backend-power-pulse-7.onrender.com/api/';
 
 
 const temptoken =
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWU3YWY1MTQwZmI2ZjdmNDRkOGJmOGYiLCJ0eXBlIjoiYWNjZXNzIiwiaWF0IjoxNzA5NzQyNzkzLCJleHAiOjE3MDk4MjU1OTN9.cPR4Cz8wSDqtjENdqpJxs5AlmbjMRwVqxpezsGA3HuM';
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWU3YWY1MTQwZmI2ZjdmNDRkOGJmOGYiLCJ0eXBlIjoiYWNjZXNzIiwiaWF0IjoxNzA5ODI4MDgxLCJleHAiOjE3MDk5MTA4ODF9.XZ5zY65k5DHoNxhW4HSo2FkecylMGw74PZzTxIM21rc';
 
 
 const setAuthHeader = (token) => {
@@ -73,13 +73,13 @@ export const currentUser = createAsyncThunk(
     const state = thunkAPI.getState();
     const persistedToken = state.auth.token;
 
-    if (persistedToken === null) {
-      return thunkAPI.rejectWithValue('Unable to fetch user');
-    }
+    // if (persistedToken === null) {
+    //   return thunkAPI.rejectWithValue('Unable to fetch user');
+    // }
 
     try {
-      // setAuthHeader(temptoken);
-      setAuthHeader(persistedToken);
+      setAuthHeader(temptoken);
+      // setAuthHeader(persistedToken);
 
       const { data } = await axios.get('users/current');
 
