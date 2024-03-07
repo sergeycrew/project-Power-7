@@ -18,6 +18,7 @@ import { getExercisesCategory } from '../../jsonFromBd/testApi'; // to do //
 import { toast } from 'react-toastify';
 
 import throttle from 'lodash.throttle';
+import { exercises } from '../../redux/exercises/operations';
 
 export const ExercisesCategories = ({ query }) => {
   const location = useLocation();
@@ -29,7 +30,7 @@ export const ExercisesCategories = ({ query }) => {
 
   const lastIndex = currentPage * recordsPerPage;
   const firstIndex = lastIndex - recordsPerPage;
-  const exercises = exercisesCategories?.slice(firstIndex, lastIndex);
+  const allExercises = exercisesCategories?.slice(firstIndex, lastIndex);
   const npage = Math.ceil(exercisesCategories?.length / recordsPerPage);
   const numbers = Array.from({ length: npage }, (_, index) => index + 1);
 
@@ -58,7 +59,8 @@ export const ExercisesCategories = ({ query }) => {
 
     const CategoriesList = async () => {
       try {
-        const allCategories = await getExercisesCategory(); 
+        // const allCategories = await getExercisesCategory(); 
+        const allCategories = await exercises(); 
         const categories = filterArrayByQuery(allCategories, query);
         setExercisesCategories(categories);
       } catch (error) {
@@ -76,7 +78,7 @@ export const ExercisesCategories = ({ query }) => {
   return (
     <>
       <CategoriesList>
-        {exercises?.map(card => (
+        {allExercises?.map(card => (
           <li key={card._id}>
             <CardLink to={`${card.name}`} state={{ from: location }}>
               <ExerciseCard

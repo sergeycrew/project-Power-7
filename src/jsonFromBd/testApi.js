@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-const BASE_URL = 'https://backend-power-pulse-7.onrender.com';
+// const BASE_URL = 'https://backend-power-pulse-7.onrender.com';
 
-axios.defaults.baseURL = BASE_URL;
+// axios.defaults.baseURL = BASE_URL;
 
 
 export const getExercisesCategory = async () => {
