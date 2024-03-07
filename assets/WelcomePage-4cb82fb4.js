@@ -1,4 +1,4 @@
-import{u as o,L as r,j as i,C as a,s}from"./index-9834b270.js";import{b as d,a as p,c as x,d as h}from"./hero-desktop-2x-c0317d06.js";const c="/project-Power-7/assets/bg-mobile-1x-014f5a2c.png",l="/project-Power-7/assets/bg-mobile-2x-ba0edaad.png",g=o.div`
+import{u as o,L as r,j as i,C as a,i as d}from"./index-df5aa589.js";import{b as s,a as p,c as x,d as c}from"./hero-desktop-2x-c0317d06.js";const h="/project-Power-7/assets/bg-mobile-1x-014f5a2c.png",l="/project-Power-7/assets/bg-mobile-2x-ba0edaad.png",g=o.div`
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -7,18 +7,18 @@ import{u as o,L as r,j as i,C as a,s}from"./index-9834b270.js";import{b as d,a a
 
   background-repeat: no-repeat;
   background-position: bottom right;
-  background-image: image-set(url(${c}) 1x, url(${l}) 2x);
+  background-image: image-set(url(${h}) 1x, url(${l}) 2x);
 
   @media screen and (min-width: 768px) {
     gap: 64px;
     padding-top: 189px;
-    background-image: image-set(url(${d}) 1x, url(${p}) 2x);
+    background-image: image-set(url(${s}) 1x, url(${p}) 2x);
   }
 
   @media screen and (min-width: 1440px) {
     padding-top: 200px;
     background-size: contain;
-    background-image: image-set(url(${x}) 1x, url(${h}) 2x);
+    background-image: image-set(url(${x}) 1x, url(${c}) 2x);
   }
 `,m=o.div`
   padding: 0 20px;
@@ -127,4 +127,4 @@ import{u as o,L as r,j as i,C as a,s}from"./index-9834b270.js";import{b as d,a a
     font-size: 20px;
     line-height: 1.2;
   }
-`,k=()=>i.jsx(a,{children:i.jsxs(g,{children:[i.jsxs(m,{children:[i.jsx(u,{children:i.jsx("use",{href:`${s}#slogan-line`})}),i.jsx(b,{children:"Transforming your body shape with Power Pulse"})]}),i.jsxs(w,{children:[i.jsx(n,{children:i.jsx(t,{to:"/signUp",children:"Sign Up"})}),i.jsx(n,{children:i.jsx(t,{to:"/signIn",children:"Sign In"})})]})]})});export{k as default};
+`,k=()=>i.jsx(a,{children:i.jsxs(g,{children:[i.jsxs(m,{children:[i.jsx(u,{children:i.jsx("use",{href:`${d}#slogan-line`})}),i.jsx(b,{children:"Transforming your body shape with Power Pulse"})]}),i.jsxs(w,{children:[i.jsx(n,{children:i.jsx(t,{to:"/signUp",children:"Sign Up"})}),i.jsx(n,{children:i.jsx(t,{to:"/signIn",children:"Sign In"})})]})]})});export{k as default};

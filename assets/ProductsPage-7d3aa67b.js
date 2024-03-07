@@ -1,4 +1,4 @@
-import{u as o,j as t,d as a,e as h,a as p,w as u,x as m,i as $}from"./index-9834b270.js";import{F as j,a as b,E as y,c as v,b as r,d as w}from"./index.esm-bc3b8fb3.js";const _=e=>e.productList.items,C=e=>e.productList.isLoading,k=e=>e.$recommended?e.theme.colors.recommendedColor:e.theme.colors.notRecommendedColor,F=o.div`
+import{u as o,j as t,s as a,d as h,a as p,z as u,A as m,g as $}from"./index-df5aa589.js";import{F as j,a as b,E as y,c as v,b as r,d as w}from"./index.esm-453a53bc.js";const _=e=>e.productList.items,C=e=>e.productList.isLoading,k=e=>e.$recommended?e.theme.colors.recommendedColor:e.theme.colors.notRecommendedColor,F=o.div`
   height: 141px;
   width: 405px;
   padding: ${e=>e.theme.spacing(4)};
@@ -49,22 +49,22 @@ import{u as o,j as t,d as a,e as h,a as p,w as u,x as m,i as $}from"./index-9834
   height: 32px;
   overflow-y: hidden;
   margin-bottom: ${e=>e.theme.spacing(2)};
-`,R=o.p`
+`,z=o.p`
   font-size: 24px;
   &::first-letter {
     text-transform: uppercase;
   }
-`,W=o.svg`
+`,R=o.svg`
   width: 24px;
   height: 24px;
-`,z=o.div`
+`,W=o.div`
   display: flex;
   height: 18px;
   overflow-y: hidden;
 `,s=o.p`
   margin-right: ${e=>e.theme.spacing(1)};
   color: ${e=>e.theme.colors.captionColor};
-`,M=({product:{id:e,title:i,calories:l,category:x,weight:g,recommended:f=!0}})=>t.jsxs(F,{children:[t.jsxs(S,{children:[t.jsx(L,{children:"diet"}),t.jsx(P,{$recommended:f}),t.jsx(c,{children:t.jsx("b",{children:f?"Recommended":"Not recommended"})}),t.jsxs(T,{children:["Add",t.jsx(B,{children:t.jsx("use",{href:`${a}#icon-arrow-right`})})]})]}),t.jsxs(E,{children:[t.jsx(W,{children:t.jsx("use",{href:`${a}#icon-run-exercises`})}),t.jsx(R,{children:i})]}),t.jsxs(z,{children:[t.jsx(s,{children:"Calories:"})," ",t.jsx(c,{children:l}),t.jsx(s,{children:"Category: "})," ",t.jsx(c,{children:x}),t.jsx(s,{children:"Weight:"})," ",t.jsx(c,{children:g})]})]}),A=o.ul`
+`,A=({product:{id:e,title:i,calories:l,category:x,weight:g,recommended:f=!0}})=>t.jsxs(F,{children:[t.jsxs(S,{children:[t.jsx(L,{children:"diet"}),t.jsx(P,{$recommended:f}),t.jsx(c,{children:t.jsx("b",{children:f?"Recommended":"Not recommended"})}),t.jsxs(T,{children:["Add",t.jsx(B,{children:t.jsx("use",{href:`${a}#icon-arrow-right`})})]})]}),t.jsxs(E,{children:[t.jsx(R,{children:t.jsx("use",{href:`${a}#icon-run-exercises`})}),t.jsx(z,{children:i})]}),t.jsxs(W,{children:[t.jsx(s,{children:"Calories:"})," ",t.jsx(c,{children:l}),t.jsx(s,{children:"Category: "})," ",t.jsx(c,{children:x}),t.jsx(s,{children:"Weight:"})," ",t.jsx(c,{children:g})]})]}),M=o.ul`
   padding: 0;
   margin: 0;
   display: flex;
@@ -72,7 +72,7 @@ import{u as o,j as t,d as a,e as h,a as p,w as u,x as m,i as $}from"./index-9834
   color: #efede8;
   row-gap: 32px;
   column-gap: 16px;
-`,I=()=>{const e=h(_);return t.jsx(A,{children:e.map(i=>t.jsx("li",{children:t.jsx(M,{product:i})},i._id))})},D=o(j)`
+`,I=()=>{const e=h(_);return t.jsx(M,{children:e.map(i=>t.jsx("li",{children:t.jsx(A,{product:i})},i._id))})},D=o(j)`
   display: flex;
   gap: ${e=>e.theme.spacing(4)};
 `,N=o.p`
