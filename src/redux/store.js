@@ -16,6 +16,7 @@ import { exercisesReducer } from './exercises/slice';
 
 import { productFilterReducer } from './products/productFilterSlice';
 import { productListReducer } from './products/productListSlice';
+import { productsReducer } from './products/productSlice';
 
 
 const authPersistConfig = {
@@ -31,6 +32,7 @@ export const rootReducer = combineReducers({
 
   productFilter: productFilterReducer,
   productList: productListReducer,
+  products: productsReducer
 
 });
 
