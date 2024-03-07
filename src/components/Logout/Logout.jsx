@@ -4,8 +4,8 @@ import sprite from 'images/sprite/sprite.svg';
 
 //import { logOut } from 'redux/auth/authOperations';
 
-export const Logout = () => {
-  //const dispatch = useDispatch();
+export const Logout = ({ color }) => {
+  // const dispatch = useDispatch();
 
   // const handleClick = () => {
   //   dispatch(logOut());
@@ -17,7 +17,7 @@ export const Logout = () => {
       //onClick={handleClick}
     >
       <Text>Logout</Text>
-        <LogOutIcon>
+        <LogOutIcon style={{ '--color1': color }}>
         <use href={`${sprite}#logout`} />
       </LogOutIcon>
     </LogoutButtonLink>
