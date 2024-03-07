@@ -20,7 +20,7 @@ export const DaySwitch = () => {
     return (
       <s.DateContainer>
         <s.Wrapper onClick={onClick} ref={ref}>
-          <p>{format(currentDate, 'dd/MM/yyyy')}</p>
+          <p>{format(new Date(currentDate), 'dd/MM/yyyy')}</p>
           <s.CalendarIcon>
             <use href={`${icons}#icon-calendar`}></use>
           </s.CalendarIcon>
@@ -63,7 +63,7 @@ export const DaySwitch = () => {
       <DatePicker
         selected={currentDate}
         onChange={(date) => {
-          dispatch(changeCalendarDay(date));
+          dispatch(changeCalendarDay(date.getTime()));
         }}
         customInput={<CustomInput />}
         dateFormat={'dd MM yyyy'}

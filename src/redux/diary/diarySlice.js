@@ -5,22 +5,23 @@ import {
   deleteProduct,
 } from './diaryOperations';
 
-const currentTimeInMilliseconds = Date.now();
-const currentTimeISOString = new Date(currentTimeInMilliseconds).toISOString();
+// const currentTimeInMilliseconds = Date.now();
+// const currentTimeISOString = new Date(currentTimeInMilliseconds).toISOString();
 
 const diaryState = {
-  // currentDate: new Date().toISOString(),
-  currentDate: currentTimeISOString,
+  currentDate: Date.now(),
+  // currentDate: currentTimeISOString,
   diaryInfo: {
     burnedCalories: 0,
     consumedCalories: 0,
+    doneExercisesTime: 0,
     products: [],
     exercises: [],
     isLoading: false,
     error: null,
   },
 };
-
+// currentDate: new Date().toISOString(),
 const handlePending = (state) => {
   state.isLoading = true;
   state.error = null;
@@ -36,6 +37,7 @@ const handleFetchAllFulfilled = (state, { payload }) => {
   state.diaryInfo.error = null;
   state.diaryInfo.burnedCalories = payload.data.burnedCalories;
   state.diaryInfo.consumedCalories = payload.data.consumedCalories;
+  state.diaryInfo.doneExercisesTime = payload.data.doneExercisesTime;
   state.diaryInfo.products = payload.data.products;
   state.diaryInfo.exercises = payload.data.exercises;
 };
@@ -63,17 +65,21 @@ export const diarySlice = createSlice({
   initialState: diaryState,
   reducers: {
     changeCalendarDay(state, action) {
-      state.currentDate = action.payload;
+      const date = new Date(action.payload);
+      state.currentDate = date.getTime();
+      // state.currentDate = action.payload;
     },
     previousDay(state) {
       let date = new Date(state.currentDate);
       date.setDate(date.getDate() - 1);
-      state.currentDate = date.toISOString();
+      state.currentDate = date.getTime();
+      // state.currentDate = date.toISOString();
     },
     nextDay(state) {
       let date = new Date(state.currentDate);
       date.setDate(date.getDate() + 1);
-      state.currentDate = date.toISOString();
+      state.currentDate = date.getTime();
+      // state.currentDate = date.toISOString();
     },
   },
   extraReducers: (builder) => {

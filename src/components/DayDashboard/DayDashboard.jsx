@@ -1,26 +1,22 @@
+import { useSelector } from 'react-redux';
+import {
+  selectBurnedCalories,
+  selectConsumedCalories,
+  selectDoneExercisesTime,
+} from '../../redux/diary/diarySelectors';
 import icons from '../../images/sprite/sprite.svg';
 import { DashboardCard } from './DashboardCard/DashboardCard';
 import * as s from './DayDashboard.styled';
 
 export const DayDashboard = () => {
-  //   const arr = [
-  //     { subtitle: 'Daily calorie intake', icon: `${icons}#icon-fork-knife` },
-  //     { subtitle: 'Daily physical activity', icon: `${icons}#icon-dumbbell` },
-  //     { subtitle: 'Сalories consumed', icon: `${icons}#icon-apple` },
-  //     { subtitle: 'Сalories burned', icon: `${icons}#icon-fire` },
-  //     { subtitle: 'Calories remaining', icon: `${icons}#icon-bubble` },
-  //     { subtitle: 'Sports remaining', icon: `${icons}#icon-human` },
-  //   ];
+  let burnedCalories = useSelector(selectBurnedCalories);
+  let consumedCalories = useSelector(selectConsumedCalories);
+  let doneExercisesTime = useSelector(selectDoneExercisesTime);
+  let sportRemaining = 110 - doneExercisesTime;
+
   return (
     <s.DashboardWrapper>
       <s.DashboardList>
-        {/* {arr.map((item, index) => (
-          <DashboardCard
-            key={index}
-            subtitle={item.subtitle}
-            icon={item.icon}
-          />
-        ))} */}
         <DashboardCard
           subtitle="Daily calorie intake"
           icon={`${icons}#food`}
@@ -28,23 +24,22 @@ export const DayDashboard = () => {
         <DashboardCard
           subtitle="Daily physical activity"
           icon={`${icons}#dumbbell`}
-        ></DashboardCard>
-        <DashboardCard
-          subtitle="Сalories consumed"
-          icon={`${icons}#apple`}
-        ></DashboardCard>
-        <DashboardCard
-          subtitle="Сalories burned"
-          icon={`${icons}#fire`}
-        ></DashboardCard>
+        >
+          110 min
+        </DashboardCard>
+        <DashboardCard subtitle="Сalories consumed" icon={`${icons}#apple`}>
+          {consumedCalories}
+        </DashboardCard>
+        <DashboardCard subtitle="Сalories burned" icon={`${icons}#fire`}>
+          {burnedCalories}
+        </DashboardCard>
         <DashboardCard
           subtitle="Calories remaining"
           icon={`${icons}#bubble`}
         ></DashboardCard>
-        <DashboardCard
-          subtitle="Sports remaining"
-          icon={`${icons}#figure`}
-        ></DashboardCard>
+        <DashboardCard subtitle="Sports remaining" icon={`${icons}#figure`}>
+          {`${sportRemaining} min`}
+        </DashboardCard>
       </s.DashboardList>
       <s.InfoWrapper>
         <s.SvgInfo>
