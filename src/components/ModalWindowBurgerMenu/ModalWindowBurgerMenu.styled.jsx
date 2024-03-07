@@ -129,3 +129,21 @@ export const LogoutModalWindowWrapper = styled.div`
     height: 24px;
   }
 `;
+
+export const LogoutBtn = styled.button`
+  position: absolute;
+  bottom: 26px;
+  left: 32px;
+  display: inline-flex;
+  align-items: center;
+  background-color: transparent;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.33;
+  color: rgba(239, 237, 232, 1);
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+  }
+`;
