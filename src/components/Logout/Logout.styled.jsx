@@ -39,4 +39,3 @@ height: 20px;
     height: 24px;
   }
 `;
-
