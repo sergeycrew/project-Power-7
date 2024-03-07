@@ -20,6 +20,7 @@ const initialUser = {
   sex: 'male',
   levelActivity: 1,
   avatarUrl: '',
+  bmr: '',
 };
 
 const initialState = {
@@ -66,7 +67,7 @@ const handleCurrentUserPending = (state) => {
 
 const handleCurrentUserRejected = (state, { payload }) => {
   state.user = initialUser;
-  state.token = null;
+  // state.token = null;
   state.isLoggedIn = false;
   state.isRefreshing = false;
   state.error = payload;
@@ -95,10 +96,6 @@ const handleUpdateUserParamsFulfilled = (state, { payload }) => {
   // state.token = payload.token;
   state.error = null;
 };
-
-
-
-
 
 const handleUpdateUserAvatarPending = (state) => {
   state.error = null;
@@ -164,7 +161,7 @@ const authSlice = createSlice({
 
       .addCase(userVerifyAgain.pending, handleUserVerifyAgainPending)
       .addCase(userVerifyAgain.rejected, handleUserVerifyAgainRejected)
-      .addCase(userVerifyAgain.fulfilled, handleUserVerifyAgainFulfilled)
+      .addCase(userVerifyAgain.fulfilled, handleUserVerifyAgainFulfilled),
 });
 
 export const authReducer = authSlice.reducer;

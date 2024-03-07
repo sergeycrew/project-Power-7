@@ -1,29 +1,31 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { theme } from '../../styles/Theme';
 
 export const ItemWrapper = styled.li`
-  border: 1px solid rgba(239, 237, 232, 0.2);
+  border: 1px solid ${(p) => p.theme.colors.cardBorderColor};
   border-radius: 12px;
   padding: 16px;
   width: 335px;
+  height: 100%;
   min-height: 335px;
   max-height: 824px;
-  background: rgba(239, 237, 232, 0.05);
-  /* overflow-y: scroll; */
-
-  /* $::-webkit-scrollbar {
-    width: 8px;
+  background: ${(p) => p.theme.colors.cardBgColor};
+  position: relative;
+  overflow: hidden;
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    width: 6px;
+    max-height: 60px;
   }
-
-  .book-category-list::-webkit-scrollbar-thumb {
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(239, 237, 232, 0.1);
     border-radius: 12px;
-    background: var(--scroll-bar-color);
-  } */
+  }
 
   @media screen and (min-width: 768px) {
     width: 704px;
     min-height: 234px;
+    max-height: 234px;
   }
 
   @media screen and (min-width: 1440px) {
@@ -31,7 +33,7 @@ export const ItemWrapper = styled.li`
   }
 `;
 
-export const DairyItemTitle = styled.p`
+export const DiaryItemTitle = styled.h2`
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 14px;
@@ -50,8 +52,7 @@ export const LinkText = styled.span`
   font-weight: 500;
   font-size: 14px;
   line-height: 129%;
-  /* color: #e6533c; */
-  color: ${theme.colors.hoverColor};
+  color: ${(p) => p.theme.colors.hoverColor};
 
   @media screen and (min-width: 768px) {
     font-size: 16px;
@@ -74,5 +75,5 @@ export const ArrowIcon = styled.svg`
   width: 16px;
   height: 16px;
 
-  fill: ${theme.colors.hoverColor};
+  fill: ${(p) => p.theme.colors.hoverColor};
 `;

@@ -1,6 +1,6 @@
 import * as s from './DashboardCard.styled';
 
-export const DashboardCard = ({ subtitle, icon }) => {
+export const DashboardCard = ({ subtitle, icon, children }) => {
   return (
     <s.CardContainer>
       <s.InnerCardWrapper>
@@ -9,7 +9,7 @@ export const DashboardCard = ({ subtitle, icon }) => {
         </s.Svg>
         <s.InnerCardText>{subtitle}</s.InnerCardText>
       </s.InnerCardWrapper>
-      <s.UserIndicators>2000</s.UserIndicators>
+      <s.UserIndicators>{children}</s.UserIndicators>
     </s.CardContainer>
   );
 };
