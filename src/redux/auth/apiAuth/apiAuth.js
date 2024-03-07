@@ -50,7 +50,7 @@ export const logout = async () => {
 
 export const getCurrent = async (token) => {
   try {
-    setToken(token);
+    // setToken(token);
     const { data } = await axios.get('/users/current');
     return data;
   } catch (error) {
