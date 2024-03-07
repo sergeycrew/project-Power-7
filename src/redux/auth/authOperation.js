@@ -4,8 +4,10 @@ import { toast } from 'react-toastify';
 
 axios.defaults.baseURL = 'https://backend-power-pulse-7.onrender.com/api/';
 
+
 const temptoken =
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWU3YWY1MTQwZmI2ZjdmNDRkOGJmOGYiLCJ0eXBlIjoiYWNjZXNzIiwiaWF0IjoxNzA5NzQyNzkzLCJleHAiOjE3MDk4MjU1OTN9.cPR4Cz8wSDqtjENdqpJxs5AlmbjMRwVqxpezsGA3HuM';
+
 
 const setAuthHeader = (token) => {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
@@ -71,12 +73,13 @@ export const currentUser = createAsyncThunk(
     const state = thunkAPI.getState();
     const persistedToken = state.auth.token;
 
-    // if (persistedToken === null) {
-    //   return thunkAPI.rejectWithValue('Unable to fetch user');
-    // }
+    if (persistedToken === null) {
+      return thunkAPI.rejectWithValue('Unable to fetch user');
+    }
 
     try {
-      setAuthHeader(temptoken);
+      // setAuthHeader(temptoken);
+      setAuthHeader(persistedToken);
 
       const { data } = await axios.get('users/current');
 
