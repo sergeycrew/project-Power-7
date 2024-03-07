@@ -47,6 +47,7 @@ export const SignUpForm = () => {
       })
     );
     resetForm();
+    // navigate('/signIn');
 
     if (isLoggedIn) {
       navigate('/profile');
