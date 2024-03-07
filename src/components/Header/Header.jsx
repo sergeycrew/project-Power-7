@@ -1,4 +1,3 @@
-
 import { Logo } from 'components/Logo/Logo';
 import { Logout } from 'components/Logout/Logout';
 import { UserNav } from 'components/UserNav/UserNav';
@@ -6,11 +5,13 @@ import { UserBar } from 'components/UserBar/UserBar';
 import { Container } from 'styles/container';
 import { HeaderBar, HideLogout, LogoWrap } from './Header.styled';
 
+
 import { BurgerMenuButton } from 'components/BurgerMenuButton/BurgerMenuButton';
 import { ModalWindowMenuUser } from 'components/ModalWindowBurgerMenu/ModalWindowBurgerMenu'
 
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useAuth } from '../../hooks/useAuth';
+
 
 
 export const Header = () => {
@@ -58,14 +59,15 @@ export const Header = () => {
   }, [isLoggedIn, isModalOpen, closeModal]);
 
   return (
-
     <Container>
       <HeaderBar style={headerStyle}>
         <LogoWrap>
           <Logo />
         </LogoWrap>
-         <UserNav />
-       <UserBar />
+
+        <UserNav />
+        <UserBar />
+
         <HideLogout>
           <Logout />
         </HideLogout>
@@ -73,5 +75,5 @@ export const Header = () => {
         {isModalOpen && <ModalWindowMenuUser closeModal={closeModal}/>}
       </HeaderBar>
     </Container>
-     );
+  );
 };

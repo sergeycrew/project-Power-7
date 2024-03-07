@@ -31,18 +31,34 @@ function App() {
           <Route path="/products" element={<ProductsPage />} />
           <Route path="/exercises" element={<ExercisesPage />}>
             <Route index element={<Navigate to="bodyPart" />} />
-            <Route path="bodyPart" element={<ExercisesCategories query={'Body parts'} />}></Route>
-            <Route path="bodyPart/:filter" element={<ExercisesListByCategory />} />
-            <Route path="target" element={<ExercisesCategories query={'Muscles'} />} ></Route>
-            <Route path="target/:filter" element={<ExercisesListByCategory />} />
-            <Route path="equipment" element={<ExercisesCategories query={'Equipment'} />} ></Route>
-            <Route path="equipment/:filter" element={<ExercisesListByCategory />} />
+            <Route
+              path="bodyPart"
+              element={<ExercisesCategories query={'Body parts'} />}
+            ></Route>
+            <Route
+              path="bodyPart/:filter"
+              element={<ExercisesListByCategory />}
+            />
+            <Route
+              path="target"
+              element={<ExercisesCategories query={'Muscles'} />}
+            ></Route>
+            <Route
+              path="target/:filter"
+              element={<ExercisesListByCategory />}
+            />
+            <Route
+              path="equipment"
+              element={<ExercisesCategories query={'Equipment'} />}
+            ></Route>
+            <Route
+              path="equipment/:filter"
+              element={<ExercisesListByCategory />}
+            />
           </Route>
           <Route path="/profile" element={<ProfilePage />} />
-
-
         </Route>
-         <Route path="*" element={<ErrorPage />} />
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
     </>
   );
