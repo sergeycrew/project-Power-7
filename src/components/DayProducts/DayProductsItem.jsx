@@ -2,7 +2,7 @@ import { DayCommonItemTitle } from '../DayCommonItemTitle/DayCommonItemTitle';
 import * as s from './DayProductsItem.styled';
 import icons from '../../images/sprite/sprite.svg';
 
-export const DayProductItem = ({ isFirstItem }) => {
+export const DayProductItem = ({ isFirstItem, value }) => {
   return (
     <s.ItemProductWrapper>
       <s.ProductsContainer>
@@ -10,25 +10,25 @@ export const DayProductItem = ({ isFirstItem }) => {
           <DayCommonItemTitle isFirstItem={isFirstItem}>
             Title
           </DayCommonItemTitle>
-          <s.DayItemContent>Black bread</s.DayItemContent>
+          <s.DayItemContent>{value.productId.title}</s.DayItemContent>
         </s.ListItem>
         <s.ListItem>
           <DayCommonItemTitle isFirstItem={isFirstItem}>
             Category
           </DayCommonItemTitle>
-          <s.DayItemContent>Black bread</s.DayItemContent>
+          <s.DayItemContent>{value.productId.category}</s.DayItemContent>
         </s.ListItem>
         <s.ListItem>
           <DayCommonItemTitle isFirstItem={isFirstItem}>
             Calories
           </DayCommonItemTitle>
-          <s.DayItemContent>200</s.DayItemContent>
+          <s.DayItemContent>{value.productId.calories}</s.DayItemContent>
         </s.ListItem>
         <s.ListItem>
           <DayCommonItemTitle isFirstItem={isFirstItem}>
             Weight
           </DayCommonItemTitle>
-          <s.DayItemContent>200</s.DayItemContent>
+          <s.DayItemContent>{value.productId.weight}</s.DayItemContent>
         </s.ListItem>
         <s.ListItem>
           <DayCommonItemTitle isFirstItem={isFirstItem}>

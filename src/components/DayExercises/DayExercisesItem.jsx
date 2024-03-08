@@ -2,7 +2,7 @@ import * as s from './DayExercisesItem.styled';
 import icons from '../../images/sprite/sprite.svg';
 import { DayCommonItemTitle } from '../DayCommonItemTitle/DayCommonItemTitle';
 
-export const DayExerciseItem = ({ isFirstItem }) => {
+export const DayExerciseItem = ({ isFirstItem, value }) => {
   return (
     <s.ItemExerciseWrapper>
       <s.ProductsContainer>
@@ -10,37 +10,49 @@ export const DayExerciseItem = ({ isFirstItem }) => {
           <DayCommonItemTitle isFirstItem={isFirstItem}>
             Body Part
           </DayCommonItemTitle>
-          <s.DayExerciseItemContent>Waist</s.DayExerciseItemContent>
+          <s.DayExerciseItemContent>
+            {value.exerciseId.bodyPart}
+          </s.DayExerciseItemContent>
         </s.ListItem>
         <s.ListItem>
           <DayCommonItemTitle isFirstItem={isFirstItem}>
             Equipment
           </DayCommonItemTitle>
-          <s.DayExerciseItemContent>Black bread</s.DayExerciseItemContent>
+          <s.DayExerciseItemContent>
+            {value.exerciseId.equipment}
+          </s.DayExerciseItemContent>
         </s.ListItem>
         <s.ListItem>
           <DayCommonItemTitle isFirstItem={isFirstItem}>
             Name
           </DayCommonItemTitle>
-          <s.DayExerciseItemContent>Black bread</s.DayExerciseItemContent>
+          <s.DayExerciseItemContent>
+            {value.exerciseId.name}
+          </s.DayExerciseItemContent>
         </s.ListItem>
         <s.ListItem>
           <DayCommonItemTitle isFirstItem={isFirstItem}>
             Target
           </DayCommonItemTitle>
-          <s.DayExerciseItemContent>200</s.DayExerciseItemContent>
+          <s.DayExerciseItemContent>
+            {value.exerciseId.target}
+          </s.DayExerciseItemContent>
         </s.ListItem>
         <s.ListItem>
           <DayCommonItemTitle isFirstItem={isFirstItem}>
             Burned cal..
           </DayCommonItemTitle>
-          <s.DayExerciseItemContent>200</s.DayExerciseItemContent>
+          <s.DayExerciseItemContent>
+            {value.exerciseId.burnedCalories}
+          </s.DayExerciseItemContent>
         </s.ListItem>
         <s.ListItem>
           <DayCommonItemTitle isFirstItem={isFirstItem}>
             Time
           </DayCommonItemTitle>
-          <s.DayExerciseItemContent>200</s.DayExerciseItemContent>
+          <s.DayExerciseItemContent>
+            {value.exerciseId.time}
+          </s.DayExerciseItemContent>
         </s.ListItem>
       </s.ProductsContainer>
       <s.DeleteButton>

@@ -120,6 +120,9 @@ export const DayExerciseItemContent = styled.p`
   font-weight: 400;
   font-size: 14px;
   line-height: 129%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
   color: ${(p) => p.theme.colors.whiteColor};
 
   @media screen and (min-width: 768px) {

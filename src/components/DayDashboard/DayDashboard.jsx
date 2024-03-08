@@ -4,15 +4,23 @@ import {
   selectConsumedCalories,
   selectDoneExercisesTime,
 } from '../../redux/diary/diarySelectors';
+import { selectUser } from '../../redux/auth/authSelectors';
 import icons from '../../images/sprite/sprite.svg';
 import { DashboardCard } from './DashboardCard/DashboardCard';
 import * as s from './DayDashboard.styled';
+import {
+  findSuccesColor,
+  findAttentionColor,
+} from '../../Helpers/GlobalOperations';
 
 export const DayDashboard = () => {
+  const user = useSelector(selectUser);
   let burnedCalories = useSelector(selectBurnedCalories);
   let consumedCalories = useSelector(selectConsumedCalories);
   let doneExercisesTime = useSelector(selectDoneExercisesTime);
-  let sportRemaining = 110 - doneExercisesTime;
+  let timeSport = Number(user.timeSport) || 110;
+  let sportRemaining = timeSport - doneExercisesTime;
+  let caloriesRemaining = Math.round(user.bmr) - consumedCalories;
 
   return (
     <s.DashboardWrapper>
@@ -20,12 +28,18 @@ export const DayDashboard = () => {
         <DashboardCard
           subtitle="Daily calorie intake"
           icon={`${icons}#food`}
-        ></DashboardCard>
+          $bgColor="orange"
+          $cardTextColor="white"
+        >
+          {Math.round(user.bmr)}
+        </DashboardCard>
         <DashboardCard
           subtitle="Daily physical activity"
           icon={`${icons}#dumbbell`}
+          $bgColor="orange"
+          $cardTextColor="white"
         >
-          110 min
+          {`${timeSport} min`}
         </DashboardCard>
         <DashboardCard subtitle="Сalories consumed" icon={`${icons}#apple`}>
           {consumedCalories}
@@ -36,8 +50,18 @@ export const DayDashboard = () => {
         <DashboardCard
           subtitle="Calories remaining"
           icon={`${icons}#bubble`}
-        ></DashboardCard>
-        <DashboardCard subtitle="Sports remaining" icon={`${icons}#figure`}>
+          $borderColor={findAttentionColor(
+            Math.round(user.bmr),
+            consumedCalories
+          )}
+        >
+          {caloriesRemaining}
+        </DashboardCard>
+        <DashboardCard
+          subtitle="Sports remaining"
+          icon={`${icons}#figure`}
+          $borderColor={findSuccesColor(timeSport, doneExercisesTime)}
+        >
           {`${sportRemaining} min`}
         </DashboardCard>
       </s.DashboardList>

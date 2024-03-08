@@ -7,13 +7,13 @@ const setAuthHeader = (token) => {
 };
 
 const tempToken =
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWU3YWY1MTQwZmI2ZjdmNDRkOGJmOGYiLCJ0eXBlIjoiYWNjZXNzIiwiaWF0IjoxNzA5ODI4MDgxLCJleHAiOjE3MDk5MTA4ODF9.XZ5zY65k5DHoNxhW4HSo2FkecylMGw74PZzTxIM21rc';
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWUyM2MwZDkwZGNmMGFkM2ZjNzMwOWMiLCJ0eXBlIjoiYWNjZXNzIiwiaWF0IjoxNzA5ODU5MDg4LCJleHAiOjE3MDk5NDE4ODh9._w4BrKwN4EJn5MIQKxFXQtiUNeHXjhYdEfIEYUMq_0g';
 
 export const fetchAllDairyInfo = createAsyncThunk(
   '/diary/alldaydiary',
   async (date, thunkAPI) => {
     try {
-      const state = thunkAPI.getState();
+      // const state = thunkAPI.getState();
       // const storedToken = state.auth.token;
       // setAuthHeader(storedToken);
       setAuthHeader(tempToken);
