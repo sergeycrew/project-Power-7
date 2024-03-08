@@ -1,4 +1,4 @@
-import{u as o,L as m,a as x,b as g,c as u,j as i,l as w,C as b}from"./index-057ea621.js";import{b as f,a as j,c as $,d as S}from"./hero-desktop-2x-c0317d06.js";import{s as k,a as v}from"./signup-mob-2x-c155b3ed.js";import{F as C,a as z,E as _,c as y,b as t,d as F}from"./index.esm-a45d50ac.js";const P=o.div`
+import{u as o,L as m,a as x,b as g,c as u,j as i,l as f,C as w}from"./index-7bbb76c7.js";import{b,a as j,c as $,d as S}from"./hero-desktop-2x-c0317d06.js";import{s as k,a as v}from"./signup-mob-2x-c155b3ed.js";import{F as C,a as z,E as _,b as y}from"./formik.esm-e1bb1052.js";import{c as F,a as t}from"./index.esm-670beacc.js";const P=o.div`
   position: relative;
   height: 100vh;
   /* width: 100%; */
@@ -13,7 +13,7 @@ import{u as o,L as m,a as x,b as g,c as u,j as i,l as w,C as b}from"./index-057e
 
   @media screen and (min-width: 768px) {
     padding: 189px 32px 0;
-    background-image: image-set(url(${f}) 1x, url(${j}) 2x);
+    background-image: image-set(url(${b}) 1x, url(${j}) 2x);
   }
 
   @media screen and (min-width: 1440px) {
@@ -151,4 +151,4 @@ import{u as o,L as m,a as x,b as g,c as u,j as i,l as w,C as b}from"./index-057e
     font-size: 20px;
     line-height: 1.2;
   }
-`,R=/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/,D=y().shape({email:t().trim().matches(R,"Please enter a valid email! For example jane@mail.com").required("Required"),password:t().trim().min(6,"Too Short!").max(30,"Password should not exceed 30 characters").matches(/^\S*$/,"Password should not contain spaces").required("Required")}),M={email:"",password:""},V=()=>{const e=x(),s=g(),{isLoggedIn:d}=u(),l=({email:p,password:c},{resetForm:h})=>{e(w({email:p,password:c})),h(),d&&s("/profile")};return i.jsx(F,{initialValues:M,onSubmit:l,validationSchema:D,children:i.jsxs(T,{autoComplete:"off",children:[i.jsxs(W,{children:[i.jsxs(n,{children:[i.jsx(a,{autoComplete:"on",type:"email",id:"email",name:"email",placeholder:"Email",required:!0}),i.jsx(r,{name:"email",component:"span"})]}),i.jsxs(n,{children:[i.jsx(a,{type:"password",id:"password",name:"password",placeholder:"Password",required:!0}),i.jsx(r,{name:"password",component:"span"})]})]}),i.jsx(A,{type:"submit",children:"Sign In"})]})})},H=()=>i.jsx(b,{children:i.jsxs(P,{children:[i.jsx(U,{children:"Sign In"}),i.jsx(I,{children:"Welcome! Please enter your credentials to login to the platform:"}),i.jsx(V,{}),i.jsxs(L,{children:[i.jsx(q,{children:"Don’t have an account? "}),i.jsx(E,{to:"/signUp",children:"Sign Up"})]})]})});export{H as default};
+`,R=/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/,D=F().shape({email:t().trim().matches(R,"Please enter a valid email! For example jane@mail.com").required("Required"),password:t().trim().min(6,"Too Short!").max(30,"Password should not exceed 30 characters").matches(/^\S*$/,"Password should not contain spaces").required("Required")}),M={email:"",password:""},V=()=>{const e=x(),s=g(),{isLoggedIn:d}=u(),l=({email:p,password:c},{resetForm:h})=>{e(f({email:p,password:c})),h(),d&&s("/profile")};return i.jsx(y,{initialValues:M,onSubmit:l,validationSchema:D,children:i.jsxs(T,{autoComplete:"off",children:[i.jsxs(W,{children:[i.jsxs(n,{children:[i.jsx(a,{autoComplete:"on",type:"email",id:"email",name:"email",placeholder:"Email",required:!0}),i.jsx(r,{name:"email",component:"span"})]}),i.jsxs(n,{children:[i.jsx(a,{type:"password",id:"password",name:"password",placeholder:"Password",required:!0}),i.jsx(r,{name:"password",component:"span"})]})]}),i.jsx(A,{type:"submit",children:"Sign In"})]})})},J=()=>i.jsx(w,{children:i.jsxs(P,{children:[i.jsx(U,{children:"Sign In"}),i.jsx(I,{children:"Welcome! Please enter your credentials to login to the platform:"}),i.jsx(V,{}),i.jsxs(L,{children:[i.jsx(q,{children:"Don’t have an account? "}),i.jsx(E,{to:"/signUp",children:"Sign Up"})]})]})});export{J as default};
