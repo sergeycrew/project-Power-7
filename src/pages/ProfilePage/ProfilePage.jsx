@@ -11,6 +11,7 @@ import { selectUser } from '../../redux/auth/authSelectors';
 
 import { Container } from 'styles/container';
 import { Logout } from '../../components/Logout/Logout';
+import { Loader } from '../../components/Loader/Loader';
 
 const ProfilePage = () => {
   const user = useSelector(selectUser);
@@ -24,9 +25,9 @@ const ProfilePage = () => {
     }
   }, [dispatch, isLoggedIn]);
 
-  return isLoading ? (
-    <b>Refreshing user...</b>
-  ) : (
+  return  (
+    isLoading ? <Loader/> : 
+    <Container>
     <s.Container>
       <s.Title>Profile Setings</s.Title>
       <s.Wrapper>
@@ -55,6 +56,7 @@ const ProfilePage = () => {
         </s.WrappForm>
       </s.Wrapper>
     </s.Container>
+    </Container>
   );
 };
 
