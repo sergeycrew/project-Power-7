@@ -3,7 +3,8 @@ import styled from 'styled-components';
 export const CardContainer = styled.li`
   box-sizing: border-box;
   /* width: calc((100% - 13px) / 2); */
-  width: 157px;
+  /* width: 157px; */
+  width: 100%;
   height: 96px;
   /* border: 1px solid ${(p) => p.theme.colors.cardBorderColor}; */
   border: 1px solid;
@@ -32,6 +33,10 @@ export const CardContainer = styled.li`
         return (p) => p.theme.colors.cardBorderColor;
     }
   }};
+
+  @media screen and (min-width: 375px) {
+    width: 157px;
+  }
 
   @media screen and (min-width: 768px) {
     width: 187px;

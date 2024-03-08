@@ -99,7 +99,6 @@ export const RecomendalDot = styled.span`
   border-radius: 10px;
   width: 14px;
   height: 14px;
-  /* background-color: ${(p) => p.theme.colors.recommendedColor}; */
   background-color: ${({ $color }) => {
     switch ($color) {
       case 'red':
