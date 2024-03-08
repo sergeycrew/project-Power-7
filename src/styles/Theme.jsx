@@ -8,7 +8,6 @@ export const theme = {
     greyColor: 'EFEDE8',
     modalOverlay: 'rgba(4, 4, 4, 0.4)',
 
-
     darkGrayColor: '#303030',
 
     // accent colors
@@ -18,6 +17,7 @@ export const theme = {
     errorColor: '#d80027',
 
     //product cart
+
     recommendedColor: '#419B09',
     notRecommendedColor: '#E9101D',
     selectBgrColor: '#1c1c1c',
@@ -25,6 +25,7 @@ export const theme = {
     cardBorderColor: 'rgba(239, 237, 232, 0.2)',
     captionColor: 'rgba(239, 237, 232, 0.4)',
     fornCaptionColor: 'rgba(239, 237, 232, 0.5)',
+    cardTextColor: 'rgba(239, 237, 232, 0.8)',
   },
 
   radii: {
