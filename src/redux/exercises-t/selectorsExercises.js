@@ -1,11 +1,20 @@
-export const selectLoading = state => state.exercises.loading;
+import { createSelector } from '@reduxjs/toolkit';
 
-export const selectFilter = state => state.exercises.filter;
+export const selectLoading = (state) => state.exercises.loading;
 
-export const selectExercises = state => state.exercises.exercises;
+export const selectFilter = (state) => state.exercises.filter;
 
-export const selectBodyParts = state => state.exercises.bodyParts;
+export const selectExercises = (state) => state.exercises.exercises;
 
-export const selectMuscules = state => state.exercises.muscules;
+export const selectCategory = (state) => state.exercises.categories;
 
-export const selectEquipment = state => state.exercises.equipment;
+export const selectExercisesPage = (state) => state.exercises.exercisesPage;
+
+export const selectFilterCategoruExercises = createSelector(
+  [selectFilter, selectCategory, selectLoading],
+  (filter, categories, loading) => {
+    if (!loading) {
+      return categories.filter((item) => item?.filter === filter);
+    }
+  }
+);
