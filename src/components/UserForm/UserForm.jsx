@@ -4,7 +4,7 @@ import { Formik, Field, ErrorMessage } from 'formik';
 import * as s from './UserForm.styled';
 
 import { useDispatch, useSelector } from 'react-redux';
-import {selectUser} from '../../redux/auth/authSelectors';
+import {selectIsLoggedIn, selectUser} from '../../redux/auth/authSelectors';
 import { updateUserParams, userVerifyAgain } from '../../redux/auth/authOperation';
 
 // import user from '../../jsonFromBd/userParams.json'
@@ -88,9 +88,9 @@ const UserForm = () => {
 
   const initialValues = {
     name: user.name || 'Name',
-    height: user.height || '150',
-    currentWeight: user.currentWeight || '35',
-    desiredWeight: user.desiredWeight || '35',
+    height: user.height || '',
+    currentWeight: user.currentWeight || '',
+    desiredWeight: user.desiredWeight || '',
     birthday: user.birthday || '2005-01-01',
     blood: (user.blood ?? '1').toString() || '1',
     sex: user.sex || 'male',
@@ -107,12 +107,14 @@ const UserForm = () => {
   const handleChanger = (e) => {
     setBtnActive(true);
   };
-
+   
   const sendVerify = () => {
    startTimer()
     const email = user.email;
     console.log({email})
-    dispatch(userVerifyAgain({email}));
+    // dispatch(userVerifyAgain({email}));
+    // console.log(state)
+
    
   };
  

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Text = styled.p`
   color: rgba(239, 237, 232, 0.8);
   font-family: 'RobotoRegular';
-  font-size: 14px;
+  font-size: 12px;
   font-style: normal;
   font-weight: 400;
   line-height: 18px;
@@ -19,7 +19,7 @@ export const Container = styled.div`
   padding: 14px;
   align-items: flex-start;
   gap: 8px;
-  flex-shrink: 0;
+  /* flex-shrink: 0; */
   border-radius: 12px;
   border: 1px solid rgba(239, 237, 232, 0.2);
   background-color: ${p => p.theme.colors.orangeColor};

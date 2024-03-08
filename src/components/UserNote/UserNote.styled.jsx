@@ -14,6 +14,9 @@ export const Text = styled.p`
 export const Container = styled.div`
   display: flex;
   justify-content: center;
+  /* @media screen and (min-width: 768px) and (max-width: 1439px) {
+   max-width: 439px;
+  } */
 `;
 
 export const Svg = styled.svg`
@@ -35,6 +38,10 @@ export const Wrapp = styled.div`
   display: flex;
   gap: 8px;
   margin-top: 40px;
+
+  @media screen and (max-width: 768px)  {
+   max-width: 335px;
+  } 
 
   @media screen and (min-width: 768px) {
     width: 440px;
