@@ -1,5 +1,6 @@
 export const selectProducts = (state) => state.productList.items;
-export const selectProductsCount = (state) => state.productList.countItems;
+export const selectContainsProducts = (state) =>
+  state.productList.containsProducts;
 export const selectIsLoading = (state) => state.productList.isLoading;
 export const selectError = (state) => state.productList.error;
 export const selectFilters = (state) => state.productFilter;

@@ -7,7 +7,7 @@ export const productSlice = createSlice({
     categories: [],
     items: [],
     isLoading: false,
-    countItems: 0,
+    containsProducts: false,
   },
 
   extraReducers: (builder) =>
@@ -19,7 +19,7 @@ export const productSlice = createSlice({
 
 function ListFulfilled(state, { payload }) {
   state.items = payload;
-  state.countItems = payload.length;
+  state.containsProducts = payload.length > 0;
   state.isLoading = false;
 }
 

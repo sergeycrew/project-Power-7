@@ -7,7 +7,7 @@ export const theme = {
     whiteColor: '#efede8',
     greyColor: 'EFEDE8',
     modalOverlay: 'rgba(4, 4, 4, 0.4)',
-    
+
     // accent colors
     accentColor: 'rgba(239, 237, 232, 0.3)',
     hoverColor: '#e6533c',
@@ -15,9 +15,9 @@ export const theme = {
     errorColor: '#d80027',
 
     //product cart
-    
     recommendedColor: '#419B09',
     notRecommendedColor: '#E9101D',
+    selectBgrColor: '#1c1c1c',
     cardBgColor: 'rgba(239, 237, 232, 0.05)',
     cardBorderColor: 'rgba(239, 237, 232, 0.2)',
     captionColor: 'rgba(239, 237, 232, 0.4)',
@@ -28,8 +28,6 @@ export const theme = {
     sd: '4px',
     ld: '12px',
   },
-
-  
 
   spacing: (value) => `${value * 4}px`,
 };
