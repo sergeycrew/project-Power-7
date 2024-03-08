@@ -8,6 +8,7 @@ export const Loader = () => {
       height={200}
       width={200}
       ariaLabel="infinity-spin-loading"
+      
     />
   );
 };

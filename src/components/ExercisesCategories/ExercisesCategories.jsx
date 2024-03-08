@@ -49,7 +49,13 @@ export const ExercisesCategories = ({ query }) => {
     }
   };
 
+
+const ExampleComponent = () => {
+  // Проверка размера экрана от 0 до 768px
+  const isTablet = useMediaQuery('(min-width: 768px) and (max-width: 1200px)')}
+
   const getRecordsPerPageThrottled = throttle(getRecordsPerPage, 500);
+
 
   useEffect(() => {
     getRecordsPerPage();

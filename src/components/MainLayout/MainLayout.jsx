@@ -14,6 +14,7 @@ const MainLayout = () => {
   //   dispatch(refreshUser());
   // }, [dispatch]);
   return  (
+    // isLoading ? <Loader/> : 
     <Layout>
       <Header />
       {/* <main> */}
@@ -34,6 +35,7 @@ const MainLayout = () => {
         pauseOnHover
         theme="dark"
       />
+      
     </Layout>
   );
 };
