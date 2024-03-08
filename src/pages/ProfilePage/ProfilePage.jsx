@@ -10,6 +10,7 @@ import { useAuth } from '../../hooks/useAuth';
 import { selectUser } from '../../redux/auth/authSelectors';
 
 import { Container } from 'styles/container';
+import { Logout } from '../../components/Logout/Logout';
 
 const ProfilePage = () => {
   const user = useSelector(selectUser);
@@ -29,7 +30,7 @@ const ProfilePage = () => {
     <s.Container>
       <s.Title>Profile Setings</s.Title>
       <s.Wrapper>
-        <div>
+        <s.UserWrap>
           <UserCard />
           <s.WrappInfo>
             <DailyBaseInfo
@@ -45,7 +46,10 @@ const ProfilePage = () => {
             />
           </s.WrappInfo>
           <UserNote />
-        </div>
+         <s.LogoutWrap>
+         <Logout />
+         </s.LogoutWrap>
+        </s.UserWrap>
         <s.WrappForm>
           <UserForm />
         </s.WrappForm>
