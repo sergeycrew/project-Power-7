@@ -1,4 +1,6 @@
 import { Route, Routes, Navigate } from 'react-router-dom';
+import { PrivateRoute } from './Routes/PrivateRoute';
+import { PublicRoute } from './Routes/PublicRoute';
 
 import { lazy } from 'react';
 
@@ -25,10 +27,14 @@ function App() {
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route index element={<WelcomePage />} />
-          <Route path="/signUp" element={<SignUpPage />} />
-          <Route path="/signIn" element={<SignInPage />} />
-          <Route path="/diary" element={<DiaryPage />} />
-          <Route path="/products" element={<ProductsPage />} />
+          <Route path="/signUp" element={<PublicRoute redirectTo="/profile" component={<SignUpPage />}/>}/>
+          {/* <Route path="/signUp" element={<SignUpPage />} /> */}
+          <Route path="/signIn" element={<PublicRoute redirectTo="/profile" component={<SignInPage />}/>}/>
+          {/* <Route path="/signIn" element={<SignInPage />} /> */}
+          <Route path="/diary" element={<PrivateRoute redirectTo="/signIn" component={<DiaryPage />}/>}/>
+          {/* <Route path="/diary" element={<DiaryPage />} /> */}
+          <Route path="/products" element={<PrivateRoute redirectTo="/signIn" component={<ProductsPage />}/>}/>
+          {/* <Route path="/products" element={<ProductsPage />}/> */}
           <Route path="/exercises" element={<ExercisesPage />}>
             <Route index element={<Navigate to="bodyPart" />} />
             <Route
@@ -56,7 +62,8 @@ function App() {
               element={<ExercisesListByCategory />}
             />
           </Route>
-          <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/profile" element={<PrivateRoute redirectTo="/signIn" component={<ProfilePage/>}/>} />
+          {/* <Route path="/profile" element={<ProfilePage />} /> */}
           <Route path="*" element={<ErrorPage />} />
         </Route>
       </Routes>
