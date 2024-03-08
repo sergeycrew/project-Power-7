@@ -26,7 +26,8 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<MainLayout />}>
-          <Route index element={<WelcomePage />} />
+          <Route index element={<PublicRoute redirectTo="/profile"component={<WelcomePage/>}/>}/>
+          {/* <Route index element={<WelcomePage />} /> */}
           <Route path="/signUp" element={<PublicRoute redirectTo="/profile" component={<SignUpPage />}/>}/>
           {/* <Route path="/signUp" element={<SignUpPage />} /> */}
           <Route path="/signIn" element={<PublicRoute redirectTo="/profile" component={<SignInPage />}/>}/>
