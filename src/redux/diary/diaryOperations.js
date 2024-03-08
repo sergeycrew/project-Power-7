@@ -14,8 +14,8 @@ export const fetchAllDairyInfo = createAsyncThunk(
   async (date, thunkAPI) => {
     try {
       const state = thunkAPI.getState();
-      const storedToken = state.auth.token;
-      setAuthHeader(storedToken);
+      // const storedToken = state.auth.token;
+      // setAuthHeader(storedToken);
       // setAuthHeader(tempToken);
       const response = await axios.post('diary/alldaydiary', date);
       console.log(response.data);
