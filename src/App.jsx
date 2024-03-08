@@ -5,6 +5,8 @@ import { PublicRoute } from './Routes/PublicRoute';
 import { lazy } from 'react';
 
 import MainLayout from './components/MainLayout/MainLayout';
+//import {HomePage} from './pages/HomePage/HomePageAlt'
+
 
 const WelcomePage = lazy(() => import('pages/WelcomePage/WelcomePage'));
 const SignUpPage = lazy(() => import('pages/SignUpPage/SignUpPage'));

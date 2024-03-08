@@ -16,12 +16,12 @@ const MainLayout = () => {
   return (
     <Layout>
       <Header />
-      <main>
+      {/* <main> */}
         <Suspense fallback={<Loader />}>
           <Outlet />
         </Suspense>
-      </main>
-      <footer></footer>
+      {/* </main> */}
+      {/* <footer></footer> */}
       <ToastContainer
         position="top-right"
         autoClose={5000}
