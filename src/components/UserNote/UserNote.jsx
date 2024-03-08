@@ -1,5 +1,6 @@
 import * as s from './UserNote.styled';
-import sprite from '../../images/sprite.svg';
+// import sprite from '../../images/sprite.svg';
+import sprite from '../../images/sprite/sprite.svg';
 
 const UserNote = () => {
   return (
@@ -7,7 +8,7 @@ const UserNote = () => {
     <s.Wrapp>
     <s.WrappSvg>
       <s.Svg>
-        <use href={`${sprite}#icon-exclamation`}></use>
+        <use href={`${sprite}#exclamation`}></use>
       </s.Svg>
       </s.WrappSvg>
       <s.Text>

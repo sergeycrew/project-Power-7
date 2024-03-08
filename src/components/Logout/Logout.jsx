@@ -16,17 +16,17 @@ export const Logout = ({ color, closeModal }) => {
   const handleClick = (e) => {
     e.preventDefault();
     dispatch(logOut());
-    closeModal();
+    // closeModal();
   };
 
   return (
-    <LogoWrapper>
+    
       <LogoutButtonLink to="/" onClick={(e) => handleClick(e)}>
         <Text>Logout</Text>
         <LogOutIcon style={{ '--color1': color }}>
           <use href={`${sprite}#logout`} />
         </LogOutIcon>
       </LogoutButtonLink>
-    </LogoWrapper>
+
   );
 };
