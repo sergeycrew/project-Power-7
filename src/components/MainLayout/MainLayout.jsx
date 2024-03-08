@@ -1,12 +1,18 @@
 import { Loader } from '../Loader/Loader';
-import { Suspense } from 'react';
+import { Suspense, useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
 import { Layout } from './MainLayout.styled';
 import { Header } from '../Header/Header';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useDispatch } from 'react-redux';
+import { refreshUser } from '../../redux/auth/authOperation';
 
 const MainLayout = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(refreshUser());
+  }, [dispatch]);
   return (
     <Layout>
       <Header />
