@@ -1,8 +1,11 @@
+import { useDispatch } from 'react-redux';
 import * as s from './DayExercisesItem.styled';
 import icons from '../../images/sprite/sprite.svg';
 import { DayCommonItemTitle } from '../DayCommonItemTitle/DayCommonItemTitle';
+import { deleteExercise } from '../../redux/diary/diaryOperations';
 
 export const DayExerciseItem = ({ isFirstItem, value }) => {
+  const dispatch = useDispatch();
   return (
     <s.ItemExerciseWrapper>
       <s.ProductsContainer>
@@ -40,7 +43,7 @@ export const DayExerciseItem = ({ isFirstItem, value }) => {
         </s.ListItem>
         <s.ListItem>
           <DayCommonItemTitle isFirstItem={isFirstItem}>
-            Burned cal..
+            Burned calories
           </DayCommonItemTitle>
           <s.DayExerciseItemContent>
             {value.exerciseId.burnedCalories}
@@ -55,7 +58,10 @@ export const DayExerciseItem = ({ isFirstItem, value }) => {
           </s.DayExerciseItemContent>
         </s.ListItem>
       </s.ProductsContainer>
-      <s.DeleteButton>
+      <s.DeleteButton
+        type="button"
+        onClick={() => dispatch(deleteExercise(value._id))}
+      >
         <s.DeleteIcon>
           <use href={`${icons}#trash`}></use>
         </s.DeleteIcon>
@@ -63,40 +69,3 @@ export const DayExerciseItem = ({ isFirstItem, value }) => {
     </s.ItemExerciseWrapper>
   );
 };
-
-// export const DayExerciseItem = () => {
-//   return (
-//     <s.ProductsContainer>
-//       <s.ListItem>
-//         <DayCommonItemTitle>Body Part</DayCommonItemTitle>
-//         <s.DayItemBodyPartContent>Waist</s.DayItemBodyPartContent>
-//       </s.ListItem>
-//       <s.ListItem>
-//         <DayCommonItemTitle>Equipment</DayCommonItemTitle>
-//         <s.DayItemEquipmentContent>Black bread</s.DayItemEquipmentContent>
-//       </s.ListItem>
-//       <s.ListItem>
-//         <DayCommonItemTitle>Name</DayCommonItemTitle>
-//         <s.DayItemNameContent>Black bread</s.DayItemNameContent>
-//       </s.ListItem>
-//       <s.ListItem>
-//         <DayCommonItemTitle>Target</DayCommonItemTitle>
-//         <s.DayTargetContent>200</s.DayTargetContent>
-//       </s.ListItem>
-//       <s.ListItem>
-//         <DayCommonItemTitle>Burned cal..</DayCommonItemTitle>
-//         <s.DayCaloriesContent>200</s.DayCaloriesContent>
-//       </s.ListItem>
-//       <s.ListItem>
-//         <DayCommonItemTitle>Time</DayCommonItemTitle>
-//         <s.DayTimeContent>200</s.DayTimeContent>
-//       </s.ListItem>
-
-//       <s.DeleteButton>
-//         <s.DeleteIcon>
-//           <use href={`${icons}#icon-trash`}></use>
-//         </s.DeleteIcon>
-//       </s.DeleteButton>
-//     </s.ProductsContainer>
-//   );
-// };

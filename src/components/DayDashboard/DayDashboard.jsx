@@ -11,6 +11,7 @@ import * as s from './DayDashboard.styled';
 import {
   findSuccesColor,
   findAttentionColor,
+  findSportRemaining,
 } from '../../Helpers/GlobalOperations';
 
 export const DayDashboard = () => {
@@ -19,9 +20,9 @@ export const DayDashboard = () => {
   let consumedCalories = useSelector(selectConsumedCalories);
   let doneExercisesTime = useSelector(selectDoneExercisesTime);
   let timeSport = Number(user.timeSport) || 110;
-  let sportRemaining = timeSport - doneExercisesTime;
   let caloriesRemaining = Math.round(user.bmr) - consumedCalories;
 
+  console.log();
   return (
     <s.DashboardWrapper>
       <s.DashboardList>
@@ -62,7 +63,7 @@ export const DayDashboard = () => {
           icon={`${icons}#figure`}
           $borderColor={findSuccesColor(timeSport, doneExercisesTime)}
         >
-          {`${sportRemaining} min`}
+          {`${findSportRemaining(timeSport, doneExercisesTime)} min`}
         </DashboardCard>
       </s.DashboardList>
       <s.InfoWrapper>

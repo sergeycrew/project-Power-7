@@ -16,8 +16,6 @@ export const DaySwitch = () => {
   const currentDate = useSelector(selectCurrentDate);
   const dispatch = useDispatch();
 
-  console.log(currentDate);
-
   const CustomInput = forwardRef(({ onClick }, ref) => {
     return (
       <s.DateContainer>

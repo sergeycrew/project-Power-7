@@ -1,23 +1,4 @@
 import styled from 'styled-components';
-// import { theme } from '../../styles/Theme';
-
-// const commonStyles = `
-//   border: 1px solid ${theme.colors.accentColor};
-//   border-radius: 12px;
-//   padding: 10px 14px;
-//   height: 38px;
-//   font-weight: 400;
-//   font-size: 14px;
-//   line-height: 129%;
-//   color: ${theme.colors.whiteColor};
-// `;
-
-// const commonMediaStyles = `
-//     height: 40px;
-//     font-size: 16px;
-//     line-height: 150%;
-//     padding: 8px 14px;
-// `;
 
 export const ProductsContainer = styled.ul`
   display: flex;
@@ -104,14 +85,6 @@ export const ListItem = styled.li`
   }
 `;
 
-// export const DayItemTitle = styled.p`
-//   font-family: 'Roboto', sans-serif;
-//   font-weight: 400;
-//   font-size: 12px;
-//   line-height: 150%;
-//   color: ${(p) => p.theme.colors.orangeLightColor};
-//   margin-bottom: 8px;
-// `;
 export const DayExerciseItemContent = styled.p`
   border: 1px solid ${(p) => p.theme.colors.accentColor};
   border-radius: 12px;
@@ -120,9 +93,10 @@ export const DayExerciseItemContent = styled.p`
   font-weight: 400;
   font-size: 14px;
   line-height: 129%;
+  text-transform: capitalize;
   overflow: hidden;
+  white-space: nowrap;
   text-overflow: ellipsis;
-
   color: ${(p) => p.theme.colors.whiteColor};
 
   @media screen and (min-width: 768px) {
@@ -132,98 +106,6 @@ export const DayExerciseItemContent = styled.p`
     padding: 8px 14px;
   }
 `;
-
-// export const DayItemBodyPartContent = styled.p`
-//   ${commonStyles}
-//   width: 297px;
-
-//   @media screen and (min-width: 768px) {
-//     ${commonMediaStyles}
-//     width: 90px;
-//   }
-
-//   @media screen and (min-width: 1440px) {
-//     width: 115px;
-//   }
-// `;
-
-// export const DayItemEquipmentContent = styled.p`
-//   ${commonStyles}
-//   width: 297px;
-
-//   @media screen and (min-width: 768px) {
-//     ${commonMediaStyles}
-//     width: 132px;
-//   }
-
-//   @media screen and (min-width: 1440px) {
-//     width: 157px;
-//   }
-// `;
-
-// export const DayItemNameContent = styled.p`
-//   ${commonStyles}
-//   width: 297px;
-
-//   @media screen and (min-width: 768px) {
-//     ${commonMediaStyles}
-//     width: 128px;
-//   }
-
-//   @media screen and (min-width: 1440px) {
-//     width: 131px;
-//   }
-// `;
-
-// export const DayTargetContent = styled.p`
-//   ${commonStyles}
-//   width: 81px;
-
-//   @media screen and (min-width: 768px) {
-//     ${commonMediaStyles}
-//     width: 84px;
-//   }
-
-//   @media screen and (min-width: 1440px) {
-//     width: 106px;
-//   }
-// `;
-
-// export const DayCaloriesContent = styled.p`
-//   ${commonStyles}
-//   width: 80px;
-
-//   @media screen and (min-width: 768px) {
-//     ${commonMediaStyles}
-//     width: 78px;
-//   }
-
-//   @media screen and (min-width: 1440px) {
-//     width: 91px;
-//   }
-// `;
-
-// export const DayTimeContent = styled.p`
-//   ${commonStyles}
-//   width: 76px;
-
-//   @media screen and (min-width: 1440px) {
-//     width: 82px;
-//   }
-// `;
-
-// export const DayItemShortContent = styled.p`
-//   border: 1px solid rgba(239, 237, 232, 0.3);
-//   border-radius: 12px;
-//   padding: 10px 43px 10px 14px;
-//   width: 81px;
-//   height: 38px;
-//   font-family: "Roboto", sans-serif;
-//   font-weight: 400;
-//   font-size: 14px;
-//   line-height: 129%;
-//   color: #efede8;
-// `;
 
 export const DeleteButton = styled.button`
   position: relative;

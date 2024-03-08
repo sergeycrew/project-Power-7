@@ -11,3 +11,13 @@ export const findSuccesColor = (time, doneExerciseTime) => {
 export const findAttentionColor = (intake, consume) => {
   return intake < consume ? 'red' : 'gray';
 };
+
+export const findSportRemaining = (timeSport, doneExercisesTime) => {
+  return timeSport >= doneExercisesTime
+    ? timeSport - doneExercisesTime
+    : `+${doneExercisesTime - timeSport}`;
+};
+
+export const findRecommendedProduct = (value) => {
+  return value ? { text: 'Yes', color: 'green' } : { text: 'No', color: 'red' };
+};

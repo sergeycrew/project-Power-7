@@ -8,5 +8,6 @@ export const ItemCommonTitle = styled.h3`
   color: ${(p) => p.theme.colors.orangeLightColor};
   margin-bottom: 8px;
   overflow: hidden;
+  white-space: nowrap;
   text-overflow: ellipsis;
 `;

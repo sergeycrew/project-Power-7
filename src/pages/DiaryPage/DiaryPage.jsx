@@ -24,8 +24,6 @@ const DiaryPage = () => {
       date: currentDate,
     };
 
-    console.log(currentDate);
-
     dispatch(fetchAllDairyInfo(currentDateObj));
   }, [dispatch, currentDate]);
   return (

@@ -1,8 +1,19 @@
+import { useDispatch, useSelector } from 'react-redux';
 import { DayCommonItemTitle } from '../DayCommonItemTitle/DayCommonItemTitle';
 import * as s from './DayProductsItem.styled';
 import icons from '../../images/sprite/sprite.svg';
+import { deleteProduct } from '../../redux/diary/diaryOperations';
+import { selectUser } from '../../redux/auth/authSelectors';
+import { findRecommendedProduct } from '../../Helpers/GlobalOperations';
 
 export const DayProductItem = ({ isFirstItem, value }) => {
+  const dispatch = useDispatch();
+  const user = useSelector(selectUser);
+  // let bloodType = user.blood;
+  let recommended = findRecommendedProduct(
+    value.productId.groupBloodNotAllowed[user.blood]
+  );
+
   return (
     <s.ItemProductWrapper>
       <s.ProductsContainer>
@@ -37,12 +48,15 @@ export const DayProductItem = ({ isFirstItem, value }) => {
           <s.DayItemContent
             style={{ display: 'flex', alignItems: 'center', gap: '8px' }}
           >
-            <s.RecomendalDot></s.RecomendalDot>
-            <span>Yes</span>
+            <s.RecomendalDot $color={recommended.color}></s.RecomendalDot>
+            <span>{recommended.text}</span>
           </s.DayItemContent>
         </s.ListItem>
       </s.ProductsContainer>
-      <s.DeleteButton>
+      <s.DeleteButton
+        type="button"
+        onClick={() => dispatch(deleteProduct(value.productId._id))}
+      >
         <s.DeleteIcon>
           <use href={`${icons}#trash`}></use>
         </s.DeleteIcon>
