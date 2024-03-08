@@ -10,7 +10,7 @@ export const LogoWrapper = styled(Link)`
 
 export const LogoIcon = styled.svg` 
 width: 36px;
-height: 13p;
+height: 14p;
 
 @media screen and (min-width: 768px) {
     width: 44px;
