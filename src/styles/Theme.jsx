@@ -20,6 +20,7 @@ export const theme = {
 
     recommendedColor: '#419B09',
     notRecommendedColor: '#E9101D',
+    selectBgrColor: '#1c1c1c',
     cardBgColor: 'rgba(239, 237, 232, 0.05)',
     cardBorderColor: 'rgba(239, 237, 232, 0.2)',
     captionColor: 'rgba(239, 237, 232, 0.4)',

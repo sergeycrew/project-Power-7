@@ -92,13 +92,13 @@ const handleUpdateUserParamsPending = (state) => {
 };
 const handleUpdateUserParamsRejected = (state, { payload }) => {
   state.isLoggedIn = true;
-  state.goToParams = false;
+  // state.goToParams = false;
   state.error = payload;
 };
 const handleUpdateUserParamsFulfilled = (state, { payload }) => {
   state.user = payload;
   state.isLoggedIn = true;
-  state.goToParams = false;
+  // state.goToParams = false;
   // state.token = payload.token;
   state.error = null;
 };

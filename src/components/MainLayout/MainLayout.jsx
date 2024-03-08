@@ -9,11 +9,11 @@ import { useDispatch } from 'react-redux';
 import { refreshUser } from '../../redux/auth/authOperation';
 
 const MainLayout = () => {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(refreshUser());
-  }, [dispatch]);
-  return (
+  // const dispatch = useDispatch();
+  // useEffect(() => {
+  //   dispatch(refreshUser());
+  // }, [dispatch]);
+  return  (
     <Layout>
       <Header />
       {/* <main> */}

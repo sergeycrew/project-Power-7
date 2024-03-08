@@ -31,3 +31,17 @@ export const fetchProducts = createAsyncThunk(
     }
   }
 );
+
+export const fetchProductsCategories = createAsyncThunk(
+  'products/Category',
+  async (_, thunkAPI) => {
+    const state = thunkAPI.getState();
+    try {
+      setAuthHeader(temptoken);
+      const response = await axios.get('api/products/Category');
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
