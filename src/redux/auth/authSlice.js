@@ -29,6 +29,7 @@ const initialState = {
   token: '',
   isLoggedIn: false,
   isRefreshing: false,
+  isLoading: true,
   error: null,
 };
 
@@ -64,6 +65,7 @@ const handleLogOutFulfilled = (state) => {
 const handleCurrentUserPending = (state) => {
   // state.isRefreshing = true;
   state.error = null;
+  state.isLoading = true;
 };
 
 const handleCurrentUserRejected = (state, { payload }) => {
@@ -72,14 +74,17 @@ const handleCurrentUserRejected = (state, { payload }) => {
   // state.isLoggedIn = false;
   // state.isRefreshing = false;
   state.error = payload;
+  state.isLoading = false;
 };
 
 const handleCurrentUserFulfilled = (state, { payload }) => {
   state.user = payload;
+  state.isLoading = false;
+
   // state.token = payload.tokens.refreshToken;
-  state.isLoggedIn = true;
-  state.isRefreshing = false;
-  state.error = null;
+  // state.isLoggedIn = true;
+  // state.isRefreshing = false;
+  // state.error = null;
 };
 
 const handleUpdateUserParamsPending = (state) => {
@@ -142,7 +147,6 @@ const handleUserRefreshRejected = (state, { payload }) => {
 const handleUserRefreshFulfilled = (state, { payload }) => {
   state.isLoggedIn = true;
   state.token = payload;
-  state.error = null;
   state.isRefreshing = false;
 };
 

@@ -15,7 +15,7 @@ const ProfilePage = () => {
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
 
-  const { isRefreshing, isLoggedIn } = useAuth();
+  const { isLoggedIn, isLoading } = useAuth();
 
   useEffect(() => {
     if (isLoggedIn) {
@@ -23,7 +23,7 @@ const ProfilePage = () => {
     }
   }, [dispatch, isLoggedIn]);
 
-  return isRefreshing ? (
+  return isLoading ? (
     <b>Refreshing user...</b>
   ) : (
     <s.Container>
