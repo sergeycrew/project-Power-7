@@ -9,7 +9,7 @@ export const OverlayModal = styled.div`
   height: 100%;
   background-color: ${p => p.theme.colors.modalOverlay};
   overflow: hidden;
-  z-index: 10;
+  z-index: 90;
 `;
 export const WrapperModalWindowUserMenu = styled.div`
   position: absolute;

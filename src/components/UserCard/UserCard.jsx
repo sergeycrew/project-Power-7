@@ -47,7 +47,7 @@ style={{ display: !user.verify ? 'none' : 'inline-block' }}
         </s.Label>
         </div>
         
-        <s.UserName>{user.name}</s.UserName>
+        <s.UserName>{user.name ? user.name : 'Name'}</s.UserName>
         <s.SubTitle>User</s.SubTitle>
         </s.Container>
 

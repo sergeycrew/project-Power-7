@@ -10,7 +10,7 @@ import { BurgerMenuButton } from 'components/BurgerMenuButton/BurgerMenuButton';
 import { ModalWindowMenuUser } from 'components/ModalWindowBurgerMenu/ModalWindowBurgerMenu'
 
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { useAuth } from '../../hooks/useAuth';
+import { useAuth } from '../../hooks';
 
 
 
@@ -20,7 +20,8 @@ export const Header = () => {
   const buttonRef = useRef(null);
   const isWideScreen = window.innerWidth >= 1440;
   const headerStyle = {
-    borderBottom: isLoggedIn ? '${p => p.theme.colors.greyColor}' : '0',
+    borderBottom: isLoggedIn ? '1px solid rgba(239, 237, 232, 0.2)' : '0',
+     position: isLoggedIn ? 'static' : 'absolute',
     backgroundColor:
       isWideScreen && !isLoggedIn ? 'transparent' : 'rgba(4, 4, 4, 1)',
   };
@@ -53,7 +54,7 @@ export const Header = () => {
   }, [closeModal]);
 
   useEffect(() => {
-    if (isLoggedIn && isModalOpen) {
+    if (!isLoggedIn && isModalOpen) {
       closeModal();
     }
   }, [isLoggedIn, isModalOpen, closeModal]);
@@ -64,14 +65,15 @@ export const Header = () => {
         <LogoWrap>
           <Logo />
         </LogoWrap>
-
-        <UserNav />
+        {isLoggedIn && 
+          (<>
+            <UserNav />
         <UserBar />
-
         <HideLogout>
           <Logout />
         </HideLogout>
-        <BurgerMenuButton openModal={openModal} buttonRef={buttonRef}/>
+            <BurgerMenuButton openModal={openModal} buttonRef={buttonRef} />
+          </>)}
         {isModalOpen && <ModalWindowMenuUser closeModal={closeModal}/>}
       </HeaderBar>
     </Container>

@@ -10,47 +10,51 @@ import { useAuth } from '../../hooks/useAuth';
 import { selectUser } from '../../redux/auth/authSelectors';
 
 import { Container } from 'styles/container';
+import { Logout } from '../../components/Logout/Logout';
 
 const ProfilePage = () => {
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
 
+  const { isLoggedIn, isLoading } = useAuth();
+
   useEffect(() => {
-    dispatch(currentUser());
-  }, [dispatch]);
+    if (isLoggedIn) {
+      dispatch(currentUser());
+    }
+  }, [dispatch, isLoggedIn]);
 
-  const { isRefreshing } = useAuth();
-
-  return isRefreshing ? (
+  return isLoading ? (
     <b>Refreshing user...</b>
   ) : (
-
-      <s.Container>
-        <s.Title>Profile Setings</s.Title>
-        <s.Wrapper>
-          <div>
-            <UserCard />
-            <s.WrappInfo>
-              <DailyBaseInfo
-                iconId="icon-fork-knife"
-                text="Daily calorie intake"
-                value={user.bmr}
-              />
-              <DailyBaseInfo
-                iconId="icon-dumbbell"
-                text="Daily physical activity"
-                value={user.timeSport}
-                amoutName="min"
-              />
-            </s.WrappInfo>
-            <UserNote />
-          </div>
-          <s.WrappForm>
-            <UserForm />
-          </s.WrappForm>
-        </s.Wrapper>
-      </s.Container>
- 
+    <s.Container>
+      <s.Title>Profile Setings</s.Title>
+      <s.Wrapper>
+        <s.UserWrap>
+          <UserCard />
+          <s.WrappInfo>
+            <DailyBaseInfo
+              iconId="icon-fork-knife"
+              text="Daily calorie intake"
+              value={user.bmr}
+            />
+            <DailyBaseInfo
+              iconId="icon-dumbbell"
+              text="Daily physical activity"
+              value={user.timeSport}
+              amoutName="min"
+            />
+          </s.WrappInfo>
+          <UserNote />
+         <s.LogoutWrap>
+         <Logout />
+         </s.LogoutWrap>
+        </s.UserWrap>
+        <s.WrappForm>
+          <UserForm />
+        </s.WrappForm>
+      </s.Wrapper>
+    </s.Container>
   );
 };
 

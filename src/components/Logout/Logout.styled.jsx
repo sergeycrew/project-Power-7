@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 export const LogoWrapper = styled.div`
   width: 70px;
-  height: 20p;
+  height: 20px;
 
   @media screen and (min-width: 768px) {
     width: 78px;
@@ -25,7 +25,7 @@ export const Text = styled.span`
   margin-right: 8px;
   font-size: 14px;
   font-weight: 400;
-  @media screen and (min-width: 768px){
+  @media screen and (min-width: 768px) {
     font-size: 16px;
   }
 `;

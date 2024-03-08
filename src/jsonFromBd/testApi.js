@@ -17,7 +17,7 @@ export const getAllExercises = async () => {
 };
 
 export const addWorkout = async (workout) => {
-  const res = await axios.post('diary/workout', workout);
+  const res = await axios.post('addexercises', workout);
 
   return res.data;
 };

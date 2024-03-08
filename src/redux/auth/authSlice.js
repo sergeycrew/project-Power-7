@@ -7,6 +7,7 @@ import {
   updateUserParams,
   updateUserAvatar,
   userVerifyAgain,
+  refreshUser,
 } from './authOperation';
 
 const initialUser = {
@@ -25,9 +26,10 @@ const initialUser = {
 
 const initialState = {
   user: initialUser,
-  token: null,
+  token: '',
   isLoggedIn: false,
   isRefreshing: false,
+  isLoading: true,
   error: null,
 };
 
@@ -41,44 +43,48 @@ const handleRejected = (state, { payload }) => {
 
 const handleRegisterFulfilled = (state, { payload }) => {
   state.user = payload.user;
-  state.token = payload.token;
+  state.token = payload.tokens.refreshToken;
   state.isLoggedIn = true;
   state.error = null;
 };
 
 const handleLogInFulfilled = (state, { payload }) => {
   state.user = payload.user;
-  state.token = payload.token;
+  state.token = payload.tokens.refreshToken;
   state.isLoggedIn = true;
   state.error = null;
 };
 
 const handleLogOutFulfilled = (state) => {
   state.user = initialUser;
-  state.token = null;
+  state.token = '';
   state.isLoggedIn = false;
   state.error = null;
 };
 
 const handleCurrentUserPending = (state) => {
-  state.isRefreshing = true;
+  // state.isRefreshing = true;
   state.error = null;
+  state.isLoading = true;
 };
 
 const handleCurrentUserRejected = (state, { payload }) => {
-  state.user = initialUser;
-  // state.token = null;
-  state.isLoggedIn = false;
-  state.isRefreshing = false;
+  // state.user = initialUser;
+  // state.token = '';
+  // state.isLoggedIn = false;
+  // state.isRefreshing = false;
   state.error = payload;
+  state.isLoading = false;
 };
 
 const handleCurrentUserFulfilled = (state, { payload }) => {
   state.user = payload;
-  // state.token = payload.token;
-  state.isLoggedIn = true;
-  state.isRefreshing = false;
-  state.error = null;
+  state.isLoading = false;
+
+  // state.token = payload.tokens.refreshToken;
+  // state.isLoggedIn = true;
+  // state.isRefreshing = false;
+  // state.error = null;
 };
 
 const handleUpdateUserParamsPending = (state) => {
@@ -130,6 +136,20 @@ const handleUserVerifyAgainFulfilled = (state, { payload }) => {
   state.error = null;
 };
 
+const handleUserRefreshPending = (state) => {
+  state.error = null;
+  state.isRefreshing = true;
+};
+const handleUserRefreshRejected = (state, { payload }) => {
+  state.error = payload;
+  state.isRefreshing = true;
+};
+const handleUserRefreshFulfilled = (state, { payload }) => {
+  state.isLoggedIn = true;
+  state.token = payload;
+  state.isRefreshing = false;
+};
+
 const authSlice = createSlice({
   name: 'auth',
   initialState,
@@ -161,7 +181,11 @@ const authSlice = createSlice({
 
       .addCase(userVerifyAgain.pending, handleUserVerifyAgainPending)
       .addCase(userVerifyAgain.rejected, handleUserVerifyAgainRejected)
-      .addCase(userVerifyAgain.fulfilled, handleUserVerifyAgainFulfilled),
+      .addCase(userVerifyAgain.fulfilled, handleUserVerifyAgainFulfilled)
+
+      .addCase(refreshUser.pending, handleUserRefreshPending)
+      .addCase(refreshUser.rejected, handleUserRefreshRejected)
+      .addCase(refreshUser.fulfilled, handleUserRefreshFulfilled),
 });
 
 export const authReducer = authSlice.reducer;

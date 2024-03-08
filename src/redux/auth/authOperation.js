@@ -4,11 +4,6 @@ import { toast } from 'react-toastify';
 
 axios.defaults.baseURL = 'https://backend-power-pulse-7.onrender.com/api/';
 
-
-const temptoken =
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWU3YWY1MTQwZmI2ZjdmNDRkOGJmOGYiLCJ0eXBlIjoiYWNjZXNzIiwiaWF0IjoxNzA5ODI4MDgxLCJleHAiOjE3MDk5MTA4ODF9.XZ5zY65k5DHoNxhW4HSo2FkecylMGw74PZzTxIM21rc';
-
-
 const setAuthHeader = (token) => {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
 };
@@ -22,9 +17,8 @@ export const register = createAsyncThunk(
   async (credentials, { rejectWithValue }) => {
     try {
       const { data } = await axios.post('users/register', credentials);
-      setAuthHeader(data.token);
+      setAuthHeader(data.tokens.accessToken);
       toast.success('Registration is successful');
-      console.log(data);
       return data;
     } catch (error) {
       toast.error('Oops, something went wrong! Try again later.');
@@ -39,9 +33,8 @@ export const logIn = createAsyncThunk(
   async (credentials, { rejectWithValue }) => {
     try {
       const { data } = await axios.post('users/login', credentials);
-      setAuthHeader(data.token);
+      setAuthHeader(data.tokens.accessToken);
       toast.success('Login is successful');
-      console.log(data);
       return data;
     } catch (error) {
       toast.error('Oops, something went wrong! Try again later.');
@@ -56,7 +49,6 @@ export const logOut = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       await axios.post('users/logout');
-
       clearAuthHeader();
       toast.success('Logout is successful');
     } catch (error) {
@@ -70,17 +62,7 @@ export const logOut = createAsyncThunk(
 export const currentUser = createAsyncThunk(
   'auth/current',
   async (_, thunkAPI) => {
-    const state = thunkAPI.getState();
-    const persistedToken = state.auth.token;
-
-    // if (persistedToken === null) {
-    //   return thunkAPI.rejectWithValue('Unable to fetch user');
-    // }
-
     try {
-      setAuthHeader(temptoken);
-      // setAuthHeader(persistedToken);
-
       const { data } = await axios.get('users/current');
 
       return data;
@@ -89,7 +71,7 @@ export const currentUser = createAsyncThunk(
     }
   }
 );
-
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 export const updateUserAvatar = createAsyncThunk(
   'users/updateAvatar',
   async (file, thunkAPI) => {
@@ -130,3 +112,23 @@ export const userVerifyAgain = createAsyncThunk(
   }
 );
 // credentials
+
+export const refreshUser = createAsyncThunk(
+  'users/refresh',
+  async (_, thunkApi) => {
+    const state = thunkApi.getState();
+    const persistorToken = state.auth.token;
+    if (persistorToken === '') {
+      return thunkApi.rejectWithValue('Unable to fetch user');
+    }
+    try {
+      const tokens = await axios.post('/users/refresh', {
+        refreshToken: persistorToken,
+      });
+      setAuthHeader(tokens.data.accessToken);
+      return tokens.data.refreshToken;
+    } catch (error) {
+      return thunkApi.rejectWithValue(error.message);
+    }
+  }
+);
