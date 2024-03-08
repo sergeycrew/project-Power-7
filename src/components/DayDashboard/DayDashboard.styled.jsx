@@ -5,7 +5,12 @@ export const DashboardList = styled.ul`
   flex-wrap: wrap;
   column-gap: 13px;
   row-gap: 20px;
-  width: 335px;
+  /* width: 335px; */
+  width: 100%;
+
+  @media screen and (min-width: 375px) {
+    width: 335px;
+  }
 
   @media screen and (min-width: 768px) {
     width: 593px;
@@ -20,7 +25,12 @@ export const DashboardList = styled.ul`
 export const InfoWrapper = styled.div`
   display: flex;
   gap: 8px;
-  max-width: 335px;
+  max-width: 100%;
+  /* max-width: 335px; */
+
+  @media screen and (min-width: 375px) {
+    max-width: 335px;
+  }
 
   @media screen and (min-width: 768px) {
     max-width: 593px;

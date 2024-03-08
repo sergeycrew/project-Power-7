@@ -5,13 +5,14 @@ export const ItemWrapper = styled.li`
   border: 1px solid ${(p) => p.theme.colors.cardBorderColor};
   border-radius: 12px;
   padding: 16px;
-  width: 335px;
+  /* width: 335px; */
+  width: 100%;
   height: 100%;
   min-height: 335px;
   max-height: 824px;
   background: ${(p) => p.theme.colors.cardBgColor};
   position: relative;
-  overflow: hidden;
+  /* overflow: hidden;
   overflow-y: auto;
   &::-webkit-scrollbar {
     width: 6px;
@@ -20,6 +21,10 @@ export const ItemWrapper = styled.li`
   &::-webkit-scrollbar-thumb {
     background-color: rgba(239, 237, 232, 0.1);
     border-radius: 12px;
+  } */
+
+  @media screen and (min-width: 375px) {
+    width: 335px;
   }
 
   @media screen and (min-width: 768px) {
@@ -76,4 +81,17 @@ export const ArrowIcon = styled.svg`
   height: 16px;
 
   fill: ${(p) => p.theme.colors.hoverColor};
+`;
+
+export const ChildrenContainer = styled.div`
+  overflow: hidden;
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    width: 6px;
+    max-height: 60px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(239, 237, 232, 0.1);
+    border-radius: 12px;
+  }
 `;
