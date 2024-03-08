@@ -14,6 +14,7 @@ import { authReducer } from './auth/authSlice';
 import { productFilterReducer } from './products/productFilterSlice';
 import { productListReducer } from './products/productListSlice';
 import { diaryReducer } from './diary/diarySlice';
+import { exercisesReducer } from './exercises-t/sliceExercises';
 
 const authPersistConfig = {
   key: 'auth',
@@ -26,6 +27,7 @@ export const rootReducer = combineReducers({
   productFilter: productFilterReducer,
   productList: productListReducer,
   diary: diaryReducer,
+  exercises: exercisesReducer,
 });
 
 export const store = configureStore({
