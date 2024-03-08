@@ -16,7 +16,7 @@ export const Logout = ({ color, closeModal }) => {
   const handleClick = (e) => {
     e.preventDefault();
     dispatch(logOut());
-    closeModal();
+    // closeModal();
   };
 
   return (

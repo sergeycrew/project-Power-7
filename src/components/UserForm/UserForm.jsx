@@ -88,9 +88,9 @@ const UserForm = () => {
 
   const initialValues = {
     name: user.name || 'Name',
-    height: user.height || '150',
-    currentWeight: user.currentWeight || '35',
-    desiredWeight: user.desiredWeight || '35',
+    height: user.height || '',
+    currentWeight: user.currentWeight || '',
+    desiredWeight: user.desiredWeight || '',
     birthday: user.birthday || '2005-01-01',
     blood: (user.blood ?? '1').toString() || '1',
     sex: user.sex || 'male',
