@@ -12,6 +12,7 @@ import {
   findSuccesColor,
   findAttentionColor,
   findSportRemaining,
+  findCaloriesRemaining,
 } from '../../Helpers/GlobalOperations';
 
 export const DayDashboard = () => {
@@ -20,7 +21,7 @@ export const DayDashboard = () => {
   let consumedCalories = useSelector(selectConsumedCalories);
   let doneExercisesTime = useSelector(selectDoneExercisesTime);
   let timeSport = Number(user.timeSport) || 110;
-  let caloriesRemaining = Math.round(user.bmr) - consumedCalories;
+  let dailyCaloriesIntake = Math.round(user.bmr) || 0;
 
   console.log();
   return (
@@ -32,7 +33,7 @@ export const DayDashboard = () => {
           $bgColor="orange"
           $cardTextColor="white"
         >
-          {Math.round(user.bmr)}
+          {dailyCaloriesIntake}
         </DashboardCard>
         <DashboardCard
           subtitle="Daily physical activity"
@@ -43,7 +44,7 @@ export const DayDashboard = () => {
           {`${timeSport} min`}
         </DashboardCard>
         <DashboardCard subtitle="Сalories consumed" icon={`${icons}#apple`}>
-          {consumedCalories}
+          {Math.abs(consumedCalories)}
         </DashboardCard>
         <DashboardCard subtitle="Сalories burned" icon={`${icons}#fire`}>
           {burnedCalories}
@@ -52,11 +53,14 @@ export const DayDashboard = () => {
           subtitle="Calories remaining"
           icon={`${icons}#bubble`}
           $borderColor={findAttentionColor(
-            Math.round(user.bmr),
-            consumedCalories
+            dailyCaloriesIntake,
+            Math.abs(consumedCalories)
           )}
         >
-          {caloriesRemaining}
+          {findCaloriesRemaining(
+            dailyCaloriesIntake,
+            Math.abs(consumedCalories)
+          )}
         </DashboardCard>
         <DashboardCard
           subtitle="Sports remaining"

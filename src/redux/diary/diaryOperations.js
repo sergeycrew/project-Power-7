@@ -29,14 +29,15 @@ export const fetchAllDairyInfo = createAsyncThunk(
 
 export const deleteProduct = createAsyncThunk(
   '/diary/deldiaryproduct',
-  async (productId, thunkAPI) => {
+  async (product, thunkAPI) => {
+    console.log(product);
     try {
       // const state = thunkAPI.getState();
       // const storedToken = state.auth.token;
       // setAuthHeader(storedToken);
-      const response = await axios.delete(
-        `/diary/deldiaryproduct/${productId}`
-      );
+      const response = await axios.delete(`/diary/deldiaryproduct`, {
+        data: product,
+      });
       toast.success('A product has been successfully deleted!');
       return response.data;
     } catch (error) {
@@ -48,14 +49,14 @@ export const deleteProduct = createAsyncThunk(
 
 export const deleteExercise = createAsyncThunk(
   '/diary/deldiaryexercisest',
-  async (exerciseId, thunkAPI) => {
+  async (exercise, thunkAPI) => {
     try {
       // const state = thunkAPI.getState();
       // const storedToken = state.auth.token;
       // setAuthHeader(storedToken);
-      const response = await axios.delete(
-        `/diary/deldiaryexercisest/${exerciseId}`
-      );
+      const response = await axios.delete(`/diary/deldiaryexercisest`, {
+        data: exercise,
+      });
       toast.success('An exercise has been successfully deleted!');
       return response.data;
     } catch (error) {

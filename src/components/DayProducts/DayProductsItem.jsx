@@ -5,14 +5,24 @@ import icons from '../../images/sprite/sprite.svg';
 import { deleteProduct } from '../../redux/diary/diaryOperations';
 import { selectUser } from '../../redux/auth/authSelectors';
 import { findRecommendedProduct } from '../../Helpers/GlobalOperations';
+import { selectCurrentDate } from '../../redux/diary/diarySelectors';
 
 export const DayProductItem = ({ isFirstItem, value }) => {
   const dispatch = useDispatch();
+  let currentTime = useSelector(selectCurrentDate);
   const user = useSelector(selectUser);
-  // let bloodType = user.blood;
   let recommended = findRecommendedProduct(
     value.productId.groupBloodNotAllowed[user.blood]
   );
+
+  const objForDelete = {
+    date: currentTime,
+    productId: value._id,
+    calories: value.calories,
+    amount: value.amount,
+  };
+
+  // console.log(objForDelete);
 
   return (
     <s.ItemProductWrapper>
@@ -33,13 +43,13 @@ export const DayProductItem = ({ isFirstItem, value }) => {
           <DayCommonItemTitle isFirstItem={isFirstItem}>
             Calories
           </DayCommonItemTitle>
-          <s.DayItemContent>{value.productId.calories}</s.DayItemContent>
+          <s.DayItemContent>{value.calories}</s.DayItemContent>
         </s.ListItem>
         <s.ListItem>
           <DayCommonItemTitle isFirstItem={isFirstItem}>
             Weight
           </DayCommonItemTitle>
-          <s.DayItemContent>{value.productId.weight}</s.DayItemContent>
+          <s.DayItemContent>{value.amount}</s.DayItemContent>
         </s.ListItem>
         <s.ListItem>
           <DayCommonItemTitle isFirstItem={isFirstItem}>
@@ -55,7 +65,7 @@ export const DayProductItem = ({ isFirstItem, value }) => {
       </s.ProductsContainer>
       <s.DeleteButton
         type="button"
-        onClick={() => dispatch(deleteProduct(value.productId._id))}
+        onClick={() => dispatch(deleteProduct(objForDelete))}
       >
         <s.DeleteIcon>
           <use href={`${icons}#trash`}></use>

@@ -45,8 +45,13 @@ const handleFetchAllFulfilled = (state, { payload }) => {
 const handleDeleteProductFulfilled = (state, action) => {
   state.isLoading = false;
   state.error = null;
+  // const newProductArr = state.diaryInfo.products.filter(
+  //   (product) => product._id !== action.payload.data.productId
+  // );
+
+  // state.diaryInfo.products = newProductArr;
   const index = state.diaryInfo.products.findIndex(
-    (product) => product.id === action.payload.id
+    (product) => product._id === action.payload.data.productId
   );
   state.diaryInfo.products.splice(index, 1);
 };
@@ -55,7 +60,7 @@ const handleDeleteExerciseFulfilled = (state, action) => {
   state.isLoading = false;
   state.error = null;
   const index = state.diaryInfo.exercises.findIndex(
-    (exercise) => exercise.id === action.payload.id
+    (exercise) => exercise._id === action.payload.data.exerciseId
   );
   state.diaryInfo.exercises.splice(index, 1);
 };

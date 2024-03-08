@@ -1,11 +1,20 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import * as s from './DayExercisesItem.styled';
 import icons from '../../images/sprite/sprite.svg';
 import { DayCommonItemTitle } from '../DayCommonItemTitle/DayCommonItemTitle';
 import { deleteExercise } from '../../redux/diary/diaryOperations';
+import { selectCurrentDate } from '../../redux/diary/diarySelectors';
 
 export const DayExerciseItem = ({ isFirstItem, value }) => {
   const dispatch = useDispatch();
+  let currentTime = useSelector(selectCurrentDate);
+
+  const objForDelete = {
+    date: currentTime,
+    exerciseId: value._id,
+    calories: value.calories,
+    time: value.time,
+  };
   return (
     <s.ItemExerciseWrapper>
       <s.ProductsContainer>
@@ -45,22 +54,18 @@ export const DayExerciseItem = ({ isFirstItem, value }) => {
           <DayCommonItemTitle isFirstItem={isFirstItem}>
             Burned calories
           </DayCommonItemTitle>
-          <s.DayExerciseItemContent>
-            {value.exerciseId.burnedCalories}
-          </s.DayExerciseItemContent>
+          <s.DayExerciseItemContent>{value.calories}</s.DayExerciseItemContent>
         </s.ListItem>
         <s.ListItem>
           <DayCommonItemTitle isFirstItem={isFirstItem}>
             Time
           </DayCommonItemTitle>
-          <s.DayExerciseItemContent>
-            {value.exerciseId.time}
-          </s.DayExerciseItemContent>
+          <s.DayExerciseItemContent>{value.time}</s.DayExerciseItemContent>
         </s.ListItem>
       </s.ProductsContainer>
       <s.DeleteButton
         type="button"
-        onClick={() => dispatch(deleteExercise(value._id))}
+        onClick={() => dispatch(deleteExercise(objForDelete))}
       >
         <s.DeleteIcon>
           <use href={`${icons}#trash`}></use>

@@ -18,6 +18,10 @@ export const findSportRemaining = (timeSport, doneExercisesTime) => {
     : `+${doneExercisesTime - timeSport}`;
 };
 
+export const findCaloriesRemaining = (intake, consumed) => {
+  return intake >= consumed ? intake - consumed : `-${consumed - intake}`;
+};
+
 export const findRecommendedProduct = (value) => {
   return value ? { text: 'Yes', color: 'green' } : { text: 'No', color: 'red' };
 };
