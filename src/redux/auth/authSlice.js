@@ -25,7 +25,7 @@ const initialUser = {
 
 const initialState = {
   user: initialUser,
-  token: null,
+  token: '',
   isLoggedIn: false,
   isRefreshing: false,
   error: null,
@@ -55,27 +55,27 @@ const handleLogInFulfilled = (state, { payload }) => {
 
 const handleLogOutFulfilled = (state) => {
   state.user = initialUser;
-  state.token = null;
+  state.token = '';
   state.isLoggedIn = false;
   state.error = null;
 };
 
 const handleCurrentUserPending = (state) => {
-  state.isRefreshing = true;
+  // state.isRefreshing = true;
   state.error = null;
 };
 
 const handleCurrentUserRejected = (state, { payload }) => {
-  state.user = initialUser;
-  // state.token = null;
-  state.isLoggedIn = false;
-  state.isRefreshing = false;
+  // state.user = initialUser;
+  state.token = '';
+  // state.isLoggedIn = false;
+  // state.isRefreshing = false;
   state.error = payload;
 };
 
 const handleCurrentUserFulfilled = (state, { payload }) => {
-  state.user = payload;
-  // state.token = payload.token;
+  state.user = payload.user;
+  // state.token = payload.tokens.refreshToken;
   state.isLoggedIn = true;
   state.isRefreshing = false;
   state.error = null;
