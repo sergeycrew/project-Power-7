@@ -22,6 +22,7 @@ import { ExercisesListByCategory } from './components/ExercisesList/ExercisesLis
 import { useAuth } from './hooks';
 import { refreshUser } from './redux/auth/authOperation';
 import { useDispatch } from 'react-redux';
+import { Loader } from './components/Loader/Loader';
 
 
 
@@ -36,7 +37,8 @@ function App() {
   const { isRefreshing } = useAuth();
   // return (
   return isRefreshing ? (
-    <b>Refreshing user...</b>
+    
+    <Loader/>
   ) :   (
     <>
       <Routes>

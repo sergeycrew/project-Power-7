@@ -4,8 +4,11 @@ import { Formik, Field, ErrorMessage } from 'formik';
 import * as s from './UserForm.styled';
 
 import { useDispatch, useSelector } from 'react-redux';
-import {selectIsLoggedIn, selectUser} from '../../redux/auth/authSelectors';
-import { updateUserParams, userVerifyAgain } from '../../redux/auth/authOperation';
+import { selectIsLoggedIn, selectUser } from '../../redux/auth/authSelectors';
+import {
+  updateUserParams,
+  userVerifyAgain,
+} from '../../redux/auth/authOperation';
 
 // import user from '../../jsonFromBd/userParams.json'
 import { CustomDataPicker } from '../UserDataPicker/UserDataPicker';
@@ -13,59 +16,55 @@ import RadioOption from '../UserRadio/UserRadio';
 import { useState } from 'react';
 // import { CustomDataPicker } from '../CustomDataPicker/CustomDataPicker';
 
-
-
-
 // blood - number; allowed values 1, 2, 3, 4; required
 // sex - string; allowed values "male", "female"; required
 // levelActivity - number; allowed values 1, 2, 3, 4, 5; required
 
 const UserForm = () => {
-    const dispatch = useDispatch();
-    const user = useSelector(selectUser);
-    console.log(user)
+  const dispatch = useDispatch();
+  const user = useSelector(selectUser);
+  console.log(user);
 
-    const bloodOpt = [
-        { id: '1', value: '1', label: '1' },
-        { id: '2', value: '2', label: '2' },
-        { id: '3', value: '3', label: '3' },
-        { id: '4', value: '4', label: '4' },
-      ];
-    
-      const sexOpt = [
-        { id: 'Male', value: 'male', label: 'Male' },
-        { id: 'Female', value: 'female', label: 'Female' },
-      ];
-    
-      const actOpt = [
-        {
-          id: 'level-1',
-          value: '1',
-          label: 'Sedentary lifestyle (little or no physical activity)',
-        },
-        {
-          id: 'level-2',
-          value: '2',
-          label: 'Light activity (light exercises/sports 1-3 days per week)',
-        },
-        {
-          id: 'level-3',
-          value: '3',
-          label: 'Moderately active (moderate exercises/sports 3-5 days per week)',
-        },
-        {
-          id: 'level-4',
-          value: '4',
-          label: 'Very active (intense exercises/sports 6-7 days per week)',
-        },
-        {
-          id: 'level-5',
-          value: '5',
-          label:
-            'Extremely active (very strenuous exercises/sports and physical work)',
-        },
-      ];
-    
+  const bloodOpt = [
+    { id: '1', value: '1', label: '1' },
+    { id: '2', value: '2', label: '2' },
+    { id: '3', value: '3', label: '3' },
+    { id: '4', value: '4', label: '4' },
+  ];
+
+  const sexOpt = [
+    { id: 'Male', value: 'male', label: 'Male' },
+    { id: 'Female', value: 'female', label: 'Female' },
+  ];
+
+  const actOpt = [
+    {
+      id: 'level-1',
+      value: '1',
+      label: 'Sedentary lifestyle (little or no physical activity)',
+    },
+    {
+      id: 'level-2',
+      value: '2',
+      label: 'Light activity (light exercises/sports 1-3 days per week)',
+    },
+    {
+      id: 'level-3',
+      value: '3',
+      label: 'Moderately active (moderate exercises/sports 3-5 days per week)',
+    },
+    {
+      id: 'level-4',
+      value: '4',
+      label: 'Very active (intense exercises/sports 6-7 days per week)',
+    },
+    {
+      id: 'level-5',
+      value: '5',
+      label:
+        'Extremely active (very strenuous exercises/sports and physical work)',
+    },
+  ];
 
   const ValidationSchema = Yup.object().shape({
     name: Yup.string().required(),
@@ -83,8 +82,8 @@ const UserForm = () => {
       .required('Desired weight is required'),
     birthday: Yup.date().required('Birthday is required'),
   });
-//   const userBirth = new Date(user.birthday)//////////
-//   const formattedDate = parseISO(user.birthday);
+  //   const userBirth = new Date(user.birthday)//////////
+  //   const formattedDate = parseISO(user.birthday);
 
   const initialValues = {
     name: user.name || 'Name',
@@ -96,7 +95,7 @@ const UserForm = () => {
     sex: user.sex || 'male',
     levelActivity: (user.levelActivity ?? '1').toString() || '1',
   };
-  const handleSubmit = values => {
+  const handleSubmit = (values) => {
     // const sendData = {
     //   ...values,
     // };
@@ -107,59 +106,55 @@ const UserForm = () => {
   const handleChanger = (e) => {
     setBtnActive(true);
   };
-   
+
   const sendVerify = () => {
-   startTimer()
+    startTimer();
     const email = user.email;
-    console.log({email})
+    console.log({ email });
     // dispatch(userVerifyAgain({email}));
     // console.log(state)
-
-   
   };
- 
-    const [timer, setTimer] = useState(null);
-    const [buttonDisabled, setButtonDisabled] = useState(false);
-    const [remainingTime, setRemainingTime] = useState(null);
-    const [timerExpired, setTimerExpired] = useState(false);
 
-  
-    const startTimer = () => {
-        
-      setButtonDisabled(true);
-      setRemainingTime(60); 
-      setTimer(
-        setInterval(() => {
-          setRemainingTime(prevTime => {
-            if (prevTime === 1) {
-              clearInterval(timer);
-              setButtonDisabled(false);
-              setTimerExpired(true);
-              return null;
-            } else {
-              return prevTime - 1;
-            }
-          });
-        }, 1000) 
-      );
-    };
+  const [timer, setTimer] = useState(null);
+  const [buttonDisabled, setButtonDisabled] = useState(false);
+  const [remainingTime, setRemainingTime] = useState(null);
+  const [timerExpired, setTimerExpired] = useState(false);
 
-    const verifyBtnContant = buttonDisabled ? `Try again in ${remainingTime}` : (timerExpired ? 'Send again' : 'Verify')
+  const startTimer = () => {
+    setButtonDisabled(true);
+    setRemainingTime(60);
+    setTimer(
+      setInterval(() => {
+        setRemainingTime((prevTime) => {
+          if (prevTime === 1) {
+            clearInterval(timer);
+            setButtonDisabled(false);
+            setTimerExpired(true);
+            return null;
+          } else {
+            return prevTime - 1;
+          }
+        });
+      }, 1000)
+    );
+  };
 
-
+  const verifyBtnContant = buttonDisabled
+    ? `Try again in ${remainingTime}`
+    : timerExpired
+    ? 'Send again'
+    : 'Verify';
 
   return (
     <Formik
-      initialValues={initialValues
-      }
+      initialValues={initialValues}
       validationSchema={ValidationSchema}
       onSubmit={handleSubmit}
-    //   handleChange = {(e)=> handleChanger(e)}
-    >{formik => (
-      <s.StyledForm
-      onChange={handleChanger}>
-      
-        
+      validateOnChange={true}
+      //   handleChange = {(e)=> handleChanger(e)}
+    >
+      {(formik) => (
+        <s.StyledForm onChange={handleChanger}>
           <s.Container>
             <div style={{ width: '100%' }}>
               <s.SectionTitle>Name</s.SectionTitle>
@@ -168,12 +163,13 @@ const UserForm = () => {
                 type="text"
                 placeholder="Your name"
                 as={s.Input}
-                
+                required
                 // defaultValue={user.name}
               />
+              <s.FormError name="name" component="span" />
             </div>
             <div style={{ width: '100%' }}>
-            <s.SectionTitle>Email</s.SectionTitle>
+              <s.SectionTitle>Email</s.SectionTitle>
               <s.Input
                 type="text"
                 name="email"
@@ -182,7 +178,6 @@ const UserForm = () => {
                 readOnly
                 disabled
               />
-      
             </div>
           </s.Container>
           <s.WrappInputFields>
@@ -193,8 +188,11 @@ const UserForm = () => {
                 id="height"
                 placeholder=""
                 as={s.InputField}
+                required
               />
               <label htmlFor="height">Height</label>
+
+              <s.FormError name="height" component="span" />
             </s.WrappInput>
             <s.Wrapper>
               <s.WrappInput>
@@ -204,39 +202,42 @@ const UserForm = () => {
                   id="currentWeight"
                   placeholder=""
                   as={s.InputField}
+                  required
                 />
                 <label htmlFor="currentWeight">Current Weight</label>
+                <s.FormError name="currentWeight" component="span" />
               </s.WrappInput>
             </s.Wrapper>
           </s.WrappInputFields>
           <s.WrappInputFields>
-          <s.WrappInput>
-            <Field
-              type="number"
-              name="desiredWeight"
-              id="desiredWeight"
-              placeholder=""
-              as={s.InputField}
-            />
-            <label htmlFor="desiredWeight">Desired Weight</label>
-          </s.WrappInput>
-          <CustomDataPicker
-          selectedDate={formik.values.birthday}
-        //   isOpen={true}
-       
-              setSelectedDate={date => {
+            <s.WrappInput>
+              <Field
+                type="number"
+                name="desiredWeight"
+                id="desiredWeight"
+                placeholder=""
+                as={s.InputField}
+                required
+              />
+              <label htmlFor="desiredWeight">Desired Weight</label>
+              <s.FormError name="desiredWeight" component="span" />
+            </s.WrappInput>
+            <CustomDataPicker
+              selectedDate={formik.values.birthday}
+              //   isOpen={true}
+
+              setSelectedDate={(date) => {
+                handleChanger();
                 // const formattedDate = parseISO(date.toISOString());
                 formik.setFieldValue('birthday', date.toISOString());
-              }}/>
-              
-             
-        </s.WrappInputFields>
+              }}
+            />
+          </s.WrappInputFields>
 
-
-        <s.WrapperRadio>
+          <s.WrapperRadio>
             <div style={{ display: 'flex', marginRight: '20px' }}>
               <div style={{ display: 'flex', marginRight: '20px' }}>
-                {bloodOpt.map(option => (
+                {bloodOpt.map((option) => (
                   <RadioOption
                     key={option.id}
                     id={option.id}
@@ -250,7 +251,7 @@ const UserForm = () => {
               </div>
 
               <div style={{ display: 'flex' }}>
-                {sexOpt.map(option => (
+                {sexOpt.map((option) => (
                   <RadioOption
                     key={option.id}
                     id={option.id}
@@ -265,7 +266,7 @@ const UserForm = () => {
             </div>
 
             <s.WrapperLevel>
-              {actOpt.map(option => (
+              {actOpt.map((option) => (
                 <RadioOption
                   key={option.id}
                   id={option.id}
@@ -280,17 +281,24 @@ const UserForm = () => {
               ))}
             </s.WrapperLevel>
           </s.WrapperRadio>
-          <div style={{ display: 'flex' , justifyContent: 'flex-start'}}>
-          <s.Button type="submit" disabled={!btnActive}>Save</s.Button>
-          <s.ButtonVerify type="submit" 
-           disabled={buttonDisabled}
-           onClick={sendVerify}
-           style={{ display: user.verify ? 'none' : 'inline-block' }}
-           >
-           {verifyBtnContant}
-           </s.ButtonVerify>
+          <div style={{ display: 'flex', justifyContent: 'flex-start' }}>
+            <s.Button
+              type="submit"
+              disabled={!btnActive || Object.keys(formik.errors).length > 0}
+            >
+              Save
+            </s.Button>
+            <s.ButtonVerify
+              type="submit"
+              disabled={buttonDisabled}
+              onClick={sendVerify}
+              style={{ display: user.verify ? 'none' : 'inline-block' }}
+            >
+              {verifyBtnContant}
+            </s.ButtonVerify>
           </div>
-      </s.StyledForm>)}
+        </s.StyledForm>
+      )}
     </Formik>
   );
 };

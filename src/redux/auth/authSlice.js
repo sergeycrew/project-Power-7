@@ -142,7 +142,7 @@ const handleUserRefreshPending = (state) => {
 };
 const handleUserRefreshRejected = (state, { payload }) => {
   state.error = payload;
-  state.isRefreshing = true;
+  state.isRefreshing = false;
 };
 const handleUserRefreshFulfilled = (state, { payload }) => {
   state.isLoggedIn = true;

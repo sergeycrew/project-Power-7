@@ -37,7 +37,7 @@ export const fetchProductsCategories = createAsyncThunk(
   async (_, thunkAPI) => {
     const state = thunkAPI.getState();
     try {
-      setAuthHeader(temptoken);
+      // setAuthHeader(temptoken);
       const response = await axios.get('api/products/Category');
       return response.data;
     } catch (error) {

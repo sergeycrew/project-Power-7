@@ -13,7 +13,9 @@ export const fetchAllDairyInfo = createAsyncThunk(
   '/diary/alldaydiary',
   async (date, thunkAPI) => {
     try {
+
       // const state = thunkAPI.getState();
+
       // const storedToken = state.auth.token;
       // setAuthHeader(storedToken);
       // setAuthHeader(tempToken);
