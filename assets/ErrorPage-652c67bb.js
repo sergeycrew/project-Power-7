@@ -1,4 +1,4 @@
-import{u as t,b as i,j as o,C as n}from"./index-84deabb5.js";import{b as r,a,c as s,d}from"./hero-desktop-2x-c0317d06.js";const h="/project-Power-7/assets/hero-mobile-1x-1bba6f7c.png",c="/project-Power-7/assets/hero-mobile-2x-98b0b14f.png",x=t.section`
+import{u as t,G as i,j as o,C as r}from"./index-f1828bc9.js";import{b as n,a,c as s,d}from"./hero-desktop-2x-c0317d06.js";const h="/project-Power-7/assets/hero-mobile-1x-1bba6f7c.png",c="/project-Power-7/assets/hero-mobile-2x-98b0b14f.png",l=t.section`
   position: relative;
   height: 100vh;
 
@@ -7,14 +7,14 @@ import{u as t,b as i,j as o,C as n}from"./index-84deabb5.js";import{b as r,a,c a
   background-image: image-set(url(${h}) 1x, url(${c}) 2x);
 
   @media screen and (min-width: 768px) {
-    background-image: image-set(url(${r}) 1x, url(${a}) 2x);
+    background-image: image-set(url(${n}) 1x, url(${a}) 2x);
   }
 
   @media screen and (min-width: 1440px) {
     background-size: contain;
     background-image: image-set(url(${s}) 1x, url(${d}) 2x);
   }
-`,p=t.div`
+`,x=t.div`
   max-width: 240px;
   width: 100%;
   height: 100vh;
@@ -34,7 +34,7 @@ import{u as t,b as i,j as o,C as n}from"./index-84deabb5.js";import{b as r,a,c a
     max-width: 669px;
     padding-inline: 96px;
   }
-`,l=t.h1`
+`,p=t.h1`
   font-weight: 500;
   font-size: 66px;
   line-height: 1;
@@ -69,10 +69,12 @@ import{u as t,b as i,j as o,C as n}from"./index-84deabb5.js";import{b as r,a,c a
   font-size: 16px;
   line-height: 1.12;
   color: ${e=>e.theme.colors.whiteColor};
+  transition: all 0.3s;
 
   &:hover,
   &:focus {
     border-color: ${e=>e.theme.colors.orangeColor};
+    background-color: ${e=>e.theme.colors.orangeLightColor};
   }
 
   @media screen and (min-width: 768px) {
@@ -81,4 +83,4 @@ import{u as t,b as i,j as o,C as n}from"./index-84deabb5.js";import{b as r,a,c a
     font-size: 20px;
     line-height: 1.2;
   }
-`,f=()=>{const e=i();return o.jsx(n,{children:o.jsx(x,{children:o.jsxs(p,{children:[o.jsx(l,{children:"404"}),o.jsx(g,{children:"Sorry, you have reached a page that we could not find. It seems that you are lost among the numbers and letters of our virtual space. Perhaps this page went on vacation or decided to disappear into another dimension. We apologize for this inconvenience."}),o.jsx(m,{type:"button",onClick:()=>e("/"),children:"Go Home"})]})})})};export{f as default};
+`,f=()=>{const e=i();return o.jsx(r,{children:o.jsx(l,{children:o.jsxs(x,{children:[o.jsx(p,{children:"404"}),o.jsx(g,{children:"Sorry, you have reached a page that we could not find. It seems that you are lost among the numbers and letters of our virtual space. Perhaps this page went on vacation or decided to disappear into another dimension. We apologize for this inconvenience."}),o.jsx(m,{type:"button",onClick:()=>e("/"),children:"Go Home"})]})})})};export{f as default};
