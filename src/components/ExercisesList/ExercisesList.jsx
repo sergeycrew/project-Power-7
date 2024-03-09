@@ -96,7 +96,7 @@ export const ExercisesListByCategory = () => {
               </InfoContainer>
               <ExercisesContainer>
                 <CaloriesIcon>
-                  <svg fill="#efede8">
+                  <svg fill="#ffffff">
                     {' '}
                     <use href={icons + '#icon-running-figure'}></use>
                   </svg>

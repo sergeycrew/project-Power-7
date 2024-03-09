@@ -46,6 +46,11 @@ export const ExerciseTitle = styled.div`
   font-style: normal;
   font-weight: 400;
   line-height: 24px;
+  
+  &::first-letter {
+    text-transform: uppercase;
+  }
+
   @media screen and (min-width: 768px) {
     font-size: 24px;
     line-height: 32px;

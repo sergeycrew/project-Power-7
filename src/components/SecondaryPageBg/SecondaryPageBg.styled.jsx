@@ -5,7 +5,7 @@ import bg_img2_page from '../../images/desktopImages/exercises-desktop-2x.png';
 
 export const Wrapper = styled.div`
   @media (min-width: 1440px) {
-    height: 100vh;
+    height: 100%;
     width: 100%;
     position: relative;
   }
@@ -14,12 +14,12 @@ export const Wrapper = styled.div`
 export const BgContainer = styled.div`
   @media (min-width: 1440px) {
     width: 100%;
-    height: 100vh;
-    min-height: 780px;
-    ${props => (!props.hideFilter ? 'min-height: 850px;' : '')}
+    height: 100%;
+   
+    // ${props => (!props.hideFilter ? 'min-height: 850px;' : '')}
 
     position: absolute;
-    z-index: -5;
+    // z-index: -5;
 
     display: flex;
     justify-content: right;
