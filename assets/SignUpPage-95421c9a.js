@@ -1,4 +1,4 @@
-import{u as o,L as c,a as h,j as i,r as x}from"./index-fbdb7ab3.js";import{b as g,a as u,c as f,d as w}from"./hero-desktop-2x-c0317d06.js";import{s as b,a as j}from"./signup-mob-2x-c155b3ed.js";import{F as $,a as k,E as S,b as v}from"./formik.esm-f316be31.js";import{c as z,a as t}from"./index.esm-9abd6a1e.js";import{H as C,M as y,a as _}from"./WelcomePage.styled-47809687.js";o.div`
+import{u as o,L as c,a as h,j as i,r as x}from"./index-365e8baf.js";import{b as g,a as u,c as f,d as w}from"./hero-desktop-2x-c0317d06.js";import{s as b,a as j}from"./signup-mob-2x-c155b3ed.js";import{F as $,a as k,E as S,b as v}from"./formik.esm-c48b1dcb.js";import{c as z,a as t}from"./index.esm-39e416ed.js";import{H as C,M as y,a as _}from"./WelcomePage.styled-8c7fe7b0.js";o.div`
   /* height: 100vh; */
   /* background-image: linear-gradient(82deg, #040404 1.35%, #040404 100%), */
   /* linear-gradient(155deg, #040404 21.1%, #040404 100%); */
