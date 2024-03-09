@@ -19,7 +19,7 @@ export const BgContainer = styled.div`
     ${props => (!props.hideFilter ? 'min-height: 850px;' : '')}
 
     position: absolute;
-    z-index: -5;
+    // z-index: -5;
 
     display: flex;
     justify-content: right;

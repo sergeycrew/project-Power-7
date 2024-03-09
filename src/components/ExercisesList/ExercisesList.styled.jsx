@@ -61,6 +61,7 @@ export const ExercisesItem = styled.li`
   width: 335px;
   min-height: 141px;
   border-radius: 12px;
+  background-color: rgba(239, 237, 232, 0.05);
   border: 1px solid rgba(239, 237, 232, 0.2);
   padding: 16px 16px;
   @media (min-width: 1440px) {
@@ -79,6 +80,7 @@ export const InfoContainer = styled.div`
 `;
 
 export const WorkoutTitle = styled.h3`
+  color: #FFFFFF;
   padding: 5px 7.5px;
   justify-content: center;
   align-items: center;
@@ -119,6 +121,10 @@ export const ExercisesTitle = styled.h2`
   font-weight: 400;
   line-height: 1.2;
   width: 250px;
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
 
   @media screen and (min-width: 768px) {
     font-size: 24px;

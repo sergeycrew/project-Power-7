@@ -99,6 +99,10 @@ export const NameItem = styled.p`
   font-style: normal;
   font-weight: 400;
   line-height: 16px;
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
 `;
 
 export const ValueItem = styled.p`
@@ -114,6 +118,10 @@ export const ValueItem = styled.p`
   overflow: hidden;
   text-overflow: ellipsis;
   width: 100%;
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
 `;
 
 export const ListTrening = styled.ul`
