@@ -5,35 +5,31 @@ import {
   deleteProduct,
 } from './diaryOperations';
 
-// const currentTimeInMilliseconds = Date.now();
-// const currentTimeISOString = new Date(currentTimeInMilliseconds).toISOString();
-
-const diaryState = {
+const initialState = {
   currentDate: Date.now(),
-  // currentDate: currentTimeISOString,
   diaryInfo: {
     burnedCalories: 0,
     consumedCalories: 0,
     doneExercisesTime: 0,
     products: [],
     exercises: [],
-    isLoading: false,
+    isLoadingDiary: false,
     error: null,
   },
 };
-// currentDate: new Date().toISOString(),
+
 const handlePending = (state) => {
-  state.isLoading = true;
-  state.error = null;
+  state.diaryInfo.isLoadingDiary = true;
+  state.diaryInfo.error = null;
 };
 
 const handleRejected = (state, action) => {
-  state.isLoading = false;
-  state.error = action.payload;
+  state.diaryInfo.isLoadingDiary = false;
+  state.diaryInfo.error = action.payload;
 };
 
 const handleFetchAllFulfilled = (state, { payload }) => {
-  state.diaryInfo.isLoading = false;
+  state.diaryInfo.isLoadingDiary = false;
   state.diaryInfo.error = null;
   state.diaryInfo.burnedCalories = payload.data.burnedCalories;
   state.diaryInfo.consumedCalories = payload.data.consumedCalories;
@@ -43,48 +39,67 @@ const handleFetchAllFulfilled = (state, { payload }) => {
 };
 
 const handleDeleteProductFulfilled = (state, action) => {
-  state.isLoading = false;
-  state.error = null;
-  // const newProductArr = state.diaryInfo.products.filter(
-  //   (product) => product._id !== action.payload.data.productId
-  // );
+  state.diaryInfo.isLoadingDiary = false;
+  state.diaryInfo.error = null;
 
-  // state.diaryInfo.products = newProductArr;
-  const index = state.diaryInfo.products.findIndex(
-    (product) => product._id === action.payload.data.productId
+  const productIdToDelete = action.payload.data;
+  console.log(
+    'Product._id:',
+    state.diaryInfo.products.map((product) => product._id)
   );
-  state.diaryInfo.products.splice(index, 1);
+  console.log('action.payload.productId:', productIdToDelete);
+
+  const newProductsArr = state.diaryInfo.products.filter(
+    (product) => product._id !== action.payload.data.productId
+  );
+  state.diaryInfo.products = newProductsArr;
+  // const index = state.diaryInfo.products.findIndex(
+  //   (product) => product._id === action.payload.productId
+  // );
+  // state.diaryInfo.products.splice(index, 1);
 };
 
 const handleDeleteExerciseFulfilled = (state, action) => {
-  state.isLoading = false;
-  state.error = null;
-  const index = state.diaryInfo.exercises.findIndex(
-    (exercise) => exercise._id === action.payload.data.exerciseId
+  state.diaryInfo.isLoadingDiary = false;
+  state.diaryInfo.error = null;
+
+  console.log(action.payload.data);
+  console.log(state.diaryInfo.products);
+
+  const exerciseIdToDelete = action.payload.data;
+  console.log(
+    'Exercise._id:',
+    state.diaryInfo.exercise.map((exercise) => exercise._id)
   );
-  state.diaryInfo.exercises.splice(index, 1);
+  console.log('action.payload.data.exerciseId:', exerciseIdToDelete);
+
+  const newExercisesArr = state.diaryInfo.exercises.filter(
+    (exercise) => exercise._id !== action.payload.data
+  );
+  state.diaryInfo.exercises = newExercisesArr;
+  // const index = state.diaryInfo.exercises.findIndex(
+  //   (exercise) => exercise._id === action.payload.data.exerciseId
+  // );
+  // state.diaryInfo.exercises.splice(index, 1);
 };
 
 export const diarySlice = createSlice({
   name: 'diary',
-  initialState: diaryState,
+  initialState,
   reducers: {
     changeCalendarDay(state, action) {
       const date = new Date(action.payload);
       state.currentDate = date.getTime();
-      // state.currentDate = action.payload;
     },
     previousDay(state) {
       let date = new Date(state.currentDate);
       date.setDate(date.getDate() - 1);
       state.currentDate = date.getTime();
-      // state.currentDate = date.toISOString();
     },
     nextDay(state) {
       let date = new Date(state.currentDate);
       date.setDate(date.getDate() + 1);
       state.currentDate = date.getTime();
-      // state.currentDate = date.toISOString();
     },
   },
   extraReducers: (builder) => {

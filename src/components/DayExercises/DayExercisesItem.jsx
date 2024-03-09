@@ -15,6 +15,7 @@ export const DayExerciseItem = ({ isFirstItem, value }) => {
     calories: value.calories,
     time: value.time,
   };
+  console.log(value._id);
   return (
     <s.ItemExerciseWrapper>
       <s.ProductsContainer>

@@ -1,5 +1,6 @@
-export const selectIsLoading = (state) => state.diary.isLoading;
-export const selectError = (state) => state.diary.error;
+export const selectIsLoadingDiary = (state) =>
+  state.diary.diaryInfo.isLoadingDiary;
+export const selectError = (state) => state.diary.diaryInfo.error;
 export const selectCurrentDate = (state) => state.diary.currentDate;
 export const selectBurnedCalories = (state) =>
   state.diary.diaryInfo.burnedCalories;
