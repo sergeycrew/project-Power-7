@@ -80,3 +80,23 @@ export const NotFoundText = styled.p`
   transform: translate(-50%, -50%);
   color: ${(p) => p.theme.colors.accentColor};
 `;
+
+export const ItemsContainer = styled.div`
+  max-height: 167px;
+  margin-right: -10px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  &::-webkit-scrollbar {
+    width: 6px;
+    max-height: 60px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(239, 237, 232, 0.1);
+    border-radius: 12px;
+  }
+
+  @media screen and (max-width: 767px) {
+    max-height: 750px;
+    margin-right: -15px;
+  }
+`;

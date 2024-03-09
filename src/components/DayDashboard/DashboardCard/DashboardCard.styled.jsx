@@ -1,12 +1,8 @@
 import styled from 'styled-components';
 
 export const CardContainer = styled.li`
-  box-sizing: border-box;
-  /* width: calc((100% - 13px) / 2); */
-  /* width: 157px; */
   width: 100%;
   height: 96px;
-  /* border: 1px solid ${(p) => p.theme.colors.cardBorderColor}; */
   border: 1px solid;
   border-radius: 12px;
   padding: 14px;

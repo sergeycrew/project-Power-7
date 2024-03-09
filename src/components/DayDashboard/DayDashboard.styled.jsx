@@ -5,7 +5,6 @@ export const DashboardList = styled.ul`
   flex-wrap: wrap;
   column-gap: 13px;
   row-gap: 20px;
-  /* width: 335px; */
   width: 100%;
 
   @media screen and (min-width: 375px) {

@@ -4,6 +4,7 @@ export const ProductsContainer = styled.ul`
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
+  margin-top: -4px;
 
   @media screen and (min-width: 768px) {
     gap: 8px;
@@ -12,8 +13,12 @@ export const ProductsContainer = styled.ul`
 `;
 
 export const ListItem = styled.li`
+  width: 100%;
+  position: relative;
   &:nth-of-type(1) {
-    width: 297px;
+    @media screen and (min-width: 375px) {
+      width: 297px;
+    }
 
     @media screen and (min-width: 768px) {
       width: 204px;
@@ -25,7 +30,11 @@ export const ListItem = styled.li`
   }
 
   &:nth-of-type(2) {
-    width: 297px;
+    @media screen and (min-width: 375px) {
+      width: 297px;
+    }
+
+    /* width: 297px; */
 
     @media screen and (min-width: 768px) {
       width: 128px;
@@ -37,7 +46,11 @@ export const ListItem = styled.li`
   }
 
   &:nth-of-type(3) {
-    width: 81px;
+    @media screen and (min-width: 375px) {
+      width: 81px;
+    }
+
+    /* width: 81px; */
 
     @media screen and (min-width: 768px) {
       width: 90px;
@@ -49,7 +62,11 @@ export const ListItem = styled.li`
   }
 
   &:nth-of-type(4) {
-    width: 80px;
+    @media screen and (min-width: 375px) {
+      width: 80px;
+    }
+
+    /* width: 80px; */
 
     @media screen and (min-width: 768px) {
       width: 90px;
@@ -61,7 +78,11 @@ export const ListItem = styled.li`
   }
 
   &:nth-of-type(5) {
-    width: 76px;
+    @media screen and (min-width: 375px) {
+      width: 76px;
+    }
+
+    /* width: 76px; */
 
     @media screen and (min-width: 768px) {
       width: 80px;
@@ -81,6 +102,8 @@ export const DayItemContent = styled.p`
   font-weight: 400;
   font-size: 14px;
   line-height: 129%;
+  word-wrap: break-word;
+  white-space: nowrap;
   text-transform: capitalize;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -110,21 +133,23 @@ export const RecomendalDot = styled.span`
 `;
 
 export const DeleteButton = styled.button`
-  position: relative;
+  /* position: relative; */
   padding: 0;
   background: none;
   border: none;
-  top: 4px;
+  /* top: 4px;
+  right: -8px; */
 
-  @media screen and (max-width: 767px) {
+  @media screen and (min-width: 375px) and (max-width: 767px) {
+    position: relative;
     right: 16px;
+    top: 5px;
   }
 `;
 
 export const DeleteIcon = styled.svg`
   height: 20px;
   width: 20px;
-
   fill: ${(p) => p.theme.colors.orangeLightColor};
 `;
 

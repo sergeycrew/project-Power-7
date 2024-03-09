@@ -13,7 +13,7 @@ export const DiaryItem = ({ title, link, to, children }) => {
           </s.ArrowIcon>
         </s.LinkToOtherPage>
       </s.TitleWrapper>
-      <s.ChildrenContainer> {children}</s.ChildrenContainer>
+      {children}
     </s.ItemWrapper>
   );
 };
