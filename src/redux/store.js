@@ -14,7 +14,7 @@ import { authReducer } from './auth/authSlice';
 import { productFilterReducer } from './products/productFilterSlice';
 import { productListReducer } from './products/productListSlice';
 import { diaryReducer } from './diary/diarySlice';
-import { exercisesReducer } from './exercises-t/sliceExercises';
+import { exercisesReducer } from './exercises/sliceExercises';
 
 const authPersistConfig = {
   key: 'auth',

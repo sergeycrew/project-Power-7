@@ -1,5 +1,11 @@
 import styled from 'styled-components';
 
+export const ExercisesLi = styled.li`
+  position: relative;
+  cursor: pointer;
+`;
+
+
 export const ExerciseCardWrapper = styled.div`
   max-width: 335px;
   height: 206px;
