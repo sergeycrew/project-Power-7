@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const HeaderBar = styled.header`
   display: flex;
   align-items: center;
-  width: 100%;
   padding-inline: 20px;
   padding: 20px 24px;
   margin-inline: auto;
