@@ -4,16 +4,16 @@ export const Text = styled.p`
   /* color: ${p => p.theme.colors.whiteColor}; */
   color: ${p => p.theme.colors.accentColor};
   font-family: 'RobotoRegular';
-  font-size: 14px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 400;
-  line-height: 18px;
+  line-height: 24px;
   
 `;
 
 export const Container = styled.div`
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   /* @media screen and (min-width: 768px) and (max-width: 1439px) {
    max-width: 439px;
   } */
@@ -44,6 +44,6 @@ export const Wrapp = styled.div`
   } 
 
   @media screen and (min-width: 768px) {
-    width: 440px;
+    width: 439px;
   }
 `;

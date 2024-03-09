@@ -62,17 +62,25 @@ export const WrappForm = styled.div`
 
 export const LogoutWrap = styled.div`
 margin-top: 32px;
+margin-left: auto;
 /* margin-left: auto;
 margin-top: 32px;
 justify-content: center;
-width: 70px;
-  height: 20px;
+/*  */
+/* width: 70px;
+  height: 20px; */
 
   @media screen and (min-width: 768px) {
     width: 78px;
     height: 24px;
-  } */
+  } 
 `
 export const UserWrap = styled.div`
-/* justify-content: center; */
+
+ @media screen and (min-width: 768px) and (max-width: 1439px) {margin: auto;
+    width: 439px;
+  }
+  /* @media screen and (min-width: 1440px) {
+   margin-left: 50px;
+  } */
 `

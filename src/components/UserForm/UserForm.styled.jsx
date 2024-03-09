@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { Form } from 'formik';
+import styled, {css} from 'styled-components';
+import { ErrorMessage, Form } from 'formik';
 
 export const Container = styled.div`
   margin-top: 20px;
@@ -17,6 +17,20 @@ export const StyledForm = styled(Form)`
   /* margin-top: 20px; */
 
   @media screen and (min-width: 768px) {
+  }
+`;
+export const FormError = styled(ErrorMessage)`
+  position: absolute;
+  top: 48px;
+  left: 0;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  color: ${(p) => p.theme.colors.errorColor};
+
+  @media screen and (min-width: 1440px) {
+    top: 52px;
   }
 `;
 
@@ -111,6 +125,9 @@ export const InputField = styled.input`
     outline: none;
     border-color: ${(p) => p.theme.colors.orangeColor};
   }
+
+
+   
 `;
 
 export const WrapperRadio = styled.div`

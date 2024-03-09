@@ -67,7 +67,9 @@ export const currentUser = createAsyncThunk(
 
       return data;
     } catch (error) {
+      toast.error('Oops, something went wrong! Try again later.');
       return thunkAPI.rejectWithValue(error.message);
+      
     }
   }
 );
@@ -78,11 +80,12 @@ export const updateUserAvatar = createAsyncThunk(
     try {
       const formData = new FormData();
       formData.append('avatar', file);
-
+      toast.success('Avatar is updated');
       const { data } = await axios.patch('users/updateAvatar', formData);
       return URL.createObjectURL(file);
       // return data;
     } catch (error) {
+      toast.error('Oops, something went wrong! Try again later.');
       return thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -92,9 +95,11 @@ export const updateUserParams = createAsyncThunk(
   'users/update',
   async (params, thunkAPI) => {
     try {
+      toast.success('User information saved');
       const { data } = await axios.put('users/update', params);
       return data;
     } catch (error) {
+      toast.error('Oops, something went wrong! Try again later.');
       return thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -104,9 +109,11 @@ export const userVerifyAgain = createAsyncThunk(
   'users/verifyAgain',
   async (creds, thunkAPI) => {
     try {
+      toast.success('Verifycation Email has been send');
       const { data } = await axios.post('users/verifyAgain', creds);
       return data;
     } catch (error) {
+      toast.error('Oops, something went wrong! Try again later.');
       return thunkAPI.rejectWithValue(error.message);
     }
   }

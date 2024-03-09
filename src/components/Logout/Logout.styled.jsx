@@ -10,9 +10,11 @@ export const LogoWrapper = styled.div`
     height: 24px;
   }
 `;
-
-export const LogoutButtonLink = styled(NavLink)`
+// export const LogoutButtonLink = styled(NavLink)`
+export const LogoutButtonLink = styled.button`
+padding: 0;
   display: flex;
+  background-color: inherit ;
   justify-content: flex-end;
   align-items: center;
   color: ${(p) => p.theme.colors.whiteColor};
