@@ -10,7 +10,7 @@ const ExercisesPage = () => {
   const isFilter = location.pathname.length < 21;
 
   return (
-    <SecondaryPageBg isFilter={isFilter}>
+    <SecondaryPageBg hideFilter={isFilter}>
       <Container>
         <ExercisesPageWrap>
           <ExercisesNav />
