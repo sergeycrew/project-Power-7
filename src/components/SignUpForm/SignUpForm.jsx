@@ -1,11 +1,9 @@
 import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
 
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 import * as form from './SignUpForm.styled';
 import { register } from '../../redux/auth/authOperation';
-import { useAuth } from '../../hooks/useAuth';
 
 const emailPattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
 
@@ -35,8 +33,6 @@ const defaultValues = {
 
 export const SignUpForm = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
-  const { isLoggedIn } = useAuth();
 
   const onRegisterSubmit = ({ name, email, password }, { resetForm }) => {
     dispatch(
@@ -47,11 +43,6 @@ export const SignUpForm = () => {
       })
     );
     resetForm();
-    // navigate('/signIn');
-
-    if (isLoggedIn) {
-      navigate('/profile');
-    }
   };
 
   return (

@@ -10,11 +10,13 @@ import {
   bg_desk_2x,
 } from '../../Helpers/BackgroundImage';
 
-export const MainContainer = styled.div`
-  position: relative;
+export const SignUpShadow = styled.div`
+  /* height: 100vh; */
+  /* background-image: linear-gradient(82deg, #040404 1.35%, #040404 100%), */
+  /* linear-gradient(155deg, #040404 21.1%, #040404 100%); */
+  /* position: relative;
   height: 100vh;
-  /* width: 100%; */
-  padding: 127px 20px 0;
+    padding: 127px 20px 0;
 
   background-repeat: no-repeat;
   background-position: bottom right;
@@ -32,7 +34,7 @@ export const MainContainer = styled.div`
     padding: 200px 96px 0;
     background-size: contain;
     background-image: image-set(url(${bg_desk_1x}) 1x, url(${bg_desk_2x}) 2x);
-  }
+  } */
 `;
 
 export const Title = styled.h1`
@@ -82,7 +84,7 @@ export const StyledLink = styled(Link)`
   line-height: 1.5;
   color: ${(p) => p.theme.colors.whiteColor};
   text-decoration: underline;
-  transition: color 0.3s;
+  transition: all 0.3s;
 
   &:hover,
   &:focus {
