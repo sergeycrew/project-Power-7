@@ -1,4 +1,4 @@
-import{u as o,L as c,a as h,j as i,l as m}from"./index-0de337d4.js";import{b as x,a as g,c as u,d as w}from"./hero-desktop-2x-c0317d06.js";import{s as f,a as b}from"./signup-mob-2x-c155b3ed.js";import{F as j,a as $,E as S,b as k}from"./formik.esm-6e19e373.js";import{c as z,a as t}from"./index.esm-2d3cbfc5.js";import{H as v,M as C,a as _}from"./WelcomePage.styled-8ce09205.js";o.div`
+import{u as o,L as c,a as h,j as i,l as m}from"./index-fbdb7ab3.js";import{b as x,a as g,c as u,d as w}from"./hero-desktop-2x-c0317d06.js";import{s as f,a as b}from"./signup-mob-2x-c155b3ed.js";import{F as j,a as $,E as S,b as k}from"./formik.esm-f316be31.js";import{c as z,a as t}from"./index.esm-9abd6a1e.js";import{H as v,M as C,a as _}from"./WelcomePage.styled-47809687.js";o.div`
   position: relative;
   height: 100vh;
   /* width: 100%; */

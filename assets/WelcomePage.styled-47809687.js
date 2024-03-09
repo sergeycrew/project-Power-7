@@ -1,4 +1,4 @@
-import{u as e,j as t,i as n,L as o}from"./index-0de337d4.js";import{b as a,a as d,c as r,d as s}from"./hero-desktop-2x-c0317d06.js";const p=e.div`
+import{u as e,j as t,i as n,L as o}from"./index-fbdb7ab3.js";import{b as a,a as d,c as r,d as s}from"./hero-desktop-2x-c0317d06.js";const h=e.div`
   /* position: relative; */
   position: absolute;
   margin-left: auto;
@@ -28,7 +28,7 @@ import{u as e,j as t,i as n,L as o}from"./index-0de337d4.js";import{b as a,a as 
     gap: 39px;
     margin: 0;
   }
-`,h=e.div`
+`,p=e.div`
   position: relative;
   display: flex;
   justify-content: center;
@@ -169,22 +169,39 @@ import{u as e,j as t,i as n,L as o}from"./index-0de337d4.js";import{b as a,a as 
     font-size: 16px;
     line-height: 1.5;
   }
-`,k=()=>t.jsxs(p,{children:[t.jsxs(h,{children:[t.jsx(x,{children:t.jsx(l,{children:t.jsx("use",{href:`${n}#icon-Polygon-1`})})}),t.jsxs(c,{children:[t.jsx(g,{children:"350+"}),t.jsx(m,{children:"Video tutorial"})]})]}),t.jsxs(w,{children:[t.jsx(u,{children:t.jsx(f,{children:t.jsx("use",{href:`${n}#icon-running-stick-figure`})})}),t.jsxs(b,{children:[t.jsx(j,{children:"500"}),t.jsx($,{children:"cal"})]})]})]}),v="/project-Power-7/assets/bg-mobile-1x-014f5a2c.png",y="/project-Power-7/assets/bg-mobile-2x-ba0edaad.png",C=e.div`
+`,k=()=>t.jsxs(h,{children:[t.jsxs(p,{children:[t.jsx(x,{children:t.jsx(l,{children:t.jsx("use",{href:`${n}#icon-Polygon-1`})})}),t.jsxs(c,{children:[t.jsx(g,{children:"350+"}),t.jsx(m,{children:"Video tutorial"})]})]}),t.jsxs(w,{children:[t.jsx(u,{children:t.jsx(f,{children:t.jsx("use",{href:`${n}#icon-running-stick-figure`})})}),t.jsxs(b,{children:[t.jsx(j,{children:"500"}),t.jsx($,{children:"cal"})]})]})]}),v="/project-Power-7/assets/bg-mobile-1x-014f5a2c.png",y="/project-Power-7/assets/bg-mobile-2x-ba0edaad.png",C=e.div`
   position: relative;
   z-index: 0;
+  max-width: 375px;
+  margin: 0 auto;
   width: 100%;
   height: 100vh;
   background-repeat: no-repeat;
   background-position: bottom right;
   background-image: image-set(url(${v}) 1x, url(${y}) 2x);
 
+  @media screen and (min-width: 375px) and (max-height: 812px) {
+    height: 812px;
+  }
+
   @media screen and (min-width: 768px) {
+    max-width: 768px;
     background-image: image-set(url(${a}) 1x, url(${d}) 2x);
   }
 
+  @media screen and (min-width: 768px) and (max-height: 1024px) {
+    height: 1024px;
+  }
+
   @media screen and (min-width: 1440px) {
+    max-width: 1440px;
+    height: 100vh;
     background-size: contain;
     background-image: image-set(url(${r}) 1x, url(${s}) 2x);
+  }
+
+  @media screen and (min-width: 1440px) and (max-height: 800px) {
+    height: 800px;
   }
 `,_=({children:i})=>t.jsxs(C,{children:[i,t.jsx(k,{})]}),I=e.section`
   padding-top: 127px;
