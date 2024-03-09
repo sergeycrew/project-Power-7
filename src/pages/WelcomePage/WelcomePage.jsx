@@ -1,29 +1,35 @@
-import { Container } from '../../styles/container';
+import { HomeBackground } from '../../components/HomeBackground/HomeBackground';
 import * as welcome from './WelcomePage.styled';
 import icon from '../../images/sprite/sprite.svg';
 
 const WelcomePage = () => {
   return (
-    <Container>
-      <welcome.MainContainer>
-        <welcome.TitleWrap>
-          <welcome.Icon>
-            <use href={`${icon}#slogan-line`}></use>
-          </welcome.Icon>
-          <welcome.Title>
-            Transforming your body shape with Power Pulse
-          </welcome.Title>
-        </welcome.TitleWrap>
-        <welcome.LinkList>
-          <welcome.ListItem>
-            <welcome.StyledLink to="/signUp">Sign Up</welcome.StyledLink>
-          </welcome.ListItem>
-          <welcome.ListItem>
-            <welcome.StyledLink to="/signIn">Sign In</welcome.StyledLink>
-          </welcome.ListItem>
-        </welcome.LinkList>
-      </welcome.MainContainer>
-    </Container>
+    <HomeBackground>
+      <welcome.MainSection>
+        <welcome.MainContainer>
+          <welcome.TitleBox>
+            <welcome.Title>
+              Transforming your body shape with Power Pulse
+            </welcome.Title>
+            <welcome.Icon>
+              <use href={`${icon}#slogan-line`}></use>
+            </welcome.Icon>
+            <welcome.LinkList>
+              <welcome.ListItem>
+                <welcome.StyledSignUpLink to="/signUp">
+                  Sign Up
+                </welcome.StyledSignUpLink>
+              </welcome.ListItem>
+              <welcome.ListItem>
+                <welcome.StyledSignInLink to="/signIn">
+                  Sign In
+                </welcome.StyledSignInLink>
+              </welcome.ListItem>
+            </welcome.LinkList>
+          </welcome.TitleBox>
+        </welcome.MainContainer>
+      </welcome.MainSection>
+    </HomeBackground>
   );
 };
 

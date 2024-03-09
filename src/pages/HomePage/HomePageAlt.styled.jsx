@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-import { NavLink  } from 'react-router-dom';
-
+import { NavLink } from 'react-router-dom';
 
 export const HomeSection = styled.section`
   max-width: 1400px;
@@ -38,7 +37,6 @@ export const Title = styled.h1`
 `;
 
 export const SvgCircle = styled.svg`
-
   position: absolute;
   top: 170px;
   left: -8px;
@@ -64,7 +62,7 @@ export const TitleContainerTablet = styled.div`
 
   padding-top: 127px;
   height: 120px;
-  width 335px;
+  width: 335px;
   gap: 40px;
 
   @media screen and (min-width: 768px) {
@@ -113,7 +111,7 @@ export const BtnHomeTablet = styled.div`
   }
 `;
 
-export const StyledLink = styled(NavLink )`
+export const StyledLink = styled(NavLink)`
   font-size: 16px;
   font-weight: 400;
   line-height: 1.33;
@@ -147,4 +145,3 @@ export const StyledLink = styled(NavLink )`
     padding: 16px 60px;
   }
 `;
-

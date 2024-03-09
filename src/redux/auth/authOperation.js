@@ -69,7 +69,6 @@ export const currentUser = createAsyncThunk(
     } catch (error) {
       toast.error('Oops, something went wrong! Try again later.');
       return thunkAPI.rejectWithValue(error.message);
-      
     }
   }
 );
