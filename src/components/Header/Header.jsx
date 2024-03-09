@@ -5,14 +5,11 @@ import { UserBar } from 'components/UserBar/UserBar';
 import { Container } from 'styles/container';
 import { HeaderBar, HideLogout, LogoWrap } from './Header.styled';
 
-
 import { BurgerMenuButton } from 'components/BurgerMenuButton/BurgerMenuButton';
-import { ModalWindowMenuUser } from 'components/ModalWindowBurgerMenu/ModalWindowBurgerMenu'
+import { ModalWindowMenuUser } from 'components/ModalWindowBurgerMenu/ModalWindowBurgerMenu';
 
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useAuth } from '../../hooks';
-
-
 
 export const Header = () => {
   const { isLoggedIn } = useAuth();
@@ -21,12 +18,11 @@ export const Header = () => {
   const isWideScreen = window.innerWidth >= 1440;
   const headerStyle = {
     borderBottom: isLoggedIn ? '1px solid rgba(239, 237, 232, 0.2)' : '0',
-     position: isLoggedIn ? 'static' : 'absolute',
+    position: isLoggedIn ? 'static' : 'absolute',
     backgroundColor:
       isWideScreen && !isLoggedIn ? 'transparent' : 'rgba(4, 4, 4, 1)',
   };
 
-  
   const openModal = () => {
     setModalOpen(true);
   };
@@ -41,7 +37,7 @@ export const Header = () => {
   }, [isModalOpen]);
 
   useEffect(() => {
-    const handleKeyDown = e => {
+    const handleKeyDown = (e) => {
       if (e.key === 'Escape') {
         closeModal();
       }
@@ -65,16 +61,17 @@ export const Header = () => {
         <LogoWrap>
           <Logo />
         </LogoWrap>
-        {isLoggedIn && 
-          (<>
+        {isLoggedIn && (
+          <>
             <UserNav />
-        <UserBar />
-        <HideLogout>
-          <Logout />
-        </HideLogout>
+            <UserBar />
+            <HideLogout>
+              <Logout />
+            </HideLogout>
             <BurgerMenuButton openModal={openModal} buttonRef={buttonRef} />
-          </>)}
-        {isModalOpen && <ModalWindowMenuUser closeModal={closeModal}/>}
+          </>
+        )}
+        {isModalOpen && <ModalWindowMenuUser closeModal={closeModal} />}
       </HeaderBar>
     </Container>
   );

@@ -92,13 +92,13 @@ const handleUpdateUserParamsPending = (state) => {
 };
 const handleUpdateUserParamsRejected = (state, { payload }) => {
   state.isLoggedIn = true;
-  state.goToParams = false;
+  // state.goToParams = false;
   state.error = payload;
 };
 const handleUpdateUserParamsFulfilled = (state, { payload }) => {
   state.user = payload;
   state.isLoggedIn = true;
-  state.goToParams = false;
+  // state.goToParams = false;
   // state.token = payload.token;
   state.error = null;
 };
@@ -142,7 +142,7 @@ const handleUserRefreshPending = (state) => {
 };
 const handleUserRefreshRejected = (state, { payload }) => {
   state.error = payload;
-  state.isRefreshing = true;
+  state.isRefreshing = false;
 };
 const handleUserRefreshFulfilled = (state, { payload }) => {
   state.isLoggedIn = true;

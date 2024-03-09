@@ -3,8 +3,8 @@ import { Logout } from '../../components/Logout/Logout';
 // import { Link } from 'react-router-dom';
 
 export const Container = styled.div`
- margin-left: 20px;
-  margin-right: 20px;
+ /* margin-left: 20px; */
+  /* margin-right: 20px; */
   /* padding-top: 40px; */
 
   /* @media screen and (min-width: 768px) {
@@ -12,13 +12,13 @@ export const Container = styled.div`
   } */
 
   @media screen and (min-width: 768px) and (max-width: 1439px) {
-    margin-left: 32px;
-    margin-right: 32px;
+    /* margin-left: 32px; */
+    /* margin-right: 32px; */
   }
 
   @media screen and (min-width: 1440px) {
-    margin-left: 96px;
-    margin-right: 96px;
+    /* margin-left: 96px;
+    margin-right: 96px; */
   }
 `;
 
@@ -62,17 +62,25 @@ export const WrappForm = styled.div`
 
 export const LogoutWrap = styled.div`
 margin-top: 32px;
+margin-left: auto;
 /* margin-left: auto;
 margin-top: 32px;
 justify-content: center;
-width: 70px;
-  height: 20px;
+/*  */
+/* width: 70px;
+  height: 20px; */
 
   @media screen and (min-width: 768px) {
     width: 78px;
     height: 24px;
-  } */
+  } 
 `
 export const UserWrap = styled.div`
-/* justify-content: center; */
+
+ @media screen and (min-width: 768px) and (max-width: 1439px) {margin: auto;
+    width: 439px;
+  }
+  /* @media screen and (min-width: 1440px) {
+   margin-left: 50px;
+  } */
 `

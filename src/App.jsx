@@ -2,7 +2,7 @@ import { Route, Routes, Navigate } from 'react-router-dom';
 import { PrivateRoute } from './Routes/PrivateRoute';
 import { PublicRoute } from './Routes/PublicRoute';
 
-import { lazy } from 'react';
+import { lazy, useEffect } from 'react';
 
 import MainLayout from './components/MainLayout/MainLayout';
 //import {HomePage} from './pages/HomePage/HomePageAlt'
@@ -19,16 +19,31 @@ const ErrorPage = lazy(() => import('pages/ErrorPage/ErrorPage'));
 
 import { ExercisesCategories } from './components/ExercisesCategories/ExercisesCategories';
 import { ExercisesListByCategory } from './components/ExercisesList/ExercisesList';
+import { useAuth } from './hooks';
+import { refreshUser } from './redux/auth/authOperation';
+import { useDispatch } from 'react-redux';
+import { Loader } from './components/Loader/Loader';
 
-const test = import.meta.env.VITE_API_TEST;
+
+
+
 
 function App() {
-  console.log(test);
-  return (
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(refreshUser());
+  }, [dispatch]);
+
+  const { isRefreshing } = useAuth();
+  // return (
+  return isRefreshing ? (
+    
+    <Loader/>
+  ) :   (
     <>
       <Routes>
         <Route path="/" element={<MainLayout />}>
-          <Route index element={<PublicRoute redirectTo="/profile"component={<WelcomePage/>}/>}/>
+          <Route index element={<PublicRoute redirectTo="/profile" component={<WelcomePage/>}/>}/>
           {/* <Route index element={<WelcomePage />} /> */}
           <Route path="/signUp" element={<PublicRoute redirectTo="/profile" component={<SignUpPage />}/>}/>
           {/* <Route path="/signUp" element={<SignUpPage />} /> */}
@@ -65,7 +80,7 @@ function App() {
               element={<ExercisesListByCategory />}
             />
           </Route>
-          <Route path="/profile" element={<PrivateRoute redirectTo="/signIn" component={<ProfilePage/>}/>} />
+          <Route path="/profile" element={<PrivateRoute redirectTo="/" component={<ProfilePage/>}/>} />
           {/* <Route path="/profile" element={<ProfilePage />} /> */}
           <Route path="*" element={<ErrorPage />} />
         </Route>

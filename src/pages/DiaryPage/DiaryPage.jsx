@@ -38,10 +38,11 @@ const DiaryPage = () => {
             {products.length === 0 ? (
               <s.NotFoundText>Not found products</s.NotFoundText>
             ) : (
-              products.map((index, item) => (
+              products.map((item, index) => (
                 <DayProductItem
                   isFirstItem={index === 0}
                   key={item._id}
+                  value={item}
                 ></DayProductItem>
               ))
             )}
@@ -56,10 +57,11 @@ const DiaryPage = () => {
             {exercises.length === 0 ? (
               <s.NotFoundText>Not found exercises</s.NotFoundText>
             ) : (
-              exercises.map((index, item) => (
+              exercises.map((item, index) => (
                 <DayExerciseItem
                   isFirstItem={index === 0}
                   key={item._id}
+                  value={item}
                 ></DayExerciseItem>
               ))
             )}

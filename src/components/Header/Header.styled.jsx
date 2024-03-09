@@ -3,20 +3,15 @@ import styled from 'styled-components';
 export const HeaderBar = styled.header`
   display: flex;
   align-items: center;
-  width: 100%;
   padding-inline: 20px;
   padding: 20px 24px;
   margin-inline: auto;
   z-index: 10;
 
-;
-
-
   @media screen and (min-width: 768px) {
     padding-inline: 32px;
     padding: 30px 34px;
   }
-
 
   @media screen and (min-width: 1440px) {
     padding-inline: 90px;

@@ -9,11 +9,12 @@ import { useDispatch } from 'react-redux';
 import { refreshUser } from '../../redux/auth/authOperation';
 
 const MainLayout = () => {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(refreshUser());
-  }, [dispatch]);
-  return (
+  // const dispatch = useDispatch();
+  // useEffect(() => {
+  //   dispatch(refreshUser());
+  // }, [dispatch]);
+  return  (
+    // isLoading ? <Loader/> : 
     <Layout>
       <Header />
       {/* <main> */}
@@ -25,7 +26,7 @@ const MainLayout = () => {
       <ToastContainer
         position="top-right"
         autoClose={5000}
-        hideProgressBar={false}
+        hideProgressBar={true}
         newestOnTop={false}
         closeOnClick
         rtl={false}
@@ -34,6 +35,7 @@ const MainLayout = () => {
         pauseOnHover
         theme="dark"
       />
+      
     </Layout>
   );
 };

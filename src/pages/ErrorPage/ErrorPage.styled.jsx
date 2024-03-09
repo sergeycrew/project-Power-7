@@ -87,10 +87,12 @@ export const ErrorBtn = styled.button`
   font-size: 16px;
   line-height: 1.12;
   color: ${(p) => p.theme.colors.whiteColor};
+  transition: all 0.3s;
 
   &:hover,
   &:focus {
     border-color: ${(p) => p.theme.colors.orangeColor};
+    background-color: ${(p) => p.theme.colors.orangeLightColor};
   }
 
   @media screen and (min-width: 768px) {

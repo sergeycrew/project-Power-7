@@ -82,7 +82,7 @@ export const StyledLink = styled(Link)`
   line-height: 1.5;
   color: ${(p) => p.theme.colors.whiteColor};
   text-decoration: underline;
-  transition: color 0.3s;
+  transition: all 0.3s;
 
   &:hover,
   &:focus {
