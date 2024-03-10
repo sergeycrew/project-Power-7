@@ -1,5 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 export const fetchExercisesCategory = createAsyncThunk(
   'exercises/fetchExercisesCategory',
@@ -46,6 +47,7 @@ export const featchAddExercises = createAsyncThunk(
       //   calories,
       //   time,
       // };
+      toast.success('Workout is successful');
       await axios.post('diary/addexercises', {
         ...credentials,
         date: Date.now(),

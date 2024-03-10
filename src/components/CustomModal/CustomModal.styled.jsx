@@ -30,16 +30,16 @@ export const Modal = styled.div`
   text-align: center;
 
   @media screen and (max-width: 374px) {
-    ${props => props.modal320Styles}
+    ${(props) => props.theme.modal320Styles}
   }
 
-  ${props => props.modalStyles}
+  ${props => props.theme.modalStyles}
 
   @media screen and (min-width: 768px) {
-    ${props => props.modalTabletStyles}
+    ${props => props.theme.modalTabletStyles}
   }
   @media screen and (min-width: 1440px) {
-    ${props => props.modalDesktopStyles}
+    ${props => props.theme.modalDesktopStyles}
   }
 `;
 

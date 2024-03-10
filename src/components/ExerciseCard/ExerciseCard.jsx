@@ -14,7 +14,8 @@ export const ExerciseCard = ({ title, filter, photo }) => {
 
   return (
     <s.ExercisesLi onClick={() => onClick(title)}>
-      <s.ExerciseCardWrapper photo={photo}>
+      <s.ExerciseCardWrapper >
+      <s.Image src={photo ? photo : images} alt={title} />
         <s.ExerciseDescription>
           <s.ExerciseTitle>
             {title}

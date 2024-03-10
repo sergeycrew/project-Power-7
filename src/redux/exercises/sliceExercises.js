@@ -23,19 +23,28 @@ const exercisesSlice = createSlice({
     exercises: [],
     exercisesPage: 1,
     categoryPicked: '',
-    exercisesLimit: 20,
+    categoriesPage: 1,
+    categoriesLimit: 10,
+    exercisesLimit: 999,
     isLoading: false,
     error: null,
   },
   reducers: {
     changeFilter(state, action) {
       state.filter = action.payload;
+      state.categoriesPage = 1;
     },
     changeExercisesPage(state, action) {
       state.exercisesPage += action.payload;
     },
     isCategoryPicked(state, action) {
       state.categoryPicked = action.payload;
+    },
+    changeCategoriesPage(state, action) {
+      state.categoriesPage = action.payload;
+    },
+    changeCategoriesLimit(state, action) {
+      state.categoriesLimit = action.payload;
     },
   },
   extraReducers: (builder) =>
@@ -68,4 +77,4 @@ const exercisesSlice = createSlice({
 
 export const exercisesReducer = exercisesSlice.reducer;
 
-export const { changeFilter, changeExercisesPage, isCategoryPicked } = exercisesSlice.actions;
+export const { changeFilter, changeExercisesPage, isCategoryPicked, changeCategoriesPage, changeCategoriesLimit } = exercisesSlice.actions;

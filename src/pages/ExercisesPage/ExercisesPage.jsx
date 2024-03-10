@@ -1,19 +1,19 @@
 import { ExercisesNav } from 'components/ExercisesNav/ExercisesNav';
-import { Outlet, useLocation } from 'react-router-dom';
 
-import { ExercisesPageWrap, Container } from './ExercisesPage.styled';
-import { SecondaryPageBg } from 'components/SecondaryPageBg/SecondaryPageBg';
-import { useEffect, useState } from 'react';
-import { featchAllExercises } from '../../redux/exercises/operationsExercises';
+
+import * as s from './ExercisesPage.styled';
+
 import { useDispatch, useSelector } from 'react-redux';
 import { ExercisesCategories } from '../../components/ExercisesCategories/ExercisesCategories';
 
 import { ExercisesListByCategory } from '../../components/ExercisesList/ExercisesList';
-import { selectCategoryPicked, selectExercises } from '../../redux/exercises/selectorsExercises';
+import { selectCategoryPicked } from '../../redux/exercises/selectorsExercises';
+import { Container } from 'styles/container';
+import { SecondaryPageBg } from '../../components/SecondaryPageBg/SecondaryPageBg';
 
 const ExercisesPage = () => {
 //   const location = useLocation();
-const dispatch = useDispatch();
+
 
 // const [exercisesCategories, setExercisesCategories] = useState(null);
 // const [isCategoryPicked, setIsCategoryPicked] = useState(false); 
@@ -27,32 +27,21 @@ const dispatch = useDispatch();
 
 
 
-// const handleFilterClick = filter => {
-//   setActiveFilter(filter);
-// };
-// const handleCategoryPicked = (value) => {
-//   setIsCategoryPicked(value); 
-// };
-
-// useEffect(() => {
-//     dispatch(featchAllExercises(''));
-//     // dispatch(selectExercises())
-//   }, [dispatch]);
 
 const activeCategory = useSelector(selectCategoryPicked)
   return (
 
-    <SecondaryPageBg 
-    // hidefilter={!exerciseName}
-    >
-
-      <Container>
-        <ExercisesPageWrap>
+    
+   
+      <Container style={ {backgroundColor: 'transparent' }}>
+    
+        <s.ExercisesPageWrap>
           <ExercisesNav/>
-          {activeCategory ? <ExercisesListByCategory /> : <ExercisesCategories  />}
-      </ExercisesPageWrap>
+          {activeCategory ?  <SecondaryPageBg><ExercisesListByCategory /> </SecondaryPageBg> : <ExercisesCategories  />}
+      </s.ExercisesPageWrap>
+
       </Container>
-    </SecondaryPageBg>
+       
   );
 };
 
