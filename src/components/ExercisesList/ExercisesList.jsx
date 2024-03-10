@@ -1,17 +1,9 @@
 import {
   ExercisesList,
   StyledLink,
-  ExercisesItem,
-  InfoContainer,
-  WorkoutTitle,
-  Start,
-  StartIcon,
-  ExercisesContainer,
-  ExercisesTitle,
-  CaloriesIcon,
-  DataInfo,
   MainExercisesContainer,
 } from './ExercisesList.styled';
+import { ExercisesItem } from '../ExercisesItem/ExercisesItem';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import icons from '../../images/sprite.svg';
@@ -78,44 +70,11 @@ export const ExercisesListByCategory = () => {
       <MainExercisesContainer>
         <ExercisesList>
           {exercisesSubCategories?.map((card) => (
-            <ExercisesItem key={card._id}>
-              <InfoContainer>
-                <WorkoutTitle>WORKOUT</WorkoutTitle>
-                <NavLink
-                  style={{ display: 'flex', alignItems: 'center' }}
-                  onClick={() => toogleModal(card)}
-                >
-                  <Start>Start</Start>
-                  <StartIcon>
-                    <svg fill="#efede8">
-                      {' '}
-                      <use href={icons + '#icon-arrow-right'}></use>
-                    </svg>
-                  </StartIcon>
-                </NavLink>
-              </InfoContainer>
-              <ExercisesContainer>
-                <CaloriesIcon>
-                  <svg fill="#ffffff">
-                    {' '}
-                    <use href={icons + '#icon-running-figure'}></use>
-                  </svg>
-                </CaloriesIcon>
-                <ExercisesTitle>{card.name}</ExercisesTitle>
-              </ExercisesContainer>
-              <DataInfo>
-                <li>
-                  Burned calories:
-                  <span>{card.burnedCalories}</span>
-                </li>
-                <li>
-                  Body part: <span>{card.bodyPart}</span>
-                </li>
-                <li>
-                  Target:<span>{card.target}</span>
-                </li>
-              </DataInfo>
-            </ExercisesItem>
+            <ExercisesItem
+              key={card._id}
+              card={card}
+              toogleModal={toogleModal}
+            />
           ))}
         </ExercisesList>
       </MainExercisesContainer>
