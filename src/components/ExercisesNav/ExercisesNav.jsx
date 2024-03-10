@@ -31,7 +31,7 @@ import { selectCategoryPicked, selectFilter } from '../../redux/exercises/select
         dispatch(isCategoryPicked(''));
       };
 
-    
+   
       return (
         <s.NavWrap>
           {activeCategory ? (
@@ -42,15 +42,15 @@ import { selectCategoryPicked, selectFilter } from '../../redux/exercises/select
     
           <s.NavLinkWrap>
             <s.NavButton type='button' onClick={() => handleFilterClick('Body parts')}
-            active={activeFilter === 'Body parts' ? "true" : undefined}>
+            theme={{kostil: activeFilter === 'Body parts' ? undefined : "true" }}>
               Body parts
             </s.NavButton>
             <s.NavButton type='button' onClick={() => handleFilterClick('Muscles')}
-            active={activeFilter === 'Muscles' ? "true" : undefined}>
+            theme={{kostil: activeFilter === 'Muscles' ? undefined : "true"}}>
               Muscles
             </s.NavButton>
             <s.NavButton type='button' onClick={() => handleFilterClick('Equipment')}
-            active={activeFilter === 'Equipment' ? "true" : undefined}>
+            theme={{kostil: activeFilter === 'Equipment' ? undefined : "true"}}>
               Equipment
             </s.NavButton>
           </s.NavLinkWrap>

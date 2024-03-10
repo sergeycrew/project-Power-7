@@ -24,7 +24,7 @@ export const NavLinkWrap = styled.div`
 export const NavButton = styled.button`
   padding: 0;
   background-color: inherit;
-  color: rgba(239, 237, 232, 0.40);
+  color: ${(p) => p.theme.kostil ? 'rgba(239, 237, 232, 0.40)' : '#efede8'};
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
   font-style: normal;
@@ -36,7 +36,8 @@ export const NavButton = styled.button`
     line-height: 1.5;
   }
 
-  &.active::after {
+
+  ${(p) => p.theme.kostil} &&::after {
     display: block;
     content: '';
     position: absolute;
@@ -52,9 +53,7 @@ export const NavButton = styled.button`
       bottom: 5px;
     }
   }
-  &.active {
-    color: #efede8;
-  }
+
 `;
 
 export const FilterTitle = styled.h2`

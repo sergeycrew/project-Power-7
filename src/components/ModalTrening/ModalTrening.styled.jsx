@@ -211,7 +211,7 @@ export const ButtonAdd = styled.button`
   gap: 10px;
   border: none;
   border-radius: 12px;
-  background: var(--orange, #e6533c);
+  background: ${(p) => p.theme.colors.orangeColor};
   margin-right: auto;
   margin-top: 24px;
 
