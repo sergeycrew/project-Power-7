@@ -4,8 +4,8 @@ import icon from '../../images/sprite/sprite.svg';
 import { GoogleSignInButton } from '../../components/GoogleSignIn/GoogleSignIn';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { refreshUser } from '../../redux/auth/authOperation';
-//import { GoogleSignIn } from '../../redux/auth/authOperation';
+//import { refreshUser } from '../../redux/auth/authOperation';
+import { GoogleSignIn } from '../../redux/auth/authOperation';
 
 //import { useLocation } from 'react-router-dom';
 
@@ -22,7 +22,7 @@ const WelcomePage = () => {
   useEffect(() => {
     const refetch = async () => {
       if (accessToken && refreshToken) {
-        dispatch(refreshUser({accessToken,refreshToken}));
+        dispatch(GoogleSignIn({accessToken,refreshToken}));
       }
     };
 
