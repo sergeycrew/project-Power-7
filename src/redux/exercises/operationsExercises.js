@@ -37,3 +37,22 @@ export const featchAllExercises = createAsyncThunk(
     }
   }
 );
+export const featchAddExercises = createAsyncThunk(
+  'exercises/addexercises',
+  async (credentials, thunkAPI) => {
+    try {
+      // credentials = {
+      //   exerciseId,
+      //   calories,
+      //   time,
+      // };
+      await axios.post('diary/addexercises', {
+        ...credentials,
+        date: Date.now(),
+      });
+      return;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);

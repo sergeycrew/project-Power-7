@@ -21,8 +21,9 @@ import icons from '../../images/sprite.svg';
 import { CustomModal } from 'components/CustomModal/CustomModal';
 import { useEffect, useState } from 'react';
 import { CountdownCircleTimer } from 'react-countdown-circle-timer';
-import { addWorkout } from '../../jsonFromBd/testApi';
+// import { addWorkout } from '../../jsonFromBd/testApi';
 import { toast } from 'react-toastify';
+import { featchAddExercises } from '../../redux/exercises/operationsExercises';
   
   export const ModalTrening = ({
     onToogle,
@@ -93,7 +94,7 @@ import { toast } from 'react-toastify';
       };
   
       try {
-        const res = await addWorkout(workout);
+        const res = await featchAddExercises(workout);
         setWorkoutDoneInfo({
           time: res.time,
           calories: res.calories,

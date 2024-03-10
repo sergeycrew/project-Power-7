@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import * as s from './ExercisesNav.styled';
   
   import { useParams } from 'react-router-dom';
-import { changeFilter } from '../../redux/exercises/sliceExercises';
+import { changeFilter, isCategoryPicked } from '../../redux/exercises/sliceExercises';
 import { selectCategoryPicked, selectFilter } from '../../redux/exercises/selectorsExercises';
   
   export const ExercisesNav = () => {
@@ -23,11 +23,12 @@ import { selectCategoryPicked, selectFilter } from '../../redux/exercises/select
       //   </NavLinkWrap>
       // </NavWrap>
       const dispatch = useDispatch();
-      // const activeFilter = useSelector(selectFilter);
+      const activeFilter = useSelector(selectFilter);
       const activeCategory = useSelector(selectCategoryPicked)
     
       const handleFilterClick = (filter) => {
         dispatch(changeFilter(filter));
+        dispatch(isCategoryPicked(''));
       };
 
     
@@ -40,13 +41,16 @@ import { selectCategoryPicked, selectFilter } from '../../redux/exercises/select
           )}
     
           <s.NavLinkWrap>
-            <s.NavButton type='button' onClick={() => handleFilterClick('Body parts')}>
+            <s.NavButton type='button' onClick={() => handleFilterClick('Body parts')}
+            active={activeFilter === 'Body parts' ? "true" : undefined}>
               Body parts
             </s.NavButton>
-            <s.NavButton type='button' onClick={() => handleFilterClick('Muscles')}>
+            <s.NavButton type='button' onClick={() => handleFilterClick('Muscles')}
+            active={activeFilter === 'Muscles' ? "true" : undefined}>
               Muscles
             </s.NavButton>
-            <s.NavButton type='button' onClick={() => handleFilterClick('Equipment')}>
+            <s.NavButton type='button' onClick={() => handleFilterClick('Equipment')}
+            active={activeFilter === 'Equipment' ? "true" : undefined}>
               Equipment
             </s.NavButton>
           </s.NavLinkWrap>

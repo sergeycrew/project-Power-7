@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 
 export const BackBtn = styled.button`
+background-color: inherit;
   display: inline-flex;
   align-items: center;
   gap: 4px;
@@ -9,7 +10,6 @@ export const BackBtn = styled.button`
   color: rgb(239, 237, 232, 0.4);
   text-decoration: none;
   font-weight: 500;
-
   position: absolute;
   top: -140px;
 

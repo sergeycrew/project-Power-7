@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+
 import * as s from './ExerciseCard.styled';
 import { featchAllExercises } from '../../redux/exercises/operationsExercises';
 import { useDispatch } from 'react-redux';

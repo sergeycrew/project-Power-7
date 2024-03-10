@@ -17,8 +17,7 @@ const ProductsPage = lazy(() => import('pages/ProductsPage/ProductsPage'));
 const ExercisesPage = lazy(() => import('pages/ExercisesPage/ExercisesPage'));
 const ErrorPage = lazy(() => import('pages/ErrorPage/ErrorPage'));
 
-import { ExercisesCategories } from './components/ExercisesCategories/ExercisesCategories';
-import { ExercisesListByCategory } from './components/ExercisesList/ExercisesList';
+
 import { useAuth } from './hooks';
 import { refreshUser } from './redux/auth/authOperation';
 import { useDispatch } from 'react-redux';
@@ -53,33 +52,7 @@ function App() {
           {/* <Route path="/diary" element={<DiaryPage />} /> */}
           <Route path="/products" element={<PrivateRoute redirectTo="/" component={<ProductsPage />}/>}/>
           {/* <Route path="/products" element={<ProductsPage />}/> */}
-          <Route path="/exercises" element={<ExercisesPage />}>
-            <Route index element={<Navigate to="bodyPart" />} />
-            <Route
-              path="bodyPart"
-              element={<ExercisesCategories query={'Body parts'} />}
-            ></Route>
-            <Route
-              path="bodyPart/:filter"
-              element={<ExercisesListByCategory />}
-            />
-            <Route
-              path="target"
-              element={<ExercisesCategories query={'Muscles'} />}
-            ></Route>
-            <Route
-              path="target/:filter"
-              element={<ExercisesListByCategory />}
-            />
-            <Route
-              path="equipment"
-              element={<ExercisesCategories query={'Equipment'} />}
-            ></Route>
-            <Route
-              path="equipment/:filter"
-              element={<ExercisesListByCategory />}
-            />
-          </Route>
+          <Route path="/exercises" element={<PrivateRoute redirectTo="/" component={<ExercisesPage />}/>}/>
           <Route path="/profile" element={<PrivateRoute redirectTo="/" component={<ProfilePage/>}/>} />
           {/* <Route path="/profile" element={<ProfilePage />} /> */}
           <Route path="*" element={<ErrorPage />} />

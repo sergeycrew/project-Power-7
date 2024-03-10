@@ -1,11 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit';
 import {
+  featchAddExercises,
   featchAllExercises,
   fetchExercisesCategory,
 } from './operationsExercises';
 
 const handlePending = (state) => {
   state.isLoading = true;
+  state.exercises = [];
 };
 
 const handleRejected = (state, action) => {
@@ -51,7 +53,17 @@ const exercisesSlice = createSlice({
         state.error = null;
         state.exercises = action.payload;
       })
-      .addCase(featchAllExercises.rejected, handleRejected),
+      .addCase(featchAllExercises.rejected, handleRejected)
+      .addCase(featchAddExercises.pending, (state, action) => {
+        state.isLoading = true;
+   
+      })
+      .addCase(featchAddExercises.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.error = null;
+       
+      })
+      .addCase(featchAddExercises.rejected, handleRejected),
 });
 
 export const exercisesReducer = exercisesSlice.reducer;
