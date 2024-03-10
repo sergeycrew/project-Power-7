@@ -8,6 +8,7 @@ import {
   updateUserAvatar,
   userVerifyAgain,
   refreshUser,
+  GoogleSignIn,
 } from './authOperation';
 
 const initialUser = {
@@ -162,6 +163,10 @@ const authSlice = createSlice({
       .addCase(logIn.pending, handlePending)
       .addCase(logIn.rejected, handleRejected)
       .addCase(logIn.fulfilled, handleLogInFulfilled)
+
+      .addCase(GoogleSignIn.pending, handlePending)
+      .addCase(GoogleSignIn.rejected, handleRejected)
+      .addCase(GoogleSignIn.fulfilled, handleLogInFulfilled)
 
       .addCase(logOut.pending, handlePending)
       .addCase(logOut.rejected, handleRejected)

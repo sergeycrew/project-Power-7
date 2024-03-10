@@ -3,7 +3,7 @@ import sprite from 'images/sprite/sprite.svg';
 // import { useDispatch } from 'react-redux';
 // import { GoogleAuth } from '../../redux/auth/authOperation';
 
-export const GoogleSignIn = () => {
+export const GoogleSignInButton = () => {
 //const dispatch = useDispatch()
     
     const onClickGoogleBtn = () => {
