@@ -1,4 +1,4 @@
-import{u as i,a as g,j as t,s as a,B as w,D as u,b as p,e as j}from"./index-fe4668e7.js";import{u as v}from"./formik.esm-1d1b6046.js";const y=e=>e.productList.items,C=e=>e.productList.containsProducts,S=e=>e.productList.isLoading,_=[{_id:{$oid:"65e1c02cf5886fc9ad5f5fb9"},title:"alcoholic drinks"},{_id:{$oid:"65e1c02cf5886fc9ad5f5fba"},title:"berries"},{_id:{$oid:"65e1c02cf5886fc9ad5f5fbb"},title:"cereals"},{_id:{$oid:"65e1c02cf5886fc9ad5f5fbc"},title:"dairy"},{_id:{$oid:"65e1c02cf5886fc9ad5f5fbd"},title:"dried fruits"},{_id:{$oid:"65e1c02cf5886fc9ad5f5fbe"},title:"eggs"},{_id:{$oid:"65e1c02cf5886fc9ad5f5fbf"},title:"fish"},{_id:{$oid:"65e1c02cf5886fc9ad5f5fc0"},title:"flour"},{_id:{$oid:"65e1c02cf5886fc9ad5f5fc1"},title:"fruits"},{_id:{$oid:"65e1c02cf5886fc9ad5f5fc2"},title:"meat"},{_id:{$oid:"65e1c02cf5886fc9ad5f5fc3"},title:"mushrooms"},{_id:{$oid:"65e1c02cf5886fc9ad5f5fc4"},title:"nuts"},{_id:{$oid:"65e1c02cf5886fc9ad5f5fc5"},title:"oils and fats"},{_id:{$oid:"65e1c02cf5886fc9ad5f5fc6"},title:"poppy"},{_id:{$oid:"65e1c02cf5886fc9ad5f5fc7"},title:"sausage"},{_id:{$oid:"65e1c02cf5886fc9ad5f5fc8"},title:"seeds"},{_id:{$oid:"65e1c02cf5886fc9ad5f5fc9"},title:"sesame"},{_id:{$oid:"65e1c02cf5886fc9ad5f5fca"},title:"soft drinks"},{_id:{$oid:"65e1c02cf5886fc9ad5f5fcb"},title:"vegetables and herbs"}],k=i.form`
+import{u as i,a as g,j as t,d as a,E as w,F as u,e as p,r as j}from"./index-025e3954.js";import{u as v}from"./formik.esm-ea088495.js";const y=e=>e.productList.items,C=e=>e.productList.containsProducts,S=e=>e.productList.isLoading,_=[{_id:{$oid:"65e1c02cf5886fc9ad5f5fb9"},title:"alcoholic drinks"},{_id:{$oid:"65e1c02cf5886fc9ad5f5fba"},title:"berries"},{_id:{$oid:"65e1c02cf5886fc9ad5f5fbb"},title:"cereals"},{_id:{$oid:"65e1c02cf5886fc9ad5f5fbc"},title:"dairy"},{_id:{$oid:"65e1c02cf5886fc9ad5f5fbd"},title:"dried fruits"},{_id:{$oid:"65e1c02cf5886fc9ad5f5fbe"},title:"eggs"},{_id:{$oid:"65e1c02cf5886fc9ad5f5fbf"},title:"fish"},{_id:{$oid:"65e1c02cf5886fc9ad5f5fc0"},title:"flour"},{_id:{$oid:"65e1c02cf5886fc9ad5f5fc1"},title:"fruits"},{_id:{$oid:"65e1c02cf5886fc9ad5f5fc2"},title:"meat"},{_id:{$oid:"65e1c02cf5886fc9ad5f5fc3"},title:"mushrooms"},{_id:{$oid:"65e1c02cf5886fc9ad5f5fc4"},title:"nuts"},{_id:{$oid:"65e1c02cf5886fc9ad5f5fc5"},title:"oils and fats"},{_id:{$oid:"65e1c02cf5886fc9ad5f5fc6"},title:"poppy"},{_id:{$oid:"65e1c02cf5886fc9ad5f5fc7"},title:"sausage"},{_id:{$oid:"65e1c02cf5886fc9ad5f5fc8"},title:"seeds"},{_id:{$oid:"65e1c02cf5886fc9ad5f5fc9"},title:"sesame"},{_id:{$oid:"65e1c02cf5886fc9ad5f5fca"},title:"soft drinks"},{_id:{$oid:"65e1c02cf5886fc9ad5f5fcb"},title:"vegetables and herbs"}],k=i.form`
   display: flex;
   flex-direction: column;
   gap: ${e=>e.theme.spacing(4)};
@@ -13,7 +13,7 @@ import{u as i,a as g,j as t,s as a,B as w,D as u,b as p,e as j}from"./index-fe46
   color: ${e=>e.theme.colors.fornCaptionColor};
   font-size: 14px;
   text-align: right;
-`;const P=i.input`
+`;const F=i.input`
   width: 100%;
   padding: ${e=>e.theme.spacing(3)};
   color: ${e=>e.theme.colors.whiteColor};
@@ -37,7 +37,7 @@ import{u as i,a as g,j as t,s as a,B as w,D as u,b as p,e as j}from"./index-fe46
     font-size: 16px;
     line-height: 1.5em;
   }
-`,z=i.button`
+`,P=i.button`
   height: 18px;
   position: absolute;
   padding: 0px;
@@ -56,7 +56,7 @@ import{u as i,a as g,j as t,s as a,B as w,D as u,b as p,e as j}from"./index-fe46
   @media screen and (min-width: 1440px) {
     left: 168px;
   }
-`,F=i.svg`
+`,z=i.svg`
   width: 18px;
   height: 18px;
   stroke: #e6533c;
@@ -101,7 +101,7 @@ import{u as i,a as g,j as t,s as a,B as w,D as u,b as p,e as j}from"./index-fe46
     font-size: 16px;
     line-height: 1.5em;
   }
-`,T="_prodFilterCategorySlct_1jl47_1",m={prodFilterCategorySlct:T},R=()=>{const e=g(),o=v({initialValues:{title:"",category:"",type:""},onSubmit:r=>n(r)}),n=r=>{console.log("paramsSearch",r),e(w(r)),e(u())},c=r=>{o.handleChange(r);const{initialValues:d,values:$}=o;if(r.target.value!==d[r.target.value]){const b={...$,[r.target.name]:r.target.value};n(b)}};return t.jsxs(k,{onSubmit:o.handleSubmit,children:[t.jsx(P,{type:"text",name:"title",placeholder:"Search",value:o.values.title,onChange:o.handleChange}),o.values.title!==""&&t.jsx(z,{type:"button",onClick:()=>{o.setFieldValue("title",""),o.handleSubmit()},children:t.jsx(F,{children:t.jsx("use",{href:`${a}#icon-x`})})}),t.jsx(L,{type:"submit",children:t.jsx(B,{children:t.jsx("use",{href:`${a}#icon-search`})})}),t.jsxs(W,{children:[t.jsxs(h,{className:m.prodFilterCategorySlct,name:"category",value:o.values.category,onChange:c,children:[t.jsx("option",{value:"",children:"Categories"}),_.map(r=>t.jsx("option",{value:r.title,children:r.title},r._id.$oid))]}),t.jsxs(h,{className:m.prodFilterCategorySlct,name:"type",value:o.values.type,onChange:c,children:[t.jsx("option",{value:"",children:"All"}),t.jsx("option",{value:"recommended",children:"Recommended"}),t.jsx("option",{value:"not recommended",children:"Not recommended"})]})]})]})},A=e=>e.$recommended?e.theme.colors.recommendedColor:e.theme.colors.notRecommendedColor,D=i.div`
+`,T="_prodFilterCategorySlct_1jl47_1",m={prodFilterCategorySlct:T},E=()=>{const e=g(),o=v({initialValues:{title:"",category:"",type:""},onSubmit:r=>n(r)}),n=r=>{console.log("paramsSearch",r),e(w(r)),e(u())},c=r=>{o.handleChange(r);const{initialValues:d,values:$}=o;if(r.target.value!==d[r.target.value]){const b={...$,[r.target.name]:r.target.value};n(b)}};return t.jsxs(k,{onSubmit:o.handleSubmit,children:[t.jsx(F,{type:"text",name:"title",placeholder:"Search",value:o.values.title,onChange:o.handleChange}),o.values.title!==""&&t.jsx(P,{type:"button",onClick:()=>{o.setFieldValue("title",""),o.handleSubmit()},children:t.jsx(z,{children:t.jsx("use",{href:`${a}#icon-x`})})}),t.jsx(L,{type:"submit",children:t.jsx(B,{children:t.jsx("use",{href:`${a}#icon-search`})})}),t.jsxs(W,{children:[t.jsxs(h,{className:m.prodFilterCategorySlct,name:"category",value:o.values.category,onChange:c,children:[t.jsx("option",{value:"",children:"Categories"}),_.map(r=>t.jsx("option",{value:r.title,children:r.title},r._id.$oid))]}),t.jsxs(h,{className:m.prodFilterCategorySlct,name:"type",value:o.values.type,onChange:c,children:[t.jsx("option",{value:"",children:"All"}),t.jsx("option",{value:"recommended",children:"Recommended"}),t.jsx("option",{value:"not recommended",children:"Not recommended"})]})]})]})},R=e=>e.$recommended?e.theme.colors.recommendedColor:e.theme.colors.notRecommendedColor,A=i.div`
   height: 141px;
   width: 405px;
   padding: ${e=>e.theme.spacing(4)};
@@ -109,12 +109,12 @@ import{u as i,a as g,j as t,s as a,B as w,D as u,b as p,e as j}from"./index-fe46
   border-radius: ${e=>e.theme.radii.ld};
   background-color: ${e=>e.theme.colors.cardBgColor};
   word-wrap: break-word;
-`,E=i.div`
+`,N=i.div`
   display: flex;
   margin-bottom: ${e=>e.theme.spacing(6)};
   align-items: baseline;
   justify-content: space-between;
-`,N=i.span`
+`,D=i.span`
   margin-right: auto;
   border-radius: ${e=>e.theme.radii.sd};
   padding: 7.5px 5px;
@@ -127,7 +127,7 @@ import{u as i,a as g,j as t,s as a,B as w,D as u,b as p,e as j}from"./index-fe46
   height: 14px;
   width: 14px;
   border-radius: 50%;
-  background-color: ${A};
+  background-color: ${R};
 `,s=i.p`
   margin-right: ${e=>e.theme.spacing(4)};
   color: ${e=>e.theme.colors.whiteColor};
@@ -167,7 +167,7 @@ import{u as i,a as g,j as t,s as a,B as w,D as u,b as p,e as j}from"./index-fe46
 `,l=i.p`
   margin-right: ${e=>e.theme.spacing(1)};
   color: ${e=>e.theme.colors.captionColor};
-`,G=({product:{id:e,title:o,calories:n,category:c,weight:r,recommended:d=!0}})=>t.jsxs(D,{children:[t.jsxs(E,{children:[t.jsx(N,{children:"diet"}),t.jsx(I,{$recommended:d}),t.jsx(s,{children:t.jsx("b",{children:d?"Recommended":"Not recommended"})}),t.jsxs(V,{children:["Add",t.jsx(M,{children:t.jsx("use",{href:`${a}#icon-arrow-right`})})]})]}),t.jsxs(O,{children:[t.jsx(Y,{children:t.jsx("use",{href:`${a}#icon-run-exercises`})}),t.jsx(X,{children:o})]}),t.jsxs(q,{children:[t.jsx(l,{children:"Calories:"})," ",t.jsx(s,{children:n}),t.jsx(l,{children:"Category: "})," ",t.jsx(s,{children:c}),t.jsx(l,{children:"Weight:"})," ",t.jsx(s,{children:r})]})]}),H=i.ul`
+`,G=({product:{id:e,title:o,calories:n,category:c,weight:r,recommended:d=!0}})=>t.jsxs(A,{children:[t.jsxs(N,{children:[t.jsx(D,{children:"diet"}),t.jsx(I,{$recommended:d}),t.jsx(s,{children:t.jsx("b",{children:d?"Recommended":"Not recommended"})}),t.jsxs(V,{children:["Add",t.jsx(M,{children:t.jsx("use",{href:`${a}#icon-arrow-right`})})]})]}),t.jsxs(O,{children:[t.jsx(Y,{children:t.jsx("use",{href:`${a}#icon-run-exercises`})}),t.jsx(X,{children:o})]}),t.jsxs(q,{children:[t.jsx(l,{children:"Calories:"})," ",t.jsx(s,{children:n}),t.jsx(l,{children:"Category: "})," ",t.jsx(s,{children:c}),t.jsx(l,{children:"Weight:"})," ",t.jsx(s,{children:r})]})]}),H=i.ul`
   padding: 0;
   margin: 0;
   display: flex;
@@ -248,4 +248,4 @@ import{u as i,a as g,j as t,s as a,B as w,D as u,b as p,e as j}from"./index-fe46
   width: 40px;
   height: 40px;
   object-fit: cover;
-`;const oe=()=>{const e=g();p(S);const o=p(C);return j.useEffect(()=>{e(u())},[e]),t.jsxs(U,{children:[t.jsxs(Z,{children:[t.jsx(ee,{children:"Products"}),t.jsx(R,{})]}),o?t.jsx(J,{}):t.jsx(Q,{})]})};export{oe as default};
+`;const oe=()=>{const e=g();p(S);const o=p(C);return j.useEffect(()=>{e(u())},[e]),t.jsxs(U,{children:[t.jsxs(Z,{children:[t.jsx(ee,{children:"Products"}),t.jsx(E,{})]}),o?t.jsx(J,{}):t.jsx(Q,{})]})};export{oe as default};
