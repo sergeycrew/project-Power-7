@@ -43,15 +43,15 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<MainLayout />}>
-          <Route index element={<PublicRoute redirectTo="/profile" component={<WelcomePage/>}/>}/>
+          <Route index element={<PublicRoute redirectTo="/diary" component={<WelcomePage/>}/>}/>
           {/* <Route index element={<WelcomePage />} /> */}
           <Route path="/signUp" element={<PublicRoute redirectTo="/profile" component={<SignUpPage />}/>}/>
           {/* <Route path="/signUp" element={<SignUpPage />} /> */}
-          <Route path="/signIn" element={<PublicRoute redirectTo="/profile" component={<SignInPage />}/>}/>
+          <Route path="/signIn" element={<PublicRoute redirectTo="/diary" component={<SignInPage />}/>}/>
           {/* <Route path="/signIn" element={<SignInPage />} /> */}
-          <Route path="/diary" element={<PrivateRoute redirectTo="/signIn" component={<DiaryPage />}/>}/>
+          <Route path="/diary" element={<PrivateRoute redirectTo="/" component={<DiaryPage />}/>}/>
           {/* <Route path="/diary" element={<DiaryPage />} /> */}
-          <Route path="/products" element={<PrivateRoute redirectTo="/signIn" component={<ProductsPage />}/>}/>
+          <Route path="/products" element={<PrivateRoute redirectTo="/" component={<ProductsPage />}/>}/>
           {/* <Route path="/products" element={<ProductsPage />}/> */}
           <Route path="/exercises" element={<ExercisesPage />}>
             <Route index element={<Navigate to="bodyPart" />} />
