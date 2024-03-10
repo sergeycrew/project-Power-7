@@ -1,11 +1,11 @@
 import { HomeBackground } from '../../components/HomeBackground/HomeBackground';
 import * as welcome from './WelcomePage.styled';
 import icon from '../../images/sprite/sprite.svg';
-import { GoogleSignIn } from '../../components/GoogleSignIn/GoogleSignIn';
+import { GoogleSignInButton } from '../../components/GoogleSignIn/GoogleSignIn';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { selectToken } from '../../redux/auth/authSelectors';
-import axios from 'axios';
+import { GoogleSignIn } from '../../redux/auth/authOperation';
+
 //import { useLocation } from 'react-router-dom';
 
 const WelcomePage = () => {
@@ -21,13 +21,7 @@ const WelcomePage = () => {
   useEffect(() => {
     const refetch = async () => {
       if (accessToken && refreshToken) {
-        dispatch(selectToken(refreshToken));
-
-        try {
-          axios.defaults.headers.common.Authorization = `Bearer ${accessToken}`;
-        } catch (error) {
-          console.error(error);
-        }
+        dispatch(GoogleSignIn({accessToken,refreshToken}));
       }
     };
 
@@ -57,7 +51,7 @@ const WelcomePage = () => {
                 </welcome.StyledSignInLink>
               </welcome.ListItem>
               <welcome.ListItem>
-                <GoogleSignIn/>
+                <GoogleSignInButton/>
               </welcome.ListItem>
             </welcome.LinkList>
           </welcome.TitleBox>
