@@ -19,7 +19,7 @@ export const Loader = () => {
   return (
     <FullScreenLoader>
       <InfinitySpin
-        color='#ef8964'
+        color="#ef8964"
         // {(p) => p.theme.colors.orangeColor}
         visible={true}
         height={200}

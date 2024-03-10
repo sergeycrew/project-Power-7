@@ -2,7 +2,7 @@ import { useDispatch } from 'react-redux';
 import {
   LogoutButtonLink,
   Text,
-  LogoWrapper,
+ // LogoWrapper,
   LogOutIcon,
 } from './Logout.styled';
 
@@ -10,7 +10,7 @@ import sprite from 'images/sprite/sprite.svg';
 
 import { logOut } from '../../redux/auth/authOperation';
 
-export const Logout = ({ color, closeModal }) => {
+export const Logout = ({ color }) => {
   const dispatch = useDispatch();
 
   const handleClick = (e) => {
