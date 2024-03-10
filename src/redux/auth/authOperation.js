@@ -138,3 +138,18 @@ export const refreshUser = createAsyncThunk(
     }
   }
 );
+
+// export const GoogleSignIn = createAsyncThunk(
+//   'users/googleAuth',
+//   async (credentials, { rejectWithValue }) => {
+//     try {
+//       const { data } = await axios.post('users/googleAuth', credentials);
+//       setAuthHeader(data.tokens.accessToken);
+//       return data;
+//     } catch (error) {
+//       toast.error('Oops, something went wrong! Try again later.');
+//       console.log(error.message);
+//       return rejectWithValue(error.message);
+//     }
+//   }
+// );
