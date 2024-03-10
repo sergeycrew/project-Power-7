@@ -10,24 +10,23 @@ import { GoogleSignIn } from '../../redux/auth/authOperation';
 //import { useLocation } from 'react-router-dom';
 
 const WelcomePage = () => {
-
   //const params = useLocation();
-   const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const url = window.location;
   const accessToken = new URLSearchParams(url.search).get('accesstoken');
   const refreshToken = new URLSearchParams(url.search).get('refreshtoken');
 
-  console.log(accessToken, refreshToken)
-  
+  console.log(accessToken, refreshToken);
+
   useEffect(() => {
     const refetch = async () => {
       if (accessToken && refreshToken) {
-        dispatch(GoogleSignIn({accessToken,refreshToken}));
+        dispatch(GoogleSignIn({ accessToken, refreshToken }));
       }
     };
 
     refetch();
-  }, [dispatch, accessToken, refreshToken,]);
+  }, [dispatch, accessToken, refreshToken]);
 
   return (
     <HomeBackground>
@@ -52,7 +51,7 @@ const WelcomePage = () => {
                 </welcome.StyledSignInLink>
               </welcome.ListItem>
               <welcome.ListItem>
-                <GoogleSignInButton/>
+                <GoogleSignInButton />
               </welcome.ListItem>
             </welcome.LinkList>
           </welcome.TitleBox>
