@@ -45,6 +45,7 @@ export const ExercisesListByCategory = () => {
     ;
     dispatch(isCategoryPicked(''));
   };
+  
 
   return (
     <div style={{ position: 'relative' }}>

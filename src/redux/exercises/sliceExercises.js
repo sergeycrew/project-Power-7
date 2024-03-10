@@ -25,7 +25,7 @@ const exercisesSlice = createSlice({
     categoryPicked: '',
     categoriesPage: 1,
     categoriesLimit: 10,
-    exercisesLimit: 20,
+    exercisesLimit: 999,
     isLoading: false,
     error: null,
   },

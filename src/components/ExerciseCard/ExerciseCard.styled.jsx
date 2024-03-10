@@ -5,24 +5,13 @@ export const ExercisesLi = styled.li`
   cursor: pointer;
 `;
 
-
-export const ExerciseCardWrapper = styled.div`
-  max-width: 335px;
-  height: 206px;
+export const Image = styled.img`
+display: block;
+border: 1px solid rgba(239, 237, 232, 0.2);
   border-radius: 12px;
-  border: 1px solid rgba(239, 237, 232, 0.2);
+height: 206px;
+filter: brightness(50%);
 
-  background-repeat: no-repeat;
-  background-image: linear-gradient(
-      0deg,
-      rgba(4, 4, 4, 0.5) 0%,
-      rgba(4, 4, 4, 0.5) 100%
-    ),
-    url(${props => props.photo});
-
-  background-position: 50% 50%;
-  background-size: cover;
-  
 
   @media screen and (min-width: 768px) {
     width: 224px;
@@ -32,6 +21,14 @@ export const ExerciseCardWrapper = styled.div`
     width: 237px;
     height: 206px;
   }
+`
+export const ExerciseCardWrapper = styled.div`
+ 
+  
+
+  
+
+
 `;
 export const ExerciseDescription = styled.div`
   text-align: center;
@@ -47,7 +44,7 @@ export const ExerciseTitle = styled.div`
   margin: 0;
   color: #efede8;
   text-align: center;
-  font-family: Roboto;
+  font-family: 'Roboto', sans-serif;
   font-size: 20px;
   font-style: normal;
   font-weight: 400;

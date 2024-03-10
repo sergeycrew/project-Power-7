@@ -1,4 +1,4 @@
-import { Route, Routes, Navigate } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { PrivateRoute } from './Routes/PrivateRoute';
 import { PublicRoute } from './Routes/PublicRoute';
 
@@ -19,7 +19,7 @@ const ErrorPage = lazy(() => import('pages/ErrorPage/ErrorPage'));
 
 
 import { useAuth } from './hooks';
-import { refreshUser } from './redux/auth/authOperation';
+import { currentUser, refreshUser } from './redux/auth/authOperation';
 import { useDispatch } from 'react-redux';
 import { Loader } from './components/Loader/Loader';
 
@@ -28,12 +28,15 @@ import { Loader } from './components/Loader/Loader';
 
 
 function App() {
+  const { isRefreshing, isLoggedIn } = useAuth();
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(refreshUser());
-  }, [dispatch]);
+    if (isLoggedIn) {
+      dispatch(currentUser());
+    }
+  }, [dispatch, isLoggedIn]);
 
-  const { isRefreshing } = useAuth();
   // return (
   return isRefreshing ? (
     

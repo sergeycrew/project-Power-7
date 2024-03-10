@@ -37,10 +37,9 @@ export const WorkoutTitle = styled.h3`
 `;
 
 export const CaloriesIcon = styled.svg`
-  background-color: #efa082;
-  fill:#ffffff;
-  padding: 4px;
-  border-radius: 50px;
+  
+  
+
   width: 20px;
   height: 20px;
   margin-right: 16px;

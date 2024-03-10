@@ -26,6 +26,9 @@ export const ExercisesCategories = ({ handleSetExName }) => {
   const maxPage = useSelector(selectMaxCategoriesPage);
   const pagePagin = useSelector(selectCategoriesPage);
 
+  useEffect(()=>{
+dispatch(fetchExercisesCategory())
+  },[dispatch])
 
 
 

@@ -1,12 +1,10 @@
-import { BgContainer, BgImage, Wrapper } from './SecondaryPageBg.styled';
+import * as s from './SecondaryPageBg.styled';
 
-export const SecondaryPageBg = ({ children, hidefilter }) => {
+export const SecondaryPageBg = ({children}) => {
   return (
-    <Wrapper>
-      <BgContainer>
-        <BgImage  hidefilter={hidefilter} />
-      </BgContainer>
-      {children}
-    </Wrapper>
+    <s.ExrBackgroundImage>
+    {children}
+   
+  </s.ExrBackgroundImage>
   );
 };

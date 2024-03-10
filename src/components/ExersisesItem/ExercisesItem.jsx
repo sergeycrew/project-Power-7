@@ -33,9 +33,9 @@ export const ExercisesItem = ({ card, toogleModal }) => {
       </InfoContainer>
       <ExercisesContainer>
         <CaloriesIcon>
-          <svg fill="#ffffff">
-            {' '}
-            <use href={icons + '#icon-running-figure'}></use>
+          <svg >
+            
+            <use href={`${icons}#icon-run-exercises`}></use>
           </svg>
         </CaloriesIcon>
         <ExercisesTitle>{card.name}</ExercisesTitle>

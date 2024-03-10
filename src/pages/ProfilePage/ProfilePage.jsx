@@ -19,11 +19,11 @@ const ProfilePage = () => {
 
   const { isLoggedIn, isLoading } = useAuth();
 
-  useEffect(() => {
-    if (isLoggedIn) {
-      dispatch(currentUser());
-    }
-  }, [dispatch, isLoggedIn]);
+  // useEffect(() => {
+  //   if (isLoggedIn) {
+  //     dispatch(currentUser());
+  //   }
+  // }, [dispatch, isLoggedIn]);
 
   return  (
     isLoading ? <Loader/> : 
