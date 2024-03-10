@@ -21,7 +21,11 @@ useEffect(() => {
   }, [dispatch]);
 
   return (
-    <SecondaryPageBg >
+
+    <SecondaryPageBg 
+    // hideFilter={isFilter}
+    >
+
       <Container>
         <ExercisesPageWrap>
           <ExercisesNav/>

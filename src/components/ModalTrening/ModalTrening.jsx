@@ -149,7 +149,7 @@ import { toast } from 'react-toastify';
               >
                 {() => {
                   return (
-                    <div style={{ display: 'flex', flexDirection: 'column' }}>
+                    <div style={{ display: 'flex', flexDirection: 'column', color: 'white' }}>
                       <div>{timerFormat}</div>
                       <div>Round: {isRound}</div>
                     </div>

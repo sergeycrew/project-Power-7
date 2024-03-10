@@ -4,6 +4,7 @@ export const ProductsContainer = styled.ul`
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
+  margin-top: -4px;
 
   @media screen and (min-width: 768px) {
     gap: 8px;
@@ -16,8 +17,14 @@ export const ProductsContainer = styled.ul`
 `;
 
 export const ListItem = styled.li`
+  width: 100%;
+  position: relative;
+
   &:nth-of-type(1) {
-    width: 297px;
+    @media screen and (min-width: 375px) {
+      width: 297px;
+    }
+    /* width: 297px; */
 
     @media screen and (min-width: 768px) {
       width: 90px;
@@ -29,7 +36,11 @@ export const ListItem = styled.li`
   }
 
   &:nth-of-type(2) {
-    width: 297px;
+    @media screen and (min-width: 375px) {
+      width: 297px;
+    }
+
+    /* width: 297px; */
 
     @media screen and (min-width: 768px) {
       width: 132px;
@@ -41,7 +52,11 @@ export const ListItem = styled.li`
   }
 
   &:nth-of-type(3) {
-    width: 297px;
+    @media screen and (min-width: 375px) {
+      width: 297px;
+    }
+
+    /* width: 297px; */
 
     @media screen and (min-width: 768px) {
       width: 128px;
@@ -53,7 +68,11 @@ export const ListItem = styled.li`
   }
 
   &:nth-of-type(4) {
-    width: 81px;
+    @media screen and (min-width: 375px) {
+      width: 81px;
+    }
+
+    /* width: 81px; */
 
     @media screen and (min-width: 768px) {
       width: 84px;
@@ -65,7 +84,11 @@ export const ListItem = styled.li`
   }
 
   &:nth-of-type(5) {
-    width: 80px;
+    @media screen and (min-width: 375px) {
+      width: 80px;
+    }
+
+    /* width: 80px; */
 
     @media screen and (min-width: 768px) {
       width: 78px;
@@ -77,7 +100,11 @@ export const ListItem = styled.li`
   }
 
   &:nth-of-type(6) {
-    width: 76px;
+    @media screen and (min-width: 375px) {
+      width: 76px;
+    }
+
+    /* width: 76px; */
 
     @media screen and (min-width: 1440px) {
       width: 82px;
@@ -108,14 +135,14 @@ export const DayExerciseItemContent = styled.p`
 `;
 
 export const DeleteButton = styled.button`
-  position: relative;
   padding: 0;
   background: none;
   border: none;
-  top: 4px;
 
-  @media screen and (max-width: 767px) {
+  @media screen and (min-width: 375px) and (max-width: 767px) {
+    position: relative;
     right: 16px;
+    top: 5px;
   }
 `;
 

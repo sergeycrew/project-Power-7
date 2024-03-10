@@ -65,7 +65,9 @@ color: rgba(239, 237, 232, 0.40);
 `;
 
 
+
 export const FilterTitle = styled.h2`
+
 color: ${(p) => p.theme.colors.whiteColor};
 font-size: 24px;
  text-transform: capitalize;
@@ -82,6 +84,7 @@ export const Title = styled.h2`
 color: ${(p) => p.theme.colors.whiteColor};
 font-size: 24px;
 margin-bottom: 20px;
+color: ${(p) => p.theme.colors.whiteColor};
 
 
 

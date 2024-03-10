@@ -11,13 +11,16 @@ import {
   selectCurrentDate,
   selectProducts,
   selectExercises,
+  selectIsLoadingDiary,
 } from '../../redux/diary/diarySelectors';
+import { DiaryLoader } from '../../components/DiaryLoader/DiaryLoader';
 
 const DiaryPage = () => {
   const dispatch = useDispatch();
   const currentDate = useSelector(selectCurrentDate);
   const products = useSelector(selectProducts);
   const exercises = useSelector(selectExercises);
+  let isLoading = useSelector(selectIsLoadingDiary);
 
   useEffect(() => {
     const currentDateObj = {
@@ -26,6 +29,7 @@ const DiaryPage = () => {
 
     dispatch(fetchAllDairyInfo(currentDateObj));
   }, [dispatch, currentDate]);
+
   return (
     <s.Container>
       <s.TitleWrapper>
@@ -34,46 +38,46 @@ const DiaryPage = () => {
       </s.TitleWrapper>
       <s.DiaryCommonContainer>
         <s.DiaryItemContainer>
-          <DiaryItem title="Products" link="Add products" to="/products">
-            {products.length === 0 ? (
-              <s.NotFoundText>Not found products</s.NotFoundText>
-            ) : (
-              products.map((item, index) => (
-                <DayProductItem
-                  isFirstItem={index === 0}
-                  key={item._id}
-                  value={item}
-                ></DayProductItem>
-              ))
-            )}
-
-            {/* <s.NotFoundText>Not found products</s.NotFoundText> */}
-            {/* <DayProductItem isFirstItem={true}></DayProductItem>
-            <DayProductItem isFirstItem={false}></DayProductItem>
-            <DayProductItem isFirstItem={false}></DayProductItem>
-            <DayProductItem isFirstItem={false}></DayProductItem> */}
+          <DiaryItem title="Products" link="Add product" to="/products">
+            <s.ItemsContainer>
+              {isLoading ? (
+                <DiaryLoader />
+              ) : products.length === 0 ? (
+                <s.NotFoundText>Not found products</s.NotFoundText>
+              ) : (
+                products.map((item, index) => (
+                  <DayProductItem
+                    isFirstItem={index === 0}
+                    key={item._id}
+                    value={item}
+                  ></DayProductItem>
+                ))
+              )}
+            </s.ItemsContainer>
           </DiaryItem>
-          <DiaryItem title="Exercises" link="Add exercises" to="/exercises">
-            {exercises.length === 0 ? (
-              <s.NotFoundText>Not found exercises</s.NotFoundText>
-            ) : (
-              exercises.map((item, index) => (
-                <DayExerciseItem
-                  isFirstItem={index === 0}
-                  key={item._id}
-                  value={item}
-                ></DayExerciseItem>
-              ))
-            )}
-            {/* <s.NotFoundText>Not found exercises</s.NotFoundText> */}
-            {/* <DayExerciseItem isFirstItem={true}></DayExerciseItem>
-            <DayExerciseItem isFirstItem={false}></DayExerciseItem> */}
+          <DiaryItem title="Exercises" link="Add exercise" to="/exercises">
+            <s.ItemsContainer>
+              {isLoading ? (
+                <DiaryLoader />
+              ) : exercises.length === 0 ? (
+                <s.NotFoundText>Not found exercises</s.NotFoundText>
+              ) : (
+                exercises.map((item, index) => (
+                  <DayExerciseItem
+                    isFirstItem={index === 0}
+                    key={item._id}
+                    value={item}
+                  ></DayExerciseItem>
+                ))
+              )}
+            </s.ItemsContainer>
           </DiaryItem>
         </s.DiaryItemContainer>
         <DayDashboard></DayDashboard>
       </s.DiaryCommonContainer>
     </s.Container>
   );
+  // );
 };
 
 export default DiaryPage;

@@ -11,10 +11,21 @@ import {
   nextDay,
 } from '../../redux/diary/diarySlice';
 import { selectCurrentDate } from '../../redux/diary/diarySelectors';
+import { selectUser } from '../../redux/auth/authSelectors';
 
 export const DaySwitch = () => {
   const currentDate = useSelector(selectCurrentDate);
   const dispatch = useDispatch();
+  const user = useSelector(selectUser);
+
+  const isPreviousButtonDisabled = () => {
+    let userCreationDate = new Date(user.createdAt);
+    let currentDateAsDate = new Date(currentDate);
+    currentDateAsDate.setHours(0, 0, 0, 0);
+    return userCreationDate.getTime() >= currentDateAsDate;
+
+    // return userCreationDate.getTime() >= currentDate - 86400000;
+  };
 
   const CustomInput = forwardRef(({ onClick }, ref) => {
     return (
@@ -29,7 +40,8 @@ export const DaySwitch = () => {
           <li>
             <s.SwitchButton
               type="button"
-              style={{ opacity: '0.2' }}
+              disabled={isPreviousButtonDisabled()}
+              style={{ opacity: isPreviousButtonDisabled() ? '0.2' : '1' }}
               onClick={() => {
                 dispatch(previousDay());
               }}
@@ -68,41 +80,9 @@ export const DaySwitch = () => {
         customInput={<CustomInput />}
         dateFormat={'dd MM yyyy'}
         calendarStartDay={1}
+        minDate={user.createdAt}
       />
       <CalendarGlobalStyles />
     </>
   );
 };
-
-// const currentDate = useSelector(selectCurrentDate);
-// // const [selectedDate, setSelectedDate] = useState(Date.now());
-// const dispatch = useDispatch();
-
-// const CustomInput = forwardRef(({ onClick }, ref) => {
-//   return (
-//     <s.Wrapper onClick={onClick} ref={ref}>
-//       {format(selectedDate, 'dd/MM/yyyy')}
-//       <s.CalendarIcon>
-//         <use href={`${icons}#icon-calendar`}></use>
-//       </s.CalendarIcon>
-//     </s.Wrapper>
-//   );
-// });
-
-// //   console.log(selectedDate);
-// CustomInput.displayName = 'CustomInput';
-
-//  return (
-//    <>
-//      <DatePicker
-//        selected={selectedDate}
-//        onChange={(date) => {
-//          setSelectedDate(date);
-//        }}
-//        customInput={<CustomInput />}
-//        dateFormat={'dd MM yyyy'}
-//        calendarStartDay={1}
-//      />
-//      <CalendarGlobalStyles />
-//    </>
-//  );
