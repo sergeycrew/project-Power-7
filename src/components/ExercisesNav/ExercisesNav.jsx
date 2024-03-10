@@ -3,7 +3,7 @@ import * as s from './ExercisesNav.styled';
   
   import { useParams } from 'react-router-dom';
 import { changeFilter } from '../../redux/exercises/sliceExercises';
-import { selectFilter } from '../../redux/exercises/selectorsExercises';
+import { selectCategoryPicked, selectFilter } from '../../redux/exercises/selectorsExercises';
   
   export const ExercisesNav = () => {
     // const { filter } = useParams();
@@ -23,16 +23,18 @@ import { selectFilter } from '../../redux/exercises/selectorsExercises';
       //   </NavLinkWrap>
       // </NavWrap>
       const dispatch = useDispatch();
-      const activeFilter = useSelector(selectFilter);
+      // const activeFilter = useSelector(selectFilter);
+      const activeCategory = useSelector(selectCategoryPicked)
     
       const handleFilterClick = (filter) => {
         dispatch(changeFilter(filter));
       };
+
     
       return (
         <s.NavWrap>
-          {activeFilter ? (
-            <s.FilterTitle>{activeFilter}</s.FilterTitle>
+          {activeCategory ? (
+            <s.FilterTitle>{activeCategory}</s.FilterTitle>
           ) : (
             <s.Title>Exercises</s.Title>
           )}

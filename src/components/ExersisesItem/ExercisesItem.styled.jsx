@@ -1,63 +1,7 @@
 import styled from 'styled-components';
 
 
-export const BackBtn = styled.button`
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  padding: 6px 0;
-  color: rgb(239, 237, 232, 0.4);
-  text-decoration: none;
-  font-weight: 500;
-
-  position: absolute;
-  top: -140px;
-
-`;
-
-export const MainExercisesContainer = styled.div`
-  &::-webkit-scrollbar {
-    width: 8px;
-  }
-
-  &::-webkit-scrollbar-track {
-    border-radius: 12px;
-    background: rgba(239, 237, 232, 0.1);
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background: linear-gradient(
-      90deg,
-      #ef8964 0%,
-      #ef8964 30%,
-      #ef8964 50%,
-      #ef8964 70%,
-      #ef8964 100%
-    );
-    border-radius: 12px;
-  }
-
-  @media (min-width: 768px) {
-    overflow-y: auto;
-    height: 507px;
-    gap: 32px 16px;
-  }
-  @media (min-width: 1440px) {
-    width: 850px;
-  }
-`;
-
-export const ExercisesList = styled.ul`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-
-  @media (min-width: 768px) {
-    gap: 32px 16px;
-  }
-`;
-
-export const ExercisesItem = styled.li`
+export const ExercisesItemWrapper = styled.li`
   width: 335px;
   min-height: 141px;
   border-radius: 12px;

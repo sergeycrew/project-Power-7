@@ -20,6 +20,7 @@ const exercisesSlice = createSlice({
     filter: 'Body parts',
     exercises: [],
     exercisesPage: 1,
+    categoryPicked: '',
     exercisesLimit: 20,
     isLoading: false,
     error: null,
@@ -30,6 +31,9 @@ const exercisesSlice = createSlice({
     },
     changeExercisesPage(state, action) {
       state.exercisesPage += action.payload;
+    },
+    isCategoryPicked(state, action) {
+      state.categoryPicked = action.payload;
     },
   },
   extraReducers: (builder) =>
@@ -52,4 +56,4 @@ const exercisesSlice = createSlice({
 
 export const exercisesReducer = exercisesSlice.reducer;
 
-export const { changeFilter, changeExercisesPage } = exercisesSlice.actions;
+export const { changeFilter, changeExercisesPage, isCategoryPicked } = exercisesSlice.actions;

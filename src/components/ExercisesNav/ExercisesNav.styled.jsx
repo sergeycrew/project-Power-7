@@ -30,6 +30,7 @@ export const NavLinkWrap = styled.div`
 
 
 export const NavButton = styled.button`
+background-color: black;
 color: rgba(239, 237, 232, 0.40);
     font-family: Roboto;
     font-size: 14px;

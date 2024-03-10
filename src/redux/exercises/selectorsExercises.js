@@ -8,6 +8,8 @@ export const selectExercises = (state) => state.exercises.exercises;
 
 export const selectCategory = (state) => state.exercises.categories;
 
+export const selectCategoryPicked = (state) => state.exercises.categoryPicked;
+
 export const selectExercisesPage = (state) => state.exercises.exercisesPage;
 
 export const selectFilterCategoruExercises = createSelector(

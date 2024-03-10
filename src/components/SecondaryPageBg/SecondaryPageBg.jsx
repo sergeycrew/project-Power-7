@@ -1,10 +1,10 @@
 import { BgContainer, BgImage, Wrapper } from './SecondaryPageBg.styled';
 
-export const SecondaryPageBg = ({ children, hideFilter }) => {
+export const SecondaryPageBg = ({ children, hidefilter }) => {
   return (
     <Wrapper>
       <BgContainer>
-        <BgImage  hideFilter={hideFilter} />
+        <BgImage  hidefilter={hidefilter} />
       </BgContainer>
       {children}
     </Wrapper>
