@@ -80,27 +80,29 @@ export const Icon = styled.svg`
 
 export const LinkList = styled.ul`
   display: flex;
+  flex-wrap: wrap;
   gap: 14px;
 
   @media screen and (min-width: 768px) {
     gap: 20px;
+    flex-wrap: nowrap;
   }
 `;
 
 export const ListItem = styled.li`
-  width: 136px;
+  width: 130px;
   height: 42px;
 
-  &:last-child {
-    width: 130px;
+  &:first-child {
+    width: 136px;
   }
 
   @media screen and (min-width: 768px) {
-    width: 190px;
+    width: 182px;
     height: 56px;
 
-    &:last-child {
-      width: 182px;
+    &:first-child {
+      width: 190px;
     }
   }
 `;

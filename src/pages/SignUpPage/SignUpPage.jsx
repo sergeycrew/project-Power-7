@@ -7,7 +7,6 @@ import { HomeBackground } from '../../components/HomeBackground/HomeBackground';
 const SignUpPage = () => {
   return (
     <HomeBackground>
-      {/* <signup.SignUpShadow> */}
       <MainSection>
         <MainContainer>
           <signup.Title>Sign Up</signup.Title>
@@ -23,7 +22,6 @@ const SignUpPage = () => {
           </signup.LinkWrap>
         </MainContainer>
       </MainSection>
-      {/* </signup.SignUpShadow> */}
     </HomeBackground>
   );
 };
