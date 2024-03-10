@@ -1,4 +1,4 @@
-import{u as e,j as t,i as n,L as o}from"./index-9d6e2318.js";import{b as a,a as d,c as r,d as s}from"./hero-desktop-2x-c0317d06.js";const h=e.div`
+import{u as e,j as t,i as n,L as o}from"./index-bb9b8e75.js";import{b as a,a as d,c as r,d as s}from"./hero-desktop-2x-c0317d06.js";const h=e.div`
   /* position: relative; */
   position: absolute;
   margin-left: auto;
@@ -118,7 +118,7 @@ import{u as e,j as t,i as n,L as o}from"./index-9d6e2318.js";import{b as a,a as 
     gap: 8px;
     padding-left: 28px;
   }
-`,u=e.div`
+`,f=e.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -131,7 +131,7 @@ import{u as e,j as t,i as n,L as o}from"./index-9d6e2318.js";import{b as a,a as 
     width: 24px;
     height: 24px;
   }
-`,f=e.svg`
+`,u=e.svg`
   width: 12px;
   height: 12px;
 
@@ -169,7 +169,7 @@ import{u as e,j as t,i as n,L as o}from"./index-9d6e2318.js";import{b as a,a as 
     font-size: 16px;
     line-height: 1.5;
   }
-`,k=()=>t.jsxs(h,{children:[t.jsxs(p,{children:[t.jsx(x,{children:t.jsx(l,{children:t.jsx("use",{href:`${n}#icon-Polygon-1`})})}),t.jsxs(c,{children:[t.jsx(g,{children:"350+"}),t.jsx(m,{children:"Video tutorial"})]})]}),t.jsxs(w,{children:[t.jsx(u,{children:t.jsx(f,{children:t.jsx("use",{href:`${n}#icon-running-stick-figure`})})}),t.jsxs(b,{children:[t.jsx(j,{children:"500"}),t.jsx($,{children:"cal"})]})]})]}),v="/project-Power-7/assets/bg-mobile-1x-014f5a2c.png",y="/project-Power-7/assets/bg-mobile-2x-ba0edaad.png",C=e.div`
+`,k=()=>t.jsxs(h,{children:[t.jsxs(p,{children:[t.jsx(x,{children:t.jsx(l,{children:t.jsx("use",{href:`${n}#icon-Polygon-1`})})}),t.jsxs(c,{children:[t.jsx(g,{children:"350+"}),t.jsx(m,{children:"Video tutorial"})]})]}),t.jsxs(w,{children:[t.jsx(f,{children:t.jsx(u,{children:t.jsx("use",{href:`${n}#icon-running-stick-figure`})})}),t.jsxs(b,{children:[t.jsx(j,{children:"500"}),t.jsx($,{children:"cal"})]})]})]}),v="/project-Power-7/assets/bg-mobile-1x-014f5a2c.png",y="/project-Power-7/assets/bg-mobile-2x-ba0edaad.png",C=e.div`
   position: relative;
   z-index: 0;
   max-width: 375px;
@@ -272,25 +272,27 @@ import{u as e,j as t,i as n,L as o}from"./index-9d6e2318.js";import{b as a,a as 
   }
 `,M=e.ul`
   display: flex;
+  flex-wrap: wrap;
   gap: 14px;
 
   @media screen and (min-width: 768px) {
     gap: 20px;
+    flex-wrap: nowrap;
   }
 `,P=e.li`
-  width: 136px;
+  width: 130px;
   height: 42px;
 
-  &:last-child {
-    width: 130px;
+  &:first-child {
+    width: 136px;
   }
 
   @media screen and (min-width: 768px) {
-    width: 190px;
+    width: 182px;
     height: 56px;
 
-    &:last-child {
-      width: 182px;
+    &:first-child {
+      width: 190px;
     }
   }
 `,N=e(o)`
