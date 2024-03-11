@@ -4,10 +4,14 @@ import { fetchProducts } from './productOperations';
 export const productSlice = createSlice({
   name: 'products',
   initialState: {
-    categories: [],
     items: [],
     isLoading: false,
     containsProducts: false,
+    recommendedOptions: [
+      { value: '', label: 'All' },
+      { value: 'recommended', label: 'Recommended' },
+      { value: 'not recommended', label: 'Not recommended' },
+    ],
   },
 
   extraReducers: (builder) =>

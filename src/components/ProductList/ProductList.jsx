@@ -7,11 +7,13 @@ export const ProductList = () => {
   const products = useSelector(selectProducts);
   return (
     <List>
-      {products.map((product) => (
-        <li key={product._id}>
-          <ProductCard product={product} />
-        </li>
-      ))}
+      {products.map((product) => {
+        return (
+          <li key={product._id}>
+            <ProductCard product={product} />
+          </li>
+        );
+      })}
     </List>
   );
 };

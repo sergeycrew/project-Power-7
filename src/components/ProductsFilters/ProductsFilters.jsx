@@ -1,100 +1,115 @@
-import { Formik } from 'formik';
-import * as Yup from 'yup';
+import { fetchProducts } from '../../redux/products/productOperations';
+import { useDispatch, useSelector } from 'react-redux';
+import { changeFilter } from '../../redux/products/filterSlice';
+import { useFormik } from 'formik';
+import Select from 'react-select';
+import sprite from '../../images/sprite.svg';
 import {
   StyledForm,
   Field,
-  FindBtn,
+  BtnCancel,
+  SvgX,
+  BtnSearch,
+  SvgSearch,
+  SelectWrapper,
   FormTitle,
-  SvgMagnifier,
-  ErrorMessage,
+  // ErrorMessage,
 } from './ProductsFilters.styled';
+import { SelectStyles } from './ProductSelectStyles';
+import {
+  selectCategories,
+  selectRecommendedOptions,
+} from '../../redux/products/productsSelectors';
 
-import { fetchProducts } from '../../redux/products/productOperations';
-import { useDispatch } from 'react-redux';
-import { changeFilter } from '../../redux/products/productFilterSlice';
-import categories from '../../jsonFromBd/productsCategories.json';
-import sprite from '../../images/sprite.svg';
-
-// useEffect(() => {
-//   dispatch(fetchProducts());
-// }, [dispatch]);
-
-const filterSchema = Yup.object().shape({
-  title: Yup.string().min(3, 'Too Short!'),
-  category: Yup.string().strict(true).oneOf(['dairy', 'berries', 'fish']),
-  type: Yup.string()
-    .strict(true)
-    .oneOf(['all', 'recommended', 'not recommended']),
-});
-
-export const ProductFilters = () => {
+export const ProductsFilters = () => {
   const dispatch = useDispatch();
+
+  const CalegoriesOptions = useSelector(selectCategories);
+  const RecommendedOptions = useSelector(selectRecommendedOptions);
+
+  const validate = (values) => {
+    const errors = {};
+
+    if (values.title && values.title.length < 2) {
+      errors.title = 'Мust be longer than 2 characters';
+    }
+  };
+
+  const formik = useFormik({
+    initialValues: {
+      title: '',
+      category: '',
+      type: '',
+    },
+    validate,
+    onSubmit: (values) => handleSubmit(values),
+  });
+
+  const defaultValue = (options, value) => {
+    return options ? options.find((option) => option.value == value) : '';
+  };
+
+  const handleSubmit = (values) => {
+    dispatch(changeFilter(values));
+    dispatch(fetchProducts());
+  };
+
+  const handleChange = (typeOptions, valueObj) => {
+    formik.setFieldValue(typeOptions, valueObj.value);
+    const { initialValues, values } = formik;
+    if (valueObj.value !== initialValues[valueObj.value]) {
+      const paramsSearch = { ...values, [typeOptions]: valueObj.value };
+      handleSubmit(paramsSearch);
+    }
+  };
+
   return (
-    <div>
+    <StyledForm onSubmit={formik.handleSubmit}>
+      <Field
+        type="text"
+        name="title"
+        placeholder="Search"
+        value={formik.values.title.trim()}
+        onChange={formik.handleChange}
+      />
+      {formik.values.title !== '' && (
+        <BtnCancel
+          type="button"
+          onClick={() => {
+            formik.setFieldValue('title', '');
+            formik.setFieldValue('categoty', '');
+            formik.setFieldValue('type', '');
+            handleSubmit('title', '');
+          }}
+        >
+          <SvgX>
+            <use href={`${sprite}#icon-x`}></use>
+          </SvgX>
+        </BtnCancel>
+      )}
+      <BtnSearch type="submit">
+        <SvgSearch>
+          <use href={`${sprite}#icon-search`}></use>
+        </SvgSearch>
+      </BtnSearch>
+
+      <SelectWrapper>
+        <Select
+          value={defaultValue(CalegoriesOptions, formik.values.category)}
+          onChange={(value) => handleChange('category', value)}
+          options={CalegoriesOptions}
+          placeholder="Categories"
+          styles={SelectStyles}
+        />
+
+        <Select
+          value={defaultValue(RecommendedOptions, formik.values.type)}
+          onChange={(value) => handleChange('type', value)}
+          options={RecommendedOptions}
+          styles={SelectStyles}
+        />
+      </SelectWrapper>
       <FormTitle>Filters</FormTitle>
-      <Formik
-        initialValues={{
-          title: '',
-          category: '',
-          type: '',
-        }}
-        validationSchema={filterSchema}
-        onSubmit={(values, actions) => {
-          dispatch(changeFilter(values));
-          dispatch(fetchProducts());
-          // actions.resetForm();
-        }}
-      >
-        <StyledForm>
-          <label>
-            <Field name="title" placeholder="Search" />
-            <ErrorMessage name="title" component="span" />
-          </label>
-          <label>
-            <Field as="select" name="category">
-              {categories.map((category) => (
-                <option
-                  key={category._id.$oid}
-                  id={category._id.$oid}
-                  name="category"
-                  value={category.title}
-                >
-                  {category.title}
-                </option>
-              ))}
-            </Field>
-            <ErrorMessage name="category" component="span" />
-          </label>
-          <label>
-            <Field as="select" name="type">
-              <option
-                value="all"
-                // onChange={(value) => setFieldValue('type', value)}
-              >
-                All
-              </option>
-              <option
-                value="recommended"
-                // onChange={(value) => setFieldValue('type', value)}
-              >
-                Recommended
-              </option>
-              <option
-                value="not recommended"
-                // onChange={(value) => setFieldValue('type', value)}
-              >
-                Not recommended
-              </option>
-            </Field>
-            <ErrorMessage name="type" component="span" />
-          </label>
-          <FindBtn type="submit">
-            <SvgMagnifier>
-              <use href={`${sprite}#icon-search`}></use>
-            </SvgMagnifier>
-          </FindBtn>
-        </StyledForm>
-      </Formik>
-    </div>
+    </StyledForm>
   );
 };
