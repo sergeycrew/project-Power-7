@@ -8,7 +8,7 @@ const getRecommended = (type) => {
     case 'not recommended':
       return false;
     default:
-      return type;
+      return undefined;
   }
 };
 const getParams = ({
@@ -17,16 +17,18 @@ const getParams = ({
 }) => {
   const blood = auth.user.blood;
   const recommended = getRecommended(type);
-  return { category, title, blood, recommended };
+  if (recommended === true || recommended === false) {
+    return { category, title, blood, recommended };
+  } else {
+    return { category, title, blood };
+  }
 };
 
 export const fetchProducts = createAsyncThunk(
   'products/All',
   async (_, thunkAPI) => {
     const state = thunkAPI.getState();
-
     const params = getParams(state);
-    console.log(params);
     try {
       // setAuthHeader(temptoken);
       const response = await axios.get('products/all', { params });

@@ -21,6 +21,7 @@ import sprite from '../../images/sprite.svg';
 
 export const ProductCard = ({
   product: { id, title, calories, category, weight, recommended = true },
+  toogleModal,
 }) => {
   //   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -38,7 +39,7 @@ export const ProductCard = ({
         <Text>
           <b>{recommended ? 'Recommended' : 'Not recommended'}</b>
         </Text>
-        <Button>
+        <Button onClick={() => toogleModal({ id, title, calories })}>
           Add
           <SvgArrow>
             <use href={`${sprite}#icon-arrow-right`}></use>
