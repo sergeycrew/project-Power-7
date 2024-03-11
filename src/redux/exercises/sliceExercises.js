@@ -1,11 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit';
 import {
+  featchAddExercises,
   featchAllExercises,
   fetchExercisesCategory,
 } from './operationsExercises';
 
 const handlePending = (state) => {
   state.isLoading = true;
+  state.exercises = [];
 };
 
 const handleRejected = (state, action) => {
@@ -20,16 +22,29 @@ const exercisesSlice = createSlice({
     filter: 'Body parts',
     exercises: [],
     exercisesPage: 1,
-    exercisesLimit: 20,
+    categoryPicked: '',
+    categoriesPage: 1,
+    categoriesLimit: 10,
+    exercisesLimit: 999,
     isLoading: false,
     error: null,
   },
   reducers: {
     changeFilter(state, action) {
       state.filter = action.payload;
+      state.categoriesPage = 1;
     },
     changeExercisesPage(state, action) {
       state.exercisesPage += action.payload;
+    },
+    isCategoryPicked(state, action) {
+      state.categoryPicked = action.payload;
+    },
+    changeCategoriesPage(state, action) {
+      state.categoriesPage = action.payload;
+    },
+    changeCategoriesLimit(state, action) {
+      state.categoriesLimit = action.payload;
     },
   },
   extraReducers: (builder) =>
@@ -47,9 +62,19 @@ const exercisesSlice = createSlice({
         state.error = null;
         state.exercises = action.payload;
       })
-      .addCase(featchAllExercises.rejected, handleRejected),
+      .addCase(featchAllExercises.rejected, handleRejected)
+      .addCase(featchAddExercises.pending, (state, action) => {
+        state.isLoading = true;
+   
+      })
+      .addCase(featchAddExercises.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.error = null;
+       
+      })
+      .addCase(featchAddExercises.rejected, handleRejected),
 });
 
 export const exercisesReducer = exercisesSlice.reducer;
 
-export const { changeFilter, changeExercisesPage } = exercisesSlice.actions;
+export const { changeFilter, changeExercisesPage, isCategoryPicked, changeCategoriesPage, changeCategoriesLimit } = exercisesSlice.actions;

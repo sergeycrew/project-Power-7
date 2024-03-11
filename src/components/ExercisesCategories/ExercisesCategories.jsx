@@ -1,121 +1,69 @@
-import {
-  CategoriesList,
-  CardLink,
-  PaginationBtn,
-  PaginationList,
-  PaginationItem,
-} from './ExercisesCategories.styled';
-import { useEffect } from 'react';
+import * as s from './ExercisesCategories.styled';
+import { useCallback, useEffect } from 'react';
 import { useState } from 'react';
 
-import icons from '../../images/sprite.svg';
 
-import { Outlet, useLocation } from 'react-router-dom';
+
 import { ExerciseCard } from 'components/ExerciseCard/ExerciseCard';
 
-import { getExercisesCategory } from '../../jsonFromBd/testApi'; // to do //
+import { fetchExercisesCategory } from '../../redux/exercises/operationsExercises';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+  selectCategoriesPage,
+  selectCategory,
+  // selectCategoryPicked,
+  selectFilter,
+  selectMaxCategoriesPage,
+  selectPaginCategories,
+} from '../../redux/exercises/selectorsExercises';
+import { changeCategoriesPage } from '../../redux/exercises/sliceExercises';
+import { WrapperRadio } from '../UserForm/UserForm.styled';
 
-import { toast } from 'react-toastify';
+export const ExercisesCategories = ({ handleSetExName }) => {
+  const dispatch = useDispatch();
+  const categories = useSelector(selectPaginCategories);
 
-import throttle from 'lodash.throttle';
+  const maxPage = useSelector(selectMaxCategoriesPage);
+  const pagePagin = useSelector(selectCategoriesPage);
 
-export const ExercisesCategories = ({ query }) => {
-  const location = useLocation();
-
-  const [exercisesCategories, setExercisesCategories] = useState(null);
-  const [currentPage, setCurrentPage] = useState(1);
-
-  const [recordsPerPage, setRecordsPage] = useState(10);
-
-  const lastIndex = currentPage * recordsPerPage;
-  const firstIndex = lastIndex - recordsPerPage;
-  const exercises = exercisesCategories?.slice(firstIndex, lastIndex);
-  const npage = Math.ceil(exercisesCategories?.length / recordsPerPage);
-  const numbers = Array.from({ length: npage }, (_, index) => index + 1);
-
-  const filterArrayByQuery = (arr, query) => arr.filter(item => item.filter === query);
-
-  const changeCurrentPage = n => {
-    setCurrentPage(n);
-  };
-
-  const getRecordsPerPage = () => {
-    const widthScreen = window.innerWidth;
-
-    if (widthScreen >= 768 && widthScreen < 1440) {
-      setRecordsPage(9);
-    } else {
-      setRecordsPage(10);
-    }
-  };
+  useEffect(()=>{
+dispatch(fetchExercisesCategory())
+  },[dispatch])
 
 
-const ExampleComponent = () => {
-  // Проверка размера экрана от 0 до 768px
-  const isTablet = useMediaQuery('(min-width: 768px) and (max-width: 1200px)')}
 
-  const getRecordsPerPageThrottled = throttle(getRecordsPerPage, 500);
-
-
-  useEffect(() => {
-    getRecordsPerPage();
-
-    window.addEventListener('resize', getRecordsPerPageThrottled);
-
-    const CategoriesList = async () => {
-      try {
-        const allCategories = await getExercisesCategory(); 
-        const categories = filterArrayByQuery(allCategories, query);
-        setExercisesCategories(categories);
-      } catch (error) {
-        toast.error('Ops...Something went wrong. Please try again.');
-        console.log(error.message);
-      }
-    };
-    CategoriesList();
-
-    return () => {
-      window.removeEventListener('resize', getRecordsPerPageThrottled);
-    };
-  }, [query]);
 
   return (
-    <>
-      <CategoriesList>
-        {exercises?.map(card => (
-          <li key={card._id}>
-            <CardLink to={`${card.name}`} state={{ from: location }}>
-              <ExerciseCard
-                filter={card.filter}
-                title={card.name}
-                photo={card.imgURL}
-              />
-            </CardLink>
-          </li>
+    <div>
+      <s.CategoriesList>
+        {categories?.map((card) => (
+          <ExerciseCard
+            key={card._id}
+            handleSetExName={handleSetExName}
+            filter={card.filter}
+            title={card.name}
+            photo={card.imgURL}
+          />
         ))}
-      </CategoriesList>
-
-      {npage > 1 && (
-        <PaginationList>
-          {numbers.map((n, i) => (
-            <PaginationItem key={i}>
-              <PaginationBtn onClick={() => changeCurrentPage(n)}> 
-                {n === currentPage ? (
-                  <svg width="14" height="14">
-                    <use href={icons + '#icon-apple'} />
-                  </svg>
-                ) : (
-                  <svg width="14" height="14">
-                    <use href={icons + '#icon-apple'} />   
-                  </svg>
-                )}
-              </PaginationBtn>
-            </PaginationItem>
-          ))}
-        </PaginationList>   // to do замінити ікоку //
-      )}
-
-        <Outlet />
-    </>
+      </s.CategoriesList>
+      )
+      <s.Pagination>
+        {maxPage?.map((page) => (
+          <WrapperRadio key={page}>
+            <div className="radio">
+              <input
+                className="radio-input"
+                type="radio"
+                id={page}
+                value={page}
+                checked={pagePagin === page}
+                onChange={() => dispatch(changeCategoriesPage(page))}
+              />
+              <label className="radio-label" htmlFor={page}></label>
+            </div>
+          </WrapperRadio>
+        ))}
+      </s.Pagination>
+    </div>
   );
 };

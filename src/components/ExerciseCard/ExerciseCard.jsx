@@ -1,19 +1,28 @@
-import {
-  ExerciseCardWrapper,
-  ExerciseDescription,
-  ExerciseTitle,
-  ExerciseText,
-} from './ExerciseCard.styled';
+
+import * as s from './ExerciseCard.styled';
+import { featchAllExercises } from '../../redux/exercises/operationsExercises';
+import { useDispatch } from 'react-redux';
+import { isCategoryPicked } from '../../redux/exercises/sliceExercises';
 
 export const ExerciseCard = ({ title, filter, photo }) => {
+  const dispatch = useDispatch();
+
+  const onClick = (title) => {
+    dispatch(featchAllExercises(title));
+    dispatch(isCategoryPicked(title));
+  };
+
   return (
-    <ExerciseCardWrapper photo={photo}>
-      <ExerciseDescription>
-        <ExerciseTitle>
-          {title}
-          <ExerciseText>{filter}</ExerciseText>
-        </ExerciseTitle>
-      </ExerciseDescription>
-    </ExerciseCardWrapper>
+    <s.ExercisesLi onClick={() => onClick(title)}>
+      <s.ExerciseCardWrapper >
+      <s.Image src={photo ? photo : images} alt={title} />
+        <s.ExerciseDescription>
+          <s.ExerciseTitle>
+            {title}
+            <s.ExerciseText>{filter}</s.ExerciseText>
+          </s.ExerciseTitle>
+        </s.ExerciseDescription>
+      </s.ExerciseCardWrapper>
+    </s.ExercisesLi>
   );
 };

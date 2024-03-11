@@ -47,10 +47,12 @@ export const CustomModal = ({
   return createPortal(
     <BackDrop onClick={handleBackdropClick}>
       <Modal
-        modal320Styles={modal320Styles}
-        modalStyles={modalStyles}
-        modalTabletStyles={modalTabletStyles}
-        modalDesktopStyles={modalDesktopStyles}
+      theme={{
+        modal320Styles,
+        modalStyles,
+        modalTabletStyles,
+        modalDesktopStyles,
+      }}
       >
         <CloseModalBtn type="button" onClick={onClose}>
           <svg width="20" height="20" stroke="white">

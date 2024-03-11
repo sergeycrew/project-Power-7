@@ -17,6 +17,7 @@ import { diaryReducer } from './diary/diarySlice';
 import { exercisesReducer } from './exercises-t/sliceExercises';
 import { categoriesReducer } from './products/categoriesSlice';
 
+
 const authPersistConfig = {
   key: 'auth',
   storage,

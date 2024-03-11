@@ -1,13 +1,20 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { CustomModal } from 'components/CustomModal/CustomModal';
 
+
+export const CustomModale = styled(CustomModal)`
+
+`;
 export const Img = styled.img`
   width: 118px;
   height: 73px;
   margin-bottom: 27px;
+  margin-top: 48px;
 
   @media (min-width: 768px) {
     margin-bottom: 32px;
+    margin-top: 64px;
   }
 `;
 

@@ -42,7 +42,7 @@ const DiaryPage = () => {
             <s.ItemsContainer>
               {isLoading ? (
                 <DiaryLoader />
-              ) : products.length === 0 ? (
+              ) : !isLoading && products.length === 0 ? (
                 <s.NotFoundText>Not found products</s.NotFoundText>
               ) : (
                 products.map((item, index) => (
@@ -59,7 +59,7 @@ const DiaryPage = () => {
             <s.ItemsContainer>
               {isLoading ? (
                 <DiaryLoader />
-              ) : exercises.length === 0 ? (
+              ) : !isLoading && exercises.length === 0 ? (
                 <s.NotFoundText>Not found exercises</s.NotFoundText>
               ) : (
                 exercises.map((item, index) => (
@@ -77,7 +77,6 @@ const DiaryPage = () => {
       </s.DiaryCommonContainer>
     </s.Container>
   );
-  // );
 };
 
 export default DiaryPage;
