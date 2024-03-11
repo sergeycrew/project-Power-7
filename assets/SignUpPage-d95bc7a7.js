@@ -1,4 +1,4 @@
-import{u as o,L as j,r as v,a as $,j as e,i as n,b as S}from"./index-bb9b8e75.js";import{F as k,a as C,b as y}from"./formik.esm-60d455a2.js";import{c as z,a as c}from"./index.esm-cc1a7b55.js";import{H as P,M as N,a as q}from"./WelcomePage.styled-d29538fe.js";import"./hero-desktop-2x-c0317d06.js";const F=o.h1`
+import{u as o,L as j,r as v,a as $,j as e,i as n,b as S}from"./index-71a6311b.js";import{F as k,a as C,b as y}from"./formik.esm-05ccdfdc.js";import{c as z,a as c}from"./index.esm-caf596d3.js";import{H as P,M as N,a as q}from"./WelcomePage.styled-fdbbe848.js";import"./hero-desktop-2x-c0317d06.js";const F=o.h1`
   font-weight: 700;
   font-size: 24px;
   line-height: 1.17;

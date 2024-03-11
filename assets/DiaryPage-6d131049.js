@@ -1,4 +1,4 @@
-import{u as n,L as z,j as e,i as a,c,d as y,r as f,a as u,o as k,p as T,q as L,t as R,v as B,$ as E,w as S}from"./index-bb9b8e75.js";import{f as W,i as P,C as M}from"./react-datepicker-cssmodules-d64f959a.js";const A=n.div`
+import{u as t,L as k,j as e,i as a,c,d as y,r as f,a as u,o as z,p as T,q as L,t as R,v as S,$ as B,w as E}from"./index-71a6311b.js";import{f as W,i as P,C as M}from"./react-datepicker-cssmodules-86ae4ec4.js";const A=t.div`
   margin: 0 auto;
   padding: 0 20px;
   width: 100%;
@@ -13,7 +13,7 @@ import{u as n,L as z,j as e,i as a,c,d as y,r as f,a as u,o as k,p as T,q as L,t
     padding: 0 96px;
     max-width: 1440px;
   }
-`,N=n.h1`
+`,N=t.h1`
   font-weight: 700;
   font-size: 24px;
   line-height: 117%;
@@ -23,7 +23,7 @@ import{u as n,L as z,j as e,i as a,c,d as y,r as f,a as u,o as k,p as T,q as L,t
     font-size: 32px;
     line-height: 137%;
   }
-`,_=n.div`
+`,_=t.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -33,7 +33,7 @@ import{u as n,L as z,j as e,i as a,c,d as y,r as f,a as u,o as k,p as T,q as L,t
   @media screen and (min-width: 768px) {
     padding: 52px 0 32px 0;
   }
-`,q=n.ul`
+`,q=t.ul`
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -41,7 +41,7 @@ import{u as n,L as z,j as e,i as a,c,d as y,r as f,a as u,o as k,p as T,q as L,t
   @media screen and (min-width: 768px) {
     gap: 32px;
   }
-`,O=n.div`
+`,O=t.div`
   display: flex;
   flex-direction: column-reverse;
   gap: 40px;
@@ -58,7 +58,7 @@ import{u as n,L as z,j as e,i as a,c,d as y,r as f,a as u,o as k,p as T,q as L,t
     gap: 32px;
     padding-bottom: 68px;
   }
-`,b=n.p`
+`,b=t.p`
   font-weight: 400;
   font-size: 14px;
   line-height: 129%;
@@ -67,7 +67,7 @@ import{u as n,L as z,j as e,i as a,c,d as y,r as f,a as u,o as k,p as T,q as L,t
   left: 50%;
   transform: translate(-50%, -50%);
   color: ${i=>i.theme.colors.accentColor};
-`,C=n.div`
+`,C=t.div`
   max-height: 167px;
   margin-right: -10px;
   overflow-y: auto;
@@ -77,7 +77,7 @@ import{u as n,L as z,j as e,i as a,c,d as y,r as f,a as u,o as k,p as T,q as L,t
     max-height: 60px;
   }
   &::-webkit-scrollbar-thumb {
-    background-color: rgba(239, 237, 232, 0.1);
+    background-color: ${i=>i.theme.colors.backgroundColorScroll};
     border-radius: 12px;
   }
 
@@ -85,7 +85,7 @@ import{u as n,L as z,j as e,i as a,c,d as y,r as f,a as u,o as k,p as T,q as L,t
     max-height: 750px;
     margin-right: -15px;
   }
-`,U=n.li`
+`,U=t.li`
   border: 1px solid ${i=>i.theme.colors.cardBorderColor};
   border-radius: 12px;
   padding: 16px;
@@ -111,17 +111,17 @@ import{u as n,L as z,j as e,i as a,c,d as y,r as f,a as u,o as k,p as T,q as L,t
   @media screen and (min-width: 1440px) {
     width: 826px;
   }
-`,G=n.h2`
+`,G=t.h2`
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 129%;
-  color: rgba(239, 237, 232, 0.5);
-`,H=n(z)`
+  color: ${i=>i.theme.colors.fornCaptionColor};
+`,H=t(k)`
   display: flex;
   align-items: center;
   gap: 8px;
-`,Y=n.span`
+`,Y=t.span`
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
   font-size: 14px;
@@ -132,7 +132,7 @@ import{u as n,L as z,j as e,i as a,c,d as y,r as f,a as u,o as k,p as T,q as L,t
     font-size: 16px;
     line-height: 150%;
   }
-`,J=n.div`
+`,J=t.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -141,12 +141,12 @@ import{u as n,L as z,j as e,i as a,c,d as y,r as f,a as u,o as k,p as T,q as L,t
   @media screen and (min-width: 768px) {
     margin-bottom: 16px;
   }
-`,K=n.svg`
+`,K=t.svg`
   width: 16px;
   height: 16px;
 
   fill: ${i=>i.theme.colors.hoverColor};
-`,$=({title:i,link:t,to:o,children:s})=>e.jsxs(U,{children:[e.jsxs(J,{children:[e.jsx(G,{children:i}),e.jsxs(H,{to:o,children:[e.jsx(Y,{children:t}),e.jsx(K,{children:e.jsx("use",{href:`${a}#icon-arrow`})})]})]}),s]}),Q=i=>i.diary.diaryInfo.isLoadingDiary,j=i=>i.diary.currentDate,V=i=>i.diary.diaryInfo.burnedCalories,X=i=>i.diary.diaryInfo.consumedCalories,Z=i=>i.diary.diaryInfo.doneExercisesTime,F=i=>i.diary.diaryInfo.products,ee=i=>i.diary.diaryInfo.exercises,ie=n.li`
+`,$=({title:i,link:n,to:d,children:s})=>e.jsxs(U,{children:[e.jsxs(J,{children:[e.jsx(G,{children:i}),e.jsxs(H,{to:d,children:[e.jsx(Y,{children:n}),e.jsx(K,{children:e.jsx("use",{href:`${a}#icon-arrow`})})]})]}),s]}),Q=i=>i.diary.diaryInfo.isLoadingDiary,j=i=>i.diary.currentDate,V=i=>i.diary.diaryInfo.burnedCalories,X=i=>i.diary.diaryInfo.consumedCalories,Z=i=>i.diary.diaryInfo.doneExercisesTime,F=i=>i.diary.diaryInfo.products,ee=i=>i.diary.diaryInfo.exercises,ie=t.li`
   width: 100%;
   height: 96px;
   border: 1px solid;
@@ -156,9 +156,9 @@ import{u as n,L as z,j as e,i as a,c,d as y,r as f,a as u,o as k,p as T,q as L,t
   flex-direction: column;
   justify-content: space-between;
   margin: 0 auto;
-  background-color: ${({$bgColor:i})=>{switch(i){case"orange":return t=>t.theme.colors.orangeColor;default:return t=>t.theme.colors.cardBgColor}}};
+  background-color: ${({$bgColor:i})=>{switch(i){case"orange":return n=>n.theme.colors.orangeColor;default:return n=>n.theme.colors.cardBgColor}}};
 
-  border-color: ${({$borderColor:i})=>{switch(i){case"red":return t=>t.theme.colors.notRecommendedColor;case"green":return t=>t.theme.colors.successtColor;default:return t=>t.theme.colors.cardBorderColor}}};
+  border-color: ${({$borderColor:i})=>{switch(i){case"red":return n=>n.theme.colors.notRecommendedColor;case"green":return n=>n.theme.colors.successtColor;default:return n=>n.theme.colors.cardBorderColor}}};
 
   @media screen and (min-width: 375px) {
     width: 157px;
@@ -169,7 +169,7 @@ import{u as n,L as z,j as e,i as a,c,d as y,r as f,a as u,o as k,p as T,q as L,t
     height: 116px;
     padding: 18px;
   }
-`,te=n.div`
+`,ne=t.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -178,23 +178,23 @@ import{u as n,L as z,j as e,i as a,c,d as y,r as f,a as u,o as k,p as T,q as L,t
     justify-content: left;
     gap: 8px;
   }
-`,ne=n.svg`
+`,te=t.svg`
   width: 20px;
   height: 20px;
   flex-shrink: 0;
   fill: ${i=>i.theme.colors.orangeLightColor};
-`,re=n.span`
+`,re=t.span`
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 12px;
   line-height: 150%;
   margin-left: 4px;
-  color: ${({$cardTextColor:i})=>{switch(i){case"white":return t=>t.theme.colors.cardTextColor;default:return t=>t.theme.colors.captionColor}}};
+  color: ${({$cardTextColor:i})=>{switch(i){case"white":return n=>n.theme.colors.cardTextColor;default:return n=>n.theme.colors.captionColor}}};
 
   @media screen and (min-width: 768px) {
     margin-left: 0;
   }
-`,oe=n.p`
+`,oe=t.p`
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
   font-size: 18px;
@@ -205,7 +205,7 @@ import{u as n,L as z,j as e,i as a,c,d as y,r as f,a as u,o as k,p as T,q as L,t
     font-size: 24px;
     line-height: 133%;
   }
-`,x=({subtitle:i,icon:t,children:o,$bgColor:s,$cardTextColor:d,$borderColor:r})=>e.jsxs(ie,{$bgColor:s,$borderColor:r,children:[e.jsxs(te,{children:[e.jsx(ne,{children:e.jsx("use",{href:t})}),e.jsx(re,{$cardTextColor:d,children:i})]}),e.jsx(oe,{children:o})]}),de=n.ul`
+`,x=({subtitle:i,icon:n,children:d,$bgColor:s,$cardTextColor:o,$borderColor:r})=>e.jsxs(ie,{$bgColor:s,$borderColor:r,children:[e.jsxs(ne,{children:[e.jsx(te,{children:e.jsx("use",{href:n})}),e.jsx(re,{$cardTextColor:o,children:i})]}),e.jsx(oe,{children:d})]}),de=t.ul`
   display: flex;
   flex-wrap: wrap;
   column-gap: 13px;
@@ -224,11 +224,10 @@ import{u as n,L as z,j as e,i as a,c,d as y,r as f,a as u,o as k,p as T,q as L,t
   @media screen and (min-width: 1440px) {
     width: 390px;
   }
-`,se=n.div`
+`,se=t.div`
   display: flex;
   gap: 8px;
   max-width: 100%;
-  /* max-width: 335px; */
 
   @media screen and (min-width: 375px) {
     max-width: 335px;
@@ -238,7 +237,7 @@ import{u as n,L as z,j as e,i as a,c,d as y,r as f,a as u,o as k,p as T,q as L,t
     max-width: 593px;
     padding-bottom: 64px;
   }
-`,ae=n.p`
+`,ae=t.p`
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 14px;
@@ -249,11 +248,11 @@ import{u as n,L as z,j as e,i as a,c,d as y,r as f,a as u,o as k,p as T,q as L,t
     font-size: 16px;
     line-height: 150%;
   }
-`,ce=n.svg`
+`,ce=t.svg`
   width: 24px;
   height: 24px;
   flex-shrink: 0;
-`,he=n.div`
+`,le=t.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -265,7 +264,7 @@ import{u as n,L as z,j as e,i as a,c,d as y,r as f,a as u,o as k,p as T,q as L,t
   @media screen and (min-width: 1440px) {
     gap: 48px;
   }
-`,le=(i,t)=>i<t?"green":"gray",xe=(i,t)=>i<t?"red":"gray",pe=(i,t)=>i>=t?i-t:`+${t-i}`,me=(i,t)=>i>=t?i-t:`-${t-i}`,we=i=>i?{text:"Yes",color:"green"}:{text:"No",color:"red"},ge=()=>{const i=c(y);let t=c(V),o=c(X),s=c(Z),d=Number(i.timeSport)||110,r=Math.round(i.bmr)||0;return console.log(),e.jsxs(he,{children:[e.jsxs(de,{children:[e.jsx(x,{subtitle:"Daily calorie intake",icon:`${a}#food`,$bgColor:"orange",$cardTextColor:"white",children:r}),e.jsx(x,{subtitle:"Daily physical activity",icon:`${a}#dumbbell`,$bgColor:"orange",$cardTextColor:"white",children:`${d} min`}),e.jsx(x,{subtitle:"Сalories consumed",icon:`${a}#apple`,children:Math.abs(o)}),e.jsx(x,{subtitle:"Сalories burned",icon:`${a}#fire`,children:t}),e.jsx(x,{subtitle:"Calories remaining",icon:`${a}#bubble`,$borderColor:xe(r,Math.abs(o)),children:me(r,Math.abs(o))}),e.jsx(x,{subtitle:"Sports remaining",icon:`${a}#figure`,$borderColor:le(d,s),children:`${pe(d,s)} min`})]}),e.jsxs(se,{children:[e.jsx(ce,{children:e.jsx("use",{href:`${a}#exclamation`})}),e.jsx(ae,{children:"Record all your meals in the calorie diary every day. This will help you be aware of your nutrition and make informed choices."})]})]})},fe=n.h3`
+`,he=(i,n)=>i<n?"green":"gray",xe=(i,n)=>i<n?"red":"gray",pe=(i,n)=>i>=n?i-n:`+${n-i}`,me=(i,n)=>i>=n?i-n:`-${n-i}`,we=i=>i?{text:"Yes",color:"green"}:{text:"No",color:"red"},ge=()=>{const i=c(y);let n=c(V),d=c(X),s=c(Z),o=Number(i.timeSport)||110,r=Math.round(i.bmr)||0;return console.log(),e.jsxs(le,{children:[e.jsxs(de,{children:[e.jsx(x,{subtitle:"Daily calorie intake",icon:`${a}#food`,$bgColor:"orange",$cardTextColor:"white",children:r}),e.jsx(x,{subtitle:"Daily physical activity",icon:`${a}#dumbbell`,$bgColor:"orange",$cardTextColor:"white",children:`${o} min`}),e.jsx(x,{subtitle:"Сalories consumed",icon:`${a}#apple`,children:Math.abs(d)}),e.jsx(x,{subtitle:"Сalories burned",icon:`${a}#fire`,children:n}),e.jsx(x,{subtitle:"Calories remaining",icon:`${a}#bubble`,$borderColor:xe(r,Math.abs(d)),children:me(r,Math.abs(d))}),e.jsx(x,{subtitle:"Sports remaining",icon:`${a}#figure`,$borderColor:he(o,s),children:`${pe(o,s)} min`})]}),e.jsxs(se,{children:[e.jsx(ce,{children:e.jsx("use",{href:`${a}#exclamation`})}),e.jsx(ae,{children:"Record all your meals in the calorie diary every day. This will help you be aware of your nutrition and make informed choices."})]})]})},fe=t.h3`
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 12px;
@@ -275,7 +274,7 @@ import{u as n,L as z,j as e,i as a,c,d as y,r as f,a as u,o as k,p as T,q as L,t
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-`,h=({children:i,isFirstItem:t})=>{const[o,s]=f.useState(window.innerWidth<768);return f.useEffect(()=>{const d=()=>{s(window.innerWidth<768)};return window.addEventListener("resize",d),()=>{window.removeEventListener("resize",d)}}),e.jsx(fe,{children:o||t?i:null})},ue=n.ul`
+`,l=({children:i,isFirstItem:n})=>{const[d,s]=f.useState(window.innerWidth<768);return f.useEffect(()=>{const o=()=>{s(window.innerWidth<768)};return window.addEventListener("resize",o),()=>{window.removeEventListener("resize",o)}}),e.jsx(fe,{children:d||n?i:null})},ue=t.ul`
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
@@ -285,7 +284,7 @@ import{u as n,L as z,j as e,i as a,c,d as y,r as f,a as u,o as k,p as T,q as L,t
     gap: 8px;
     margin-right: 12px;
   }
-`,w=n.li`
+`,w=t.li`
   width: 100%;
   position: relative;
   &:nth-of-type(1) {
@@ -307,8 +306,6 @@ import{u as n,L as z,j as e,i as a,c,d as y,r as f,a as u,o as k,p as T,q as L,t
       width: 297px;
     }
 
-    /* width: 297px; */
-
     @media screen and (min-width: 768px) {
       width: 128px;
     }
@@ -322,8 +319,6 @@ import{u as n,L as z,j as e,i as a,c,d as y,r as f,a as u,o as k,p as T,q as L,t
     @media screen and (min-width: 375px) {
       width: 81px;
     }
-
-    /* width: 81px; */
 
     @media screen and (min-width: 768px) {
       width: 90px;
@@ -339,8 +334,6 @@ import{u as n,L as z,j as e,i as a,c,d as y,r as f,a as u,o as k,p as T,q as L,t
       width: 80px;
     }
 
-    /* width: 80px; */
-
     @media screen and (min-width: 768px) {
       width: 90px;
     }
@@ -355,8 +348,6 @@ import{u as n,L as z,j as e,i as a,c,d as y,r as f,a as u,o as k,p as T,q as L,t
       width: 76px;
     }
 
-    /* width: 76px; */
-
     @media screen and (min-width: 768px) {
       width: 80px;
     }
@@ -365,7 +356,7 @@ import{u as n,L as z,j as e,i as a,c,d as y,r as f,a as u,o as k,p as T,q as L,t
       width: 110px;
     }
   }
-`,g=n.p`
+`,g=t.p`
   border: 1px solid ${i=>i.theme.colors.accentColor};
   border-radius: 12px;
   padding: 10px 14px;
@@ -386,30 +377,27 @@ import{u as n,L as z,j as e,i as a,c,d as y,r as f,a as u,o as k,p as T,q as L,t
     line-height: 150%;
     padding: 8px 14px;
   }
-`,je=n.span`
+`,je=t.span`
   display: inline-block;
   border-radius: 10px;
   width: 14px;
   height: 14px;
-  background-color: ${({$color:i})=>{switch(i){case"red":return t=>t.theme.colors.notRecommendedColor;default:return t=>t.theme.colors.recommendedColor}}};
-`,ye=n.button`
-  /* position: relative; */
+  background-color: ${({$color:i})=>{switch(i){case"red":return n=>n.theme.colors.notRecommendedColor;default:return n=>n.theme.colors.recommendedColor}}};
+`,ye=t.button`
   padding: 0;
   background: none;
   border: none;
-  /* top: 4px;
-  right: -8px; */
 
   @media screen and (min-width: 375px) and (max-width: 767px) {
     position: relative;
     right: 16px;
     top: 5px;
   }
-`,be=n.svg`
+`,be=t.svg`
   height: 20px;
   width: 20px;
   fill: ${i=>i.theme.colors.orangeLightColor};
-`,Ce=n.div`
+`,Ce=t.div`
   display: flex;
   align-items: last baseline;
   margin-bottom: 40px;
@@ -425,7 +413,7 @@ import{u as n,L as z,j as e,i as a,c,d as y,r as f,a as u,o as k,p as T,q as L,t
   @media screen and (min-width: 1440px) {
     padding-left: 16px;
   }
-`,$e=({isFirstItem:i,value:t})=>{const o=u();let s=c(j);const d=c(y);let r=we(t.productId.groupBloodNotAllowed[d.blood]);const l={date:s,productId:t._id,calories:t.calories,amount:t.amount};return e.jsxs(Ce,{children:[e.jsxs(ue,{children:[e.jsxs(w,{children:[e.jsx(h,{isFirstItem:i,children:"Title"}),e.jsx(g,{children:t.productId.title})]}),e.jsxs(w,{children:[e.jsx(h,{isFirstItem:i,children:"Category"}),e.jsx(g,{children:t.productId.category})]}),e.jsxs(w,{children:[e.jsx(h,{isFirstItem:i,children:"Calories"}),e.jsx(g,{children:t.calories})]}),e.jsxs(w,{children:[e.jsx(h,{isFirstItem:i,children:"Weight"}),e.jsx(g,{children:t.amount})]}),e.jsxs(w,{children:[e.jsx(h,{isFirstItem:i,children:"Recommend"}),e.jsxs(g,{style:{display:"flex",alignItems:"center",gap:"8px"},children:[e.jsx(je,{$color:r.color}),e.jsx("span",{children:r.text})]})]})]}),e.jsx(ye,{type:"button",onClick:()=>o(k(l)),children:e.jsx(be,{children:e.jsx("use",{href:`${a}#trash`})})})]})},De=n.ul`
+`,$e=({isFirstItem:i,value:n})=>{const d=u();let s=c(j);const o=c(y);let r=we(n.productId.groupBloodNotAllowed[o.blood]);const h={date:s,productId:n._id,calories:n.calories,amount:n.amount};return e.jsxs(Ce,{children:[e.jsxs(ue,{children:[e.jsxs(w,{children:[e.jsx(l,{isFirstItem:i,children:"Title"}),e.jsx(g,{children:n.productId.title})]}),e.jsxs(w,{children:[e.jsx(l,{isFirstItem:i,children:"Category"}),e.jsx(g,{children:n.productId.category})]}),e.jsxs(w,{children:[e.jsx(l,{isFirstItem:i,children:"Calories"}),e.jsx(g,{children:n.calories})]}),e.jsxs(w,{children:[e.jsx(l,{isFirstItem:i,children:"Weight"}),e.jsx(g,{children:n.amount})]}),e.jsxs(w,{children:[e.jsx(l,{isFirstItem:i,children:"Recommend"}),e.jsxs(g,{style:{display:"flex",alignItems:"center",gap:"8px"},children:[e.jsx(je,{$color:r.color}),e.jsx("span",{children:r.text})]})]})]}),e.jsx(ye,{type:"button",onClick:()=>d(z(h)),children:e.jsx(be,{children:e.jsx("use",{href:`${a}#trash`})})})]})},De=t.ul`
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
@@ -439,7 +427,7 @@ import{u as n,L as z,j as e,i as a,c,d as y,r as f,a as u,o as k,p as T,q as L,t
   @media screen and (min-width: 1440px) {
     margin-right: 20px;
   }
-`,p=n.li`
+`,p=t.li`
   width: 100%;
   position: relative;
 
@@ -447,7 +435,6 @@ import{u as n,L as z,j as e,i as a,c,d as y,r as f,a as u,o as k,p as T,q as L,t
     @media screen and (min-width: 375px) {
       width: 297px;
     }
-    /* width: 297px; */
 
     @media screen and (min-width: 768px) {
       width: 90px;
@@ -463,8 +450,6 @@ import{u as n,L as z,j as e,i as a,c,d as y,r as f,a as u,o as k,p as T,q as L,t
       width: 297px;
     }
 
-    /* width: 297px; */
-
     @media screen and (min-width: 768px) {
       width: 132px;
     }
@@ -478,8 +463,6 @@ import{u as n,L as z,j as e,i as a,c,d as y,r as f,a as u,o as k,p as T,q as L,t
     @media screen and (min-width: 375px) {
       width: 297px;
     }
-
-    /* width: 297px; */
 
     @media screen and (min-width: 768px) {
       width: 128px;
@@ -495,8 +478,6 @@ import{u as n,L as z,j as e,i as a,c,d as y,r as f,a as u,o as k,p as T,q as L,t
       width: 81px;
     }
 
-    /* width: 81px; */
-
     @media screen and (min-width: 768px) {
       width: 84px;
     }
@@ -510,8 +491,6 @@ import{u as n,L as z,j as e,i as a,c,d as y,r as f,a as u,o as k,p as T,q as L,t
     @media screen and (min-width: 375px) {
       width: 80px;
     }
-
-    /* width: 80px; */
 
     @media screen and (min-width: 768px) {
       width: 78px;
@@ -527,13 +506,11 @@ import{u as n,L as z,j as e,i as a,c,d as y,r as f,a as u,o as k,p as T,q as L,t
       width: 76px;
     }
 
-    /* width: 76px; */
-
     @media screen and (min-width: 1440px) {
       width: 82px;
     }
   }
-`,m=n.p`
+`,m=t.p`
   border: 1px solid ${i=>i.theme.colors.accentColor};
   border-radius: 12px;
   padding: 10px 14px;
@@ -553,7 +530,7 @@ import{u as n,L as z,j as e,i as a,c,d as y,r as f,a as u,o as k,p as T,q as L,t
     line-height: 150%;
     padding: 8px 14px;
   }
-`,Ie=n.button`
+`,Ie=t.button`
   padding: 0;
   background: none;
   border: none;
@@ -563,11 +540,11 @@ import{u as n,L as z,j as e,i as a,c,d as y,r as f,a as u,o as k,p as T,q as L,t
     right: 16px;
     top: 5px;
   }
-`,ve=n.svg`
+`,ve=t.svg`
   height: 20px;
   width: 20px;
   fill: ${i=>i.theme.colors.orangeLightColor};
-`,ze=n.div`
+`,ke=t.div`
   display: flex;
   align-items: last baseline;
   margin-bottom: 40px;
@@ -583,7 +560,7 @@ import{u as n,L as z,j as e,i as a,c,d as y,r as f,a as u,o as k,p as T,q as L,t
   @media screen and (min-width: 1440px) {
     padding-left: 16px;
   }
-`,ke=({isFirstItem:i,value:t})=>{const o=u(),d={date:c(j),exerciseId:t._id,calories:t.calories,time:t.time};return console.log(t._id),e.jsxs(ze,{children:[e.jsxs(De,{children:[e.jsxs(p,{children:[e.jsx(h,{isFirstItem:i,children:"Body Part"}),e.jsx(m,{children:t.exerciseId.bodyPart})]}),e.jsxs(p,{children:[e.jsx(h,{isFirstItem:i,children:"Equipment"}),e.jsx(m,{children:t.exerciseId.equipment})]}),e.jsxs(p,{children:[e.jsx(h,{isFirstItem:i,children:"Name"}),e.jsx(m,{children:t.exerciseId.name})]}),e.jsxs(p,{children:[e.jsx(h,{isFirstItem:i,children:"Target"}),e.jsx(m,{children:t.exerciseId.target})]}),e.jsxs(p,{children:[e.jsx(h,{isFirstItem:i,children:"Burned calories"}),e.jsx(m,{children:t.calories})]}),e.jsxs(p,{children:[e.jsx(h,{isFirstItem:i,children:"Time"}),e.jsx(m,{children:t.time})]})]}),e.jsx(Ie,{type:"button",onClick:()=>o(T(d)),children:e.jsx(ve,{children:e.jsx("use",{href:`${a}#trash`})})})]})},Te=n.button`
+`,ze=({isFirstItem:i,value:n})=>{const d=u(),o={date:c(j),exerciseId:n._id,calories:n.calories,time:n.time};return e.jsxs(ke,{children:[e.jsxs(De,{children:[e.jsxs(p,{children:[e.jsx(l,{isFirstItem:i,children:"Body Part"}),e.jsx(m,{children:n.exerciseId.bodyPart})]}),e.jsxs(p,{children:[e.jsx(l,{isFirstItem:i,children:"Equipment"}),e.jsx(m,{children:n.exerciseId.equipment})]}),e.jsxs(p,{children:[e.jsx(l,{isFirstItem:i,children:"Name"}),e.jsx(m,{children:n.exerciseId.name})]}),e.jsxs(p,{children:[e.jsx(l,{isFirstItem:i,children:"Target"}),e.jsx(m,{children:n.exerciseId.target})]}),e.jsxs(p,{children:[e.jsx(l,{isFirstItem:i,children:"Burned calories"}),e.jsx(m,{children:n.calories})]}),e.jsxs(p,{children:[e.jsx(l,{isFirstItem:i,children:"Time"}),e.jsx(m,{children:n.time})]})]}),e.jsx(Ie,{type:"button",onClick:()=>d(T(o)),children:e.jsx(ve,{children:e.jsx("use",{href:`${a}#trash`})})})]})},Te=t.button`
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
   font-size: 18px;
@@ -609,11 +586,11 @@ import{u as n,L as z,j as e,i as a,c,d as y,r as f,a as u,o as k,p as T,q as L,t
     line-height: 133%;
     align-items: baseline;
   }
-`,D=n.button`
+`,D=t.button`
   background: none;
   border: none;
   padding: 0;
-`,I=n.svg`
+`,I=t.svg`
   width: 16px;
   height: 16px;
 
@@ -622,15 +599,15 @@ import{u as n,L as z,j as e,i as a,c,d as y,r as f,a as u,o as k,p as T,q as L,t
   &:hover {
     fill: ${i=>i.theme.colors.orangeLightColor};
   }
-`,Le=n.ul`
+`,Le=t.ul`
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 6px;
-`,Re=n.svg`
+`,Re=t.svg`
   width: 20px;
   height: 20px;
-`,Be=n.div`
+`,Se=t.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -640,11 +617,11 @@ import{u as n,L as z,j as e,i as a,c,d as y,r as f,a as u,o as k,p as T,q as L,t
     gap: 40px;
     margin-bottom: 10px;
   }
-`,Ee=()=>{const i=c(j),t=u(),o=c(y),s=()=>{let r=new Date(o.createdAt),l=new Date(i);return l.setHours(0,0,0,0),r.getTime()>=l},d=f.forwardRef(({onClick:r},l)=>e.jsxs(Be,{children:[e.jsxs(Te,{onClick:r,ref:l,children:[e.jsx("p",{children:W(new Date(i),"dd/MM/yyyy")}),e.jsx(Re,{children:e.jsx("use",{href:`${a}#icon-calendar`})})]}),e.jsxs(Le,{children:[e.jsx("li",{children:e.jsx(D,{type:"button",disabled:s(),style:{opacity:s()?"0.2":"1"},onClick:()=>{t(L())},children:e.jsx(I,{children:e.jsx("use",{href:`${a}#icon-chevron-left`})})})}),e.jsx("li",{children:e.jsx(D,{type:"button",onClick:()=>{t(R())},children:e.jsx(I,{children:e.jsx("use",{href:`${a}#icon-chevron-right`})})})})]})]}));return d.displayName="CustomInput",e.jsxs(e.Fragment,{children:[e.jsx(P,{selected:i,onChange:r=>{t(B(r.getTime()))},customInput:e.jsx(d,{}),dateFormat:"dd MM yyyy",calendarStartDay:1,minDate:o.createdAt}),e.jsx(M,{})]})},Se=n.div`
+`,Be=()=>{const i=c(j),n=u(),d=c(y),s=()=>{let r=new Date(d.createdAt),h=new Date(i);return h.setHours(0,0,0,0),r.getTime()>=h},o=f.forwardRef(({onClick:r},h)=>e.jsxs(Se,{children:[e.jsxs(Te,{onClick:r,ref:h,children:[e.jsx("p",{children:W(new Date(i),"dd/MM/yyyy")}),e.jsx(Re,{children:e.jsx("use",{href:`${a}#icon-calendar`})})]}),e.jsxs(Le,{children:[e.jsx("li",{children:e.jsx(D,{type:"button",disabled:s(),style:{opacity:s()?"0.2":"1"},onClick:()=>{n(L())},children:e.jsx(I,{children:e.jsx("use",{href:`${a}#icon-chevron-left`})})})}),e.jsx("li",{children:e.jsx(D,{type:"button",onClick:()=>{n(R())},children:e.jsx(I,{children:e.jsx("use",{href:`${a}#icon-chevron-right`})})})})]})]}));return o.displayName="CustomInput",e.jsxs(e.Fragment,{children:[e.jsx(P,{selected:i,onChange:r=>{n(S(r.getTime()))},customInput:e.jsx(o,{}),dateFormat:"dd MM yyyy",calendarStartDay:1,minDate:d.createdAt}),e.jsx(M,{})]})},Ee=t.div`
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 35px;
   width: 100%;
   height: 100%;
-`,v=()=>e.jsx(Se,{children:e.jsx(E,{color:"#ef8964",visible:!0,height:100,width:100,ariaLabel:"infinity-spin-loading"})}),Me=()=>{const i=u(),t=c(j),o=c(F),s=c(ee);let d=c(Q);return f.useEffect(()=>{i(S({date:t}))},[i,t]),e.jsxs(A,{children:[e.jsxs(_,{children:[e.jsx(Ee,{}),e.jsx(N,{children:"Diary"})]}),e.jsxs(O,{children:[e.jsxs(q,{children:[e.jsx($,{title:"Products",link:"Add product",to:"/products",children:e.jsx(C,{children:d?e.jsx(v,{}):o.length===0?e.jsx(b,{children:"Not found products"}):o.map((r,l)=>e.jsx($e,{isFirstItem:l===0,value:r},r._id))})}),e.jsx($,{title:"Exercises",link:"Add exercise",to:"/exercises",children:e.jsx(C,{children:d?e.jsx(v,{}):s.length===0?e.jsx(b,{children:"Not found exercises"}):s.map((r,l)=>e.jsx(ke,{isFirstItem:l===0,value:r},r._id))})})]}),e.jsx(ge,{})]})]})};export{Me as default};
+`,v=()=>e.jsx(Ee,{children:e.jsx(B,{color:"#ef8964",visible:!0,height:100,width:100,ariaLabel:"infinity-spin-loading"})}),Me=()=>{const i=u(),n=c(j),d=c(F),s=c(ee);let o=c(Q);return f.useEffect(()=>{i(E({date:n}))},[i,n]),e.jsxs(A,{children:[e.jsxs(_,{children:[e.jsx(Be,{}),e.jsx(N,{children:"Diary"})]}),e.jsxs(O,{children:[e.jsxs(q,{children:[e.jsx($,{title:"Products",link:"Add product",to:"/products",children:e.jsx(C,{children:o?e.jsx(v,{}):!o&&d.length===0?e.jsx(b,{children:"Not found products"}):d.map((r,h)=>e.jsx($e,{isFirstItem:h===0,value:r},r._id))})}),e.jsx($,{title:"Exercises",link:"Add exercise",to:"/exercises",children:e.jsx(C,{children:o?e.jsx(v,{}):!o&&s.length===0?e.jsx(b,{children:"Not found exercises"}):s.map((r,h)=>e.jsx(ze,{isFirstItem:h===0,value:r},r._id))})})]}),e.jsx(ge,{})]})]})};export{Me as default};
