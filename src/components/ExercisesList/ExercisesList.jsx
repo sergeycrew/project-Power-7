@@ -5,14 +5,12 @@ import icons from '../../images/sprite.svg';
 
 import { useLocation, useParams } from 'react-router-dom';
 
-
-
 import { ModalTrening } from 'components/ModalTrening/ModalTrening';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { ModalExercise } from 'components/ModalExercise/ModalExercise';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectExercises} from '../../redux/exercises/selectorsExercises';
+import { selectExercises } from '../../redux/exercises/selectorsExercises';
 import { ExercisesItem } from '../ExersisesItem/ExercisesItem';
 import { isCategoryPicked } from '../../redux/exercises/sliceExercises';
 
@@ -23,11 +21,6 @@ export const ExercisesListByCategory = () => {
     calories: 0,
   });
 
- 
-
-
-
-
   const [isSuccessOpen, setIsSuccessOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedExercise, setSelectedExercise] = useState(null);
@@ -36,20 +29,16 @@ export const ExercisesListByCategory = () => {
     setIsModalOpen((prevState) => !prevState);
     setSelectedExercise(exercise);
   };
- 
 
-  const exercises = useSelector(selectExercises)
+  const exercises = useSelector(selectExercises);
 
-  
   const onClick = () => {
-    ;
     dispatch(isCategoryPicked(''));
   };
-  
 
   return (
     <div style={{ position: 'relative' }}>
-      <s.BackBtn onClick={() => onClick()} >
+      <s.BackBtn onClick={() => onClick()}>
         <svg width="20" height="20" stroke="rgb(239, 237, 232, 0.4)">
           <use href={icons + '#icon-arrow-left'} />
         </svg>
@@ -58,11 +47,11 @@ export const ExercisesListByCategory = () => {
       <s.MainExercisesContainer>
         <s.ExercisesList>
           {exercises?.map((card) => (
-            <ExercisesItem key={card._id}
-            card={card}
-            toogleModal={toogleModal}/>
-             
-            
+            <ExercisesItem
+              key={card._id}
+              card={card}
+              toogleModal={toogleModal}
+            />
           ))}
         </s.ExercisesList>
       </s.MainExercisesContainer>
