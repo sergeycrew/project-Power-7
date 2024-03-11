@@ -1,4 +1,4 @@
-import{u as e,j as t,s as n,L as o}from"./index-eda359a9.js";import{b as a,a as d,c as r,d as s}from"./hero-desktop-2x-c0317d06.js";const h=e.div`
+import{u as e,a as p,c as x,r as c,g as l,j as t,s as o,L as a}from"./index-ed582ca4.js";import{b as g,a as m,c as w,d as u}from"./hero-desktop-2x-c0317d06.js";const f=e.div`
   /* position: relative; */
   position: absolute;
   margin-left: auto;
@@ -28,7 +28,7 @@ import{u as e,j as t,s as n,L as o}from"./index-eda359a9.js";import{b as a,a as 
     gap: 39px;
     margin: 0;
   }
-`,p=e.div`
+`,b=e.div`
   position: relative;
   display: flex;
   justify-content: center;
@@ -46,7 +46,7 @@ import{u as e,j as t,s as n,L as o}from"./index-eda359a9.js";import{b as a,a as 
     padding-left: 23px;
     justify-content: start;
   }
-`,x=e.div`
+`,j=e.div`
   width: 30px;
   height: 30px;
   border-radius: 50%;
@@ -60,7 +60,7 @@ import{u as e,j as t,s as n,L as o}from"./index-eda359a9.js";import{b as a,a as 
     width: 40px;
     height: 40px;
   }
-`,l=e.svg`
+`,$=e.svg`
   width: 12px;
   height: 12px;
 
@@ -68,7 +68,7 @@ import{u as e,j as t,s as n,L as o}from"./index-eda359a9.js";import{b as a,a as 
     width: 20px;
     height: 20px;
   }
-`,c=e.div`
+`,k=e.div`
   display: flex;
   flex-direction: column;
   gap: 4px;
@@ -76,7 +76,7 @@ import{u as e,j as t,s as n,L as o}from"./index-eda359a9.js";import{b as a,a as 
   @media screen and (min-width: 768px) {
     gap: 8px;
   }
-`,g=e.span`
+`,v=e.span`
   font-size: 16px;
   font-weight: 700;
   line-height: 1.12;
@@ -86,7 +86,7 @@ import{u as e,j as t,s as n,L as o}from"./index-eda359a9.js";import{b as a,a as 
     font-size: 24px;
     line-height: 1;
   }
-`,m=e.p`
+`,y=e.p`
   color: rgba(239, 237, 232, 0.65);
   font-size: 12px;
   font-weight: 400;
@@ -96,7 +96,7 @@ import{u as e,j as t,s as n,L as o}from"./index-eda359a9.js";import{b as a,a as 
     font-size: 16px;
     line-height: 1.5;
   }
-`,w=e.div`
+`,C=e.div`
   position: relative;
   margin-left: auto;
   margin-right: 0;
@@ -118,7 +118,7 @@ import{u as e,j as t,s as n,L as o}from"./index-eda359a9.js";import{b as a,a as 
     gap: 8px;
     padding-left: 28px;
   }
-`,f=e.div`
+`,z=e.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -131,7 +131,7 @@ import{u as e,j as t,s as n,L as o}from"./index-eda359a9.js";import{b as a,a as 
     width: 24px;
     height: 24px;
   }
-`,u=e.svg`
+`,T=e.svg`
   width: 12px;
   height: 12px;
 
@@ -139,7 +139,7 @@ import{u as e,j as t,s as n,L as o}from"./index-eda359a9.js";import{b as a,a as 
     width: 16px;
     height: 16px;
   }
-`,b=e.div`
+`,_=e.div`
   display: flex;
   gap: 8px;
   align-items: end;
@@ -147,7 +147,7 @@ import{u as e,j as t,s as n,L as o}from"./index-eda359a9.js";import{b as a,a as 
   @media screen and (min-width: 768px) {
     gap: 11px;
   }
-`,j=e.span`
+`,I=e.span`
   font-size: 24px;
   font-weight: 700;
   line-height: 1;
@@ -159,7 +159,7 @@ import{u as e,j as t,s as n,L as o}from"./index-eda359a9.js";import{b as a,a as 
     line-height: 1.04;
     letter-spacing: -0.02em;
   }
-`,$=e.p`
+`,L=e.p`
   font-size: 12px;
   font-weight: 700;
   line-height: 1.33;
@@ -169,7 +169,7 @@ import{u as e,j as t,s as n,L as o}from"./index-eda359a9.js";import{b as a,a as 
     font-size: 16px;
     line-height: 1.5;
   }
-`,k=()=>t.jsxs(h,{children:[t.jsxs(p,{children:[t.jsx(x,{children:t.jsx(l,{children:t.jsx("use",{href:`${n}#icon-Polygon-1`})})}),t.jsxs(c,{children:[t.jsx(g,{children:"350+"}),t.jsx(m,{children:"Video tutorial"})]})]}),t.jsxs(w,{children:[t.jsx(f,{children:t.jsx(u,{children:t.jsx("use",{href:`${n}#icon-running-stick-figure`})})}),t.jsxs(b,{children:[t.jsx(j,{children:"500"}),t.jsx($,{children:"cal"})]})]})]}),v="/project-Power-7/assets/bg-mobile-1x-014f5a2c.png",y="/project-Power-7/assets/bg-mobile-2x-ba0edaad.png",C=e.div`
+`,S=i=>i.statistic.statistic,B=()=>{const i=p(),d=x(S);c.useEffect(()=>{i(l())},[i]);const s=n=>n<1e3?n:(Math.round(n)/1e3).toFixed(1),{allExercisesVideo:r,allBurnedCalories:h}=d;return t.jsxs(f,{children:[t.jsxs(b,{children:[t.jsx(j,{children:t.jsx($,{children:t.jsx("use",{href:`${o}#icon-Polygon-1`})})}),t.jsxs(k,{children:[t.jsx(v,{children:r}),t.jsx(y,{children:"Video tutorial"})]})]}),t.jsxs(C,{children:[t.jsx(z,{children:t.jsx(T,{children:t.jsx("use",{href:`${o}#icon-running-stick-figure`})})}),t.jsxs(_,{children:[t.jsx(I,{children:s(h)}),t.jsx(L,{children:"kcal"})]})]})]})},E="/project-Power-7/assets/bg-mobile-1x-014f5a2c.png",M="/project-Power-7/assets/bg-mobile-2x-ba0edaad.png",H=e.div`
   position: relative;
   z-index: 0;
   max-width: 375px;
@@ -178,7 +178,7 @@ import{u as e,j as t,s as n,L as o}from"./index-eda359a9.js";import{b as a,a as 
   height: 100vh;
   background-repeat: no-repeat;
   background-position: bottom right;
-  background-image: image-set(url(${v}) 1x, url(${y}) 2x);
+  background-image: image-set(url(${E}) 1x, url(${M}) 2x);
 
   @media screen and (min-width: 375px) and (max-height: 812px) {
     height: 812px;
@@ -186,7 +186,7 @@ import{u as e,j as t,s as n,L as o}from"./index-eda359a9.js";import{b as a,a as 
 
   @media screen and (min-width: 768px) {
     max-width: 768px;
-    background-image: image-set(url(${a}) 1x, url(${d}) 2x);
+    background-image: image-set(url(${g}) 1x, url(${m}) 2x);
   }
 
   @media screen and (min-width: 768px) and (max-height: 1024px) {
@@ -197,13 +197,13 @@ import{u as e,j as t,s as n,L as o}from"./index-eda359a9.js";import{b as a,a as 
     max-width: 1440px;
     height: 100vh;
     background-size: contain;
-    background-image: image-set(url(${r}) 1x, url(${s}) 2x);
+    background-image: image-set(url(${w}) 1x, url(${u}) 2x);
   }
 
   @media screen and (min-width: 1440px) and (max-height: 800px) {
     height: 800px;
   }
-`,_=({children:i})=>t.jsxs(C,{children:[i,t.jsx(k,{})]}),I=e.section`
+`,V=({children:i})=>t.jsxs(H,{children:[i,t.jsx(B,{})]}),D=e.section`
   padding-top: 127px;
 
   @media screen and (min-width: 768px) {
@@ -213,7 +213,7 @@ import{u as e,j as t,s as n,L as o}from"./index-eda359a9.js";import{b as a,a as 
   @media screen and (min-width: 1440px) {
     padding-top: 200px;
   }
-`,L=e.div`
+`,F=e.div`
   max-width: 375px;
   width: 100%;
   margin: 0 auto;
@@ -228,8 +228,9 @@ import{u as e,j as t,s as n,L as o}from"./index-eda359a9.js";import{b as a,a as 
     max-width: 1440px;
     padding-inline: 95px;
   }
-`,B=e.div`
+`,G=e.div`
   width: 335px;
+  /* width: 100%; */
   position: relative;
   display: flex;
   flex-direction: column;
@@ -239,8 +240,9 @@ import{u as e,j as t,s as n,L as o}from"./index-eda359a9.js";import{b as a,a as 
     width: 598px;
     gap: 64px;
   }
-`,S=e.h1`
+`,R=e.h1`
   position: relative;
+  /* width: 335px; */
   z-index: 1;
   color: ${i=>i.theme.colors.whiteColor};
   font-weight: 500;
@@ -252,7 +254,7 @@ import{u as e,j as t,s as n,L as o}from"./index-eda359a9.js";import{b as a,a as 
     font-size: 70px;
     line-height: 1.11;
   }
-`,H=e.svg`
+`,U=e.svg`
   width: 98px;
   height: 35px;
   position: absolute;
@@ -270,7 +272,7 @@ import{u as e,j as t,s as n,L as o}from"./index-eda359a9.js";import{b as a,a as 
   @media screen and (min-width: 1440px) {
     left: -16px;
   }
-`,M=e.ul`
+`,q=e.ul`
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
@@ -279,7 +281,7 @@ import{u as e,j as t,s as n,L as o}from"./index-eda359a9.js";import{b as a,a as 
     gap: 20px;
     flex-wrap: nowrap;
   }
-`,P=e.li`
+`,A=e.li`
   width: 130px;
   height: 42px;
 
@@ -295,7 +297,7 @@ import{u as e,j as t,s as n,L as o}from"./index-eda359a9.js";import{b as a,a as 
       width: 190px;
     }
   }
-`,N=e(o)`
+`,J=e(a)`
   width: 100%;
   height: 100%;
   border-radius: ${i=>i.theme.radii.ld};
@@ -318,7 +320,7 @@ import{u as e,j as t,s as n,L as o}from"./index-eda359a9.js";import{b as a,a as 
     font-size: 20px;
     line-height: 1.2;
   }
-`,E=e(o)`
+`,K=e(a)`
   width: 100%;
   height: 100%;
   border-radius: ${i=>i.theme.radii.ld};
@@ -344,4 +346,4 @@ import{u as e,j as t,s as n,L as o}from"./index-eda359a9.js";import{b as a,a as 
     font-size: 20px;
     line-height: 1.2;
   }
-`;export{_ as H,H as I,M as L,I as M,N as S,B as T,L as a,S as b,P as c,E as d};
+`;export{V as H,U as I,q as L,D as M,J as S,G as T,F as a,R as b,A as c,K as d};
