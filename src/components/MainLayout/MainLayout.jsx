@@ -5,8 +5,6 @@ import { Layout } from './MainLayout.styled';
 import { Header } from '../Header/Header';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { useDispatch } from 'react-redux';
-import { refreshUser } from '../../redux/auth/authOperation';
 
 const MainLayout = () => {
   // const dispatch = useDispatch();

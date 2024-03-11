@@ -7,7 +7,7 @@ import sprite from '../../images/sprite.svg';
 export const ModalExercise = ({ time, calories, onClick, onClose }) => {
   return (
     <s.CustomModale
-      modalStyles={{ maxWidth: '335px', width: '100%', height: '384px' }}
+      modalStyles={{ maxWidth: '430px', width: '100%', height: '384px' }}
       modalTabletStyles={{ width: '430px', height: '439px' }}
       modalDesktopStyles={{ width: '430px', height: '439px' }}
       onClose={onClose}
@@ -26,13 +26,9 @@ export const ModalExercise = ({ time, calories, onClick, onClose }) => {
           </ul>
         </s.TextWrapper>
         <s.BtnWrapper>
-          <MainButton
-            onClick={onClose}
-            filled={'#E6533C'}
-            text={'Next exercise'}
-            type={'button'}
-            modalButton={'modalButton'}
-          />
+        <s.MainButton>Next exercise </s.MainButton> 
+           
+         
         </s.BtnWrapper>
         <s.CustomLink to={'/diary'}>
           To the diary
