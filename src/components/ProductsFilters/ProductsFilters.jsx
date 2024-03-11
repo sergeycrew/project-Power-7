@@ -16,16 +16,13 @@ import {
   // ErrorMessage,
 } from './ProductsFilters.styled';
 import { SelectStyles } from './ProductSelectStyles';
-import {
-  selectCategories,
-  selectRecommendedOptions,
-} from '../../redux/products/productsSelectors';
+import { selectCategories } from '../../redux/products/productsSelectors';
+import { RecommendedOptions } from '../../redux/products/constants';
 
 export const ProductsFilters = () => {
   const dispatch = useDispatch();
 
   const CalegoriesOptions = useSelector(selectCategories);
-  const RecommendedOptions = useSelector(selectRecommendedOptions);
 
   const validate = (values) => {
     const errors = {};
