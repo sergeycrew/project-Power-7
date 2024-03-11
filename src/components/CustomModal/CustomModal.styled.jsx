@@ -45,11 +45,17 @@ export const Modal = styled.div`
 
 export const CloseModalBtn = styled.button`
   position: absolute;
-
+  width: 22px;
+  height: 22px;
   top: 14px;
   right: 14px;
   background-color: #10100f;
   border: none;
   outline: none;
   cursor: pointer;
+  @media screen and (min-width: 768px) {
+  
+  width: 26px;
+  height: 26px;
+}
 `;
