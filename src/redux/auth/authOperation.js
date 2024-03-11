@@ -139,17 +139,24 @@ export const refreshUser = createAsyncThunk(
   }
 );
 
-// export const GoogleSignIn = createAsyncThunk(
-//   'users/googleAuth',
-//   async (credentials, { rejectWithValue }) => {
-//     try {
-//       const { data } = await axios.post('users/googleAuth', credentials);
-//       setAuthHeader(data.tokens.accessToken);
-//       return data;
-//     } catch (error) {
-//       toast.error('Oops, something went wrong! Try again later.');
-//       console.log(error.message);
-//       return rejectWithValue(error.message);
-//     }
-//   }
-// );
+export const GoogleSignIn = createAsyncThunk(
+  'users/googleAuth',
+  async (_, thunkApi) => {
+    const state = thunkApi.getState();
+    const persistorToken = state.auth.token;
+    if (persistorToken === '') {
+      return thunkApi.rejectWithValue('Unable to fetch user');
+    }
+    try {
+      const tokens = await axios.post('users/googleAuth', {
+        refreshToken: persistorToken,
+      });
+      setAuthHeader(tokens.accessToken);
+      return tokens.data.refreshToken;
+    } catch (error) {
+      toast.error('Oops, something went wrong! Try again later.');
+      console.log(error.message);
+      return thunkApi.rejectWithValue(error.message);
+    }
+  }
+);

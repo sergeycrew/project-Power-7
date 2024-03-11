@@ -25,7 +25,6 @@ export const InfoWrapper = styled.div`
   display: flex;
   gap: 8px;
   max-width: 100%;
-  /* max-width: 335px; */
 
   @media screen and (min-width: 375px) {
     max-width: 335px;

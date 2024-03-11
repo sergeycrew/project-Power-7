@@ -91,7 +91,7 @@ export const ItemsContainer = styled.div`
     max-height: 60px;
   }
   &::-webkit-scrollbar-thumb {
-    background-color: rgba(239, 237, 232, 0.1);
+    background-color: ${(p) => p.theme.colors.backgroundColorScroll};
     border-radius: 12px;
   }
 
