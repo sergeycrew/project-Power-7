@@ -144,9 +144,6 @@ export const GoogleSignIn = createAsyncThunk(
   async (credentials, thunkApi) => {
     const state = thunkApi.getState();
     const persistorToken = state.auth.token;
-    if (persistorToken === '') {
-      return thunkApi.rejectWithValue('Unable to fetch user');
-    }
     try {
       setAuthHeader(credentials.tokens.accessToken);
       console.log(credentials);

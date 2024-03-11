@@ -6,6 +6,7 @@ export const theme = {
     biegeColor: '#efa082',
     whiteColor: '#efede8',
     greyColor: 'EFEDE8',
+    grayInput: 'rgba(239, 237, 232, 0.30)',
     modalOverlay: 'rgba(4, 4, 4, 0.4)',
 
     darkGrayColor: '#303030',

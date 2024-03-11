@@ -151,6 +151,12 @@ const handleUserRefreshFulfilled = (state, { payload }) => {
   state.isRefreshing = false;
 };
 
+const handleLogInGoogleFulfilled = (state, { payload }) => {
+  state.token = payload;
+  state.isLoggedIn = true;
+  state.error = null;
+};
+
 const authSlice = createSlice({
   name: 'auth',
   initialState,
@@ -166,7 +172,7 @@ const authSlice = createSlice({
 
       .addCase(GoogleSignIn.pending, handlePending)
       .addCase(GoogleSignIn.rejected, handleRejected)
-      .addCase(GoogleSignIn.fulfilled, handleLogInFulfilled)
+      .addCase(GoogleSignIn.fulfilled, handleLogInGoogleFulfilled)
 
       .addCase(logOut.pending, handlePending)
       .addCase(logOut.rejected, handleRejected)
