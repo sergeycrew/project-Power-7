@@ -1,4 +1,4 @@
-import{u as i,j as e,a as b,c as w,s as C,d as E,r as p,i as y,e as M,f as P,g as H,C as G,h as Y}from"./index-22abc787.js";import{i as j}from"./sprite-bcc8651d.js";import{c as J,a as K,b as g,d as Q}from"./index.esm-ae2ee482.js";import{b as X,a as x}from"./formik.esm-95c09dc6.js";import{I as u,S as Z,C as _,a as k,b as D,F as m,W as R,c as v,d as ee,e as te,f as ie,B as ae,g as se}from"./UserForm.styled-4d065781.js";import{W as ne,I as re,i as le,C as de}from"./react-datepicker-cssmodules-6102f31f.js";const oe=i.p`
+import{u as i,j as e,a as b,c as w,d as C,e as E,r as p,s as y,f as M,g as P,h as H,C as G,i as Y}from"./index-4117e63b.js";import{i as j}from"./sprite-e02aacb9.js";import{c as J,a as K,b as g,d as Q}from"./index.esm-9354c4f4.js";import{b as X,a as x}from"./formik.esm-7d157dc3.js";import{I as u,S as Z,C as _,a as k,b as D,F as m,W as R,c as v,d as ee,e as te,f as ie,B as ae,g as se}from"./UserForm.styled-05506f57.js";import{W as ne,I as re,i as le,C as de}from"./react-datepicker-cssmodules-9904c147.js";import"./floating-ui.dom-9d61e2db.js";const oe=i.p`
   color: rgba(239, 237, 232, 0.8);
   font-family: 'RobotoRegular';
   font-size: 12px;
@@ -243,4 +243,4 @@ justify-content: center;
   /* @media screen and (min-width: 1440px) {
    margin-left: 50px;
   } */
-`,Pe=()=>{const t=w(C);b();const{isLoggedIn:a,isLoading:r}=P();return r?e.jsx(H,{}):e.jsx(G,{children:e.jsxs(Re,{children:[e.jsx(qe,{children:"Profile Setings"}),e.jsxs(Ue,{children:[e.jsxs(Be,{children:[e.jsx(we,{}),e.jsxs(Ae,{children:[e.jsx(q,{iconId:"icon-fork-knife",text:"Daily calorie intake",value:t.bmr}),e.jsx(q,{iconId:"icon-dumbbell",text:"Daily physical activity",value:t.timeSport,amoutName:"min"})]}),e.jsx(De,{}),e.jsx(Ve,{children:e.jsx(Y,{})})]}),e.jsx(Oe,{children:e.jsx(Se,{})})]})]})})};export{Pe as default};
+`,He=()=>{const t=w(C);b();const{isLoggedIn:a,isLoading:r}=P();return r?e.jsx(H,{}):e.jsx(G,{children:e.jsxs(Re,{children:[e.jsx(qe,{children:"Profile Setings"}),e.jsxs(Ue,{children:[e.jsxs(Be,{children:[e.jsx(we,{}),e.jsxs(Ae,{children:[e.jsx(q,{iconId:"icon-fork-knife",text:"Daily calorie intake",value:t.bmr}),e.jsx(q,{iconId:"icon-dumbbell",text:"Daily physical activity",value:t.timeSport,amoutName:"min"})]}),e.jsx(De,{}),e.jsx(Ve,{children:e.jsx(Y,{})})]}),e.jsx(Oe,{children:e.jsx(Se,{})})]})]})})};export{He as default};

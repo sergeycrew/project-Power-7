@@ -1,4 +1,4 @@
-import{u as t,L as k,j as e,i as a,c,s as y,r as f,a as u,m as z,n as T,p as L,o as R,q as S,$ as B,t as E}from"./index-22abc787.js";import{f as W,i as P,C as M}from"./react-datepicker-cssmodules-6102f31f.js";const A=t.div`
+import{u as t,L as k,j as e,s as a,c,d as y,r as f,a as u,m as z,n as T,p as L,o as R,q as S,$ as B,t as E}from"./index-4117e63b.js";import{f as W,i as P,C as M}from"./react-datepicker-cssmodules-9904c147.js";import"./floating-ui.dom-9d61e2db.js";const A=t.div`
   margin: 0 auto;
   padding: 0 20px;
   width: 100%;
@@ -624,4 +624,4 @@ import{u as t,L as k,j as e,i as a,c,s as y,r as f,a as u,m as z,n as T,p as L,o
   margin-top: 35px;
   width: 100%;
   height: 100%;
-`,v=()=>e.jsx(Ee,{children:e.jsx(B,{color:"#ef8964",visible:!0,height:100,width:100,ariaLabel:"infinity-spin-loading"})}),Me=()=>{const i=u(),n=c(j),d=c(F),s=c(ee);let o=c(Q);return f.useEffect(()=>{i(E({date:n}))},[i,n]),e.jsxs(A,{children:[e.jsxs(_,{children:[e.jsx(Be,{}),e.jsx(N,{children:"Diary"})]}),e.jsxs(O,{children:[e.jsxs(q,{children:[e.jsx($,{title:"Products",link:"Add product",to:"/products",children:e.jsx(C,{children:o?e.jsx(v,{}):!o&&d.length===0?e.jsx(b,{children:"Not found products"}):d.map((r,h)=>e.jsx($e,{isFirstItem:h===0,value:r},r._id))})}),e.jsx($,{title:"Exercises",link:"Add exercise",to:"/exercises",children:e.jsx(C,{children:o?e.jsx(v,{}):!o&&s.length===0?e.jsx(b,{children:"Not found exercises"}):s.map((r,h)=>e.jsx(ze,{isFirstItem:h===0,value:r},r._id))})})]}),e.jsx(ge,{})]})]})};export{Me as default};
+`,v=()=>e.jsx(Ee,{children:e.jsx(B,{color:"#ef8964",visible:!0,height:100,width:100,ariaLabel:"infinity-spin-loading"})}),Ae=()=>{const i=u(),n=c(j),d=c(F),s=c(ee);let o=c(Q);return f.useEffect(()=>{i(E({date:n}))},[i,n]),e.jsxs(A,{children:[e.jsxs(_,{children:[e.jsx(Be,{}),e.jsx(N,{children:"Diary"})]}),e.jsxs(O,{children:[e.jsxs(q,{children:[e.jsx($,{title:"Products",link:"Add product",to:"/products",children:e.jsx(C,{children:o?e.jsx(v,{}):!o&&d.length===0?e.jsx(b,{children:"Not found products"}):d.map((r,h)=>e.jsx($e,{isFirstItem:h===0,value:r},r._id))})}),e.jsx($,{title:"Exercises",link:"Add exercise",to:"/exercises",children:e.jsx(C,{children:o?e.jsx(v,{}):!o&&s.length===0?e.jsx(b,{children:"Not found exercises"}):s.map((r,h)=>e.jsx(ze,{isFirstItem:h===0,value:r},r._id))})})]}),e.jsx(ge,{})]})]})};export{Ae as default};
