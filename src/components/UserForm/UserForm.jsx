@@ -288,14 +288,7 @@ const UserForm = () => {
             >
               Save
             </s.Button>
-            <s.ButtonVerify
-              type="submit"
-              disabled={buttonDisabled}
-              onClick={sendVerify}
-              style={{ display: user.verify ? 'none' : 'inline-block' }}
-            >
-              {verifyBtnContant}
-            </s.ButtonVerify>
+      
           </div>
         </s.StyledForm>
       )}
@@ -303,3 +296,11 @@ const UserForm = () => {
   );
 };
 export default UserForm;
+      // <s.ButtonVerify
+      //         type="submit"
+      //         disabled={buttonDisabled}
+      //         onClick={sendVerify}
+      //         style={{ display: user.verify ? 'none' : 'inline-block' }}
+      //       >
+      //         {verifyBtnContant}
+      //       </s.ButtonVerify>

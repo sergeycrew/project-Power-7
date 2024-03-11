@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectUser } from '../../redux/auth/authSelectors';
 // import { useState } from 'react';
 import { updateUserAvatar } from '../../redux/auth/authOperation';
+import { useState } from 'react';
 // import React, {} from 'react';
 // import axios from 'axios';
 // import { useSelector } from 'react-redux';
@@ -21,6 +22,45 @@ const UserCard = () => {
     //    dispatch(e.target.files[0]);
     dispatch(updateUserAvatar(e.target.files[0]));
 }
+
+  const [timer, setTimer] = useState(null);
+    const [buttonDisabled, setButtonDisabled] = useState(false);
+    const [remainingTime, setRemainingTime] = useState(null);
+    const [timerExpired, setTimerExpired] = useState(false);
+  
+
+    const verifyContent = buttonDisabled
+    ? `Try again in ${remainingTime}`
+    : timerExpired
+    ? 'Send again'
+    : 'Verify';
+    const startTimer = () => {
+        setButtonDisabled(true);
+        setRemainingTime(60);
+        setTimer(
+          setInterval(() => {
+            setRemainingTime((prevTime) => {
+              if (prevTime === 1) {
+                clearInterval(timer);
+                setButtonDisabled(false);
+                setTimerExpired(true);
+                return null;
+              } else {
+                return prevTime - 1;
+              }
+            });
+          }, 1000)
+        );
+      };
+
+      const sendVerify = () => {
+        startTimer();
+        const email = user.email;
+        console.log({ email });
+        // dispatch(userVerifyAgain({email}));
+        // console.log(state)
+      };
+
     
 
     return (
@@ -49,6 +89,11 @@ style={{ display: user.verify ? 'none' : 'inline-block' }}//////////////////////
         
         <s.UserName>{user.name ? user.name : 'Name'}</s.UserName>
         <s.SubTitle>User</s.SubTitle>
+        <s.ButtonVerify
+        type="submit"
+        disabled={buttonDisabled}
+        onClick={sendVerify}
+        style={{ display: user.verify ? 'none' : 'inline-block' }}>{verifyContent}</s.ButtonVerify>
         </s.Container>
 
     )
