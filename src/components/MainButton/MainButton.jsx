@@ -6,7 +6,7 @@ export const MainButton = ({
   filled,
   disabled,
   btnStyles,
-  modalButton,
+  modalbutton,
   onClick,
   btn320Styles,
 }) => {
@@ -17,7 +17,7 @@ export const MainButton = ({
       disabled={disabled}
       btnStyles={btnStyles}
       btn320Styles={btn320Styles}
-      modalButton={modalButton}
+      modalbutton={modalbutton}
       onClick={onClick}
     >
       {text}

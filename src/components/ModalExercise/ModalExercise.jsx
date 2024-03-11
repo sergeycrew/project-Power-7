@@ -1,13 +1,13 @@
 // import { CustomModal } from 'components/CustomModal/CustomModal';
-import { MainButton } from 'components/MainButton/MainButton';
+// import { MainButton } from 'components/MainButton/MainButton';
 import thumb_up from '../../images/thumb-up-1x.png';
 import * as s from './ModalExercise.styled';
-import sprite from '../../images/sprite.svg';
+import sprite from '../../images/sprite/sprite.svg';
 
 export const ModalExercise = ({ time, calories, onClick, onClose }) => {
   return (
     <s.CustomModale
-      modalStyles={{ maxWidth: '335px', width: '100%', height: '384px' }}
+      modalStyles={{ maxWidth: '430px', width: '100%', height: '384px' }}
       modalTabletStyles={{ width: '430px', height: '439px' }}
       modalDesktopStyles={{ width: '430px', height: '439px' }}
       onClose={onClose}
@@ -26,18 +26,14 @@ export const ModalExercise = ({ time, calories, onClick, onClose }) => {
           </ul>
         </s.TextWrapper>
         <s.BtnWrapper>
-          <MainButton
-            onClick={onClose}
-            filled={'#E6533C'}
-            text={'Next exercise'}
-            type={'button'}
-            modalButton={'modalButton'}
-          />
+        <s.MainButton>Next exercise </s.MainButton> 
+           
+         
         </s.BtnWrapper>
         <s.CustomLink to={'/diary'}>
           To the diary
           <svg width=" 16px" height="16px">
-            <use href={sprite + '#icon-arrow-right'}></use>
+            <use href={`${sprite}#arrow_gray`}></use>
           </svg>
         </s.CustomLink>
       </s.Wrapper>
