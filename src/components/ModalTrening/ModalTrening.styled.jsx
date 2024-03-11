@@ -236,7 +236,7 @@ export const ButtonAdd = styled.button`
 
 export const SpanButton = styled.span`
   color: #efede8;
-  font-family: Roboto;
+  font-family: 'Roboto', sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
