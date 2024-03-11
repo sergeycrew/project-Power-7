@@ -141,18 +141,16 @@ export const refreshUser = createAsyncThunk(
 
 export const GoogleSignIn = createAsyncThunk(
   'users/googleAuth',
-  async (_, thunkApi) => {
+  async (credentials, thunkApi) => {
     const state = thunkApi.getState();
     const persistorToken = state.auth.token;
     if (persistorToken === '') {
       return thunkApi.rejectWithValue('Unable to fetch user');
     }
     try {
-      const tokens = await axios.post('users/googleAuth', {
-        refreshToken: persistorToken,
-      });
-      setAuthHeader(tokens.accessToken);
-      return tokens.data.refreshToken;
+      setAuthHeader(credentials.tokens.accessToken);
+      console.log(credentials);
+      return credentials.tokens.refreshToken;
     } catch (error) {
       toast.error('Oops, something went wrong! Try again later.');
       console.log(error.message);

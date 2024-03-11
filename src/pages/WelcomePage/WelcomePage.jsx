@@ -21,7 +21,7 @@ const WelcomePage = () => {
   useEffect(() => {
     const refetch = async () => {
       if (accessToken && refreshToken) {
-        dispatch(GoogleSignIn({ accessToken, refreshToken }));
+        dispatch(GoogleSignIn({tokens:{ accessToken, refreshToken }}));
       }
     };
 
