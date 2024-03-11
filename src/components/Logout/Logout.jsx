@@ -2,7 +2,7 @@ import { useDispatch } from 'react-redux';
 import {
   LogoutButtonLink,
   Text,
- // LogoWrapper,
+  // LogoWrapper,
   LogOutIcon,
 } from './Logout.styled';
 
@@ -20,13 +20,11 @@ export const Logout = ({ color }) => {
   };
 
   return (
-    
-      <LogoutButtonLink to="/" onClick={(e) => handleClick(e)}>
-        <Text>Logout</Text>
-        <LogOutIcon style={{ '--color1': color }}>
-          <use href={`${sprite}#logout`} />
-        </LogOutIcon>
-      </LogoutButtonLink>
-
+    <LogoutButtonLink onClick={(e) => handleClick(e)}>
+      <Text>Logout</Text>
+      <LogOutIcon style={{ '--color1': color }}>
+        <use href={`${sprite}#logout`} />
+      </LogOutIcon>
+    </LogoutButtonLink>
   );
 };
