@@ -19,7 +19,7 @@ export const ModalTrening = ({
   const [isPlaying, setIsPlaying] = useState(false);
   const [isSecond, setIsSecond] = useState(0);
   const [isCalories, setIsCalories] = useState(0);
-  const [isRound, setIsRound] = useState(0);
+  // const [isRound, setIsRound] = useState(0);
   const [roundCounter, setRoundCounter] = useState(children);
   const dispatch = useDispatch();
 
@@ -43,7 +43,7 @@ export const ModalTrening = ({
     } else if (isSecond === roundCounter) {
       setIsPlaying(false);
       setRoundCounter((roundCounter) => roundCounter + children);
-      setIsRound((isRound) => isRound + 1);
+      // setIsRound((isRound) => isRound + 1);
     }
 
     return () => clearInterval(interval);
