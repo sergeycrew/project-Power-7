@@ -14,7 +14,7 @@ import { authReducer } from './auth/authSlice';
 import { filterReducer } from './products/filterSlice';
 import { productListReducer } from './products/productListSlice';
 import { diaryReducer } from './diary/diarySlice';
-import { exercisesReducer } from './exercises-t/sliceExercises';
+import { exercisesReducer } from './exercises/sliceExercises';
 import { categoriesReducer } from './products/categoriesSlice';
 
 
