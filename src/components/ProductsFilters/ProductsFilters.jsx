@@ -59,7 +59,6 @@ export const ProductsFilters = () => {
       handleSubmit(paramsSearch);
     }
   };
-
   return (
     <StyledForm onSubmit={formik.handleSubmit}>
       <Field
@@ -69,13 +68,11 @@ export const ProductsFilters = () => {
         value={formik.values.title.trim()}
         onChange={formik.handleChange}
       />
-      {formik.values.title !== '' && (
+      {formik.values.title.trim() !== '' && (
         <BtnCancel
           type="button"
           onClick={() => {
             formik.setFieldValue('title', '');
-            formik.setFieldValue('categoty', '');
-            formik.setFieldValue('type', '');
             handleSubmit('title', '');
           }}
         >

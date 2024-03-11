@@ -30,7 +30,6 @@ export const fetchProducts = createAsyncThunk(
     const state = thunkAPI.getState();
     const params = getParams(state);
     try {
-      // setAuthHeader(temptoken);
       const response = await axios.get('products/all', { params });
       return response.data;
     } catch (error) {

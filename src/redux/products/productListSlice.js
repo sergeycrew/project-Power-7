@@ -6,7 +6,7 @@ export const productSlice = createSlice({
   initialState: {
     items: [],
     isLoading: false,
-    containsProducts: false,
+    error: false,
   },
 
   extraReducers: (builder) =>
@@ -18,7 +18,6 @@ export const productSlice = createSlice({
 
 function ListFulfilled(state, { payload }) {
   state.items = payload;
-  state.containsProducts = payload.length > 0;
   state.isLoading = false;
 }
 

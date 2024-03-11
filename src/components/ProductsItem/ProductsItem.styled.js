@@ -17,6 +17,7 @@ export const CardWrapper = styled.div`
 
   @media screen and (max-width: 335px) {
     max-width: 320px;
+    width: 100%;
   }
   @media screen and (min-width: 335px) {
     width: 335px;
