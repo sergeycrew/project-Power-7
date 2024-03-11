@@ -34,7 +34,7 @@ export const DiaryItemTitle = styled.h2`
   font-weight: 400;
   font-size: 14px;
   line-height: 129%;
-  color: rgba(239, 237, 232, 0.5);
+  color: ${(p) => p.theme.colors.fornCaptionColor};
 `;
 
 export const LinkToOtherPage = styled(Link)`

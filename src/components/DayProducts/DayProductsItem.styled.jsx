@@ -34,8 +34,6 @@ export const ListItem = styled.li`
       width: 297px;
     }
 
-    /* width: 297px; */
-
     @media screen and (min-width: 768px) {
       width: 128px;
     }
@@ -49,8 +47,6 @@ export const ListItem = styled.li`
     @media screen and (min-width: 375px) {
       width: 81px;
     }
-
-    /* width: 81px; */
 
     @media screen and (min-width: 768px) {
       width: 90px;
@@ -66,8 +62,6 @@ export const ListItem = styled.li`
       width: 80px;
     }
 
-    /* width: 80px; */
-
     @media screen and (min-width: 768px) {
       width: 90px;
     }
@@ -81,8 +75,6 @@ export const ListItem = styled.li`
     @media screen and (min-width: 375px) {
       width: 76px;
     }
-
-    /* width: 76px; */
 
     @media screen and (min-width: 768px) {
       width: 80px;
@@ -133,12 +125,9 @@ export const RecomendalDot = styled.span`
 `;
 
 export const DeleteButton = styled.button`
-  /* position: relative; */
   padding: 0;
   background: none;
   border: none;
-  /* top: 4px;
-  right: -8px; */
 
   @media screen and (min-width: 375px) and (max-width: 767px) {
     position: relative;
