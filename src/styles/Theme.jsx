@@ -26,6 +26,7 @@ export const theme = {
     captionColor: 'rgba(239, 237, 232, 0.4)',
     fornCaptionColor: 'rgba(239, 237, 232, 0.5)',
     cardTextColor: 'rgba(239, 237, 232, 0.8)',
+    backgroundColorScroll: 'rgba(239, 237, 232, 0.1)',
   },
 
   radii: {

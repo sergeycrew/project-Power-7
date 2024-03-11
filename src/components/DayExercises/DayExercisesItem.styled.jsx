@@ -24,7 +24,6 @@ export const ListItem = styled.li`
     @media screen and (min-width: 375px) {
       width: 297px;
     }
-    /* width: 297px; */
 
     @media screen and (min-width: 768px) {
       width: 90px;
@@ -40,8 +39,6 @@ export const ListItem = styled.li`
       width: 297px;
     }
 
-    /* width: 297px; */
-
     @media screen and (min-width: 768px) {
       width: 132px;
     }
@@ -55,8 +52,6 @@ export const ListItem = styled.li`
     @media screen and (min-width: 375px) {
       width: 297px;
     }
-
-    /* width: 297px; */
 
     @media screen and (min-width: 768px) {
       width: 128px;
@@ -72,8 +67,6 @@ export const ListItem = styled.li`
       width: 81px;
     }
 
-    /* width: 81px; */
-
     @media screen and (min-width: 768px) {
       width: 84px;
     }
@@ -88,8 +81,6 @@ export const ListItem = styled.li`
       width: 80px;
     }
 
-    /* width: 80px; */
-
     @media screen and (min-width: 768px) {
       width: 78px;
     }
@@ -103,8 +94,6 @@ export const ListItem = styled.li`
     @media screen and (min-width: 375px) {
       width: 76px;
     }
-
-    /* width: 76px; */
 
     @media screen and (min-width: 1440px) {
       width: 82px;
