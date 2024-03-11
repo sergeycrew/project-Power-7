@@ -1,5 +1,5 @@
 import * as s from './ModalTrening.styled';
-import icons from '../../images/sprite.svg';
+import sprite from '../../images/sprite/sprite.svg';
 import { CustomModal } from 'components/CustomModal/CustomModal';
 import { useEffect, useState } from 'react';
 import { CountdownCircleTimer } from 'react-countdown-circle-timer';
@@ -147,15 +147,15 @@ export const ModalTrening = ({
             </CountdownCircleTimer>
           </s.DivTimer>
           <s.Button type="button" onClick={togglePlaying}>
-            <s.Svg>
-              <svg fill="#EFEDE8">
+          
+              <s.Svg >
                 {isPlaying ? (
-                  <use href={icons + '#icon-pause-square'}></use>
+                  <use href={`${sprite}#pause-square`}></use>
                 ) : (
-                  <use href={icons + '#icon-play'}></use>
+                  <use href={`${sprite}#play`}></use>
                 )}
-              </svg>
-            </s.Svg>
+              </s.Svg>
+          
           </s.Button>
 
           <s.BurnedCaloriesDiv>

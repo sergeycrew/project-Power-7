@@ -25,7 +25,15 @@ filter: brightness(50%);
   }
 `
 export const ExerciseCardWrapper = styled.div`
- 
+ height: 206px;
+   @media screen and (min-width: 768px) {
+    width: 224px;
+   
+  }
+  @media screen and (min-width: 1440px) {
+    width: 237px;
+  
+  }
   
 
   

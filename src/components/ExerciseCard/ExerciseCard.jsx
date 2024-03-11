@@ -3,9 +3,36 @@ import * as s from './ExerciseCard.styled';
 import { featchAllExercises } from '../../redux/exercises/operationsExercises';
 import { useDispatch } from 'react-redux';
 import { isCategoryPicked } from '../../redux/exercises/sliceExercises';
+import { useEffect, useState } from 'react';
+import { DiaryLoader } from '../DiaryLoader/DiaryLoader';
 
 export const ExerciseCard = ({ title, filter, photo }) => {
   const dispatch = useDispatch();
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const [textVisible, setTextVisible] = useState(false);
+
+  // useEffect(() => {
+  //   if (photo) {
+  //     const img = new Image();
+  //     img.src = photo;
+  //     img.onload = () => {
+  //       setImageLoaded(true);
+  //       setTimeout(() => {
+  //         setTextVisible(true);
+  //       }, 100); 
+  //     };
+  //   }
+  // }, [photo]);
+  useEffect(() => {
+    if (photo) {
+      const img = new Image();
+      img.src = photo;
+      img.onload = () => {
+        setImageLoaded(true);
+        setTextVisible(true); 
+      };
+    }
+  }, [photo]);
 
   const onClick = (title) => {
     dispatch(featchAllExercises(title));
@@ -15,9 +42,12 @@ export const ExerciseCard = ({ title, filter, photo }) => {
   return (
     <s.ExercisesLi onClick={() => onClick(title)}>
       <s.ExerciseCardWrapper >
-      <s.Image src={photo ? photo : images} alt={title} />
-        <s.ExerciseDescription>
-          <s.ExerciseTitle>
+      {!photo || !imageLoaded ? ( 
+          <DiaryLoader /> 
+        ) : (
+      <s.Image src={photo ? photo : images} alt={title}  />)}
+        <s.ExerciseDescription style={{ visibility: textVisible ? 'visible' : 'hidden' }}>
+          <s.ExerciseTitle >
             {title}
             <s.ExerciseText>{filter}</s.ExerciseText>
           </s.ExerciseTitle>
