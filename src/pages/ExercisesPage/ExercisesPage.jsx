@@ -1,6 +1,5 @@
 import { ExercisesNav } from 'components/ExercisesNav/ExercisesNav';
 
-
 import * as s from './ExercisesPage.styled';
 
 import { useSelector } from 'react-redux';
@@ -12,29 +11,20 @@ import { Container } from 'styles/container';
 import { SecondaryPageBg } from '../../components/SecondaryPageBg/SecondaryPageBg';
 
 const ExercisesPage = () => {
-
-
-
-
-
-
-
-
-const activeCategory = useSelector(selectCategoryPicked)
+  const activeCategory = useSelector(selectCategoryPicked);
   return (
-
-    
-    <SecondaryPageBg >
+    <SecondaryPageBg>
       <Container>
-    
-        <s.ExercisesPageWrap
-        >
-          <ExercisesNav/>
-          {activeCategory ? <ExercisesListByCategory /> : <ExercisesCategories  />}
-      </s.ExercisesPageWrap>
-
+        <s.ExercisesPageWrap>
+          <ExercisesNav />
+          {activeCategory ? (
+            <ExercisesListByCategory />
+          ) : (
+            <ExercisesCategories />
+          )}
+        </s.ExercisesPageWrap>
       </Container>
-        </SecondaryPageBg>
+    </SecondaryPageBg>
   );
 };
 

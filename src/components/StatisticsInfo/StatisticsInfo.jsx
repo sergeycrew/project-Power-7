@@ -1,3 +1,6 @@
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+
 import sprite from 'images/sprite/sprite.svg';
 import {
   InfoContainer,
@@ -15,7 +18,30 @@ import {
   TutorialImgBox,
 } from './StatisticsInfo.styled';
 
+import { selectStatistic } from '../../redux/statistic/statisticSelectors';
+
+import { getStatistic } from '../../redux/statistic/statisticOperation';
+
 export const StatisticsInfo = () => {
+  const dispatch = useDispatch();
+  const statistic = useSelector(selectStatistic);
+
+  useEffect(() => {
+    dispatch(getStatistic());
+  }, [dispatch]);
+
+  const formatNumber = (number) => {
+    if (number < 1000) {
+      return number;
+    } else {
+      return (Math.round(number) / 1000).toFixed(1);
+    }
+  };
+  // if (!statistic) {
+  //   return;
+  // }
+  const { allExercisesVideo, allBurnedCalories } = statistic;
+
   return (
     <InfoContainer>
       <Tutorial>
@@ -26,7 +52,8 @@ export const StatisticsInfo = () => {
         </TutorialImgBox>
 
         <TutorialTextBox>
-          <TutorialNumber>350+</TutorialNumber>
+          {/* <TutorialNumber>350+</TutorialNumber> */}
+          <TutorialNumber>{allExercisesVideo}</TutorialNumber>
           <TutorialText>Video tutorial</TutorialText>
         </TutorialTextBox>
       </Tutorial>
@@ -38,8 +65,9 @@ export const StatisticsInfo = () => {
         </CaloriesImgBox>
 
         <CaloriesTextBox>
-          <CaloriesNumber>500</CaloriesNumber>
-          <CaloriesText>cal</CaloriesText>
+          {/* <CaloriesNumber>500</CaloriesNumber> */}
+          <CaloriesNumber>{formatNumber(allBurnedCalories)}</CaloriesNumber>
+          <CaloriesText>kcal</CaloriesText>
         </CaloriesTextBox>
       </Calories>
     </InfoContainer>

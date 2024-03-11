@@ -16,6 +16,7 @@ import { productListReducer } from './products/productListSlice';
 import { diaryReducer } from './diary/diarySlice';
 import { exercisesReducer } from './exercises/sliceExercises';
 import { categoriesReducer } from './products/categoriesSlice';
+import { statisticReducer } from './statistic/statisticSlice';
 
 
 const authPersistConfig = {
@@ -31,6 +32,7 @@ export const rootReducer = combineReducers({
   products: productListReducer,
   diary: diaryReducer,
   exercises: exercisesReducer,
+  statistic: statisticReducer,
 });
 
 export const store = configureStore({

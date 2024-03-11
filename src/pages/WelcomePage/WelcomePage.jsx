@@ -28,6 +28,12 @@ const WelcomePage = () => {
     refetch();
   }, [dispatch, accessToken, refreshToken]);
 
+  const accentImg = (
+    <welcome.Icon>
+      <use href={`${icon}#slogan-line`}></use>
+    </welcome.Icon>
+  );
+
   return (
     <HomeBackground>
       <welcome.MainSection>
@@ -36,9 +42,8 @@ const WelcomePage = () => {
             <welcome.Title>
               Transforming your body shape with Power Pulse
             </welcome.Title>
-            <welcome.Icon>
-              <use href={`${icon}#slogan-line`}></use>
-            </welcome.Icon>
+            {accentImg}
+
             <welcome.LinkList>
               <welcome.ListItem>
                 <welcome.StyledSignUpLink to="/signUp">

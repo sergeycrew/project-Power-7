@@ -32,6 +32,7 @@ export const MainContainer = styled.div`
 
 export const TitleBox = styled.div`
   width: 335px;
+  /* width: 100%; */
   position: relative;
   display: flex;
   flex-direction: column;
@@ -45,6 +46,7 @@ export const TitleBox = styled.div`
 
 export const Title = styled.h1`
   position: relative;
+  /* width: 335px; */
   z-index: 1;
   color: ${(p) => p.theme.colors.whiteColor};
   font-weight: 500;
@@ -57,6 +59,12 @@ export const Title = styled.h1`
     line-height: 1.11;
   }
 `;
+
+// export const AccentWord = styled.span`
+//   display: inline-block;
+//   position: relative;
+//   z-index: 1;
+// `;
 
 export const Icon = styled.svg`
   width: 98px;
