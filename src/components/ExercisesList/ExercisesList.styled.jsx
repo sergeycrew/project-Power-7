@@ -58,7 +58,8 @@ export const ExercisesList = styled.ul`
 `;
 
 export const ExercisesItem = styled.li`
-  width: 335px;
+  max-width: 335px;
+  width: 100%;
   min-height: 141px;
   border-radius: 12px;
   background-color: rgba(239, 237, 232, 0.05);

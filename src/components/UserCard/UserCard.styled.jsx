@@ -102,3 +102,25 @@ export const SubTitle = styled.p`
   }
   
 `;
+export const ButtonVerify = styled.button`
+  margin: 40px 0px 44px 20px;
+  /* margin-left: 10px ; */
+  padding: 0;
+  border-radius: 12px;
+  background: ${(p) => p.theme.colors.orangeColor};
+  color: #EFEDE8;
+  
+  /* .hidden {
+  display: none;
+} */
+
+  &:disabled{
+    color: rgba(239, 237, 232, 0.6);
+    cursor: default;
+    display: none;
+  }
+  @media screen and (min-width: 768px) {
+    margin: 40px 0px 54px 20px;
+    padding: 16px 50px;
+  }
+`;
