@@ -7,9 +7,6 @@ export const selectError = (state) => state.products.error;
 export const selectCategories = (state) => state.categories.categories;
 export const selectCategoriesIsLoading = (state) => state.categories.isLoading;
 
-export const selectRecommendedOptions = (state) =>
-  state.products.recommendedOptions;
-
 export const selectFilters = (state) => state.productFilter;
 export const selectIsLoggedIn = (state) => state.auth.isLoggedIn;
 export const selectUser = (state) => state.auth.user;
