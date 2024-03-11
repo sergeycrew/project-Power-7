@@ -1,8 +1,8 @@
 // import { CustomModal } from 'components/CustomModal/CustomModal';
-import { MainButton } from 'components/MainButton/MainButton';
+// import { MainButton } from 'components/MainButton/MainButton';
 import thumb_up from '../../images/thumb-up-1x.png';
 import * as s from './ModalExercise.styled';
-import sprite from '../../images/sprite.svg';
+import sprite from '../../images/sprite/sprite.svg';
 
 export const ModalExercise = ({ time, calories, onClick, onClose }) => {
   return (
@@ -33,7 +33,7 @@ export const ModalExercise = ({ time, calories, onClick, onClose }) => {
         <s.CustomLink to={'/diary'}>
           To the diary
           <svg width=" 16px" height="16px">
-            <use href={sprite + '#icon-arrow-right'}></use>
+            <use href={`${sprite}#arrow_gray`}></use>
           </svg>
         </s.CustomLink>
       </s.Wrapper>
