@@ -14,6 +14,7 @@ import { selectExercises, selectLoading } from '../../redux/exercises/selectorsE
 import { ExercisesItem } from '../ExersisesItem/ExercisesItem';
 import { isCategoryPicked } from '../../redux/exercises/sliceExercises';
 import { DiaryLoader } from '../DiaryLoader/DiaryLoader';
+import { Loader } from '../Loader/Loader';
 
 export const ExercisesListByCategory = () => {
   const dispatch = useDispatch();
@@ -46,8 +47,10 @@ export const ExercisesListByCategory = () => {
         </svg>
         Back
       </s.BackBtn>
-      <s.MainExercisesContainer>
-      {isLoading ? (<DiaryLoader/>) :  <s.ExercisesList>
+     
+      <s.MainExercisesContainer> 
+      {isLoading && <Loader/>}
+     <s.ExercisesList>
           {exercises?.map((card) => (
             <ExercisesItem
               key={card._id}
@@ -55,7 +58,7 @@ export const ExercisesListByCategory = () => {
               toogleModal={toogleModal}
             />
           ))}
-        </s.ExercisesList>}
+        </s.ExercisesList>
       
       </s.MainExercisesContainer>
       {isModalOpen && (
