@@ -11,10 +11,13 @@ import {
   REGISTER,
 } from 'redux-persist';
 import { authReducer } from './auth/authSlice';
-import { productFilterReducer } from './products/productFilterSlice';
+import { filterReducer } from './products/filterSlice';
 import { productListReducer } from './products/productListSlice';
 import { diaryReducer } from './diary/diarySlice';
 import { exercisesReducer } from './exercises/sliceExercises';
+import { categoriesReducer } from './products/categoriesSlice';
+import { statisticReducer } from './statistic/statisticSlice';
+
 
 const authPersistConfig = {
   key: 'auth',
@@ -24,10 +27,12 @@ const authPersistConfig = {
 
 export const rootReducer = combineReducers({
   auth: persistReducer(authPersistConfig, authReducer),
-  productFilter: productFilterReducer,
-  productList: productListReducer,
+  categories: categoriesReducer,
+  filter: filterReducer,
+  products: productListReducer,
   diary: diaryReducer,
   exercises: exercisesReducer,
+  statistic: statisticReducer,
 });
 
 export const store = configureStore({

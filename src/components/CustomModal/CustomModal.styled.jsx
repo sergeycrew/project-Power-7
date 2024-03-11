@@ -12,7 +12,7 @@ export const BackDrop = styled.div`
 `;
 
 export const Modal = styled.div`
-  position: absolute;
+  position: relative;
   top: 50%;
   left: 50%;
 
@@ -20,7 +20,7 @@ export const Modal = styled.div`
 
   width: 600px;
   height: 300px;
-  padding: 40px;
+  /* padding: 40px; */
   max-height: 95%;
   overflow-y: auto;
 
@@ -45,10 +45,17 @@ export const Modal = styled.div`
 
 export const CloseModalBtn = styled.button`
   position: absolute;
-  top: 5px;
-  right: 5px;
+  width: 22px;
+  height: 22px;
+  top: 14px;
+  right: 14px;
   background-color: #10100f;
   border: none;
   outline: none;
   cursor: pointer;
+  @media screen and (min-width: 768px) {
+  
+  width: 26px;
+  height: 26px;
+}
 `;

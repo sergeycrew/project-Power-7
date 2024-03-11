@@ -1,27 +1,32 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-// const temptoken =
-//   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWU3YWY1MTQwZmI2ZjdmNDRkOGJmOGYiLCJ0eXBlIjoiYWNjZXNzIiwiaWF0IjoxNzA5NzQyNzkzLCJleHAiOjE3MDk4MjU1OTN9.cPR4Cz8wSDqtjENdqpJxs5AlmbjMRwVqxpezsGA3HuM';
-// const setAuthHeader = (token) => {
-//   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
-// };
-
-// axios.defaults.baseURL = 'https://backend-power-pulse-7.onrender.com/';
+const getRecommended = (type) => {
+  switch (type) {
+    case 'recommended':
+      return true;
+    case 'not recommended':
+      return false;
+    default:
+      return type;
+  }
+};
 const getParams = ({
-  productFilter: { category = '', title = '', type = '' },
+  filter: { category = '', title = '', type = '' },
   auth = '',
 }) => {
   const blood = auth.user.blood;
-  return { category, title, blood, recomended: type };
+  const recommended = getRecommended(type);
+  return { category, title, blood, recommended };
 };
 
 export const fetchProducts = createAsyncThunk(
   'products/All',
   async (_, thunkAPI) => {
     const state = thunkAPI.getState();
+
     const params = getParams(state);
-    console.dir(params);
+    console.log(params);
     try {
       // setAuthHeader(temptoken);
       const response = await axios.get('products/all', { params });
@@ -32,13 +37,11 @@ export const fetchProducts = createAsyncThunk(
   }
 );
 
-export const fetchProductsCategories = createAsyncThunk(
+export const fetchCategories = createAsyncThunk(
   'products/Category',
   async (_, thunkAPI) => {
-    const state = thunkAPI.getState();
     try {
-      // setAuthHeader(temptoken);
-      const response = await axios.get('api/products/Category');
+      const response = await axios.get('products');
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

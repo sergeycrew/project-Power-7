@@ -1,13 +1,16 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchProducts } from '../../redux/products/productOperations';
+import {AddProductToDiary} from '../../components/ModalAddProduct/ModalAddProduct'
+import {
+  fetchProducts,
+  fetchCategories,
+} from '../../redux/products/productOperations';
 import {
   selectIsLoading,
   selectContainsProducts,
 } from '../../redux/products/productsSelectors';
 
-// import { ProductFilters } from '../../components/ProductsFilters/ProductsFilters';
-import { ProductFilters } from '../../components/ProductsFilters/ProductsFiltersFormik';
+import { ProductsFilters } from '../../components/ProductsFilters/ProductsFilters';
 import { ProductList } from '../../components/ProductList/ProductList';
 import { ProductListEmpty } from '../../components/ProductListEmpty/ProductListEmpty';
 
@@ -19,15 +22,17 @@ const ProductsPage = () => {
   const containsProducts = useSelector(selectContainsProducts);
 
   useEffect(() => {
+    dispatch(fetchCategories());
     dispatch(fetchProducts());
   }, [dispatch]);
 
   return (
     <s.Container>
-      <s.Wrapper>
+      <s.WrapperFilters>
         <s.Title>Products</s.Title>
-        <ProductFilters />
-      </s.Wrapper>
+        <ProductsFilters />
+      </s.WrapperFilters>
+       {/* <AddProductToDiary/> */}
       {containsProducts ? <ProductList /> : <ProductListEmpty />}
     </s.Container>
   );

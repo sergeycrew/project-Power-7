@@ -109,12 +109,19 @@
 			<path fill="none" stroke="#E6533C" style="stroke: var(--color1, #E6533C)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.4" d="M12 4h-1.6c-2.24 0-3.36 0-4.216 0.436-0.753 0.383-1.365 0.995-1.748 1.748-0.436 0.856-0.436 1.976-0.436 4.216v11.2c0 2.24 0 3.36 0.436 4.216 0.383 0.753 0.995 1.364 1.748 1.748 0.856 0.436 1.976 0.436 4.216 0.436h1.6"></path>
 			<path fill="none" stroke="#E6533C" style="stroke: var(--color1, #E6533C)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.4" d="M21.333 22.667l6.667-6.667M28 16l-6.667-6.667M28 16h-16"></path>
 		</symbol>
-		<symbol id="pause" viewBox="0 0 32 32">
-			<path fill="none" stroke="#efede8" style="stroke: var(--color2, #efede8)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="4.16" d="M5.332 28.8v-25.6M26.665 28.8v-25.6"></path>
+	<symbol id="pause-square" viewBox="0 0 32 32">
+			<path fill="#e6533c" style="fill: var(--color3, #e6533c); stroke: var(--color3, #e6533c)" stroke="#e6533c" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1" d="M4 10.4c0-2.24 0-3.36 0.436-4.216 0.383-0.753 0.995-1.365 1.748-1.748 0.856-0.436 1.976-0.436 4.216-0.436h11.2c2.24 0 3.36 0 4.216 0.436 0.753 0.383 1.364 0.995 1.748 1.748 0.436 0.856 0.436 1.976 0.436 4.216v11.2c0 2.24 0 3.36-0.436 4.216-0.384 0.753-0.995 1.364-1.748 1.748-0.856 0.436-1.976 0.436-4.216 0.436h-11.2c-2.24 0-3.36 0-4.216-0.436-0.753-0.384-1.365-0.995-1.748-1.748-0.436-0.856-0.436-1.976-0.436-4.216v-11.2z">
+			</path>
+			<path fill="none" stroke="#efede8" style="stroke: var(--color2, #efede8)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.3" d="M12.666 20v-8M19.333 20v-8">
+			</path>
 		</symbol>
-		<symbol id="play" viewBox="0 0 32 32">
-			<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.9714" d="M6.667 4l18.667 12-18.667 12v-24z"></path>
-		</symbol>
+<symbol id="play"  viewBox="0 0 32 32" fill="none">
+<path fill="#e6533c" style="fill: var(--color3, #e6533c); stroke: var(--color3, #e6533c)" stroke="#e6533c" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1" d="M4 10.4c0-2.24 0-3.36 0.436-4.216 0.383-0.753 0.995-1.365 1.748-1.748 0.856-0.436 1.976-0.436 4.216-0.436h11.2c2.24 0 3.36 0 4.216 0.436 0.753 0.383 1.364 0.995 1.748 1.748 0.436 0.856 0.436 1.976 0.436 4.216v11.2c0 2.24 0 3.36-0.436 4.216-0.384 0.753-0.995 1.364-1.748 1.748-0.856 0.436-1.976 0.436-4.216 0.436h-11.2c-2.24 0-3.36 0-4.216-0.436-0.753-0.384-1.365-0.995-1.748-1.748-0.436-0.856-0.436-1.976-0.436-4.216v-11.2z">
+			</path>
+			<path fill="#efede8" style="fill: var(--color2, #efede8); stroke: var(--color2, #efede8)" stroke="#efede8" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.3" d="M11.917 10.75l8.167 5.25-8.167 5.25v-10.5z">
+			</path>
+</symbol>
+	
 		<symbol id="play-2" viewBox="0 0 27 32">
 			<path d="M26.667 16l-26.667 15.396v-30.792l26.667 15.396z"></path>
 		</symbol>
@@ -131,6 +138,9 @@
 		</symbol>
 		<symbol id="success" viewBox="0 0 32 32">
 			<path fill="#3cbf61" style="fill: var(--color5, #3cbf61)" d="M16 31.238c-8.416 0-15.238-6.822-15.238-15.238s6.822-15.238 15.238-15.238 15.238 6.822 15.238 15.238c0 8.416-6.822 15.238-15.238 15.238zM14.238 22.834l10.773-10.775-2.155-2.155-8.619 8.62-4.311-4.311-2.155 2.155 6.466 6.466z"></path>
+		</symbol>
+		<symbol id="not-success" viewBox="0 0 32 32">
+			<path fill="#d80027" style="fill: var(--color1, #d80027)" d="M16 29.334c-7.364 0-13.333-5.969-13.333-13.333s5.969-13.333 13.333-13.333v0c7.364 0 13.333 5.969 13.333 13.333s-5.969 13.333-13.333 13.333v0zM14.46 21.98l9.426-9.428-1.886-1.886-7.54 7.544-3.776-3.772-1.884 1.884 5.656 5.658z"></path>
 		</symbol>
 		<symbol id="trash" viewBox="0 0 32 32">
 			<path fill="none" stroke="#ef8964" style="stroke: var(--color3, #ef8964)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.4" d="M12 4h8M13.333 14v6.667M18.667 14v6.667"></path>

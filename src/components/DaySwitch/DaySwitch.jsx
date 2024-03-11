@@ -23,8 +23,6 @@ export const DaySwitch = () => {
     let currentDateAsDate = new Date(currentDate);
     currentDateAsDate.setHours(0, 0, 0, 0);
     return userCreationDate.getTime() >= currentDateAsDate;
-
-    // return userCreationDate.getTime() >= currentDate - 86400000;
   };
 
   const CustomInput = forwardRef(({ onClick }, ref) => {

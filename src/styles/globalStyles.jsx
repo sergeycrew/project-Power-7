@@ -72,7 +72,7 @@ h6 {
 }
 
 h2{
-        font-family: 'RobotoBold';
+  font-family: 'RobotoBold';
 }
 
 img {

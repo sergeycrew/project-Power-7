@@ -1,13 +1,47 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { CustomModal } from 'components/CustomModal/CustomModal';
+// import { MainButton } from '../MainButton/MainButton';
 
+
+export const CustomModale = styled(CustomModal)`
+
+`;
+
+export const MainButton = styled.button`
+  border-radius: 12px;
+  background: #e6533c;
+  padding: 14px 32px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 24px;
+  margin-bottom: 16px;
+  color: #efede8;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  transition: color 0.2s ;
+
+  @media screen and (min-width: 768px) {
+    padding: 16px 32px;
+  }
+
+  &:hover,
+  &:focus {
+    background: #ef8964;
+    transform: scale(1);
+    color: #efede8;
+  }
+`;
 export const Img = styled.img`
   width: 118px;
   height: 73px;
   margin-bottom: 27px;
+  margin-top: 48px;
 
   @media (min-width: 768px) {
     margin-bottom: 32px;
+    margin-top: 64px;
   }
 `;
 
@@ -59,6 +93,7 @@ export const BtnWrapper = styled.div`
 `;
 
 export const CustomLink = styled(Link)`
+cursor: pointer;
   display: flex;
   justify-content: center;
   align-self: center;
@@ -67,4 +102,12 @@ export const CustomLink = styled(Link)`
   font-size: 14px;
   font-weight: 400;
   line-height: 18px;
+  transition: color 0.2s ;
+  
+  &:hover,
+  &:focus {
+    color: #EFEDE8; 
+    transform: scale(1);
+
+  }
 `;

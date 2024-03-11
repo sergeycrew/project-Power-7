@@ -10,24 +10,29 @@ import { GoogleSignIn } from '../../redux/auth/authOperation';
 //import { useLocation } from 'react-router-dom';
 
 const WelcomePage = () => {
-
   //const params = useLocation();
-   const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const url = window.location;
   const accessToken = new URLSearchParams(url.search).get('accesstoken');
   const refreshToken = new URLSearchParams(url.search).get('refreshtoken');
 
-  console.log(accessToken, refreshToken)
-  
+  console.log(accessToken, refreshToken);
+
   useEffect(() => {
     const refetch = async () => {
       if (accessToken && refreshToken) {
-        dispatch(GoogleSignIn({accessToken,refreshToken}));
+        dispatch(GoogleSignIn({tokens:{ accessToken, refreshToken }}));
       }
     };
 
     refetch();
-  }, [dispatch, accessToken, refreshToken,]);
+  }, [dispatch, accessToken, refreshToken]);
+
+  const accentImg = (
+    <welcome.Icon>
+      <use href={`${icon}#slogan-line`}></use>
+    </welcome.Icon>
+  );
 
   return (
     <HomeBackground>
@@ -37,9 +42,8 @@ const WelcomePage = () => {
             <welcome.Title>
               Transforming your body shape with Power Pulse
             </welcome.Title>
-            <welcome.Icon>
-              <use href={`${icon}#slogan-line`}></use>
-            </welcome.Icon>
+            {accentImg}
+
             <welcome.LinkList>
               <welcome.ListItem>
                 <welcome.StyledSignUpLink to="/signUp">
@@ -52,7 +56,7 @@ const WelcomePage = () => {
                 </welcome.StyledSignInLink>
               </welcome.ListItem>
               <welcome.ListItem>
-                <GoogleSignInButton/>
+                <GoogleSignInButton />
               </welcome.ListItem>
             </welcome.LinkList>
           </welcome.TitleBox>

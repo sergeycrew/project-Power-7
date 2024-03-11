@@ -1,22 +1,22 @@
 import styled from 'styled-components';
 
 export const HeaderBar = styled.header`
+  padding-block: 12px;
+  z-index: 10;
+  top: 12px;
+  left: 50%;
+  @media screen and (max-width: 374px) {
+    max-width: 374px;
+    width: 100%;
+  }
+  @media screen and (min-width: 768px) {
+    padding-block: 19px;
+  }
+`;
+
+export const HeaderWrap = styled.div`
   display: flex;
   align-items: center;
-  padding-inline: 20px;
-  padding: 20px 24px;
-  margin-inline: auto;
-  z-index: 10;
-
-  @media screen and (min-width: 768px) {
-    padding-inline: 32px;
-    padding: 30px 34px;
-  }
-
-  @media screen and (min-width: 1440px) {
-    padding-inline: 90px;
-    padding: 30px 90px;
-  }
 `;
 
 export const LogoWrap = styled.div`

@@ -13,6 +13,8 @@ import {
   SvgIcon,
   TitleWrapper,
   SvgArrow,
+  DetailsMetaWrapper,
+  TextFull,
 } from './ProductsItem.styled';
 import sprite from '../../images/sprite.svg';
 // import { Link } from 'react-router-dom';
@@ -52,9 +54,15 @@ export const ProductCard = ({
       </TitleWrapper>
 
       <MetaWrapper>
-        <Caption>Calories:</Caption> <Text>{calories}</Text>
-        <Caption>Category: </Caption> <Text>{category}</Text>
-        <Caption>Weight:</Caption> <Text>{weight}</Text>
+        <DetailsMetaWrapper>
+          <Caption>Calories:</Caption> <TextFull>{calories}</TextFull>
+        </DetailsMetaWrapper>
+        <DetailsMetaWrapper>
+          <Caption>Category: </Caption> <Text>{category}</Text>
+        </DetailsMetaWrapper>
+        <DetailsMetaWrapper>
+          <Caption>Weight:</Caption> <TextFull>{weight}</TextFull>
+        </DetailsMetaWrapper>
       </MetaWrapper>
     </CardWrapper>
   );

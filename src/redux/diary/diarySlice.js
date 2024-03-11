@@ -42,45 +42,14 @@ const handleDeleteProductFulfilled = (state, action) => {
   state.diaryInfo.isLoadingDiary = false;
   state.diaryInfo.error = null;
 
-  const productIdToDelete = action.payload.data;
-  console.log(
-    'Product._id:',
-    state.diaryInfo.products.map((product) => product._id)
-  );
-  console.log('action.payload.productId:', productIdToDelete);
-
-  const newProductsArr = state.diaryInfo.products.filter(
-    (product) => product._id !== action.payload.data.productId
-  );
-  state.diaryInfo.products = newProductsArr;
-  // const index = state.diaryInfo.products.findIndex(
-  //   (product) => product._id === action.payload.productId
-  // );
-  // state.diaryInfo.products.splice(index, 1);
+  state.diaryInfo.products = action.payload.data.products;
 };
 
 const handleDeleteExerciseFulfilled = (state, action) => {
   state.diaryInfo.isLoadingDiary = false;
   state.diaryInfo.error = null;
 
-  console.log(action.payload.data);
-  console.log(state.diaryInfo.products);
-
-  const exerciseIdToDelete = action.payload.data;
-  console.log(
-    'Exercise._id:',
-    state.diaryInfo.exercise.map((exercise) => exercise._id)
-  );
-  console.log('action.payload.data.exerciseId:', exerciseIdToDelete);
-
-  const newExercisesArr = state.diaryInfo.exercises.filter(
-    (exercise) => exercise._id !== action.payload.data
-  );
-  state.diaryInfo.exercises = newExercisesArr;
-  // const index = state.diaryInfo.exercises.findIndex(
-  //   (exercise) => exercise._id === action.payload.data.exerciseId
-  // );
-  // state.diaryInfo.exercises.splice(index, 1);
+  state.diaryInfo.exercises = action.payload.data.exercises;
 };
 
 export const diarySlice = createSlice({

@@ -2,25 +2,29 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   margin: 0 auto;
-  padding: 0 20px;
+  padding-top: 40px auto;
+  padding-bottom: 40px;
   width: 100%;
-  max-width: 375px;
+
+  @media screen and (min-width: 375px) {
+    padding: 40px 20px;
+    max-width: 375px;
+  }
 
   @media screen and (min-width: 768px) {
-    padding: 0 32px;
+    padding: 72px 32px;
     max-width: 768px;
   }
 
   @media screen and (min-width: 1440px) {
-    padding: 0 96px;
+    padding: 68px 96px;
     max-width: 1440px;
   }
 `;
 
-export const Wrapper = styled.div`
+export const WrapperFilters = styled.div`
   display: flex;
   justify-content: space-between;
-  /* align-items: center; */
   flex-direction: column;
   margin-bottom: ${(p) => p.theme.spacing(10)};
 

@@ -48,15 +48,16 @@ export const DivTimer = styled.div`
 `;
 
 export const Button = styled.button`
+  /* padding: 5px; */
+  border-radius: 5px;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 32px;
-  height: 32px;
   background: #e6533c;
   margin-top: 14px;
   outline: none;
-  border: none;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  
   border-radius: 5px;
 
   @media (min-width: 768px) {
@@ -65,8 +66,8 @@ export const Button = styled.button`
 `;
 
 export const Svg = styled.svg`
-  width: 36px;
-  height: 36px;
+ width: 24px;
+  height: 24px;
 `;
 
 export const Text = styled.p`
@@ -211,7 +212,7 @@ export const ButtonAdd = styled.button`
   gap: 10px;
   border: none;
   border-radius: 12px;
-  background: var(--orange, #e6533c);
+  background: ${(p) => p.theme.colors.orangeColor};
   margin-right: auto;
   margin-top: 24px;
 
@@ -236,7 +237,7 @@ export const ButtonAdd = styled.button`
 
 export const SpanButton = styled.span`
   color: #efede8;
-  font-family: Roboto;
+  font-family: 'Roboto', sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;

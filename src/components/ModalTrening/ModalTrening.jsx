@@ -1,23 +1,5 @@
-import {
-  BurnedCaloriesDiv,
-  BurnedCaloriesNumber,
-  BurnedCaloriesText,
-  Button,
-  ButtonAdd,
-  DivColumn,
-  DivTimer,
-  ImgDiv,
-  ImgGif,
-  ItemDiv,
-  ItemTrening,
-  ListTrening,
-  NameItem,
-  SpanButton,
-  Svg,
-  Text,
-  ValueItem,
-} from './ModalTrening.styled';
-import icons from '../../images/sprite.svg';
+import * as s from './ModalTrening.styled';
+import sprite from '../../images/sprite/sprite.svg';
 import { CustomModal } from 'components/CustomModal/CustomModal';
 import { useEffect, useState } from 'react';
 import { CountdownCircleTimer } from 'react-countdown-circle-timer';
@@ -37,7 +19,7 @@ export const ModalTrening = ({
   const [isPlaying, setIsPlaying] = useState(false);
   const [isSecond, setIsSecond] = useState(0);
   const [isCalories, setIsCalories] = useState(0);
-  const [isRound, setIsRound] = useState(0);
+  // const [isRound, setIsRound] = useState(0);
   const [roundCounter, setRoundCounter] = useState(children);
   const dispatch = useDispatch();
 
@@ -61,7 +43,7 @@ export const ModalTrening = ({
     } else if (isSecond === roundCounter) {
       setIsPlaying(false);
       setRoundCounter((roundCounter) => roundCounter + children);
-      setIsRound((isRound) => isRound + 1);
+      // setIsRound((isRound) => isRound + 1);
     }
 
     return () => clearInterval(interval);
@@ -129,12 +111,12 @@ export const ModalTrening = ({
       }}
     >
       <>
-        <DivColumn>
-          <ImgDiv>
-            <ImgGif src={exerciseInfo.gifUrl} alt="Working out" />
-          </ImgDiv>
-          <DivTimer>
-            <Text>Time</Text>
+        <s.DivColumn>
+          <s.ImgDiv>
+            <s.ImgGif src={exerciseInfo.gifUrl} alt="Working out" />
+          </s.ImgDiv>
+          <s.DivTimer>
+            <s.Text>Time</s.Text>
             <CountdownCircleTimer
               isPlaying={isPlaying}
               duration={children}
@@ -163,47 +145,47 @@ export const ModalTrening = ({
                 );
               }}
             </CountdownCircleTimer>
-          </DivTimer>
-          <Button type="button" onClick={togglePlaying}>
-            <Svg>
-              <svg fill="#EFEDE8">
+          </s.DivTimer>
+          <s.Button type="button" onClick={togglePlaying}>
+          
+              <s.Svg >
                 {isPlaying ? (
-                  <use href={icons + '#icon-pause-square'}></use>
+                  <use href={`${sprite}#pause-square`}></use>
                 ) : (
-                  <use href={icons + '#icon-play'}></use>
+                  <use href={`${sprite}#play`}></use>
                 )}
-              </svg>
-            </Svg>
-          </Button>
+              </s.Svg>
+          
+          </s.Button>
 
-          <BurnedCaloriesDiv>
-            <BurnedCaloriesText>Burned calories:</BurnedCaloriesText>
-            <BurnedCaloriesNumber>
+          <s.BurnedCaloriesDiv>
+            <s.BurnedCaloriesText>Burned calories:</s.BurnedCaloriesText>
+            <s.BurnedCaloriesNumber>
               {Math.round(isCalories * 100) / 100}
-            </BurnedCaloriesNumber>
-          </BurnedCaloriesDiv>
-        </DivColumn>
-        <DivColumn>
-          <ListTrening>
+            </s.BurnedCaloriesNumber>
+          </s.BurnedCaloriesDiv>
+        </s.DivColumn>
+        <s.DivColumn>
+          <s.ListTrening>
             {Object.entries(exerciseInfo)
               .filter(
                 ([key, value]) =>
                   key !== 'gifUrl' && key !== 'burnedCalories' && key !== '_id'
               )
               .map(([key, value]) => (
-                <ItemTrening key={value}>
-                  <ItemDiv>
-                    <NameItem>{key}</NameItem>
-                    <ValueItem>{value}</ValueItem>
-                  </ItemDiv>
-                </ItemTrening>
+                <s.ItemTrening key={value}>
+                  <s.ItemDiv>
+                    <s.NameItem>{key}</s.NameItem>
+                    <s.ValueItem>{value}</s.ValueItem>
+                  </s.ItemDiv>
+                </s.ItemTrening>
               ))}
-          </ListTrening>
+          </s.ListTrening>
 
-          <ButtonAdd onClick={handleSendWorkout}>
-            <SpanButton>Add to diary</SpanButton>
-          </ButtonAdd>
-        </DivColumn>
+          <s.ButtonAdd onClick={handleSendWorkout}>
+            <s.SpanButton>Add to diary</s.SpanButton>
+          </s.ButtonAdd>
+        </s.DivColumn>
       </>
     </CustomModal>
   );
