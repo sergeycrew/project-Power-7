@@ -18,7 +18,7 @@ export const AddProductToDiary = () => {
 
     return (
         <CustomModalWrap
-        modalStyles={{ maxWidth: '479px', width: '100%', height: '280px' }}
+      modalStyles={{ maxWidth: '479px', width: '100%', height: '280px' }}
       modalTabletStyles={{ width: '479', height: '291px' }}
       modalDesktopStyles={{ width: '479px', height: '286px' }}
       //onClose={onClose}

@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import {AddProductToDiary} from '../../components/ModalAddProduct/ModalAddProduct'
 import {
   fetchProducts,
   fetchCategories,
@@ -32,7 +31,6 @@ const ProductsPage = () => {
         <s.Title>Products</s.Title>
         <ProductsFilters />
       </s.WrapperFilters>
-       {/* <AddProductToDiary/> */}
       {containsProducts ? <ProductList /> : <ProductListEmpty />}
     </s.Container>
   );
