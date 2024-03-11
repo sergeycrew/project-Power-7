@@ -71,8 +71,8 @@ export const Svg = styled.svg`
 
 export const Text = styled.p`
   color: rgba(239, 237, 232, 0.4);
-  font-feature-settings: 'clig' off, 'liga' off;
-  font-family: Roboto;
+  /* font-feature-settings: 'clig' off, 'liga' off; */
+  font-family: 'Roboto', sans-serif;
   font-size: 10px;
   font-style: normal;
   font-weight: 400;
@@ -94,7 +94,7 @@ export const List = styled.ul`
 export const NameItem = styled.p`
   color: rgba(239, 237, 232, 0.4);
   font-feature-settings: 'clig' off, 'liga' off;
-  font-family: Roboto;
+  font-family: 'Roboto', sans-serif;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
@@ -107,8 +107,8 @@ export const NameItem = styled.p`
 
 export const ValueItem = styled.p`
   color: #efede8;
-  font-feature-settings: 'clig' off, 'liga' off;
-  font-family: Roboto;
+  /* font-feature-settings: 'clig' off, 'liga' off; */
+  font-family: 'Roboto', sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 700;
@@ -141,7 +141,7 @@ export const ItemDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 4px;
+  gap: 6px;
   align-items: flex-start;
   white-space: nowrap;
   overflow: hidden;
@@ -185,7 +185,7 @@ export const BurnedCaloriesDiv = styled.div`
 
 export const BurnedCaloriesText = styled.p`
   color: rgba(239, 237, 232, 0.3);
-  font-family: Roboto;
+  font-family: 'Roboto', sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -194,7 +194,7 @@ export const BurnedCaloriesText = styled.p`
 
 export const BurnedCaloriesNumber = styled.p`
   color: #e6533c;
-  font-family: Roboto;
+  font-family: "Roboto", sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -211,7 +211,7 @@ export const ButtonAdd = styled.button`
   gap: 10px;
   border: none;
   border-radius: 12px;
-  background: var(--orange, #e6533c);
+  background: ${(p) => p.theme.colors.orangeColor};
   margin-right: auto;
   margin-top: 24px;
 
@@ -236,7 +236,7 @@ export const ButtonAdd = styled.button`
 
 export const SpanButton = styled.span`
   color: #efede8;
-  font-family: Roboto;
+  font-family: 'Roboto', sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;

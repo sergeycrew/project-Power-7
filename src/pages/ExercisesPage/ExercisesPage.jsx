@@ -1,23 +1,40 @@
 import { ExercisesNav } from 'components/ExercisesNav/ExercisesNav';
-import { Outlet, useLocation } from 'react-router-dom';
 
-import { ExercisesPageWrap, Container } from './ExercisesPage.styled';
-import { SecondaryPageBg } from 'components/SecondaryPageBg/SecondaryPageBg';
+
+import * as s from './ExercisesPage.styled';
+
+import { useSelector } from 'react-redux';
+import { ExercisesCategories } from '../../components/ExercisesCategories/ExercisesCategories';
+
+import { ExercisesListByCategory } from '../../components/ExercisesList/ExercisesList';
+import { selectCategoryPicked } from '../../redux/exercises/selectorsExercises';
+import { Container } from 'styles/container';
+import { SecondaryPageBg } from '../../components/SecondaryPageBg/SecondaryPageBg';
 
 const ExercisesPage = () => {
-  const location = useLocation();
 
-  const isFilter = location.pathname.length < 21;
 
+
+
+
+
+
+
+const activeCategory = useSelector(selectCategoryPicked)
   return (
-    <SecondaryPageBg hideFilter={isFilter}>
+
+    
+    <SecondaryPageBg >
       <Container>
-        <ExercisesPageWrap>
-          <ExercisesNav />
-            <Outlet />
-        </ExercisesPageWrap>
+    
+        <s.ExercisesPageWrap
+        >
+          <ExercisesNav/>
+          {activeCategory ? <ExercisesListByCategory /> : <ExercisesCategories  />}
+      </s.ExercisesPageWrap>
+
       </Container>
-    </SecondaryPageBg>
+        </SecondaryPageBg>
   );
 };
 

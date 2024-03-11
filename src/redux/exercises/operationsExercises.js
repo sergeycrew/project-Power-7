@@ -1,5 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 export const fetchExercisesCategory = createAsyncThunk(
   'exercises/fetchExercisesCategory',
@@ -32,6 +33,26 @@ export const featchAllExercises = createAsyncThunk(
         `/exercises/all?${filter}=${querry}&page=${exercises.exercisesPage}&limit=${exercises.exercisesLimit}`
       );
       return res.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+export const featchAddExercises = createAsyncThunk(
+  'exercises/addexercises',
+  async (credentials, thunkAPI) => {
+    try {
+      // credentials = {
+      //   exerciseId,
+      //   calories,
+      //   time,
+      // };
+      toast.success('Workout is successful');
+      await axios.post('diary/addexercises', {
+        ...credentials,
+        date: Date.now(),
+      });
+      return;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }

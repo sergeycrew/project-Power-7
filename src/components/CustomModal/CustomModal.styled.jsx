@@ -12,7 +12,7 @@ export const BackDrop = styled.div`
 `;
 
 export const Modal = styled.div`
-  position: absolute;
+  position: relative;
   top: 50%;
   left: 50%;
 
@@ -20,7 +20,7 @@ export const Modal = styled.div`
 
   width: 600px;
   height: 300px;
-  padding: 40px;
+  /* padding: 40px; */
   max-height: 95%;
   overflow-y: auto;
 
@@ -30,23 +30,24 @@ export const Modal = styled.div`
   text-align: center;
 
   @media screen and (max-width: 374px) {
-    ${props => props.modal320Styles}
+    ${(props) => props.theme.modal320Styles}
   }
 
-  ${props => props.modalStyles}
+  ${props => props.theme.modalStyles}
 
   @media screen and (min-width: 768px) {
-    ${props => props.modalTabletStyles}
+    ${props => props.theme.modalTabletStyles}
   }
   @media screen and (min-width: 1440px) {
-    ${props => props.modalDesktopStyles}
+    ${props => props.theme.modalDesktopStyles}
   }
 `;
 
 export const CloseModalBtn = styled.button`
   position: absolute;
-  top: 5px;
-  right: 5px;
+
+  top: 14px;
+  right: 14px;
   background-color: #10100f;
   border: none;
   outline: none;

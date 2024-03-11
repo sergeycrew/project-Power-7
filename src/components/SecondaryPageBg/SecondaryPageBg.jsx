@@ -1,12 +1,16 @@
-import { BgContainer, BgImage, Wrapper } from './SecondaryPageBg.styled';
+import { useSelector } from 'react-redux';
+import * as s from './SecondaryPageBg.styled';
+import { selectCategoryPicked } from '../../redux/exercises/selectorsExercises';
 
-export const SecondaryPageBg = ({ children, hideFilter }) => {
+export const SecondaryPageBg = ({children}) => {
+  const activeCategory = useSelector(selectCategoryPicked)
   return (
-    <Wrapper>
-      <BgContainer>
-        <BgImage  hideFilter={hideFilter} />
-      </BgContainer>
-      {children}
-    </Wrapper>
+    
+    <s.ExrBackgroundImage theme={{
+      activeCategory
+    }}>
+    {children}
+   
+  </s.ExrBackgroundImage>
   );
 };
