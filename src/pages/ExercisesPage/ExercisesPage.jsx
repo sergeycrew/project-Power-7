@@ -6,13 +6,19 @@ import { useSelector } from 'react-redux';
 import { ExercisesCategories } from '../../components/ExercisesCategories/ExercisesCategories';
 
 import { ExercisesListByCategory } from '../../components/ExercisesList/ExercisesList';
-import { selectCategoryPicked } from '../../redux/exercises/selectorsExercises';
+import { selectCategoryPicked, selectLoading } from '../../redux/exercises/selectorsExercises';
 import { Container } from 'styles/container';
 import { SecondaryPageBg } from '../../components/SecondaryPageBg/SecondaryPageBg';
+import { Loader } from '../../components/Loader/Loader';
+
+
+
 
 const ExercisesPage = () => {
   const activeCategory = useSelector(selectCategoryPicked);
+  // const isLoading = useSelector(selectLoading);
   return (
+    // isLoading ? <Loader/> : 
     <SecondaryPageBg>
       <Container>
         <s.ExercisesPageWrap>

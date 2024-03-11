@@ -10,9 +10,11 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { ModalExercise } from 'components/ModalExercise/ModalExercise';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectExercises } from '../../redux/exercises/selectorsExercises';
+import { selectExercises, selectLoading } from '../../redux/exercises/selectorsExercises';
 import { ExercisesItem } from '../ExersisesItem/ExercisesItem';
 import { isCategoryPicked } from '../../redux/exercises/sliceExercises';
+import { DiaryLoader } from '../DiaryLoader/DiaryLoader';
+import { Loader } from '../Loader/Loader';
 
 export const ExercisesListByCategory = () => {
   const dispatch = useDispatch();
@@ -31,6 +33,7 @@ export const ExercisesListByCategory = () => {
   };
 
   const exercises = useSelector(selectExercises);
+  const isLoading = useSelector(selectLoading)
 
   const onClick = () => {
     dispatch(isCategoryPicked(''));
@@ -44,8 +47,10 @@ export const ExercisesListByCategory = () => {
         </svg>
         Back
       </s.BackBtn>
-      <s.MainExercisesContainer>
-        <s.ExercisesList>
+     
+      <s.MainExercisesContainer> 
+      {isLoading && <Loader/>}
+     <s.ExercisesList>
           {exercises?.map((card) => (
             <ExercisesItem
               key={card._id}
@@ -54,6 +59,7 @@ export const ExercisesListByCategory = () => {
             />
           ))}
         </s.ExercisesList>
+      
       </s.MainExercisesContainer>
       {isModalOpen && (
         <ModalTrening

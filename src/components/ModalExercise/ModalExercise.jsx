@@ -26,7 +26,7 @@ export const ModalExercise = ({ time, calories, onClick, onClose }) => {
           </ul>
         </s.TextWrapper>
         <s.BtnWrapper>
-        <s.MainButton>Next exercise </s.MainButton> 
+        <s.MainButton onClick={onClose}>Next exercise </s.MainButton> 
            
          
         </s.BtnWrapper>

@@ -48,15 +48,16 @@ export const DivTimer = styled.div`
 `;
 
 export const Button = styled.button`
+  /* padding: 5px; */
+  border-radius: 5px;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 32px;
-  height: 32px;
   background: #e6533c;
   margin-top: 14px;
   outline: none;
-  border: none;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  
   border-radius: 5px;
 
   @media (min-width: 768px) {
@@ -65,8 +66,8 @@ export const Button = styled.button`
 `;
 
 export const Svg = styled.svg`
-  width: 36px;
-  height: 36px;
+ width: 24px;
+  height: 24px;
 `;
 
 export const Text = styled.p`

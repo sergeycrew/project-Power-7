@@ -1,4 +1,4 @@
-import { orange } from '@mui/material/colors';
+
 import { InfinitySpin } from 'react-loader-spinner';
 import styled from 'styled-components';
 
