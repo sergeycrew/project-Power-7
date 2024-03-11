@@ -3,6 +3,9 @@ import { List } from './ProductList.styled';
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
 import { selectProducts } from '../../redux/products/productsSelectors';
+
+
+
 import { AddProductToDiary } from '../ModalAddProduct/ModalAddProduct';
 
 export const ProductList = () => {
@@ -14,6 +17,7 @@ export const ProductList = () => {
     setSelectedProduct(product);
   };
   return (
+
     <div>
       <List>
         {products.map((product) => {
@@ -31,5 +35,6 @@ export const ProductList = () => {
         />
       )}
     </div>
+
   );
 };
