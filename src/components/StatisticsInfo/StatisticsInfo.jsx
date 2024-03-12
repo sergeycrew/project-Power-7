@@ -18,13 +18,18 @@ import {
   TutorialImgBox,
 } from './StatisticsInfo.styled';
 
-import { selectStatistic } from '../../redux/statistic/statisticSelectors';
+import {
+  selectStatistic,
+  selectStatisticLoading,
+} from '../../redux/statistic/statisticSelectors';
 
 import { getStatistic } from '../../redux/statistic/statisticOperation';
+import { DiaryLoader } from '../DiaryLoader/DiaryLoader';
 
 export const StatisticsInfo = () => {
   const dispatch = useDispatch();
   const statistic = useSelector(selectStatistic);
+  const isLoading = useSelector(selectStatisticLoading);
 
   useEffect(() => {
     dispatch(getStatistic());
@@ -41,7 +46,13 @@ export const StatisticsInfo = () => {
   const { allExercisesVideo, allBurnedCalories } = statistic;
 
   return (
+   
     <InfoContainer>
+    {isLoading ? 
+      (
+        <DiaryLoader /> 
+      ) : ( 
+        <>
       <Tutorial>
         <TutorialImgBox>
           <TutorialImg>
@@ -66,6 +77,8 @@ export const StatisticsInfo = () => {
           <CaloriesText>kcal</CaloriesText>
         </CaloriesTextBox>
       </Calories>
+      </>)}
     </InfoContainer>
-  );
-};
+  )
+}
+
