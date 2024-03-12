@@ -1,6 +1,7 @@
 import * as notfound from './ErrorPage.styled';
 import { useNavigate } from 'react-router-dom';
 import { Logo } from '../../components/Logo/Logo';
+import {Container} from '../../styles/container'
 
 const ErrorPage = () => {
   const navigate = useNavigate();
