@@ -64,6 +64,7 @@ export const DayProductItem = ({ isFirstItem, value }) => {
       <s.DeleteButton
         type="button"
         onClick={() => dispatch(deleteProduct(objForDelete))}
+        aria-label="delete=button"
       >
         <s.DeleteIcon>
           <use href={`${icons}#trash`}></use>
