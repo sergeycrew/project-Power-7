@@ -28,7 +28,7 @@ export const DaySwitch = () => {
   const CustomInput = forwardRef(({ onClick }, ref) => {
     return (
       <s.DateContainer>
-        <s.Wrapper onClick={onClick} ref={ref}>
+        <s.Wrapper onClick={onClick} ref={ref} aria-label="calendar">
           <p>{format(new Date(currentDate), 'dd/MM/yyyy')}</p>
           <s.CalendarIcon>
             <use href={`${icons}#icon-calendar`}></use>
@@ -43,6 +43,7 @@ export const DaySwitch = () => {
               onClick={() => {
                 dispatch(previousDay());
               }}
+              aria-label="previous-day"
             >
               <s.SwitchButtonIcon>
                 <use href={`${icons}#icon-chevron-left`}></use>
@@ -55,6 +56,7 @@ export const DaySwitch = () => {
               onClick={() => {
                 dispatch(nextDay());
               }}
+              aria-label="next-day"
             >
               <s.SwitchButtonIcon>
                 <use href={`${icons}#icon-chevron-right`}></use>

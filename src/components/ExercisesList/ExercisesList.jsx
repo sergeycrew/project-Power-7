@@ -10,11 +10,14 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { ModalExercise } from 'components/ModalExercise/ModalExercise';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectExercises, selectLoading } from '../../redux/exercises/selectorsExercises';
+import { selectCategoryPicked, selectExercises, selectExercisesLimit, selectExercisesPage, selectLoading, selectMaxPage } from '../../redux/exercises/selectorsExercises';
 import { ExercisesItem } from '../ExersisesItem/ExercisesItem';
-import { isCategoryPicked } from '../../redux/exercises/sliceExercises';
+import { changeExercisesLimit, changeExercisesPage, isCategoryPicked, resetExercisesPage } from '../../redux/exercises/sliceExercises';
 import { DiaryLoader } from '../DiaryLoader/DiaryLoader';
 import { Loader } from '../Loader/Loader';
+import InfiniteScroll from 'react-infinite-scroll-component';
+import { featchAllExercises } from '../../redux/exercises/operationsExercises';
+
 
 export const ExercisesListByCategory = () => {
   const dispatch = useDispatch();
@@ -34,10 +37,25 @@ export const ExercisesListByCategory = () => {
 
   const exercises = useSelector(selectExercises);
   const isLoading = useSelector(selectLoading)
+  // const exercisesLimit = useSelector(selectExercisesLimit)
+  const category = useSelector(selectCategoryPicked)
+  const exrPage = useSelector(selectExercisesPage)
+  const maxPage = useSelector(selectMaxPage)
 
   const onClick = () => {
     dispatch(isCategoryPicked(''));
+    dispatch(resetExercisesPage())
+    // dispatch(changeExercisesLimit(-20))
   };
+
+  // const [items, setItems] = useState(Array.from({ length: 20 }));
+  const fetchMoreData = () => {
+
+      dispatch(changeExercisesPage(1))
+      // dispatch(changeExercisesLimit(20))
+      dispatch(featchAllExercises(category))
+    };
+  
 
   return (
     <div style={{ position: 'relative' }}>
@@ -49,9 +67,12 @@ export const ExercisesListByCategory = () => {
       </s.BackBtn>
      
       <s.MainExercisesContainer> 
-      {isLoading && <Loader/>}
+
+    
      <s.ExercisesList>
+     
           {exercises?.map((card) => (
+            
             <ExercisesItem
               key={card._id}
               card={card}
@@ -59,7 +80,13 @@ export const ExercisesListByCategory = () => {
             />
           ))}
         </s.ExercisesList>
-      
+        
+        {!isLoading && maxPage !== exrPage && (
+        <s.BtnMore type='button' onClick={() => fetchMoreData()}>
+         Load More</s.BtnMore>
+        )}
+    
+   
       </s.MainExercisesContainer>
       {isModalOpen && (
         <ModalTrening

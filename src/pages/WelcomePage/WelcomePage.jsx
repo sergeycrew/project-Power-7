@@ -21,7 +21,7 @@ const WelcomePage = () => {
   useEffect(() => {
     const refetch = async () => {
       if (accessToken && refreshToken) {
-        dispatch(GoogleSignIn({tokens:{ accessToken, refreshToken }}));
+        dispatch(GoogleSignIn({ tokens: { accessToken, refreshToken } }));
       }
     };
 
@@ -40,9 +40,13 @@ const WelcomePage = () => {
         <welcome.MainContainer>
           <welcome.TitleBox>
             <welcome.Title>
-              Transforming your body shape with Power Pulse
+              Transforming your{' '}
+              <welcome.AccentWord>
+                body
+                {accentImg}
+              </welcome.AccentWord>{' '}
+              shape with Power Pulse
             </welcome.Title>
-            {accentImg}
 
             <welcome.LinkList>
               <welcome.ListItem>

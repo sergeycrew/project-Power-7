@@ -16,8 +16,9 @@ import {
   selectMaxCategoriesPage,
   selectPaginCategories,
 } from '../../redux/exercises/selectorsExercises';
-import { changeCategoriesPage } from '../../redux/exercises/sliceExercises';
+import { changeCategoriesLimit, changeCategoriesPage } from '../../redux/exercises/sliceExercises';
 import { WrapperRadio } from '../UserForm/UserForm.styled';
+import { useMediaQuery } from '@mui/system';
 
 export const ExercisesCategories = ({ handleSetExName }) => {
   const dispatch = useDispatch();
@@ -25,6 +26,15 @@ export const ExercisesCategories = ({ handleSetExName }) => {
 
   const maxPage = useSelector(selectMaxCategoriesPage);
   const pagePagin = useSelector(selectCategoriesPage);
+  const isTabletScreen = useMediaQuery('(min-width: 768px) and (max-width: 1440px)');
+
+  useEffect(() => {
+    if (isTabletScreen) {
+      dispatch(changeCategoriesLimit(9));
+    } else {
+      dispatch(changeCategoriesLimit(10));
+    }
+}, [dispatch, isTabletScreen]);
 
   useEffect(()=>{
 dispatch(fetchExercisesCategory())
