@@ -11,6 +11,7 @@ import { ProductList } from '../../components/ProductList/ProductList';
 import { ProductListEmpty } from '../../components/ProductListEmpty/ProductListEmpty';
 
 import * as s from './ProductsPage.styled';
+import { Container } from 'styles/container';
 import { ProductsBackground } from '../../components/ProductsBg/ProductsBg';
 import { changeProductsReset } from '../../redux/products/productListSlice';
 
@@ -21,20 +22,19 @@ const ProductsPage = () => {
   useEffect(() => {
     dispatch(fetchCategories());
     dispatch(changeProductsReset());
-    
+
     dispatch(fetchProducts());
   }, [dispatch]);
 
- 
   return (
     <ProductsBackground>
-      <s.Container>
+      <Container>
         <s.WrapperFilters>
           <s.Title>Products</s.Title>
           <ProductsFilters />
         </s.WrapperFilters>
         {containsProducts ? <ProductList /> : <ProductListEmpty />}
-      </s.Container>
+      </Container>
     </ProductsBackground>
   );
 };
