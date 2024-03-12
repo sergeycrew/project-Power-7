@@ -1,4 +1,4 @@
-import{u as t,V as o,j as i}from"./index-848d9fc8.js";import{b as n,a as r,c as a,d as h}from"./hero-desktop-2x-c0317d06.js";const d="/project-Power-7/assets/hero-mobile-1x-1bba6f7c.png",s="/project-Power-7/assets/hero-mobile-2x-98b0b14f.png",x=t.section`
+import{u as t,V as o,j as i}from"./index-c8227bad.js";import{b as n,a as r,c as a,d as h}from"./hero-desktop-2x-c0317d06.js";const d="/project-Power-7/assets/hero-mobile-1x-1bba6f7c.png",s="/project-Power-7/assets/hero-mobile-2x-98b0b14f.png",x=t.section`
   position: relative;
   height: 100vh;
   max-width: 375px;
