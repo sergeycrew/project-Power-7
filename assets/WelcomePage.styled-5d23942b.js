@@ -1,4 +1,4 @@
-import{u as e,a as p,c as x,r as c,g as l,j as t,s as o,L as a}from"./index-c8227bad.js";import{b as g,a as m,c as w,d as u}from"./hero-desktop-2x-c0317d06.js";const f=e.div`
+import{u as e,a as p,c as x,r as c,g as l,j as t,s as o,d as g,e as m,f as w,h as u,L as a}from"./index-6736019d.js";const f="/project-Power-7/assets/bg-mobile-1x-014f5a2c.png",b="/project-Power-7/assets/bg-mobile-2x-ba0edaad.png",j=e.div`
   /* position: relative; */
   position: absolute;
   margin-left: auto;
@@ -28,7 +28,7 @@ import{u as e,a as p,c as x,r as c,g as l,j as t,s as o,L as a}from"./index-c822
     gap: 39px;
     margin: 0;
   }
-`,b=e.div`
+`,$=e.div`
   position: relative;
   display: flex;
   justify-content: center;
@@ -46,7 +46,7 @@ import{u as e,a as p,c as x,r as c,g as l,j as t,s as o,L as a}from"./index-c822
     padding-left: 23px;
     justify-content: start;
   }
-`,j=e.div`
+`,k=e.div`
   width: 30px;
   height: 30px;
   border-radius: 50%;
@@ -60,7 +60,7 @@ import{u as e,a as p,c as x,r as c,g as l,j as t,s as o,L as a}from"./index-c822
     width: 40px;
     height: 40px;
   }
-`,$=e.svg`
+`,v=e.svg`
   width: 12px;
   height: 12px;
 
@@ -68,7 +68,7 @@ import{u as e,a as p,c as x,r as c,g as l,j as t,s as o,L as a}from"./index-c822
     width: 20px;
     height: 20px;
   }
-`,k=e.div`
+`,y=e.div`
   display: flex;
   flex-direction: column;
   gap: 4px;
@@ -76,7 +76,7 @@ import{u as e,a as p,c as x,r as c,g as l,j as t,s as o,L as a}from"./index-c822
   @media screen and (min-width: 768px) {
     gap: 8px;
   }
-`,v=e.span`
+`,C=e.span`
   font-size: 16px;
   font-weight: 700;
   line-height: 1.12;
@@ -86,7 +86,7 @@ import{u as e,a as p,c as x,r as c,g as l,j as t,s as o,L as a}from"./index-c822
     font-size: 24px;
     line-height: 1;
   }
-`,y=e.p`
+`,z=e.p`
   color: rgba(239, 237, 232, 0.65);
   font-size: 12px;
   font-weight: 400;
@@ -96,7 +96,7 @@ import{u as e,a as p,c as x,r as c,g as l,j as t,s as o,L as a}from"./index-c822
     font-size: 16px;
     line-height: 1.5;
   }
-`,C=e.div`
+`,T=e.div`
   position: relative;
   margin-left: auto;
   margin-right: 0;
@@ -118,7 +118,7 @@ import{u as e,a as p,c as x,r as c,g as l,j as t,s as o,L as a}from"./index-c822
     gap: 8px;
     padding-left: 28px;
   }
-`,z=e.div`
+`,_=e.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -131,7 +131,7 @@ import{u as e,a as p,c as x,r as c,g as l,j as t,s as o,L as a}from"./index-c822
     width: 24px;
     height: 24px;
   }
-`,T=e.svg`
+`,I=e.svg`
   width: 12px;
   height: 12px;
 
@@ -139,7 +139,7 @@ import{u as e,a as p,c as x,r as c,g as l,j as t,s as o,L as a}from"./index-c822
     width: 16px;
     height: 16px;
   }
-`,_=e.div`
+`,L=e.div`
   display: flex;
   gap: 8px;
   align-items: end;
@@ -147,7 +147,7 @@ import{u as e,a as p,c as x,r as c,g as l,j as t,s as o,L as a}from"./index-c822
   @media screen and (min-width: 768px) {
     gap: 11px;
   }
-`,I=e.span`
+`,S=e.span`
   font-size: 24px;
   font-weight: 700;
   line-height: 1;
@@ -159,7 +159,7 @@ import{u as e,a as p,c as x,r as c,g as l,j as t,s as o,L as a}from"./index-c822
     line-height: 1.04;
     letter-spacing: -0.02em;
   }
-`,L=e.p`
+`,B=e.p`
   font-size: 12px;
   font-weight: 700;
   line-height: 1.33;
@@ -169,7 +169,7 @@ import{u as e,a as p,c as x,r as c,g as l,j as t,s as o,L as a}from"./index-c822
     font-size: 16px;
     line-height: 1.5;
   }
-`,S=i=>i.statistic.statistic,B=()=>{const i=p(),s=x(S);c.useEffect(()=>{i(l())},[i]);const d=n=>n<1e3?n:(Math.round(n)/1e3).toFixed(1),{allExercisesVideo:r,allBurnedCalories:h}=s;return t.jsxs(f,{children:[t.jsxs(b,{children:[t.jsx(j,{children:t.jsx($,{children:t.jsx("use",{href:`${o}#icon-Polygon-1`})})}),t.jsxs(k,{children:[t.jsx(v,{children:r}),t.jsx(y,{children:"Video tutorial"})]})]}),t.jsxs(C,{children:[t.jsx(z,{children:t.jsx(T,{children:t.jsx("use",{href:`${o}#icon-running-stick-figure`})})}),t.jsxs(_,{children:[t.jsx(I,{children:d(h)}),t.jsx(L,{children:"kcal"})]})]})]})},E="/project-Power-7/assets/bg-mobile-1x-014f5a2c.png",M="/project-Power-7/assets/bg-mobile-2x-ba0edaad.png",H=e.div`
+`,E=i=>i.statistic.statistic,M=()=>{const i=p(),s=x(E);c.useEffect(()=>{i(l())},[i]);const d=n=>n<1e3?n:(Math.round(n)/1e3).toFixed(1),{allExercisesVideo:r,allBurnedCalories:h}=s;return t.jsxs(j,{children:[t.jsxs($,{children:[t.jsx(k,{children:t.jsx(v,{children:t.jsx("use",{href:`${o}#icon-Polygon-1`})})}),t.jsxs(y,{children:[t.jsx(C,{children:r}),t.jsx(z,{children:"Video tutorial"})]})]}),t.jsxs(T,{children:[t.jsx(_,{children:t.jsx(I,{children:t.jsx("use",{href:`${o}#icon-running-stick-figure`})})}),t.jsxs(L,{children:[t.jsx(S,{children:d(h)}),t.jsx(B,{children:"kcal"})]})]})]})},H=e.div`
   position: relative;
   z-index: 0;
   max-width: 375px;
@@ -178,7 +178,7 @@ import{u as e,a as p,c as x,r as c,g as l,j as t,s as o,L as a}from"./index-c822
   height: 100vh;
   background-repeat: no-repeat;
   background-position: bottom right;
-  background-image: image-set(url(${E}) 1x, url(${M}) 2x);
+  background-image: image-set(url(${f}) 1x, url(${b}) 2x);
 
   @media screen and (max-width: 767px) and (max-height: 812px) {
     height: 812px;
@@ -203,7 +203,7 @@ import{u as e,a as p,c as x,r as c,g as l,j as t,s as o,L as a}from"./index-c822
   @media screen and (min-width: 1440px) and (max-height: 800px) {
     height: 800px;
   }
-`,A=({children:i})=>t.jsxs(H,{children:[i,t.jsx(B,{})]}),V=e.section`
+`,P=({children:i})=>t.jsxs(H,{children:[i,t.jsx(M,{})]}),A=e.section`
   padding-top: 127px;
 
   @media screen and (min-width: 768px) {
@@ -213,7 +213,7 @@ import{u as e,a as p,c as x,r as c,g as l,j as t,s as o,L as a}from"./index-c822
   @media screen and (min-width: 1440px) {
     padding-top: 200px;
   }
-`,D=e.div`
+`,V=e.div`
   max-width: 375px;
   width: 100%;
   margin: 0 auto;
@@ -228,7 +228,7 @@ import{u as e,a as p,c as x,r as c,g as l,j as t,s as o,L as a}from"./index-c822
     max-width: 1440px;
     padding-inline: 95px;
   }
-`,F=e.div`
+`,D=e.div`
   max-width: 335px;
   width: 100%;
   position: relative;
@@ -240,7 +240,7 @@ import{u as e,a as p,c as x,r as c,g as l,j as t,s as o,L as a}from"./index-c822
     max-width: 598px;
     gap: 64px;
   }
-`,G=e.h1`
+`,F=e.h1`
   position: relative;
   z-index: 1;
   color: ${i=>i.theme.colors.whiteColor};
@@ -253,11 +253,11 @@ import{u as e,a as p,c as x,r as c,g as l,j as t,s as o,L as a}from"./index-c822
     font-size: 70px;
     line-height: 1.11;
   }
-`,R=e.span`
+`,G=e.span`
   display: inline-block;
   position: relative;
   z-index: 1;
-`,U=e.svg`
+`,R=e.svg`
   width: 98px;
   height: 35px;
   position: absolute;
@@ -270,7 +270,7 @@ import{u as e,a as p,c as x,r as c,g as l,j as t,s as o,L as a}from"./index-c822
     width: 185px;
     height: 67px;
   }
-`,W=e.ul`
+`,U=e.ul`
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
@@ -279,7 +279,7 @@ import{u as e,a as p,c as x,r as c,g as l,j as t,s as o,L as a}from"./index-c822
     gap: 20px;
     flex-wrap: nowrap;
   }
-`,X=e.li`
+`,W=e.li`
   width: 130px;
   height: 42px;
 
@@ -295,7 +295,7 @@ import{u as e,a as p,c as x,r as c,g as l,j as t,s as o,L as a}from"./index-c822
       width: 190px;
     }
   }
-`,Y=e(a)`
+`,X=e(a)`
   width: 100%;
   height: 100%;
   border-radius: ${i=>i.theme.radii.ld};
@@ -318,7 +318,7 @@ import{u as e,a as p,c as x,r as c,g as l,j as t,s as o,L as a}from"./index-c822
     font-size: 20px;
     line-height: 1.2;
   }
-`,q=e(a)`
+`,Y=e(a)`
   width: 100%;
   height: 100%;
   border-radius: ${i=>i.theme.radii.ld};
@@ -344,4 +344,4 @@ import{u as e,a as p,c as x,r as c,g as l,j as t,s as o,L as a}from"./index-c822
     font-size: 20px;
     line-height: 1.2;
   }
-`;export{R as A,A as H,U as I,W as L,V as M,Y as S,F as T,D as a,G as b,X as c,q as d};
+`;export{G as A,P as H,R as I,U as L,A as M,X as S,D as T,V as a,F as b,W as c,Y as d};
