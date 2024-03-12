@@ -48,3 +48,18 @@ export const List = styled.ul`
     height: 487px;
   }
 `;
+
+export const LiItem = styled.li`
+  width: 100%;
+
+  @media screen and (max-width: 335px) {
+    max-width: 320px;
+  }
+  @media screen and (min-width: 335px) {
+    width: 335px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    width: 405px;
+  }
+`;

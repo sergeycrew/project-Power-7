@@ -48,11 +48,13 @@ export const featchAddExercises = createAsyncThunk(
       //   time,
       // };
       toast.success('Workout is successful');
-      await axios.post('diary/addexercises', {
+      const data = await axios.post('diary/addexercises', {
         ...credentials,
         date: Date.now(),
       });
-      return;
+
+      console.log(data);
+      return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
