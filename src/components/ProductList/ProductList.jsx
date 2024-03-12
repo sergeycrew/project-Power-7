@@ -35,7 +35,7 @@ export const ProductList = () => {
 
     dispatch(fetchProducts())
   };
-
+  // {isLoading && <Loader />}
 
   const toggleModal = (product) => {
     setIsModalOpen((prevState) => !prevState);
@@ -43,7 +43,7 @@ export const ProductList = () => {
   };
   return (
     <div>
-      {isLoading && <Loader />}
+      
       <List>
         {products.map((product) => {
           return (
