@@ -29,6 +29,7 @@ const handleRejected = (state, action) => {
 };
 
 const handleFetchAllFulfilled = (state, { payload }) => {
+  console.log(payload.data);
   state.diaryInfo.isLoadingDiary = false;
   state.diaryInfo.error = null;
   state.diaryInfo.burnedCalories = payload.data.burnedCalories;
@@ -38,18 +39,21 @@ const handleFetchAllFulfilled = (state, { payload }) => {
   state.diaryInfo.exercises = payload.data.exercises;
 };
 
-const handleDeleteProductFulfilled = (state, action) => {
+const handleDeleteProductFulfilled = (state, { payload }) => {
   state.diaryInfo.isLoadingDiary = false;
   state.diaryInfo.error = null;
-
-  state.diaryInfo.products = action.payload.data.products;
+  console.log(payload.data.consumedCalories);
+  state.diaryInfo.consumedCalories = payload.data.consumedCalories;
+  state.diaryInfo.products = payload.data.products;
 };
 
-const handleDeleteExerciseFulfilled = (state, action) => {
+const handleDeleteExerciseFulfilled = (state, { payload }) => {
   state.diaryInfo.isLoadingDiary = false;
   state.diaryInfo.error = null;
 
-  state.diaryInfo.exercises = action.payload.data.exercises;
+  state.diaryInfo.exercises = payload.data.exercises;
+  state.diaryInfo.doneExercisesTime = payload.data.doneExercisesTime;
+  state.diaryInfo.burnedCalories = payload.data.burnedCalories;
 };
 
 export const diarySlice = createSlice({

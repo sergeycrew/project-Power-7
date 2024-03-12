@@ -25,6 +25,7 @@ export const deleteProduct = createAsyncThunk(
         data: product,
       });
       toast.success('A product has been successfully deleted!');
+      console.log(response.data);
       return response.data;
     } catch (error) {
       toast.error('Oops, something went wrong! Try again later.');
@@ -40,11 +41,8 @@ export const deleteExercise = createAsyncThunk(
       const response = await axios.delete(`/diary/deldiaryexercisest`, {
         data: exercise,
       });
-      // await axios.delete(`/diary/deldiaryexercisest`, {
-      //   data: exercise,
-      // });
       toast.success('An exercise has been successfully deleted!');
-      // return exercise.exerciseId;
+      console.log(response.data);
       return response.data;
     } catch (error) {
       toast.error('Oops, something went wrong! Try again later.');

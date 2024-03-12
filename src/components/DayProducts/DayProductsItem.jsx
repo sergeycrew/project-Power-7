@@ -7,7 +7,7 @@ import { selectUser } from '../../redux/auth/authSelectors';
 import { findRecommendedProduct } from '../../Helpers/GlobalOperations';
 import { selectCurrentDate } from '../../redux/diary/diarySelectors';
 
-export const DayProductItem = ({ isFirstItem, value }) => {
+export const DayProductItem = ({ isFirstItem, value, onProductDelete }) => {
   const dispatch = useDispatch();
   let currentTime = useSelector(selectCurrentDate);
   const user = useSelector(selectUser);
@@ -15,12 +15,27 @@ export const DayProductItem = ({ isFirstItem, value }) => {
     value.productId.groupBloodNotAllowed[user.blood]
   );
 
-  const objForDelete = {
-    date: currentTime,
-    productId: value._id,
-    calories: value.calories,
-    amount: value.amount,
+  const handleDeleteProduct = () => {
+    const objForDelete = {
+      date: currentTime,
+      productId: value._id,
+      calories: value.calories,
+      amount: value.amount,
+    };
+
+    dispatch(deleteProduct(objForDelete));
+    // Виклик колбек-функції, щоб сповістити про видалення продукту
+    if (onProductDelete) {
+      onProductDelete();
+    }
   };
+
+  // const objForDelete = {
+  //   date: currentTime,
+  //   productId: value._id,
+  //   calories: value.calories,
+  //   amount: value.amount,
+  // };
 
   return (
     <s.ItemProductWrapper>
@@ -63,7 +78,8 @@ export const DayProductItem = ({ isFirstItem, value }) => {
       </s.ProductsContainer>
       <s.DeleteButton
         type="button"
-        onClick={() => dispatch(deleteProduct(objForDelete))}
+        // onClick={() => dispatch(deleteProduct(objForDelete))}
+        onClick={handleDeleteProduct}
         aria-label="delete=button"
       >
         <s.DeleteIcon>
