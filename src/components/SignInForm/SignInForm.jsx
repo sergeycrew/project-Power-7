@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { Formik } from 'formik';
 import * as Yup from 'yup';
@@ -7,6 +7,10 @@ import * as Yup from 'yup';
 import * as form from './SignInForm.styled';
 import icon from '../../images/sprite/sprite.svg';
 import { logIn } from '../../redux/auth/authOperation';
+import {
+  selectAuthError,
+  selectIsLoading,
+} from '../../redux/auth/authSelectors';
 
 const emailPattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
 
@@ -32,6 +36,8 @@ const defaultValues = {
 };
 
 export const SignInForm = () => {
+  const isLoading = useSelector(selectIsLoading);
+  const error = useSelector(selectAuthError);
   const [isVisiblePassword, setIsVisiblePassword] = useState(false);
 
   const dispatch = useDispatch();
@@ -56,7 +62,7 @@ export const SignInForm = () => {
       })
     );
 
-    resetForm();
+    !isLoading && !error && resetForm();
   };
 
   return (
