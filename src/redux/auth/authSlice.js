@@ -36,10 +36,12 @@ const initialState = {
 
 const handlePending = (state) => {
   state.error = null;
+  state.isLoading = true;
 };
 
 const handleRejected = (state, { payload }) => {
   state.error = payload;
+  state.isLoading = false;
 };
 
 const handleRegisterFulfilled = (state, { payload }) => {
