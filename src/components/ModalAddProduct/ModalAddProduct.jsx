@@ -17,7 +17,7 @@ import {
 } from './ModalAddProduct.styled';
 import {featchAddProducts} from '../../redux/products/productOperations'
 
-export const AddProductToDiary = ({onToggle, exerciseInfo}) => {
+export const AddProductToDiary = ({onToggle, exerciseInfo, setIsSuccessOpen, setDairyProduct}) => {
   console.log(exerciseInfo)
   const dispatch = useDispatch();
   const { weight, calories, _id, title } = exerciseInfo;
@@ -36,12 +36,13 @@ export const AddProductToDiary = ({onToggle, exerciseInfo}) => {
   };
     console.log(diaryProduct)
     dispatch(featchAddProducts(diaryProduct));
+    setDairyProduct({calories: diaryProduct.calories})
+    setIsSuccessOpen();
     onToggle()
 }
 
   return (
     <CustomModalWrap
-
       modalStyles={{ maxWidth: '479px', width: '100%', height: '280px' }}
       modalTabletStyles={{ width: '479', height: '291px' }}
       modalDesktopStyles={{ width: '479px', height: '286px' }}

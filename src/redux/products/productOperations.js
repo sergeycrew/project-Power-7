@@ -60,7 +60,7 @@ export const featchAddProducts = createAsyncThunk(
       //   amount,
       //   calories,
       // };
-      toast.success('Workout is successful');
+      toast.success('Product added');
       await axios.post('diary/addPoduct', {
         ...credentials,
         date: Date.now(),
