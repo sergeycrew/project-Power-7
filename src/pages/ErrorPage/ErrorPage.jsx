@@ -1,12 +1,10 @@
 import * as notfound from './ErrorPage.styled';
-import { Container } from 'styles/container';
 import { useNavigate } from 'react-router-dom';
 import { Logo } from '../../components/Logo/Logo';
 
 const ErrorPage = () => {
   const navigate = useNavigate();
   return (
-    <Container>
       <notfound.ErrorWrap>
         <notfound.ErrorBox>
           <notfound.LogoWrapper>
@@ -25,7 +23,6 @@ const ErrorPage = () => {
             
         </notfound.ErrorBox>
       </notfound.ErrorWrap>
-    </Container>
   );
 };
 
