@@ -1,5 +1,4 @@
 import * as notfound from './ErrorPage.styled';
-import { Container } from 'styles/container';
 import { useNavigate } from 'react-router-dom';
 import { Logo } from '../../components/Logo/Logo';
 

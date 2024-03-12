@@ -14,7 +14,23 @@ background-color: inherit;
   top: -140px;
 
 `;
+export const BtnMore = styled.button`
+  display: flex;
+  color: ${(p) => p.theme.colors.orangeColor};
+  border: none;
+  background-color: transparent;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 10px 20px;
+  margin-top: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.28;
 
+`;
 export const MainExercisesContainer = styled.div`
   &::-webkit-scrollbar {
     width: 8px;
@@ -66,7 +82,7 @@ export const ExercisesItem = styled.li`
   border: 1px solid rgba(239, 237, 232, 0.2);
   padding: 16px 16px;
   @media (min-width: 1440px) {
-    width: 405px;
+    max-width: 405px;
   }
 `;
 

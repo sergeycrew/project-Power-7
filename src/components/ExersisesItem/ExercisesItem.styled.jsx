@@ -10,7 +10,7 @@ export const ExercisesItemWrapper = styled.li`
   border: 1px solid rgba(239, 237, 232, 0.2);
   padding: 16px 16px;
   @media (min-width: 1440px) {
-    width: 405px;
+    max-width: 405px;
   }
 `;
 

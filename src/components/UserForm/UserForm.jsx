@@ -107,43 +107,11 @@ const UserForm = () => {
     setBtnActive(true);
   };
 
-  const sendVerify = () => {
-    startTimer();
-    const email = user.email;
-    console.log({ email });
-    // dispatch(userVerifyAgain({email}));
-    // console.log(state)
-  };
+  
 
-  const [timer, setTimer] = useState(null);
-  const [buttonDisabled, setButtonDisabled] = useState(false);
-  const [remainingTime, setRemainingTime] = useState(null);
-  const [timerExpired, setTimerExpired] = useState(false);
 
-  const startTimer = () => {
-    setButtonDisabled(true);
-    setRemainingTime(60);
-    setTimer(
-      setInterval(() => {
-        setRemainingTime((prevTime) => {
-          if (prevTime === 1) {
-            clearInterval(timer);
-            setButtonDisabled(false);
-            setTimerExpired(true);
-            return null;
-          } else {
-            return prevTime - 1;
-          }
-        });
-      }, 1000)
-    );
-  };
 
-  const verifyBtnContant = buttonDisabled
-    ? `Try again in ${remainingTime}`
-    : timerExpired
-    ? 'Send again'
-    : 'Verify';
+ 
 
   return (
     <Formik
