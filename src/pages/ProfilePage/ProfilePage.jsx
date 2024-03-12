@@ -1,11 +1,10 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import DailyBaseInfo from '../../components/DayliBaseInfo/DayliBaseInfo';
 import UserCard from '../../components/UserCard/UserCard';
 import UserForm from '../../components/UserForm/UserForm';
 import UserNote from '../../components/UserNote/UserNote';
 import * as s from './ProfilePage.styled';
-import { useEffect } from 'react';
-import { currentUser } from '../../redux/auth/authOperation';
+
 import { useAuth } from '../../hooks/useAuth';
 import { selectUser } from '../../redux/auth/authSelectors';
 
@@ -15,15 +14,10 @@ import { Loader } from '../../components/Loader/Loader';
 
 const ProfilePage = () => {
   const user = useSelector(selectUser);
-  const dispatch = useDispatch();
 
-  const { isLoggedIn, isLoading } = useAuth();
 
-  // useEffect(() => {
-  //   if (isLoggedIn) {
-  //     dispatch(currentUser());
-  //   }
-  // }, [dispatch, isLoggedIn]);
+  const { isLoading } = useAuth();
+
 
   return  (
     isLoading ? <Loader/> : 

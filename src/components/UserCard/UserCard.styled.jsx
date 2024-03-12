@@ -98,6 +98,7 @@ export const ButtonVerify = styled.button`
   margin-top: 2px;
   /* color: ${(p) => p.theme.colors.successtColor}; */
   position: relative;
+  
   /* color: ${(p) => p.theme.colors.errorColor}; */
   padding: 0;
   font-family: 'RobotoRegular';

@@ -7,7 +7,7 @@ export const Logo = () => {
   const location = useLocation();
   const isErrorPage = location.pathname === '/404';
   return (
-    <LogoWrapper to={'/'}>
+    <LogoWrapper  aria-label="Logotype Power-Pulse" to={'/'}>
       <LogoIcon
         style={{fill: isErrorPage ? '#efede8' : '#E6533C'}}
       >
@@ -21,6 +21,6 @@ export const Logo = () => {
 };
 
 
-Logo.propTypes = {
-  iconColor: PropTypes.string,
-};
+// Logo.propTypes = {
+//   iconColor: PropTypes.string,
+// };
