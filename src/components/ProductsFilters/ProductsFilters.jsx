@@ -18,6 +18,7 @@ import {
 import { SelectStyles } from './ProductSelectStyles';
 import { selectCategories } from '../../redux/products/productsSelectors';
 import { RecommendedOptions } from '../../redux/products/constants';
+import { changeProductsReset } from '../../redux/products/productListSlice';
 
 export const ProductsFilters = () => {
   const dispatch = useDispatch();
@@ -47,8 +48,10 @@ export const ProductsFilters = () => {
   };
 
   const handleSubmit = (values) => {
-    dispatch(changeFilter(values));
+    dispatch(changeFilter(values));    
+    dispatch(changeProductsReset());
     dispatch(fetchProducts());
+
   };
 
   const handleChange = (typeOptions, valueObj) => {
