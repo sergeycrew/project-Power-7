@@ -132,6 +132,7 @@ export const DetailsMetaWrapper = styled.div`
 `;
 
 export const Caption = styled.p`
+  margin-right: 4px;
   color: ${(p) => p.theme.colors.captionColor};
 `;
 

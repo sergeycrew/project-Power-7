@@ -10,7 +10,7 @@ import {
 } from '../../redux/products/productsSelectors';
 import { AddProductToDiary } from '../ModalAddProduct/ModalAddProduct';
 import { Loader } from '../Loader/Loader';
-import {ModalSuccessProduct} from '../ModalSuccessProduct/ModalSuccessProduct'
+import { ModalSuccessProduct } from '../ModalSuccessProduct/ModalSuccessProduct';
 import { BtnMore } from '../ExercisesList/ExercisesList.styled';
 import { changeProductsPage } from '../../redux/products/productListSlice';
 import { fetchProducts } from '../../redux/products/productOperations';
@@ -26,16 +26,13 @@ export const ProductList = () => {
   const [dairyProduct, setDairyProduct] = useState({
     calories: 0,
   });
-  const maxPage = useSelector(selectMaxPages)
-  const prodPage = useSelector(selectProductsPage)
+  const maxPage = useSelector(selectMaxPages);
+  const prodPage = useSelector(selectProductsPage);
 
   const fetchMoreData = () => {
-
-    dispatch(changeProductsPage(1))
-
-    dispatch(fetchProducts())
+    dispatch(changeProductsPage(1));
+    dispatch(fetchProducts());
   };
-
 
   const toggleModal = (product) => {
     setIsModalOpen((prevState) => !prevState);
@@ -48,18 +45,17 @@ export const ProductList = () => {
         {products.map((product) => {
           return (
             <LiItem key={product._id}>
-              <ProductCard product={product}
-                toggleModal={toggleModal}
-              />
+              <ProductCard product={product} toggleModal={toggleModal} />
             </LiItem>
           );
         })}
         {!isLoading && maxPage !== prodPage && (
-          <BtnMore type='button' onClick={() => fetchMoreData()}>
-           Load More</BtnMore>
-          )}
+          <BtnMore type="button" onClick={() => fetchMoreData()}>
+            Load More
+          </BtnMore>
+        )}
       </List>
-     
+
       {isModalOpen && (
         <AddProductToDiary
           onToggle={toggleModal}
