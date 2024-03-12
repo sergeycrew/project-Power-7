@@ -1,4 +1,4 @@
-import{u as s,L as b,r as j,a as $,j as i,s as n,l as v}from"./index-6736019d.js";import{F as S,a as k,b as C}from"./formik.esm-6499bbb7.js";import{c as z,a as c}from"./index.esm-aab25243.js";import{H as P,M as y,a as I}from"./WelcomePage.styled-5d23942b.js";const F=s.h1`
+import{u as s,L as b,r as j,a as $,j as i,s as n,l as v}from"./index-fe607193.js";import{F as S,a as k,b as C}from"./formik.esm-c20b314d.js";import{c as z,a as c}from"./index.esm-7708be14.js";import{H as P,M as y,a as I}from"./WelcomePage.styled-f9c369de.js";const F=s.h1`
   font-weight: 700;
   font-size: 24px;
   line-height: 1.17;
