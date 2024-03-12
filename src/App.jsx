@@ -89,8 +89,8 @@ function App() {
           {/* <Route path="/profile" element={<ProfilePage />} /> */}
           {/* <Route path="*" element={<ErrorPage />} /> */}
         </Route>
-        <Route path="404" element={<ErrorPage />} />
-        <Route path="*" element={<Navigate to="/404" />} />
+        <Route path="/notfound" element={<ErrorPage />} />
+        <Route path="*" element={<Navigate to="/notfound" />} />
       </Routes>
     </>
   );
