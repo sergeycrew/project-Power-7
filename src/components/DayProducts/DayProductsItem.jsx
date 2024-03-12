@@ -2,12 +2,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import { DayCommonItemTitle } from '../DayCommonItemTitle/DayCommonItemTitle';
 import * as s from './DayProductsItem.styled';
 import icons from '../../images/sprite/sprite.svg';
-import { deleteProduct } from '../../redux/diary/diaryOperations';
+import {
+  deleteProduct,
+  fetchAllDairyInfo,
+} from '../../redux/diary/diaryOperations';
 import { selectUser } from '../../redux/auth/authSelectors';
 import { findRecommendedProduct } from '../../Helpers/GlobalOperations';
 import { selectCurrentDate } from '../../redux/diary/diarySelectors';
 
-export const DayProductItem = ({ isFirstItem, value, onProductDelete }) => {
+export const DayProductItem = ({ isFirstItem, value }) => {
   const dispatch = useDispatch();
   let currentTime = useSelector(selectCurrentDate);
   const user = useSelector(selectUser);
@@ -23,11 +26,15 @@ export const DayProductItem = ({ isFirstItem, value, onProductDelete }) => {
       amount: value.amount,
     };
 
-    dispatch(deleteProduct(objForDelete));
+    // dispatch(deleteProduct(objForDelete));
+    // // Виклик колбек-функції, щоб сповістити про видалення продукту
+    // if (onProductDelete) {
+    //   onProductDelete();
+    // }
+    dispatch(deleteProduct(objForDelete)).then(() => {
+      dispatch(fetchAllDairyInfo({ date: currentTime }));
+    });
     // Виклик колбек-функції, щоб сповістити про видалення продукту
-    if (onProductDelete) {
-      onProductDelete();
-    }
   };
 
   // const objForDelete = {

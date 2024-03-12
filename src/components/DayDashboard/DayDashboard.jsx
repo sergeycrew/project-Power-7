@@ -23,7 +23,7 @@ export const DayDashboard = () => {
   let timeSport = Number(user.timeSport) || 110;
   let dailyCaloriesIntake = Math.round(user.bmr) || 0;
 
-  console.log();
+  console.log(consumedCalories);
   return (
     <s.DashboardWrapper>
       <s.DashboardList>
