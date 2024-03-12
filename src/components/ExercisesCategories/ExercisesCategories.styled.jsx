@@ -10,8 +10,8 @@ export const CategoriesList = styled.ul`
   margin-bottom: 0;
   padding: 0;
   list-style: none;
-  margin-left: auto;
-  margin-right: auto;
+  /* margin-left: auto;
+  margin-right: auto; */
 
   @media screen and (min-width: 768px) {
     grid-template-columns: repeat(auto-fill, minmax(224px, 1fr));

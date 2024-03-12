@@ -10,7 +10,10 @@ export const selectCategory = (state) => state.exercises.categories;
 
 export const selectCategoryPicked = (state) => state.exercises.categoryPicked;
 
+export const selectMaxPage = (state) => state.exercises.maxPage;
+
 export const selectExercisesPage = (state) => state.exercises.exercisesPage;
+export const selectExercisesLimit = (state) => state.exercises.exercisesLimit;
 
 export const selectFilterCategoruExercises = createSelector(
   [selectFilter, selectCategory, selectLoading],
@@ -27,7 +30,7 @@ export const selectPaginCategories = createSelector(
   [selectFilterCategoruExercises, selectCategoriesPage, selectCategoriesLimit],
   (categories, categoriesPage, categoriesLimit) => {
     let newArr = [];
-    if (categories.length > 0) {
+    if (categories?.length > 0) {
       newArr = categories.slice(
         (categoriesPage - 1) * categoriesLimit,
         categoriesPage * categoriesLimit
@@ -41,7 +44,7 @@ export const selectMaxCategoriesPage = createSelector(
   [selectFilterCategoruExercises, selectCategoriesLimit],
   (categories, categoriesLimit) => {
     let arrPage = [];
-    const maxPage = Math.ceil(categories.length / categoriesLimit);
+    const maxPage = Math.ceil(categories?.length / categoriesLimit);
     if (maxPage > 1) {
       for (let index = 1; index <= maxPage; index++) {
         arrPage.push(index);
