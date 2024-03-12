@@ -1,11 +1,11 @@
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, Navigate } from 'react-router-dom';
 import { PrivateRoute } from './Routes/PrivateRoute';
 import { PublicRoute } from './Routes/PublicRoute';
 
 import { lazy, useEffect } from 'react';
 
 import MainLayout from './components/MainLayout/MainLayout';
-//import {HomePage} from './pages/HomePage/HomePageAlt'
+import ErrorPage from './pages/ErrorPage/ErrorPage'
 
 
 const WelcomePage = lazy(() => import('pages/WelcomePage/WelcomePage'));
@@ -15,7 +15,7 @@ const ProfilePage = lazy(() => import('pages/ProfilePage/ProfilePage'));
 const DiaryPage = lazy(() => import('pages/DiaryPage/DiaryPage'));
 const ProductsPage = lazy(() => import('pages/ProductsPage/ProductsPage'));
 const ExercisesPage = lazy(() => import('pages/ExercisesPage/ExercisesPage'));
-const ErrorPage = lazy(() => import('pages/ErrorPage/ErrorPage'));
+//const ErrorPage = lazy(() => import('pages/ErrorPage/ErrorPage'));
 
 
 import { useAuth } from './hooks';
@@ -58,8 +58,10 @@ function App() {
           <Route path="/exercises" element={<PrivateRoute redirectTo="/" component={<ExercisesPage />}/>}/>
           <Route path="/profile" element={<PrivateRoute redirectTo="/" component={<ProfilePage/>}/>} />
           {/* <Route path="/profile" element={<ProfilePage />} /> */}
-          <Route path="*" element={<ErrorPage />} />
-        </Route>
+          {/* <Route path="*" element={<ErrorPage />} /> */}
+          </Route>
+          <Route path="404" element={<ErrorPage />} />
+        <Route path="*" element={<Navigate to="/404" />} />
       </Routes>
     </>
   );
