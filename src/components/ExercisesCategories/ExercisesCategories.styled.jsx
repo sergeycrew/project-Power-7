@@ -15,6 +15,11 @@ export const CategoriesList = styled.ul`
 
   @media screen and (min-width: 768px) {
     grid-template-columns: repeat(auto-fill, minmax(224px, 1fr));
+    min-height: 650px;
+  }
+
+  @media screen and (min-width: 1400px) {
+    min-height: 428px;
   }
 `;
 
