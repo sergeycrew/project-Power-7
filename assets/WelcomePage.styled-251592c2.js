@@ -1,4 +1,4 @@
-import{u as e,a as p,b as x,r as l,g as c,j as t,s as o,f as g,h as m,i as w,k as u,L as a}from"./index-9944b9a4.js";const f="/project-Power-7/assets/bg-mobile-1x-014f5a2c.png",b="/project-Power-7/assets/bg-mobile-2x-ba0edaad.png",j=e.div`
+import{u as e,a as c,b as o,r as l,g,j as t,s as a,f as m,h as w,i as u,k as f,L as s}from"./index-8d494cf9.js";import{D as b}from"./DiaryLoader-ff61704d.js";const j="/project-Power-7/assets/bg-mobile-1x-014f5a2c.png",k="/project-Power-7/assets/bg-mobile-2x-ba0edaad.png",$=e.div`
   /* position: relative; */
   position: absolute;
   margin-left: auto;
@@ -28,7 +28,7 @@ import{u as e,a as p,b as x,r as l,g as c,j as t,s as o,f as g,h as m,i as w,k a
     gap: 39px;
     margin: 0;
   }
-`,k=e.div`
+`,y=e.div`
   position: relative;
   display: flex;
   justify-content: center;
@@ -46,7 +46,7 @@ import{u as e,a as p,b as x,r as l,g as c,j as t,s as o,f as g,h as m,i as w,k a
     padding-left: 23px;
     justify-content: start;
   }
-`,$=e.div`
+`,v=e.div`
   width: 30px;
   height: 30px;
   border-radius: 50%;
@@ -60,7 +60,7 @@ import{u as e,a as p,b as x,r as l,g as c,j as t,s as o,f as g,h as m,i as w,k a
     width: 40px;
     height: 40px;
   }
-`,v=e.svg`
+`,C=e.svg`
   width: 12px;
   height: 12px;
 
@@ -68,7 +68,7 @@ import{u as e,a as p,b as x,r as l,g as c,j as t,s as o,f as g,h as m,i as w,k a
     width: 20px;
     height: 20px;
   }
-`,y=e.div`
+`,z=e.div`
   display: flex;
   flex-direction: column;
   gap: 4px;
@@ -76,7 +76,7 @@ import{u as e,a as p,b as x,r as l,g as c,j as t,s as o,f as g,h as m,i as w,k a
   @media screen and (min-width: 768px) {
     gap: 8px;
   }
-`,C=e.span`
+`,L=e.span`
   font-size: 16px;
   font-weight: 700;
   line-height: 1.12;
@@ -86,7 +86,7 @@ import{u as e,a as p,b as x,r as l,g as c,j as t,s as o,f as g,h as m,i as w,k a
     font-size: 24px;
     line-height: 1;
   }
-`,z=e.p`
+`,T=e.p`
   color: rgba(239, 237, 232, 0.65);
   font-size: 12px;
   font-weight: 400;
@@ -96,7 +96,7 @@ import{u as e,a as p,b as x,r as l,g as c,j as t,s as o,f as g,h as m,i as w,k a
     font-size: 16px;
     line-height: 1.5;
   }
-`,T=e.div`
+`,_=e.div`
   position: relative;
   margin-left: auto;
   margin-right: 0;
@@ -118,7 +118,7 @@ import{u as e,a as p,b as x,r as l,g as c,j as t,s as o,f as g,h as m,i as w,k a
     gap: 8px;
     padding-left: 28px;
   }
-`,_=e.div`
+`,I=e.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -131,7 +131,7 @@ import{u as e,a as p,b as x,r as l,g as c,j as t,s as o,f as g,h as m,i as w,k a
     width: 24px;
     height: 24px;
   }
-`,I=e.svg`
+`,S=e.svg`
   width: 12px;
   height: 12px;
 
@@ -139,7 +139,7 @@ import{u as e,a as p,b as x,r as l,g as c,j as t,s as o,f as g,h as m,i as w,k a
     width: 16px;
     height: 16px;
   }
-`,L=e.div`
+`,B=e.div`
   display: flex;
   gap: 8px;
   align-items: end;
@@ -147,7 +147,7 @@ import{u as e,a as p,b as x,r as l,g as c,j as t,s as o,f as g,h as m,i as w,k a
   @media screen and (min-width: 768px) {
     gap: 11px;
   }
-`,S=e.span`
+`,E=e.span`
   font-size: 24px;
   font-weight: 700;
   line-height: 1;
@@ -159,7 +159,7 @@ import{u as e,a as p,b as x,r as l,g as c,j as t,s as o,f as g,h as m,i as w,k a
     line-height: 1.04;
     letter-spacing: -0.02em;
   }
-`,B=e.p`
+`,M=e.p`
   font-size: 12px;
   font-weight: 700;
   line-height: 1.33;
@@ -169,7 +169,7 @@ import{u as e,a as p,b as x,r as l,g as c,j as t,s as o,f as g,h as m,i as w,k a
     font-size: 16px;
     line-height: 1.5;
   }
-`,E=i=>i.statistic.statistic,M=()=>{const i=p(),s=x(E);l.useEffect(()=>{i(c())},[i]);const r=n=>n<1e3?n:(Math.round(n)/1e3).toFixed(1),{allExercisesVideo:d,allBurnedCalories:h}=s;return t.jsxs(j,{children:[t.jsxs(k,{children:[t.jsx($,{children:t.jsx(v,{children:t.jsx("use",{href:`${o}#icon-Polygon-1`})})}),t.jsxs(y,{children:[t.jsx(C,{children:d}),t.jsx(z,{children:"Video tutorial"})]})]}),t.jsxs(T,{children:[t.jsx(_,{children:t.jsx(I,{children:t.jsx("use",{href:`${o}#icon-running-stick-figure`})})}),t.jsxs(L,{children:[t.jsx(S,{children:r(h)}),t.jsx(B,{children:"kcal"})]})]})]})},H=e.div`
+`,D=i=>i.statistic.statistic,H=i=>i.statistic.isLoading,N=()=>{const i=c(),r=o(D),d=o(H);l.useEffect(()=>{i(g())},[i]);const h=n=>n<1e3?n:(Math.round(n)/1e3).toFixed(1),{allExercisesVideo:p,allBurnedCalories:x}=r;return t.jsx($,{children:d?t.jsx(b,{}):t.jsxs(t.Fragment,{children:[t.jsxs(y,{children:[t.jsx(v,{children:t.jsx(C,{children:t.jsx("use",{href:`${a}#icon-Polygon-1`})})}),t.jsxs(z,{children:[t.jsx(L,{children:p}),t.jsx(T,{children:"Video tutorial"})]})]}),t.jsxs(_,{children:[t.jsx(I,{children:t.jsx(S,{children:t.jsx("use",{href:`${a}#icon-running-stick-figure`})})}),t.jsxs(B,{children:[t.jsx(E,{children:h(x)}),t.jsx(M,{children:"kcal"})]})]})]})})},P=e.div`
   position: relative;
   z-index: 0;
   margin: 0 auto;
@@ -179,21 +179,21 @@ import{u as e,a as p,b as x,r as l,g as c,j as t,s as o,f as g,h as m,i as w,k a
   height: 100vh;
   background-repeat: no-repeat;
   background-position: bottom right;
-  background-image: image-set(url(${f}) 1x, url(${b}) 2x);
+  background-image: image-set(url(${j}) 1x, url(${k}) 2x);
 
   @media screen and (min-width: 768px) {
     max-width: 768px;
     min-height: 1024px;
-    background-image: image-set(url(${g}) 1x, url(${m}) 2x);
+    background-image: image-set(url(${m}) 1x, url(${w}) 2x);
   }
 
   @media screen and (min-width: 1440px) {
     max-width: 1440px;
     min-height: 800px;
     background-size: contain;
-    background-image: image-set(url(${w}) 1x, url(${u}) 2x);
+    background-image: image-set(url(${u}) 1x, url(${f}) 2x);
   }
-`,P=({children:i})=>t.jsxs(H,{children:[i,t.jsx(M,{})]}),A=e.section`
+`,V=({children:i})=>t.jsxs(P,{children:[i,t.jsx(N,{}),")"]}),G=e.section`
   padding-top: 127px;
 
   @media screen and (min-width: 768px) {
@@ -203,7 +203,7 @@ import{u as e,a as p,b as x,r as l,g as c,j as t,s as o,f as g,h as m,i as w,k a
   @media screen and (min-width: 1440px) {
     padding-top: 200px;
   }
-`,V=e.div`
+`,R=e.div`
   max-width: 375px;
   width: 100%;
   margin: 0 auto;
@@ -218,7 +218,7 @@ import{u as e,a as p,b as x,r as l,g as c,j as t,s as o,f as g,h as m,i as w,k a
     max-width: 1440px;
     padding-inline: 95px;
   }
-`,D=e.div`
+`,U=e.div`
   max-width: 335px;
   width: 100%;
   position: relative;
@@ -230,7 +230,7 @@ import{u as e,a as p,b as x,r as l,g as c,j as t,s as o,f as g,h as m,i as w,k a
     max-width: 598px;
     gap: 64px;
   }
-`,F=e.h1`
+`,W=e.h1`
   position: relative;
   z-index: 1;
   color: ${i=>i.theme.colors.whiteColor};
@@ -243,11 +243,11 @@ import{u as e,a as p,b as x,r as l,g as c,j as t,s as o,f as g,h as m,i as w,k a
     font-size: 70px;
     line-height: 1.11;
   }
-`,G=e.span`
+`,X=e.span`
   display: inline-block;
   position: relative;
   z-index: 1;
-`,R=e.svg`
+`,Y=e.svg`
   width: 98px;
   height: 35px;
   position: absolute;
@@ -260,7 +260,7 @@ import{u as e,a as p,b as x,r as l,g as c,j as t,s as o,f as g,h as m,i as w,k a
     width: 185px;
     height: 67px;
   }
-`,U=e.ul`
+`,q=e.ul`
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
@@ -269,7 +269,7 @@ import{u as e,a as p,b as x,r as l,g as c,j as t,s as o,f as g,h as m,i as w,k a
     gap: 20px;
     flex-wrap: nowrap;
   }
-`,W=e.li`
+`,J=e.li`
   width: 130px;
   height: 42px;
 
@@ -285,7 +285,7 @@ import{u as e,a as p,b as x,r as l,g as c,j as t,s as o,f as g,h as m,i as w,k a
       width: 190px;
     }
   }
-`,X=e(a)`
+`,K=e(s)`
   width: 100%;
   height: 100%;
   border-radius: ${i=>i.theme.radii.ld};
@@ -308,7 +308,7 @@ import{u as e,a as p,b as x,r as l,g as c,j as t,s as o,f as g,h as m,i as w,k a
     font-size: 20px;
     line-height: 1.2;
   }
-`,Y=e(a)`
+`,O=e(s)`
   width: 100%;
   height: 100%;
   border-radius: ${i=>i.theme.radii.ld};
@@ -334,4 +334,4 @@ import{u as e,a as p,b as x,r as l,g as c,j as t,s as o,f as g,h as m,i as w,k a
     font-size: 20px;
     line-height: 1.2;
   }
-`;export{G as A,P as H,R as I,U as L,A as M,X as S,D as T,V as a,F as b,W as c,Y as d};
+`;export{X as A,V as H,Y as I,q as L,G as M,K as S,U as T,R as a,W as b,J as c,O as d};
