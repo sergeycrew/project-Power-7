@@ -1,7 +1,7 @@
 import * as s from './UserCard.styled';
 import sprite from '../../images/sprite/sprite.svg';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectUser } from '../../redux/auth/authSelectors';
+import { selectUser, selectUserDataComplete } from '../../redux/auth/authSelectors';
 // import { useState } from 'react';
 import { updateUserAvatar } from '../../redux/auth/authOperation';
 import { useState } from 'react';
@@ -44,7 +44,7 @@ const UserCard = () => {
   const [remainingTime, setRemainingTime] = useState(null);
   const [timerExpired, setTimerExpired] = useState(false);
 
-
+  const userParams = useSelector(selectUserDataComplete);
  
 
   const verifyContent = buttonDisabled
@@ -87,6 +87,7 @@ const UserCard = () => {
 
   const sendVerify = () => {
     startTimer();
+    console.log(userParams) 
     const email = user.email;
 
     // dispatch(userVerifyAgain({email}));
