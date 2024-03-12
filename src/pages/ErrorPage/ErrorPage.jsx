@@ -1,16 +1,16 @@
 import * as notfound from './ErrorPage.styled';
 import { useNavigate } from 'react-router-dom';
 import { Logo } from '../../components/Logo/Logo';
-import {Container} from '../../styles/container'
 
 const ErrorPage = () => {
   const navigate = useNavigate();
   return (
+    <notfound.Wrapper>
       <notfound.ErrorWrap>
-        <notfound.ErrorBox>
-          <notfound.LogoWrapper>
+        <notfound.LogoWrapper>
           <Logo />
-          </notfound.LogoWrapper>
+        </notfound.LogoWrapper>
+        <notfound.ErrorBox>
           <notfound.ErrorTitle>404</notfound.ErrorTitle>
           <notfound.ErrorText>
             Sorry, you have reached a page that we could not find. It seems that
@@ -20,10 +20,10 @@ const ErrorPage = () => {
           </notfound.ErrorText>
           <notfound.ErrorBtn type="button" onClick={() => navigate('/')}>
             Go Home
-            </notfound.ErrorBtn>
-            
+          </notfound.ErrorBtn>
         </notfound.ErrorBox>
       </notfound.ErrorWrap>
+    </notfound.Wrapper>
   );
 };
 
