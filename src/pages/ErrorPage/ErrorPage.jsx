@@ -6,7 +6,6 @@ import {Container} from '../../styles/container'
 const ErrorPage = () => {
   const navigate = useNavigate();
   return (
-    <Container>
       <notfound.ErrorWrap>
         <notfound.ErrorBox>
           <notfound.LogoWrapper>
@@ -25,7 +24,6 @@ const ErrorPage = () => {
             
         </notfound.ErrorBox>
       </notfound.ErrorWrap>
-    </Container>
   );
 };
 
