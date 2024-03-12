@@ -75,11 +75,11 @@ const exercisesSlice = createSlice({
         state.maxPage = action.payload.maxPage;
       })
       .addCase(featchAllExercises.rejected, handleRejected)
-      .addCase(featchAddExercises.pending, (state, action) => {
+      .addCase(featchAddExercises.pending, (state) => {
         state.loading = true;
    
       })
-      .addCase(featchAddExercises.fulfilled, (state, action) => {
+      .addCase(featchAddExercises.fulfilled, (state) => {
         state.loading = false;
         state.error = null;
        

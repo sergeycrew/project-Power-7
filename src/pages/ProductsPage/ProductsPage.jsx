@@ -12,6 +12,7 @@ import { ProductListEmpty } from '../../components/ProductListEmpty/ProductListE
 
 import * as s from './ProductsPage.styled';
 import { ProductsBackground } from '../../components/ProductsBg/ProductsBg';
+import { changeProductsReset } from '../../redux/products/productListSlice';
 
 const ProductsPage = () => {
   const dispatch = useDispatch();
@@ -19,9 +20,12 @@ const ProductsPage = () => {
 
   useEffect(() => {
     dispatch(fetchCategories());
+    dispatch(changeProductsReset());
+    
     dispatch(fetchProducts());
   }, [dispatch]);
 
+ 
   return (
     <ProductsBackground>
       <s.Container>

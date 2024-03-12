@@ -7,6 +7,8 @@ export const selectError = (state) => state.products.error;
 export const selectCategories = (state) => state.categories.categories;
 export const selectCategoriesIsLoading = (state) => state.categories.isLoading;
 export const selectFilters = (state) => state.productFilter;
+export const selectMaxPages = (state) => state.products.maxPage;
+export const selectProductsPage = (state) => state.products.productsPage;
 
 export const selectContainsProducts = createSelector(
   [selectProducts],

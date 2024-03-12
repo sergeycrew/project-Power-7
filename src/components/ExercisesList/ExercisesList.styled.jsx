@@ -18,18 +18,40 @@ export const BtnMore = styled.button`
   display: flex;
   color: ${(p) => p.theme.colors.orangeColor};
   border: none;
+  position: relative;
   background-color: transparent;
+  margin-right: auto;
+  margin-left: auto;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  padding: 10px 20px;
+  /* width: 100%; */
+  width: 136px;
+  /* height: 25px; */
+  /* padding: 10px 20px; */
+  padding: 0;
   margin-top: 20px;
   font-family: 'Roboto', sans-serif;
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
   line-height: 1.28;
+  &&::after {
+    display: block;
+    content: '';
+    position: absolute;
+    /* width: 100%; */
+    width: 95px;
+    height: 4px;
+    left: 20;
+    bottom: -8px;
 
+    background-color: #ef8964;
+    border-radius: 2px;
+
+    @media screen and (min-width: 768px) {
+      bottom: 0px;
+    }
+  }
 `;
 export const MainExercisesContainer = styled.div`
   &::-webkit-scrollbar {

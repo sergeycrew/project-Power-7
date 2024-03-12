@@ -110,7 +110,7 @@ const UserCard = () => {
           name="fileInput"
           style={{ display: 'none' }}
           onChange={handleFileChange}
-          // disabled={!user.verify}
+        //   disabled={!user.verify}
         ></input>
         <s.Label
           htmlFor="fileInput"
@@ -118,9 +118,9 @@ const UserCard = () => {
           // disabled={!user.verify}
         >
           <s.UplSvg
-          // disabled={!user.verify}
+        //   disabled={user.verify}
           >
-            <use href={`${sprite}#icon-add-avatar`}></use>
+            <use href={`${sprite}#add`}></use>
           </s.UplSvg>
         </s.Label>
       </div>

@@ -30,9 +30,12 @@ export const fetchProducts = createAsyncThunk(
   async (_, thunkAPI) => {
     const state = thunkAPI.getState();
     const params = getParams(state);
+    // const { products } = thunkAPI.getState();
     try {
-      const response = await axios.get('products/all', { params });
-      return response.data.data;
+    
+        const response = await axios.get(`products/all?&page=${state.products.productsPage}&limit=${state.products.productsLimit}`, { params });
+      return response.data;
+      
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }

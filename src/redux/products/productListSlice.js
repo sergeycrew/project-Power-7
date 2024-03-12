@@ -7,6 +7,18 @@ export const productSlice = createSlice({
     items: [],
     isLoading: false,
     error: false,
+    productsPage: 1,
+    productsLimit: 30,
+    maxPage: 0,
+  },
+  reducers: {
+    changeProductsPage(state, action) {
+      state.productsPage += action.payload;
+    },
+    changeProductsReset(state, action) {
+      state.productsPage = 1;
+      state.items = [];
+    },
   },
 
   extraReducers: (builder) =>
@@ -17,8 +29,15 @@ export const productSlice = createSlice({
 });
 
 function ListFulfilled(state, { payload }) {
-  state.items = payload;
+  
   state.isLoading = false;
+  state.maxPage = payload.maxPage;
+  if (state.productsPage === 1  && state.items.length == 0) {
+    state.items.push(...payload.data);}
+    if (state.productsPage > 1  ) {
+      state.items.push(...payload.data)
+    }
+
 }
 
 function pending(state) {
@@ -30,3 +49,5 @@ function rejected(state) {
 }
 
 export const productListReducer = productSlice.reducer;
+export const { changeProductsPage, changeProductsReset } = productSlice.actions;
+
