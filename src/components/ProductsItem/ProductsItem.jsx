@@ -20,8 +20,8 @@ import sprite from '../../images/sprite.svg';
 // import { Link } from 'react-router-dom';
 
 export const ProductCard = ({
-  product: { id, title, calories, category, weight, recommended = true },
-  toogleModal,
+  product: { _id, title, calories, category, weight, recommended = true },
+  toggleModal,
 }) => {
   //   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -39,7 +39,7 @@ export const ProductCard = ({
         <Text>
           <b>{recommended ? 'Recommended' : 'Not recommended'}</b>
         </Text>
-        <Button onClick={() => toogleModal({ id, title, calories })}>
+        <Button onClick={() => toggleModal({_id, title, calories, category, weight })}>
           Add
           <SvgArrow>
             <use href={`${sprite}#icon-arrow-right`}></use>

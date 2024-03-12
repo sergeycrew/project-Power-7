@@ -12,7 +12,7 @@ export const ProductList = () => {
   const products = useSelector(selectProducts);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
-  const toogleModal = (product) => {
+  const toggleModal = (product) => {
     setIsModalOpen((prevState) => !prevState);
     setSelectedProduct(product);
   };
@@ -23,14 +23,16 @@ export const ProductList = () => {
         {products.map((product) => {
           return (
             <li key={product._id}>
-              <ProductCard product={product} toogleModal={toogleModal} />
+              <ProductCard product={product}
+                toggleModal={toggleModal}
+              />
             </li>
           );
         })}
       </List>
       {isModalOpen && (
         <AddProductToDiary
-          onToogle={toogleModal}
+          onToggle={toggleModal}
           exerciseInfo={selectedProduct}
         />
       )}

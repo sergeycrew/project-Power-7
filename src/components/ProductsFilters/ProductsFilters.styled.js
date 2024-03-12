@@ -80,6 +80,7 @@ export const SvgX = styled.svg`
 `;
 
 export const BtnSearch = styled.button`
+  transform: translateX(-30px);
   height: 18px;
   position: absolute;
   padding: 0px;
