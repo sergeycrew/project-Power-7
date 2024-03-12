@@ -15,7 +15,7 @@ export const UserBar = () => {
 
   return (
     <UserBarSection >
-      <UserLink to="/profile">
+      <UserLink aria-label="Profile settings" to="/profile">
         <IconSettings>
           <use href={`${sprite}#settings`} />
         </IconSettings>
@@ -23,7 +23,7 @@ export const UserBar = () => {
       </UserLink>
       <UserAvatar>
         {user.avatarUrl ? (
-          <img src={user.avatarUrl} alt="avatar" />
+          <img style={{ borderRadius: '100px', width: '100%', height: '100%' }} src={user.avatarUrl} alt="avatar" />
         ) : (
           <IconUserAvatar>
             <use href={`${sprite}#user`} />

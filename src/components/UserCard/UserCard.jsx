@@ -88,9 +88,9 @@ const UserCard = () => {
   const sendVerify = () => {
     startTimer();
     const email = user.email;
-    console.log({ email });
+
     // dispatch(userVerifyAgain({email}));
-    // console.log(state)
+
   };
 
   const  sucsescontent =  
