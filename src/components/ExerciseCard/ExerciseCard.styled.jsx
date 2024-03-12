@@ -13,6 +13,7 @@ export const Image = styled.img`
   border-radius: 12px;
   height: 206px;
   filter: brightness(50%);
+  width: 335px;
 
   @media screen and (min-width: 768px) {
     width: 224px;

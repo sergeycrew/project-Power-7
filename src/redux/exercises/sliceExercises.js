@@ -6,12 +6,12 @@ import {
 } from './operationsExercises';
 
 const handlePending = (state) => {
-  state.isLoading = true;
-  state.exercises = [];
+  state.loading = true;
+  // state.exercises = [];
 };
 
 const handleRejected = (state, action) => {
-  state.isLoading = false;
+  state.loading = false;
   state.error = action.payload;
 };
 
@@ -25,9 +25,10 @@ const exercisesSlice = createSlice({
     categoryPicked: '',
     categoriesPage: 1,
     categoriesLimit: 10,
-    exercisesLimit: 999,
-    isLoading: false,
+    exercisesLimit: 20,
+    loading: false,
     error: null,
+    maxPage: ''
   },
   reducers: {
     changeFilter(state, action) {
@@ -46,29 +47,40 @@ const exercisesSlice = createSlice({
     changeCategoriesLimit(state, action) {
       state.categoriesLimit = action.payload;
     },
+    // resetExercisesPage(state, action) {
+    //   state.exercisesPage = 1;
+    // },
+
+
+    // changeExercisesLimit(state, action) {
+    //   state.exercisesLimit += action.payload;
+    // },
   },
   extraReducers: (builder) =>
     builder
       .addCase(fetchExercisesCategory.pending, handlePending)
       .addCase(fetchExercisesCategory.fulfilled, (state, action) => {
-        state.isLoading = false;
+        state.loading = false;
         state.error = null;
+        state.exercises = [];
+        state.exercisesPage = 1;
         state.categories = action.payload;
       })
       .addCase(fetchExercisesCategory.rejected, handleRejected)
       .addCase(featchAllExercises.pending, handlePending)
       .addCase(featchAllExercises.fulfilled, (state, action) => {
-        state.isLoading = false;
+        state.loading = false;
         state.error = null;
-        state.exercises = action.payload;
+        state.exercises.push(...action.payload.data) 
+        state.maxPage = action.payload.maxPage;
       })
       .addCase(featchAllExercises.rejected, handleRejected)
       .addCase(featchAddExercises.pending, (state, action) => {
-        state.isLoading = true;
+        state.loading = true;
    
       })
       .addCase(featchAddExercises.fulfilled, (state, action) => {
-        state.isLoading = false;
+        state.loading = false;
         state.error = null;
        
       })
@@ -77,4 +89,4 @@ const exercisesSlice = createSlice({
 
 export const exercisesReducer = exercisesSlice.reducer;
 
-export const { changeFilter, changeExercisesPage, isCategoryPicked, changeCategoriesPage, changeCategoriesLimit } = exercisesSlice.actions;
+export const { changeFilter, changeExercisesPage, isCategoryPicked, changeCategoriesPage, changeCategoriesLimit, resetExercisesPage, changeExercisesLimit } = exercisesSlice.actions;
