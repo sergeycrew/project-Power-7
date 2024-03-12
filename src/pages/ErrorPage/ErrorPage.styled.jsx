@@ -26,13 +26,25 @@ export const ErrorWrap = styled.section`
   }
 `;
 
+export const LogoWrapper = styled.div`
+padding-top: 28px;
+margin-bottom: 223px;
+
+@media screen and (min-width: 768px) {
+    padding-top: 40px;
+    margin-bottom: 260px;
+  }
+  @media screen and (min-width: 1440px) {
+    margin-bottom: 170px;
+  }
+`
+
 export const ErrorBox = styled.div`
   max-width: 240px;
   width: 100%;
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   padding-inline: 20px;
   background-color: ${(p) => p.theme.colors.orangeColor};
   color: ${(p) => p.theme.colors.whiteColor};
