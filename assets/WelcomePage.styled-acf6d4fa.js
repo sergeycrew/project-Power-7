@@ -1,4 +1,4 @@
-import{u as e,a as p,c as x,r as c,g as l,j as t,s as o,d as g,e as m,f as w,h as u,L as a}from"./index-5f30b765.js";const f="/project-Power-7/assets/bg-mobile-1x-014f5a2c.png",b="/project-Power-7/assets/bg-mobile-2x-ba0edaad.png",j=e.div`
+import{u as e,a as p,b as x,r as l,g as c,j as t,s as o,f as g,h as m,i as w,k as u,L as a}from"./index-03c7c0df.js";const f="/project-Power-7/assets/bg-mobile-1x-014f5a2c.png",b="/project-Power-7/assets/bg-mobile-2x-ba0edaad.png",j=e.div`
   /* position: relative; */
   position: absolute;
   margin-left: auto;
@@ -28,7 +28,7 @@ import{u as e,a as p,c as x,r as c,g as l,j as t,s as o,d as g,e as m,f as w,h a
     gap: 39px;
     margin: 0;
   }
-`,$=e.div`
+`,k=e.div`
   position: relative;
   display: flex;
   justify-content: center;
@@ -46,7 +46,7 @@ import{u as e,a as p,c as x,r as c,g as l,j as t,s as o,d as g,e as m,f as w,h a
     padding-left: 23px;
     justify-content: start;
   }
-`,k=e.div`
+`,$=e.div`
   width: 30px;
   height: 30px;
   border-radius: 50%;
@@ -169,39 +169,29 @@ import{u as e,a as p,c as x,r as c,g as l,j as t,s as o,d as g,e as m,f as w,h a
     font-size: 16px;
     line-height: 1.5;
   }
-`,E=i=>i.statistic.statistic,M=()=>{const i=p(),s=x(E);c.useEffect(()=>{i(l())},[i]);const d=n=>n<1e3?n:(Math.round(n)/1e3).toFixed(1),{allExercisesVideo:r,allBurnedCalories:h}=s;return t.jsxs(j,{children:[t.jsxs($,{children:[t.jsx(k,{children:t.jsx(v,{children:t.jsx("use",{href:`${o}#icon-Polygon-1`})})}),t.jsxs(y,{children:[t.jsx(C,{children:r}),t.jsx(z,{children:"Video tutorial"})]})]}),t.jsxs(T,{children:[t.jsx(_,{children:t.jsx(I,{children:t.jsx("use",{href:`${o}#icon-running-stick-figure`})})}),t.jsxs(L,{children:[t.jsx(S,{children:d(h)}),t.jsx(B,{children:"kcal"})]})]})]})},H=e.div`
+`,E=i=>i.statistic.statistic,M=()=>{const i=p(),s=x(E);l.useEffect(()=>{i(c())},[i]);const r=n=>n<1e3?n:(Math.round(n)/1e3).toFixed(1),{allExercisesVideo:d,allBurnedCalories:h}=s;return t.jsxs(j,{children:[t.jsxs(k,{children:[t.jsx($,{children:t.jsx(v,{children:t.jsx("use",{href:`${o}#icon-Polygon-1`})})}),t.jsxs(y,{children:[t.jsx(C,{children:d}),t.jsx(z,{children:"Video tutorial"})]})]}),t.jsxs(T,{children:[t.jsx(_,{children:t.jsx(I,{children:t.jsx("use",{href:`${o}#icon-running-stick-figure`})})}),t.jsxs(L,{children:[t.jsx(S,{children:r(h)}),t.jsx(B,{children:"kcal"})]})]})]})},H=e.div`
   position: relative;
   z-index: 0;
-  max-width: 375px;
   margin: 0 auto;
+  max-width: 375px;
   width: 100%;
+  min-height: 812px;
   height: 100vh;
   background-repeat: no-repeat;
   background-position: bottom right;
   background-image: image-set(url(${f}) 1x, url(${b}) 2x);
 
-  @media screen and (max-width: 767px) and (max-height: 812px) {
-    height: 812px;
-  }
-
   @media screen and (min-width: 768px) {
     max-width: 768px;
+    min-height: 1024px;
     background-image: image-set(url(${g}) 1x, url(${m}) 2x);
-  }
-
-  @media screen and (min-width: 768px) and (max-height: 1024px) {
-    height: 1024px;
   }
 
   @media screen and (min-width: 1440px) {
     max-width: 1440px;
-    height: 100vh;
+    min-height: 800px;
     background-size: contain;
     background-image: image-set(url(${w}) 1x, url(${u}) 2x);
-  }
-
-  @media screen and (min-width: 1440px) and (max-height: 800px) {
-    height: 800px;
   }
 `,P=({children:i})=>t.jsxs(H,{children:[i,t.jsx(M,{})]}),A=e.section`
   padding-top: 127px;
