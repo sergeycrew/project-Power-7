@@ -56,7 +56,6 @@ dispatch(fetchExercisesCategory())
           />
         ))}
       </s.CategoriesList>
-      )
       <s.Pagination>
         {maxPage?.map((page) => (
           <WrapperRadio key={page}>
