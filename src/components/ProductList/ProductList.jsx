@@ -1,15 +1,17 @@
 import { ProductCard } from '../ProductsItem/ProductsItem';
-import { List } from './ProductList.styled';
+import { LiItem, List } from './ProductList.styled';
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
-import { selectProducts } from '../../redux/products/productsSelectors';
-
-
-
+import {
+  selectProducts,
+  selectIsLoading,
+} from '../../redux/products/productsSelectors';
 import { AddProductToDiary } from '../ModalAddProduct/ModalAddProduct';
+import { Loader } from '../Loader/Loader';
 
 export const ProductList = () => {
   const products = useSelector(selectProducts);
+  const isLoading = useSelector(selectIsLoading);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const toggleModal = (product) => {
@@ -17,16 +19,16 @@ export const ProductList = () => {
     setSelectedProduct(product);
   };
   return (
-
     <div>
+      {isLoading && <Loader />}
       <List>
         {products.map((product) => {
           return (
-            <li key={product._id}>
+            <LiItem key={product._id}>
               <ProductCard product={product}
                 toggleModal={toggleModal}
               />
-            </li>
+            </LiItem>
           );
         })}
       </List>
@@ -37,6 +39,5 @@ export const ProductList = () => {
         />
       )}
     </div>
-
   );
 };

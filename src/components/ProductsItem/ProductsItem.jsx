@@ -1,5 +1,3 @@
-// import { useState } from 'react';
-// import { TopicModal } from 'components/TopicModal';
 import {
   Title,
   CardWrapper,
@@ -17,20 +15,11 @@ import {
   TextFull,
 } from './ProductsItem.styled';
 import sprite from '../../images/sprite.svg';
-// import { Link } from 'react-router-dom';
 
 export const ProductCard = ({
   product: { _id, title, calories, category, weight, recommended = true },
   toggleModal,
 }) => {
-  //   const [isModalOpen, setIsModalOpen] = useState(false);
-
-  //   const openModal = () => setIsModalOpen(true);
-
-  //   const closeModal = () => setIsModalOpen(false);
-
-  //   const addCard = () => onAdd(id);
-
   return (
     <CardWrapper>
       <TopInfoWrapper>
