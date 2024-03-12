@@ -31,22 +31,21 @@ export const MainContainer = styled.div`
 `;
 
 export const TitleBox = styled.div`
-  width: 335px;
-  /* width: 100%; */
+  max-width: 335px;
+  width: 100%;
   position: relative;
   display: flex;
   flex-direction: column;
   gap: ${(p) => p.theme.spacing(10)};
 
   @media screen and (min-width: 768px) {
-    width: 598px;
+    max-width: 598px;
     gap: 64px;
   }
 `;
 
 export const Title = styled.h1`
   position: relative;
-  /* width: 335px; */
   z-index: 1;
   color: ${(p) => p.theme.colors.whiteColor};
   font-weight: 500;
@@ -60,29 +59,24 @@ export const Title = styled.h1`
   }
 `;
 
-// export const AccentWord = styled.span`
-//   display: inline-block;
-//   position: relative;
-//   z-index: 1;
-// `;
+export const AccentWord = styled.span`
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+`;
 
 export const Icon = styled.svg`
   width: 98px;
   height: 35px;
   position: absolute;
-  z-index: 0;
-  top: 43px;
-  left: -9px;
+  z-index: -10;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
 
   @media screen and (min-width: 768px) {
     width: 185px;
     height: 67px;
-    top: 84px;
-    left: -16px;
-  }
-
-  @media screen and (min-width: 1440px) {
-    left: -16px;
   }
 `;
 

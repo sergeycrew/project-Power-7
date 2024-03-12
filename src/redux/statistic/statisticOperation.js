@@ -6,7 +6,7 @@ export const getStatistic = createAsyncThunk(
   async (_, thunkApi) => {
     try {
       const { data } = await axios.get('statistics');
-      console.log(data);
+      // console.log(data);
       return data;
     } catch (error) {
       return thunkApi.rejectWithValue(error.message);

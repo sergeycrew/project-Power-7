@@ -37,9 +37,7 @@ export const StatisticsInfo = () => {
       return (Math.round(number) / 1000).toFixed(1);
     }
   };
-  // if (!statistic) {
-  //   return;
-  // }
+
   const { allExercisesVideo, allBurnedCalories } = statistic;
 
   return (
@@ -52,7 +50,6 @@ export const StatisticsInfo = () => {
         </TutorialImgBox>
 
         <TutorialTextBox>
-          {/* <TutorialNumber>350+</TutorialNumber> */}
           <TutorialNumber>{allExercisesVideo}</TutorialNumber>
           <TutorialText>Video tutorial</TutorialText>
         </TutorialTextBox>
@@ -65,7 +62,6 @@ export const StatisticsInfo = () => {
         </CaloriesImgBox>
 
         <CaloriesTextBox>
-          {/* <CaloriesNumber>500</CaloriesNumber> */}
           <CaloriesNumber>{formatNumber(allBurnedCalories)}</CaloriesNumber>
           <CaloriesText>kcal</CaloriesText>
         </CaloriesTextBox>

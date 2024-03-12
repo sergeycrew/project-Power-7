@@ -20,7 +20,7 @@ export const HomeBackgroundImage = styled.div`
   background-position: bottom right;
   background-image: image-set(url(${bg_mob_1x}) 1x, url(${bg_mob_2x}) 2x);
 
-  @media screen and (min-width: 375px) and (max-height: 812px) {
+  @media screen and (max-width: 767px) and (max-height: 812px) {
     height: 812px;
   }
 
