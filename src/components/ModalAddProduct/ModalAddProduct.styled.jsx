@@ -68,9 +68,9 @@ export const InputGrams = styled.input`
   text-align: left;
   padding: 8px 14px 8px 14px;
   border-radius: 12px;
-  border: 1px solid ${(p) => p.theme.colors.grayInput};
+  border: 1px solid ${(p) => p.theme.colors.orangeColor};
   background: rgba(0, 0, 0, 0.5);
-  color: ${(p) => p.theme.colors.orangeColor};
+  color: ${(p) => p.theme.colors.whiteColor};
   font-size: 14px;
   line-height: calc(18 / 14);
 
@@ -108,6 +108,8 @@ export const PCalories = styled.p`
 `;
 
 export const ValueCalories = styled.span`
+display: block;
+color: ${(p) => p.theme.colors.whiteColor};
   font-size: 12px;
   line-height: calc(18 / 12);
 `;
@@ -124,7 +126,6 @@ export const BtnWrapper = styled.div`
 
 export const CaloriesWrapper = styled.div`
   display: flex;
-  justify-content: space-between;
   margin-top: 20px;
   margin-bottom: 20px;
 
