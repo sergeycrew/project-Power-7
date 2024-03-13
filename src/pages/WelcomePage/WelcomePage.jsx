@@ -5,7 +5,7 @@ import { GoogleSignInButton } from '../../components/GoogleSignIn/GoogleSignIn';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 //import { refreshUser } from '../../redux/auth/authOperation';
-import { GoogleSignIn, Verify } from '../../redux/auth/authOperation';
+import { GoogleSignIn } from '../../redux/auth/authOperation';
 
 //import { useLocation } from 'react-router-dom';
 

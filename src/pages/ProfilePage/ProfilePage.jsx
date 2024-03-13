@@ -11,15 +11,14 @@ import { selectUser } from '../../redux/auth/authSelectors';
 import { Container } from 'styles/container';
 import { Logout } from '../../components/Logout/Logout';
 import { Loader } from '../../components/Loader/Loader';
-import { useEffect } from 'react';
-import { Verify } from '../../redux/auth/authOperation';
+
 
 const ProfilePage = () => {
   const user = useSelector(selectUser);
-  const dispatch = useDispatch();
+
   const { isLoading } = useAuth();
-  const url = window.location;
-  const verifyToken = new URLSearchParams(url.search).get('verificationToken');
+
+
 
 
 

@@ -107,7 +107,7 @@ const UserCard = () => {
         ></input>
         <s.Label
           htmlFor="fileInput"
-          style={{ display: user.verify ? 'none' : 'inline-block' }} ///////////////////////
+          style={{ display: !user.verify ? 'none' : 'inline-block' }} ///////////////////////
           // disabled={!user.verify}
         >
           <s.UplSvg
