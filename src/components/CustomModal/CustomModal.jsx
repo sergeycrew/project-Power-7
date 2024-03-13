@@ -3,7 +3,7 @@ import { createPortal } from 'react-dom';
 
 import { BackDrop, Modal, CloseModalBtn } from './CustomModal.styled';
 
-import icons from '../../images/sprite.svg';
+import icons from '../../images/sprite/sprite.svg';
 
 const modalRoot = document.querySelector('#modal-root');
 
@@ -56,7 +56,7 @@ export const CustomModal = ({
       >
         <CloseModalBtn type="button" onClick={onClose}>
           <svg width="20" height="20" stroke="white">
-          <use href={icons + '#icon-x'} />
+          <use href={icons + '#x'} />
           </svg>
         </CloseModalBtn>
         {children}

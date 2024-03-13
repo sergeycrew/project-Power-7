@@ -1,7 +1,7 @@
 import * as s from './ExercisesList.styled';
 
 import { useState } from 'react';
-import icons from '../../images/sprite.svg';
+import icons from '../../images/sprite/sprite.svg';
 
 import { useLocation, useParams } from 'react-router-dom';
 
@@ -61,7 +61,7 @@ export const ExercisesListByCategory = () => {
     <div style={{ position: 'relative' }}>
       <s.BackBtn onClick={() => onClick()}>
         <svg width="20" height="20" stroke="rgb(239, 237, 232, 0.4)">
-          <use href={icons + '#icon-arrow-left'} />
+          <use href={`${icons}#arrow_gray`} />
         </svg>
         Back
       </s.BackBtn>
