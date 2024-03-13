@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const InfoContainer = styled.div`
-  /* position: relative; */
   position: absolute;
   margin-left: auto;
   margin-right: 0;
@@ -116,7 +115,7 @@ export const Calories = styled.div`
   position: relative;
   margin-left: auto;
   margin-right: 0;
-  padding-left: 18px;
+  padding-left: 16px;
   display: flex;
   justify-content: center;
   align-items: start;
@@ -132,7 +131,7 @@ export const Calories = styled.div`
     width: 180px;
     height: 110px;
     gap: 8px;
-    padding-left: 28px;
+    padding-left: 22px;
   }
 `;
 
@@ -179,7 +178,7 @@ export const CaloriesNumber = styled.span`
   color: ${(p) => p.theme.colors.whiteColor};
 
   @media screen and (min-width: 768px) {
-    font-size: 48px;
+    font-size: 40px;
     line-height: 1.04;
     letter-spacing: -0.02em;
   }
