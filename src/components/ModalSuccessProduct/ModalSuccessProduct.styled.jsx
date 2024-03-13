@@ -34,8 +34,8 @@ export const MainButton = styled.button`
   }
 `;
 export const Img = styled.img`
-  width: 118px;
-  height: 73px;
+  width: 123px;
+  height: 97px;
   margin-bottom: 27px;
   margin-top: 48px;
 

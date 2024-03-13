@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux';
 
 export const Logo = () => {
   const location = useLocation();
-  const isErrorPage = location.pathname === '/404';
+  const isErrorPage = location.pathname === '/notfound';
   const userParams = useSelector(selectUserDataComplete);
   const redirectLink = userParams ? '/diary' : '/profile';
 

@@ -1,4 +1,4 @@
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import DailyBaseInfo from '../../components/DayliBaseInfo/DayliBaseInfo';
 import UserCard from '../../components/UserCard/UserCard';
 import UserForm from '../../components/UserForm/UserForm';
@@ -11,12 +11,16 @@ import { selectUser } from '../../redux/auth/authSelectors';
 import { Container } from 'styles/container';
 import { Logout } from '../../components/Logout/Logout';
 import { Loader } from '../../components/Loader/Loader';
+import { useEffect } from 'react';
+import { Verify } from '../../redux/auth/authOperation';
 
 const ProfilePage = () => {
   const user = useSelector(selectUser);
-
-
+  const dispatch = useDispatch();
   const { isLoading } = useAuth();
+  const url = window.location;
+  const verifyToken = new URLSearchParams(url.search).get('verificationToken');
+
 
 
   return  (

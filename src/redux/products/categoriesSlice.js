@@ -6,6 +6,12 @@ export const categoriesSlice = createSlice({
   initialState: {
     categories: [],
     isLoading: false,
+    img: '',
+  },
+  reducers: {
+    addImg(state, action){
+      state.img = action.payload
+    }
   },
 
   extraReducers: (builder) =>
@@ -33,3 +39,4 @@ function rejected(state) {
 }
 
 export const categoriesReducer = categoriesSlice.reducer;
+export const { addImg } = categoriesSlice.actions;

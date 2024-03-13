@@ -44,8 +44,8 @@ export const WrapperModalWindowUserMenu = styled.div`
 
 export const BtnCloseWindow = styled.button`
   position: absolute;
-  top: 6px;
-  right: 3px;
+  top: 16px;
+  right: 17px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -58,15 +58,17 @@ export const BtnCloseWindow = styled.button`
   @media screen and (min-width: 768px) {
     width: 32px;
     height: 32px;
+     top: 23px;
+  right: 29px;
   }
 `;
 export const IconCloseWindow = styled.svg`
-  width: 12px;
-  height: 12px;
+  width: 24px;
+  height: 24px;
   fill: rgba(239, 237, 232, 1);
   @media screen and (min-width: 768px) {
-    width: 16px;
-    height: 16px;
+    width: 32px;
+    height: 32px;
   }
 `;
 export const UserNavModalWindow = styled.nav`

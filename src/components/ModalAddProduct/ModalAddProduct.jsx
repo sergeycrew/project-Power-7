@@ -1,5 +1,5 @@
 import {  useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   InputName,
   InputGrams,
@@ -16,13 +16,20 @@ import {
   CustomModalWrap,
 } from './ModalAddProduct.styled';
 import {featchAddProducts} from '../../redux/products/productOperations'
+import { selectCategories } from '../../redux/products/productsSelectors';
+import { addImg } from '../../redux/products/categoriesSlice';
 
 export const AddProductToDiary = ({onToggle, exerciseInfo, setIsSuccessOpen, setDairyProduct}) => {
-  console.log(exerciseInfo)
+
   const dispatch = useDispatch();
   const { weight, calories, _id, title } = exerciseInfo;
   const [addWeight, setAddWeight] = useState(weight);
   const totalCalories = Math.round((addWeight * calories) / 100);
+  const categories = useSelector(selectCategories);
+  const imgCategory = categories.filter(
+    (categor) => categor.value === exerciseInfo.category
+  )[0].img;
+  dispatch(addImg(imgCategory));
 
   const handleSubmitProduct = () => {
 
@@ -34,7 +41,7 @@ export const AddProductToDiary = ({onToggle, exerciseInfo, setIsSuccessOpen, set
     amount: addWeight,
     calories: totalCalories,
   };
-    console.log(diaryProduct)
+
     dispatch(featchAddProducts(diaryProduct));
     setDairyProduct({calories: diaryProduct.calories})
     setIsSuccessOpen();
@@ -43,9 +50,9 @@ export const AddProductToDiary = ({onToggle, exerciseInfo, setIsSuccessOpen, set
 
   return (
     <CustomModalWrap
-      modalStyles={{ maxWidth: '479px', width: '100%', height: '280px' }}
-      modalTabletStyles={{ width: '479', height: '291px' }}
-      modalDesktopStyles={{ width: '479px', height: '286px' }}
+      modalStyles={{ maxWidth: '479px', width: '100%' }}
+      modalTabletStyles={{ width: '479' }}
+      modalDesktopStyles={{ width: '479px' }}
       onClose={onToggle}
     >
       <ModalWrapper>

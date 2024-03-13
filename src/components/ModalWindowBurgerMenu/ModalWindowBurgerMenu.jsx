@@ -9,6 +9,8 @@ import {
   WrapperModalWindowUserMenu,
 } from './ModalWindowBurgerMenu.styled';
 import { Logout } from 'components/Logout/Logout';
+import { useSelector } from 'react-redux';
+import { selectUserDataComplete } from '../../redux/auth/authSelectors';
 
 export const ModalWindowMenuUser = ({ closeModal }) => {
   const handleBackdropClick = e => {
@@ -16,6 +18,8 @@ export const ModalWindowMenuUser = ({ closeModal }) => {
       closeModal();
     }
   };
+  const userParams = useSelector(selectUserDataComplete);
+
   return (
     <>
       <OverlayModal onClick={handleBackdropClick}></OverlayModal>
@@ -27,6 +31,8 @@ export const ModalWindowMenuUser = ({ closeModal }) => {
           </IconCloseWindow>
         </BtnCloseWindow>
         <UserNavModalWindow>
+        {userParams && (
+          <>
           <UserNavLinkModal to="/diary" onClick={closeModal}>
             Diary
           </UserNavLinkModal>
@@ -36,6 +42,8 @@ export const ModalWindowMenuUser = ({ closeModal }) => {
           <UserNavLinkModal to="/exercises" onClick={closeModal}>
             Exercises
           </UserNavLinkModal>
+          </>
+          )}
         </UserNavModalWindow>
         <LogoutModalWindowWrapper>
           <Logout color="#efede8" closeModal={closeModal}/>

@@ -142,16 +142,27 @@ export const refreshUser = createAsyncThunk(
 export const GoogleSignIn = createAsyncThunk(
   'users/googleAuth',
   async (credentials, thunkApi) => {
-    const state = thunkApi.getState();
-    const persistorToken = state.auth.token;
     try {
       setAuthHeader(credentials.tokens.accessToken);
-      console.log(credentials);
       return credentials.tokens.refreshToken;
     } catch (error) {
       toast.error('Oops, something went wrong! Try again later.');
-      console.log(error.message);
       return thunkApi.rejectWithValue(error.message);
+    }
+  }
+);
+
+export const Verify = createAsyncThunk(
+  'users/verificationToken',
+  async (credentials, thunkApi) => {
+    try {
+      await axios.get(`users/verify/${credentials}`);
+      toast.success('Verifycation successful');
+      return
+    } catch (error) {
+      toast.error('Oops, something went wrong! Try again later.');
+    
+      return ;
     }
   }
 );
