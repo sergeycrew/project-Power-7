@@ -7,6 +7,11 @@ padding-bottom: 80px;
 
 @media screen and (min-width: 768px) {
     padding-top: 72px;
+    padding-bottom: 32px;
+    }
+
+@media screen and (min-width: 1400px) {
+    padding-bottom: 40px;
     }
 `;
 
