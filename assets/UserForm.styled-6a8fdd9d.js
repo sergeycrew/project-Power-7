@@ -1,19 +1,24 @@
-import{u as e}from"./index-d9b6e445.js";import{F as r,E as i}from"./formik.esm-e9ed6f0e.js";const a=e.div`
-  margin-top: 20px;
+import{u as e}from"./index-d09b53f9.js";import{F as r,E as t}from"./formik.esm-8720fcb5.js";const a=e.div`
+  margin-top: 40px;
+
+
 
   @media screen and (min-width: 768px) {
-    margin-top: 40px;
+    margin-top: 64px;
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
     width: 700px;
+  } 
+   @media screen and (min-width: 1440px) {
+    margin-top: 58px;
   }
 `,p=e(r)`
   /* margin-top: 20px; */
 
   @media screen and (min-width: 768px) {
   }
-`,d=e(i)`
+`,d=e(t)`
   position: absolute;
   top: 48px;
   left: 0;
@@ -26,14 +31,15 @@ import{u as e}from"./index-d9b6e445.js";import{F as r,E as i}from"./formik.esm-e
   @media screen and (min-width: 1440px) {
     top: 52px;
   }
-`,l=e.p`
-  color: ${o=>o.theme.colors.accentColor};
+`;e.p`
+color: gray;
+  /* color: ${o=>o.theme.colors.accentColor}; */
   margin-bottom: 4px;
   font-size: 12px;
   @media screen and (min-width: 768px) {
     font-size: 14px;
   }
-`,s=e.input`
+`;const l=e.input`
   max-width: 335px;
   width: 100%;
   padding: 14px;
@@ -54,16 +60,16 @@ import{u as e}from"./index-d9b6e445.js";import{F as r,E as i}from"./formik.esm-e
   @media screen and (min-width: 768px) and (max-width: 1439px) {
     max-width: 341px;
   }
-`,x=e.div`
+`,s=e.div`
   display: inline-flex;
   align-items: flex-end;
   margin-top: 20px;
   gap: 14px;
-`,c=e.div`
+`,x=e.div`
   @media screen and (min-width: 768px) {
     margin-right: 14px;
   }
-`,m=e.div`
+`,c=e.div`
   position: relative;
   margin-top: 40px;
 
@@ -78,15 +84,31 @@ import{u as e}from"./index-d9b6e445.js";import{F as r,E as i}from"./formik.esm-e
       top 0.2s,
       left 0.2s,
       transform 0.2s;
-    color: ${o=>o.theme.colors.accentColor};
+    /* color: ${o=>o.theme.colors.accentColor}; */
+    color: gray;
   }
 
   input[type='number']:focus + label,
   input[type='number']:not(:placeholder-shown) + label {
-    color: ${o=>o.theme.colors.accentColor};
+    color: gray;
     transform: translateY(-44px);
   }
-`,g=e.input`
+`,m=e.div`
+position: relative;
+  label {
+    position: absolute;
+    font-size: 14px;
+    top: -30%;
+    left: 14px;
+    /* transform: translateY(-50%); */
+    pointer-events: none;
+    /* transition:
+      top 0.2s,
+      left 0.2s,
+      transform 0.2s; */
+    /* color: ${o=>o.theme.colors.accentColor}; */
+    color: gray;
+  }`,g=e.input`
   max-width: 165px;
   width: 100%;
   padding: 14px;
@@ -99,7 +121,7 @@ import{u as e}from"./index-d9b6e445.js";import{F as r,E as i}from"./formik.esm-e
   /* cursor: text; */
   &::-webkit-inner-spin-button,
   &::-webkit-outer-spin-button {
-    display: none; /* Скрываем стандартные кнопки ввода */
+    display: none; 
   }
 
  
@@ -235,4 +257,4 @@ import{u as e}from"./index-d9b6e445.js";import{F as r,E as i}from"./formik.esm-e
     margin: 40px 0px 54px 20px;
     padding: 16px 50px;
   }
-`;export{u as B,a as C,d as F,g as I,p as S,x as W,l as a,s as b,m as c,c as d,h as e,b as f};
+`;export{u as B,a as C,d as F,g as I,p as S,m as W,l as a,s as b,c,x as d,h as e,b as f};
