@@ -98,6 +98,7 @@ export const WrappInput = styled.div`
   input[type='number']:focus + label,
   input[type='number']:not(:placeholder-shown) + label {
     color: ${(p) => p.theme.colors.accentColor};
+
     transform: translateY(-44px);
   }
 `;
@@ -118,16 +119,11 @@ export const InputField = styled.input`
     display: none; /* Скрываем стандартные кнопки ввода */
   }
 
- 
-
   &:focus,
   &:hover {
     outline: none;
     border-color: ${(p) => p.theme.colors.orangeColor};
   }
-
-
-   
 `;
 
 export const WrapperRadio = styled.div`
@@ -225,9 +221,9 @@ export const Button = styled.button`
   padding: 12px 40px;
   border-radius: 12px;
   background: ${(p) => p.theme.colors.orangeColor};
-  color: #EFEDE8;
+  color: #efede8;
 
-  &:disabled{
+  &:disabled {
     color: rgba(239, 237, 232, 0.6);
     cursor: default;
   }
@@ -244,13 +240,13 @@ export const ButtonVerify = styled.button`
   padding: 12px 40px;
   border-radius: 12px;
   background: ${(p) => p.theme.colors.orangeColor};
-  color: #EFEDE8;
-  
+  color: #efede8;
+
   /* .hidden {
   display: none;
 } */
 
-  &:disabled{
+  &:disabled {
     color: rgba(239, 237, 232, 0.6);
     cursor: default;
     display: none;

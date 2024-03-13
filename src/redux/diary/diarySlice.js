@@ -4,9 +4,16 @@ import {
   deleteExercise,
   deleteProduct,
 } from './diaryOperations';
+import {
+  logOut,
+  logIn,
+  register,
+  GoogleSignIn,
+  refreshUser,
+} from '../auth/authOperation';
 
 const initialState = {
-  currentDate: Date.now(),
+  currentDate: 0,
   diaryInfo: {
     burnedCalories: 0,
     consumedCalories: 0,
@@ -16,6 +23,15 @@ const initialState = {
     isLoadingDiary: false,
     error: null,
   },
+};
+
+const handleLogOutFulfilled = (state) => {
+  state.diaryInfo = initialState.diaryInfo;
+  state.currentDate = 0;
+};
+
+const updateCurrentDate = (state) => {
+  state.currentDate = Date.now();
 };
 
 const handlePending = (state) => {
@@ -75,6 +91,11 @@ export const diarySlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
+      .addCase(register.fulfilled, updateCurrentDate)
+      .addCase(logIn.fulfilled, updateCurrentDate)
+      .addCase(GoogleSignIn.fulfilled, updateCurrentDate)
+      .addCase(logOut.fulfilled, handleLogOutFulfilled)
+      .addCase(refreshUser.fulfilled, updateCurrentDate)
       .addCase(fetchAllDairyInfo.pending, handlePending)
       .addCase(fetchAllDairyInfo.fulfilled, handleFetchAllFulfilled)
       .addCase(fetchAllDairyInfo.rejected, handleRejected)
