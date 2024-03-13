@@ -61,7 +61,7 @@ export const ExercisesListByCategory = () => {
     <div style={{ position: 'relative' }}>
       <s.BackBtn onClick={() => onClick()}>
         <svg width="20" height="20" stroke="rgb(239, 237, 232, 0.4)">
-          <use href={`${icons}#arrow_gray`} />
+          <use href={`${icons}#icon-arrow-left`} />
         </svg>
         Back
       </s.BackBtn>
