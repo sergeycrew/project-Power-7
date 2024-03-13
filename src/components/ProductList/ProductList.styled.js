@@ -17,20 +17,19 @@ export const List = styled.ul`
 
     //общее
     &::-webkit-scrollbar {
-      width: 22px;
-      height: 167px;
+      width: 8px;
     }
 
     //дорожка
     &::-webkit-scrollbar-track {
-      background: transparent;
+      background: ${(p) => p.theme.colors.backgroundColorScroll};
+      border-radius: 12px;
     }
 
     //бегунок
     &::-webkit-scrollbar-thumb {
       background: ${(p) => p.theme.colors.orangeLightColor};
       border-radius: 12px;
-      border: 7px solid ${(p) => p.theme.colors.blackColor};
     }
   }
 

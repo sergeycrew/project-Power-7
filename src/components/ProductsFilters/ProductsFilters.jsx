@@ -13,7 +13,6 @@ import {
   SvgSearch,
   SelectWrapper,
   FormTitle,
-  // ErrorMessage,
 } from './ProductsFilters.styled';
 import { SelectStyles } from './ProductSelectStyles';
 import { selectCategories } from '../../redux/products/productsSelectors';
@@ -27,8 +26,8 @@ export const ProductsFilters = () => {
 
   const validate = (values) => {
     const errors = {};
-
-    if (values.title && values.title.length < 2) {
+    const title = values.title.trim();
+    if (title && title.length < 2) {
       errors.title = 'Мust be longer than 2 characters';
     }
   };
@@ -44,14 +43,18 @@ export const ProductsFilters = () => {
   });
 
   const defaultValue = (options, value) => {
-    return options ? options.find((option) => option.value == value) : '';
+    if (options) {
+      const option = options.find((option) => option.value == value);
+      return option ? option : '';
+    } else {
+      return '';
+    }
   };
 
   const handleSubmit = (values) => {
-    dispatch(changeFilter(values));    
+    dispatch(changeFilter(values));
     dispatch(changeProductsReset());
     dispatch(fetchProducts());
-
   };
 
   const handleChange = (typeOptions, valueObj) => {
@@ -68,15 +71,16 @@ export const ProductsFilters = () => {
         type="text"
         name="title"
         placeholder="Search"
-        value={formik.values.title.trim()}
+        value={formik.values.title}
         onChange={formik.handleChange}
       />
-      {formik.values.title.trim() !== '' && (
+      {formik.values.title !== '' && (
         <BtnCancel
           type="button"
           onClick={() => {
             formik.setFieldValue('title', '');
-            handleSubmit('title', '');
+            formik.setFieldValue('category', '');
+            formik.setFieldValue('type', '');
           }}
         >
           <SvgX>
