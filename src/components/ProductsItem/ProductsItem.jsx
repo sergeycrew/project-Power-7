@@ -14,7 +14,7 @@ import {
   DetailsMetaWrapper,
   TextFull,
 } from './ProductsItem.styled';
-import sprite from '../../images/sprite.svg';
+import sprite from '../../images/sprite/sprite.svg';
 
 export const ProductCard = ({
   product: { _id, title, calories, category, weight, recommended = true },
@@ -28,17 +28,21 @@ export const ProductCard = ({
         <Text>
           <b>{recommended ? 'Recommended' : 'Not recommended'}</b>
         </Text>
-        <Button onClick={() => toggleModal({_id, title, calories, category, weight })}>
+        <Button
+          onClick={() =>
+            toggleModal({ _id, title, calories, category, weight })
+          }
+        >
           Add
           <SvgArrow>
-            <use href={`${sprite}#icon-arrow-right`}></use>
+            <use href={`${sprite}#icon-arrow`}></use>
           </SvgArrow>
         </Button>
       </TopInfoWrapper>
 
       <TitleWrapper>
         <SvgIcon>
-          <use href={`${sprite}#icon-run-exercises`}></use>
+          <use href={`${sprite}#icon-icon`}></use>
         </SvgIcon>
         <Title>{title}</Title>
       </TitleWrapper>

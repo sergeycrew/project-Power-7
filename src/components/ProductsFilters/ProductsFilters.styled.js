@@ -69,7 +69,7 @@ export const BtnCancel = styled.button`
   }
 
   @media screen and (min-width: 768px) {
-    left: 168px;
+    left: 176px;
   }
 `;
 
@@ -80,8 +80,8 @@ export const SvgX = styled.svg`
 `;
 
 export const BtnSearch = styled.button`
-  transform: translateX(-30px);
   height: 18px;
+  width: 18px;
   position: absolute;
   padding: 0px;
   border-color: transparent;
@@ -93,7 +93,7 @@ export const BtnSearch = styled.button`
   }
 
   @media screen and (min-width: 768px) {
-    left: 192px;
+    left: 204px;
   }
 `;
 
@@ -106,15 +106,13 @@ export const SelectWrapper = styled.div`
   display: flex;
   width: 100%;
   gap: ${(p) => p.theme.spacing(4)};
+
+  @media screen and (min-width: 768px) {
+    max-width: 412px;
+  }
 `;
 
-// export const ErrorMessage = styled(FormikError)`
-//   color: ${(p) => p.theme.colors.orangeColor};
-//   font-size: 14px;
-// `;
-
-
-
-// @media screen and (min-width: 768px){
-//   max-width: 412px;
-// }
+export const ErrorMessage = styled.div`
+  color: ${(p) => p.theme.colors.orangeColor};
+  font-size: 14px;
+`;

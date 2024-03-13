@@ -4,7 +4,10 @@ import {
   fetchProducts,
   fetchCategories,
 } from '../../redux/products/productOperations';
-import { selectContainsProducts, selectIsLoading } from '../../redux/products/productsSelectors';
+import {
+  selectContainsProducts,
+  selectIsLoading,
+} from '../../redux/products/productsSelectors';
 
 import { ProductsFilters } from '../../components/ProductsFilters/ProductsFilters';
 import { ProductList } from '../../components/ProductList/ProductList';
@@ -29,14 +32,21 @@ const ProductsPage = () => {
 
   return (
     <ProductsBackground>
-      <Container>
-        <s.WrapperFilters>
-          <s.Title>Products</s.Title>
-          <ProductsFilters />
-        </s.WrapperFilters>
-        {isLoading ? <DiaryLoader /> : containsProducts ? <ProductList /> : <ProductListEmpty />}
-
-      </Container>
+      <s.WrapperPagePadding>
+        <Container>
+          <s.WrapperFilters>
+            <s.Title>Products</s.Title>
+            <ProductsFilters />
+          </s.WrapperFilters>
+          {isLoading ? (
+            <DiaryLoader />
+          ) : containsProducts ? (
+            <ProductList />
+          ) : (
+            <ProductListEmpty />
+          )}
+        </Container>
+      </s.WrapperPagePadding>
     </ProductsBackground>
   );
 };

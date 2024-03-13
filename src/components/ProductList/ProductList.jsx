@@ -34,14 +34,12 @@ export const ProductList = () => {
     dispatch(fetchProducts());
   };
 
-
   const toggleModal = (product) => {
     setIsModalOpen((prevState) => !prevState);
     setSelectedProduct(product);
   };
   return (
     <div>
-      
       <List>
         {products.map((product) => {
           return (
