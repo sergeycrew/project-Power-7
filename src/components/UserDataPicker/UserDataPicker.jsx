@@ -35,7 +35,7 @@ export const CustomDataPicker = ({ selectedDate, setSelectedDate }) => {
 
   return (
     <WrappInput>
-      <label htmlFor="datePicker">Date of birth</label>
+      <label htmlFor="datePicker" >Date of birth</label>
       <IconSvg width="18" height="18" onClick={toggleCalendar} cursor="pointer">
         <use
           href={

@@ -17,7 +17,8 @@ export const WrappInput = styled.div`
       top 0.2s,
       left 0.2s,
       transform 0.2s;
-    color: ${(p) => p.theme.colors.accentColor};
+    /* color: ${(p) => p.theme.colors.accentColor}; */
+    color: gray;
   }
   /* &:hover .calendar-icon use,
   &:focus .calendar-icon use {

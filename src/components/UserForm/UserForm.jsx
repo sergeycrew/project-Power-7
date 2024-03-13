@@ -120,8 +120,8 @@ const UserForm = () => {
       {(formik) => (
         <s.StyledForm onChange={handleChanger}>
           <s.Container>
-            <div style={{ width: '100%' }}>
-              <s.SectionTitle>Name</s.SectionTitle>
+            <s.WrappMainInput style={{ width: '100%' }}>
+
               <Field
                 name="name"
                 type="text"
@@ -130,10 +130,11 @@ const UserForm = () => {
                 required
                 // defaultValue={user.name}
               />
+              <label htmlFor="name">Name</label>
               <s.FormError name="name" component="span" />
-            </div>
-            <div style={{ width: '100%' }}>
-              <s.SectionTitle>Email</s.SectionTitle>
+            </s.WrappMainInput>
+            <s.WrappMainInput style={{ width: '100%' }}>
+    
               <s.Input
                 type="text"
                 name="email"
@@ -142,7 +143,8 @@ const UserForm = () => {
                 readOnly
                 disabled
               />
-            </div>
+              <label htmlFor="email">Email</label>
+            </s.WrappMainInput>
           </s.Container>
           <s.WrappInputFields>
             <s.WrappInput>
