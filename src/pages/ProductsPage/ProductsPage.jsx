@@ -34,7 +34,7 @@ const ProductsPage = () => {
           <s.Title>Products</s.Title>
           <ProductsFilters />
         </s.WrapperFilters>
-        {isLoading ? <DiaryLoader /> : containsProducts ? <ProductList /> : <ProductListEmpty />}
+        { containsProducts ? <ProductList /> : <ProductListEmpty />}
 
       </Container>
     </ProductsBackground>

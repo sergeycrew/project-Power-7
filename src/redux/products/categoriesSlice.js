@@ -16,9 +16,10 @@ export const categoriesSlice = createSlice({
 });
 
 function CategoriesFulfilled(state, { payload }) {
-  state.categories = payload.map(({ title }) => ({
+  state.categories = payload.map(({ title, img }) => ({
     value: title,
     label: title.charAt(0).toUpperCase() + title.slice(1),
+    img: img
   }));
   state.isLoading = false;
 }
