@@ -102,10 +102,17 @@ export const ButtonVerify = styled.button`
   /* color: ${(p) => p.theme.colors.errorColor}; */
   padding: 0;
   font-family: 'RobotoRegular';
-  font-size: 14px;
+  font-size: 16px;
   line-height: 18px;
-
+/* font-weight: 500; */
   background: 0;
+
+  &:not(:disabled):hover,
+  &:not(:disabled):focus {
+    /* border-bottom: 2px solid orange; */
+    /* box-shadow: inset 0 -2px #d80027; */
+    box-shadow: inset 0 -2px tomato;
+  }
 
   &:disabled {
     /* color: rgba(239, 237, 232, 0.5); */
@@ -124,7 +131,8 @@ export const VerSvg = styled.svg`
   height: 12px;
   position: absolute;
   top: 3px;
-  left: 50px;
+  left: 55px;
+  /* right: 3px; */
   /* @media screen and (min-width: 768px) {
     width: 12px;
     height: 12px;
@@ -136,8 +144,9 @@ export const NotVerSvg = styled.svg`
   width: 13px;
   height: 13px;
   position: absolute;
-  top: 3px;
-  left: 36px;
+  top: 2px;
+  left: 40px;
+  /* right: 3px; */
   /* @media screen and (min-width: 768px) {
     width: 12px;
     height: 12px;

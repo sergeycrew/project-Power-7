@@ -50,17 +50,21 @@ const UserCard = () => {
     : timerExpired
     ? 'Send again'
     : (
-        <>
-          Verify
-          {errorImg}
-        </>
+        
+          'Verify'
+          
       );
 
-  const  sucsescontent =  
-  <>
-  Verified
-  {successImg}
-</>
+    //   <>
+    //   Verify
+    //   {errorImg}
+    // </>
+
+  const  sucsescontent =  'Verified'
+//   <>
+//   Verified
+//   {successImg}
+// </>
 
 
   const isVerifyed = user.verify ? sucsescontent : verifyContent;
@@ -131,7 +135,7 @@ const UserCard = () => {
         type="submit"
         disabled={buttonDisabled || user.verify}
         onClick={sendVerify}
-        style={{ color: user.verify ? '#3cbf61' : buttonDisabled ? 'rgba(239, 237, 232, 0.5)' : '#d80027' }}
+        style={{ color: user.verify ? '#3cbf61' : buttonDisabled ? 'rgba(239, 237, 232, 0.9)' : 'tomato' }}
         // style={{ display: user.verify ? 'none' : 'inline-block' }}
       >
         {isVerifyed}

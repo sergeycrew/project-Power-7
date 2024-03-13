@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 export const Text = styled.p`
-  color: rgba(239, 237, 232, 0.8);
+color: white;
+  /* color: rgba(239, 237, 232, 0.8); */
   font-family: 'RobotoRegular';
   font-size: 12px;
   font-style: normal;

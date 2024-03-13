@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Text = styled.p`
-  color: ${(p) => p.theme.colors.whiteColor};
+  color: gray;
   /* color: ${(p) => p.theme.colors.accentColor}; */
   font-family: 'RobotoRegular';
   font-size: 16px;
