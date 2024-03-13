@@ -49,13 +49,19 @@ export const Header = () => {
     };
   }, [closeModal]);
 
-  useEffect(() => {
+  useEffect(() => { 
     if (!isLoggedIn && isModalOpen) {
       closeModal();
+    }
+    if (isModalOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
     }
   }, [isLoggedIn, isModalOpen, closeModal]);
 
 
+ 
 
 
   return (
@@ -75,7 +81,7 @@ export const Header = () => {
               <BurgerMenuButton openModal={openModal} buttonRef={buttonRef} />
             </>
           )}
-          {isModalOpen && <ModalWindowMenuUser closeModal={closeModal} />}
+          {isModalOpen && <ModalWindowMenuUser closeModal={closeModal}/>}
         </HeaderWrap>
       </Container>
     </HeaderBar>
