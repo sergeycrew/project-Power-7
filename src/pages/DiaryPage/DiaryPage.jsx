@@ -30,10 +30,6 @@ const DiaryPage = () => {
     dispatch(fetchAllDairyInfo(currentDateObj));
   }, [dispatch, currentDate]);
 
-  const handleProductDeleted = () => {
-    dispatch(fetchAllDairyInfo({ date: currentDate }));
-  };
-
   return (
     <s.Container>
       <s.TitleWrapper>
@@ -54,7 +50,6 @@ const DiaryPage = () => {
                     isFirstItem={index === 0}
                     key={item._id}
                     value={item}
-                    onProductDelete={handleProductDeleted}
                   ></DayProductItem>
                 ))
               )}

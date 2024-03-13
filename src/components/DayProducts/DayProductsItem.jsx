@@ -2,10 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { DayCommonItemTitle } from '../DayCommonItemTitle/DayCommonItemTitle';
 import * as s from './DayProductsItem.styled';
 import icons from '../../images/sprite/sprite.svg';
-import {
-  deleteProduct,
-  fetchAllDairyInfo,
-} from '../../redux/diary/diaryOperations';
+import { deleteProduct } from '../../redux/diary/diaryOperations';
 import { selectUser } from '../../redux/auth/authSelectors';
 import { findRecommendedProduct } from '../../Helpers/GlobalOperations';
 import { selectCurrentDate } from '../../redux/diary/diarySelectors';
@@ -18,31 +15,12 @@ export const DayProductItem = ({ isFirstItem, value }) => {
     value.productId.groupBloodNotAllowed[user.blood]
   );
 
-  const handleDeleteProduct = () => {
-    const objForDelete = {
-      date: currentTime,
-      productId: value._id,
-      calories: value.calories,
-      amount: value.amount,
-    };
-
-    // dispatch(deleteProduct(objForDelete));
-    // // Виклик колбек-функції, щоб сповістити про видалення продукту
-    // if (onProductDelete) {
-    //   onProductDelete();
-    // }
-    dispatch(deleteProduct(objForDelete)).then(() => {
-      dispatch(fetchAllDairyInfo({ date: currentTime }));
-    });
-    // Виклик колбек-функції, щоб сповістити про видалення продукту
+  const objForDelete = {
+    date: currentTime,
+    productId: value._id,
+    calories: value.calories,
+    amount: value.amount,
   };
-
-  // const objForDelete = {
-  //   date: currentTime,
-  //   productId: value._id,
-  //   calories: value.calories,
-  //   amount: value.amount,
-  // };
 
   return (
     <s.ItemProductWrapper>
@@ -85,8 +63,7 @@ export const DayProductItem = ({ isFirstItem, value }) => {
       </s.ProductsContainer>
       <s.DeleteButton
         type="button"
-        // onClick={() => dispatch(deleteProduct(objForDelete))}
-        onClick={handleDeleteProduct}
+        onClick={() => dispatch(deleteProduct(objForDelete))}
         aria-label="delete=button"
       >
         <s.DeleteIcon>

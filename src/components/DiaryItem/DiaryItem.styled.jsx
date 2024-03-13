@@ -30,10 +30,9 @@ export const ItemWrapper = styled.li`
 `;
 
 export const DiaryItemTitle = styled.h2`
-  font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 14px;
-  line-height: 129%;
+  line-height: 1.29;
   color: ${(p) => p.theme.colors.fornCaptionColor};
 `;
 
@@ -44,15 +43,14 @@ export const LinkToOtherPage = styled(Link)`
 `;
 
 export const LinkText = styled.span`
-  font-family: 'Roboto', sans-serif;
   font-weight: 500;
   font-size: 14px;
-  line-height: 129%;
+  line-height: 1.29;
   color: ${(p) => p.theme.colors.hoverColor};
 
   @media screen and (min-width: 768px) {
     font-size: 16px;
-    line-height: 150%;
+    line-height: 1.5;
   }
 `;
 

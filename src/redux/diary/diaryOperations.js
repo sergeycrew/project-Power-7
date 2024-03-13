@@ -23,7 +23,6 @@ export const deleteProduct = createAsyncThunk(
         data: product,
       });
       toast.success('A product has been successfully deleted!');
-      console.log(response);
       return response.data;
     } catch (error) {
       toast.error('Oops, something went wrong! Try again later.');
@@ -40,7 +39,6 @@ export const deleteExercise = createAsyncThunk(
         data: exercise,
       });
       toast.success('An exercise has been successfully deleted!');
-      console.log(response.data);
       return response.data;
     } catch (error) {
       toast.error('Oops, something went wrong! Try again later.');

@@ -2,10 +2,9 @@ import { styled } from 'styled-components';
 import 'react-datepicker/dist/react-datepicker-cssmodules.css';
 
 export const Wrapper = styled.button`
-  font-family: 'Roboto', sans-serif;
   font-weight: 700;
   font-size: 18px;
-  line-height: 111%;
+  line-height: 1.11;
   color: ${(p) => p.theme.colors.whiteColor};
   text-align: center;
   background: none;
@@ -24,7 +23,7 @@ export const Wrapper = styled.button`
 
   @media screen and (min-width: 768px) {
     font-size: 24px;
-    line-height: 133%;
+    line-height: 1.33;
     align-items: baseline;
   }
 `;

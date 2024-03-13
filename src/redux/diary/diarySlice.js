@@ -41,10 +41,8 @@ const handleFetchAllFulfilled = (state, { payload }) => {
 const handleDeleteProductFulfilled = (state, { payload }) => {
   state.diaryInfo.isLoadingDiary = false;
   state.diaryInfo.error = null;
-
   state.diaryInfo.products = payload.data.products;
   state.diaryInfo.consumedCalories = payload.data.consumedCalories;
-  console.log(state.diaryInfo.consumedCalories);
 };
 
 const handleDeleteExerciseFulfilled = (state, { payload }) => {
