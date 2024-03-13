@@ -11,6 +11,7 @@ import { ModalWindowMenuUser } from 'components/ModalWindowBurgerMenu/ModalWindo
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useAuth } from '../../hooks';
 
+
 export const Header = () => {
   const { isLoggedIn } = useAuth();
   const [isModalOpen, setModalOpen] = useState(false);
@@ -54,6 +55,9 @@ export const Header = () => {
     }
   }, [isLoggedIn, isModalOpen, closeModal]);
 
+
+
+
   return (
     <HeaderBar style={headerStyle}>
       <Container>
@@ -63,7 +67,7 @@ export const Header = () => {
           </LogoWrap>
           {isLoggedIn && (
             <>
-              <UserNav />
+           <UserNav />
               <UserBar />
               <HideLogout>
                 <Logout />

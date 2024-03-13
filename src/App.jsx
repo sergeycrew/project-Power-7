@@ -18,11 +18,14 @@ const ExercisesPage = lazy(() => import('pages/ExercisesPage/ExercisesPage'));
 
 import { useAuth } from './hooks';
 import { currentUser, refreshUser } from './redux/auth/authOperation';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Loader } from './components/Loader/Loader';
+import { selectUserDataComplete } from './redux/auth/authSelectors';
 
 function App() {
   const { isRefreshing, isLoggedIn } = useAuth();
+  const userParams = useSelector(selectUserDataComplete);
+  const redirectLink = userParams ? '/diary' : '/profile';
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(refreshUser());
@@ -41,7 +44,7 @@ function App() {
           <Route
             index
             element={
-              <PublicRoute redirectTo="/diary" component={<WelcomePage />} />
+              <PublicRoute redirectTo={redirectLink} component={<WelcomePage />} />
             }
           />
           {/* <Route index element={<WelcomePage />} /> */}
@@ -55,7 +58,7 @@ function App() {
           <Route
             path="/signIn"
             element={
-              <PublicRoute redirectTo="/diary" component={<SignInPage />} />
+              <PublicRoute redirectTo={redirectLink} component={<SignInPage />} />
             }
           />
           {/* <Route path="/signIn" element={<SignInPage />} /> */}
@@ -86,8 +89,8 @@ function App() {
           {/* <Route path="/profile" element={<ProfilePage />} /> */}
           {/* <Route path="*" element={<ErrorPage />} /> */}
         </Route>
-        <Route path="404" element={<ErrorPage />} />
-        <Route path="*" element={<Navigate to="/404" />} />
+        <Route path="/notfound" element={<ErrorPage />} />
+        <Route path="*" element={<Navigate to="/notfound" />} />
       </Routes>
     </>
   );

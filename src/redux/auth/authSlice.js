@@ -23,6 +23,7 @@ const initialUser = {
   levelActivity: 1,
   avatarUrl: '',
   bmr: '',
+  // userParams: false,
 };
 
 const initialState = {

@@ -1,29 +1,15 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
-  padding: 40px 20px;
-
-  @media screen and (min-width: 375px) {
-    padding: 40px 20px;
-  }
-
-  @media screen and (min-width: 768px) {
-    padding: 72px 32px;
-  }
-
-  @media screen and (min-width: 1440px) {
-    padding: 68px 95px;
-  }
-`;
-
 export const WrapperFilters = styled.div`
   display: flex;
   justify-content: space-between;
   flex-direction: column;
   margin-bottom: ${(p) => p.theme.spacing(10)};
+  padding-top: 40px;
 
   @media screen and (min-width: 768px) {
     margin-bottom: ${(p) => p.theme.spacing(8)};
+    padding-top: 72px;
   }
 
   @media screen and (min-width: 1440px) {
