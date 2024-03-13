@@ -6,7 +6,7 @@ export const fetchAllDairyInfo = createAsyncThunk(
   '/diary/alldaydiary',
   async (date, thunkAPI) => {
     try {
-      const response = await axios.post('diary/alldaydiary', date);
+      const response = await axios.get(`diary/alldaydiary?data=${date}`);
       return response.data;
     } catch (error) {
       toast.error('Oops, something went wrong! Try again later.');

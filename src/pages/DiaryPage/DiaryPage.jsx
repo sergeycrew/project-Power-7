@@ -23,11 +23,7 @@ const DiaryPage = () => {
   let isLoading = useSelector(selectIsLoadingDiary);
 
   useEffect(() => {
-    const currentDateObj = {
-      date: currentDate,
-    };
-
-    dispatch(fetchAllDairyInfo(currentDateObj));
+    dispatch(fetchAllDairyInfo(currentDate.toString()));
   }, [dispatch, currentDate]);
 
   return (
