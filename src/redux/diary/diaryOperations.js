@@ -7,7 +7,6 @@ export const fetchAllDairyInfo = createAsyncThunk(
   async (date, thunkAPI) => {
     try {
       const response = await axios.post('diary/alldaydiary', date);
-      //console.log(data);
       return response.data;
     } catch (error) {
       toast.error('Oops, something went wrong! Try again later.');
@@ -19,7 +18,6 @@ export const fetchAllDairyInfo = createAsyncThunk(
 export const deleteProduct = createAsyncThunk(
   '/diary/deldiaryproduct',
   async (product, thunkAPI) => {
-    console.log(product);
     try {
       const response = await axios.delete(`/diary/deldiaryproduct`, {
         data: product,
@@ -40,11 +38,7 @@ export const deleteExercise = createAsyncThunk(
       const response = await axios.delete(`/diary/deldiaryexercisest`, {
         data: exercise,
       });
-      // await axios.delete(`/diary/deldiaryexercisest`, {
-      //   data: exercise,
-      // });
       toast.success('An exercise has been successfully deleted!');
-      // return exercise.exerciseId;
       return response.data;
     } catch (error) {
       toast.error('Oops, something went wrong! Try again later.');

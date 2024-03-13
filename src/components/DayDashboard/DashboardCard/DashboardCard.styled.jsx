@@ -30,26 +30,23 @@ export const CardContainer = styled.li`
     }
   }};
 
-  @media screen and (min-width: 375px) {
-    width: 157px;
-  }
-
   @media screen and (min-width: 768px) {
     width: 187px;
     height: 116px;
     padding: 18px;
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1439px) {
+    &:first-child {
+      margin-bottom: 16px;
+    }
   }
 `;
 
 export const InnerCardWrapper = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
-
-  @media screen and (min-width: 768px) {
-    justify-content: left;
-    gap: 8px;
-  }
+  gap: 8px;
 `;
 
 export const Svg = styled.svg`
@@ -60,11 +57,9 @@ export const Svg = styled.svg`
 `;
 
 export const InnerCardText = styled.span`
-  font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 12px;
-  line-height: 150%;
-  margin-left: 4px;
+  line-height: 1.5;
   color: ${({ $cardTextColor }) => {
     switch ($cardTextColor) {
       case 'white':
@@ -73,21 +68,16 @@ export const InnerCardText = styled.span`
         return (p) => p.theme.colors.captionColor;
     }
   }};
-
-  @media screen and (min-width: 768px) {
-    margin-left: 0;
-  }
 `;
 
 export const UserIndicators = styled.p`
-  font-family: 'Roboto', sans-serif;
   font-weight: 700;
   font-size: 18px;
-  line-height: 111%;
+  line-height: 1.11;
   color: ${(p) => p.theme.colors.whiteColor};
 
   @media screen and (min-width: 768px) {
     font-size: 24px;
-    line-height: 133%;
+    line-height: 1.33;
   }
 `;

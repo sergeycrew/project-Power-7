@@ -105,21 +105,22 @@ export const DayExerciseItemContent = styled.p`
   border: 1px solid ${(p) => p.theme.colors.accentColor};
   border-radius: 12px;
   padding: 10px 14px;
-  height: 38px;
+  /* height: 38px; */
   font-weight: 400;
   font-size: 14px;
-  line-height: 129%;
+  line-height: 1.29;
   text-transform: capitalize;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
   color: ${(p) => p.theme.colors.whiteColor};
 
   @media screen and (min-width: 768px) {
     height: 40px;
     font-size: 16px;
-    line-height: 150%;
+    line-height: 1.5;
     padding: 8px 14px;
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 `;
 

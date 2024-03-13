@@ -20,12 +20,12 @@ export const Container = styled.div`
 export const Title = styled.h1`
   font-weight: 700;
   font-size: 24px;
-  line-height: 117%;
+  line-height: 1.17;
   color: ${(p) => p.theme.colors.whiteColor};
 
   @media screen and (min-width: 768px) {
     font-size: 32px;
-    line-height: 137%;
+    line-height: 1.37;
   }
 `;
 
@@ -73,7 +73,7 @@ export const DiaryCommonContainer = styled.div`
 export const NotFoundText = styled.p`
   font-weight: 400;
   font-size: 14px;
-  line-height: 129%;
+  line-height: 1.29;
   position: absolute;
   top: 50%;
   left: 50%;
