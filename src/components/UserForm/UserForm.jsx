@@ -14,11 +14,7 @@ import {
 import { CustomDataPicker } from '../UserDataPicker/UserDataPicker';
 import RadioOption from '../UserRadio/UserRadio';
 import { useState } from 'react';
-// import { CustomDataPicker } from '../CustomDataPicker/CustomDataPicker';
 
-// blood - number; allowed values 1, 2, 3, 4; required
-// sex - string; allowed values "male", "female"; required
-// levelActivity - number; allowed values 1, 2, 3, 4, 5; required
 
 const UserForm = () => {
   const dispatch = useDispatch();

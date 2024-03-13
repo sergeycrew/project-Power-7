@@ -44,8 +44,6 @@ const UserCard = () => {
   const [remainingTime, setRemainingTime] = useState(null);
   const [timerExpired, setTimerExpired] = useState(false);
 
-  const userParams = useSelector(selectUserDataComplete);
- 
 
   const verifyContent = buttonDisabled
     ? `Try again in ${remainingTime}`
@@ -57,6 +55,13 @@ const UserCard = () => {
           {errorImg}
         </>
       );
+
+  const  sucsescontent =  
+  <>
+  Verified
+  {successImg}
+</>
+
 
   const isVerifyed = user.verify ? sucsescontent : verifyContent;
   
@@ -87,18 +92,12 @@ const UserCard = () => {
 
   const sendVerify = () => {
     startTimer();
-    console.log(userParams) 
+
     const email = user.email;
 
     // dispatch(userVerifyAgain({email}));
 
   };
-
-  const  sucsescontent =  
-  <>
-  Verified
-  {successImg}
-</>
 
   return (
     <s.Container>

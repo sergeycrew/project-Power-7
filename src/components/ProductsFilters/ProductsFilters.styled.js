@@ -112,3 +112,9 @@ export const SelectWrapper = styled.div`
 //   color: ${(p) => p.theme.colors.orangeColor};
 //   font-size: 14px;
 // `;
+
+
+
+// @media screen and (min-width: 768px){
+//   max-width: 412px;
+// }
