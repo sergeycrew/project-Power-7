@@ -1,7 +1,5 @@
-import{u as e}from"./index-35596d51.js";import{F as r,E as t}from"./formik.esm-c51b27f7.js";const a=e.div`
+import{u as e}from"./index-a847f234.js";import{F as r,E as t}from"./formik.esm-e40ddaa4.js";const a=e.div`
   margin-top: 40px;
-
-
 
   @media screen and (min-width: 768px) {
     margin-top: 64px;
@@ -9,8 +7,8 @@ import{u as e}from"./index-35596d51.js";import{F as r,E as t}from"./formik.esm-c
     align-items: flex-end;
     justify-content: space-between;
     width: 700px;
-  } 
-   @media screen and (min-width: 1440px) {
+  }
+  @media screen and (min-width: 1440px) {
     margin-top: 58px;
   }
 `,p=e(r)`
@@ -32,7 +30,7 @@ import{u as e}from"./index-35596d51.js";import{F as r,E as t}from"./formik.esm-c
     top: 52px;
   }
 `;e.p`
-color: gray;
+  color: gray;
   /* color: ${o=>o.theme.colors.accentColor}; */
   margin-bottom: 4px;
   font-size: 12px;
@@ -94,7 +92,7 @@ color: gray;
     transform: translateY(-44px);
   }
 `,m=e.div`
-position: relative;
+  position: relative;
   label {
     position: absolute;
     font-size: 14px;
@@ -108,7 +106,8 @@ position: relative;
       transform 0.2s; */
     /* color: ${o=>o.theme.colors.accentColor}; */
     color: gray;
-  }`,g=e.input`
+  }
+`,g=e.input`
   max-width: 165px;
   width: 100%;
   padding: 14px;
@@ -121,19 +120,14 @@ position: relative;
   /* cursor: text; */
   &::-webkit-inner-spin-button,
   &::-webkit-outer-spin-button {
-    display: none; 
+    display: none;
   }
-
- 
 
   &:focus,
   &:hover {
     outline: none;
     border-color: ${o=>o.theme.colors.orangeColor};
   }
-
-
-   
 `,h=e.div`
   margin-top: 30px;
   display: flex;
@@ -225,9 +219,9 @@ position: relative;
   padding: 12px 40px;
   border-radius: 12px;
   background: ${o=>o.theme.colors.orangeColor};
-  color: #EFEDE8;
+  color: #efede8;
 
-  &:disabled{
+  &:disabled {
     color: rgba(239, 237, 232, 0.6);
     cursor: default;
   }
@@ -242,13 +236,13 @@ position: relative;
   padding: 12px 40px;
   border-radius: 12px;
   background: ${o=>o.theme.colors.orangeColor};
-  color: #EFEDE8;
-  
+  color: #efede8;
+
   /* .hidden {
   display: none;
 } */
 
-  &:disabled{
+  &:disabled {
     color: rgba(239, 237, 232, 0.6);
     cursor: default;
     display: none;

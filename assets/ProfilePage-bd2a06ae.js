@@ -1,4 +1,4 @@
-import{u as i,j as e,a as R,b as W,m as S,r as c,i as u,n as z,o as B,p as L,q as N,C as T,t as E}from"./index-35596d51.js";import{s as M}from"./sprite-14f793b3.js";import{c as P,a as H,b as j,d as G}from"./index.esm-dca2d79a.js";import{b as Y,a as b}from"./formik.esm-c51b27f7.js";import{I as y,S as J,C as K,W as $,a as F,F as f,b as I,c as w,d as Q,e as X,f as Z,B as _}from"./UserForm.styled-0d8ad3b7.js";import{W as ee,I as te,i as ie,C as ae}from"./react-datepicker-cssmodules-450522d5.js";import"./floating-ui.dom-9d61e2db.js";const se=i.p`
+import{u as i,j as e,a as R,b as W,m as S,r as c,i as u,n as z,o as B,p as L,q as N,C as T,t as E}from"./index-a847f234.js";import{s as M}from"./sprite-a870a7fe.js";import{c as P,a as H,b as j,d as G}from"./index.esm-e2bbcae6.js";import{b as Y,a as b}from"./formik.esm-e40ddaa4.js";import{I as y,S as J,C as K,W as $,a as F,F as f,b as I,c as w,d as Q,e as X,f as Z,B as _}from"./UserForm.styled-d6ec8c05.js";import{W as ee,I as te,i as ie,C as ae}from"./react-datepicker-cssmodules-2f96cc5c.js";import"./floating-ui.dom-9d61e2db.js";const se=i.p`
 color: white;
   /* color: rgba(239, 237, 232, 0.8); */
   font-family: 'RobotoRegular';
@@ -6,7 +6,6 @@ color: white;
   font-style: normal;
   font-weight: 400;
   line-height: 18px;
-  
 `,ne=i.div`
   display: flex;
   flex-direction: column;
@@ -42,7 +41,8 @@ color: white;
   /* fill: ${t=>t.theme.colors.orangeLightColor};
   stroke: ${t=>t.theme.colors.orangeLightColor}; */
 `,le=i.p`
- color: ${t=>t.theme.colors.whiteColor};
+  color: ${t=>t.theme.colors.whiteColor};
+
   font-family: 'RobotoBold';
   font-size: 18px;
   line-height: 1.3;
@@ -51,9 +51,10 @@ color: white;
     font-size: 24px;
   }
 `,de=i.div`
-display: flex;
-align-items: center;
-gap: 8px;`,k=({iconId:t,text:a,value:l=0,amoutName:r})=>e.jsxs(ne,{children:[e.jsxs(de,{children:[e.jsx(re,{children:e.jsx("use",{href:`${M}#${t}`})}),e.jsx(se,{children:a})]}),e.jsxs(le,{children:[Math.round(l)," ",r]})]}),oe=i.div`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+`,k=({iconId:t,text:a,value:l=0,amoutName:r})=>e.jsxs(ne,{children:[e.jsxs(de,{children:[e.jsx(re,{children:e.jsx("use",{href:`${M}#${t}`})}),e.jsx(se,{children:a})]}),e.jsxs(le,{children:[Math.round(l)," ",r]})]}),oe=i.div`
   display: flex;
   position: relative;
   justify-content: center;
@@ -193,7 +194,6 @@ gap: 8px;`,k=({iconId:t,text:a,value:l=0,amoutName:r})=>e.jsxs(ne,{children:[e.j
   font-style: normal;
   font-weight: 400;
   line-height: 24px;
-  
 `,we=i.div`
   display: flex;
   /* justify-content: center; */
@@ -216,9 +216,9 @@ gap: 8px;`,k=({iconId:t,text:a,value:l=0,amoutName:r})=>e.jsxs(ne,{children:[e.j
   gap: 8px;
   margin-top: 40px;
 
-  @media screen and (max-width: 768px)  {
-   max-width: 335px;
-  } 
+  @media screen and (max-width: 768px) {
+    max-width: 335px;
+  }
 
   @media screen and (min-width: 768px) {
     width: 439px;
