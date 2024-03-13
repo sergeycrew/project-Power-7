@@ -1,4 +1,4 @@
-import{u as s,L as v,b as d,c as S,d as k,r as C,a as z,j as e,s as n,l as P}from"./index-d09b53f9.js";import{F as y,a as I,b as F}from"./formik.esm-8720fcb5.js";import{c as L,a as h}from"./index.esm-9335f95d.js";import{H as V,M as q,a as N}from"./WelcomePage.styled-7d6f5d55.js";import"./DiaryLoader-4d6f856e.js";const E=s.h1`
+import{u as s,L as v,b as d,s as S,c as k,r as C,a as z,j as e,i as n,l as P}from"./index-35596d51.js";import{F as y,a as I,b as F}from"./formik.esm-c51b27f7.js";import{c as L,a as h}from"./index.esm-dca2d79a.js";import{H as V,M as q,a as N}from"./WelcomePage.styled-a6398853.js";import"./DiaryLoader-6719cff7.js";const E=s.h1`
   font-weight: 700;
   font-size: 24px;
   line-height: 1.17;
