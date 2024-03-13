@@ -2,13 +2,12 @@ import styled from 'styled-components';
 
 export const Text = styled.p`
   color: gray;
-  /* color: ${p => p.theme.colors.accentColor}; */
+  /* color: ${(p) => p.theme.colors.accentColor}; */
   font-family: 'RobotoRegular';
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: 24px;
-  
 `;
 
 export const Container = styled.div`
@@ -39,9 +38,9 @@ export const Wrapp = styled.div`
   gap: 8px;
   margin-top: 40px;
 
-  @media screen and (max-width: 768px)  {
-   max-width: 335px;
-  } 
+  @media screen and (max-width: 768px) {
+    max-width: 335px;
+  }
 
   @media screen and (min-width: 768px) {
     width: 439px;

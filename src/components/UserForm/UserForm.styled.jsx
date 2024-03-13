@@ -4,16 +4,14 @@ import { ErrorMessage, Form } from 'formik';
 export const Container = styled.div`
   margin-top: 40px;
 
-
-
   @media screen and (min-width: 768px) {
     margin-top: 64px;
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
     width: 700px;
-  } 
-   @media screen and (min-width: 1440px) {
+  }
+  @media screen and (min-width: 1440px) {
     margin-top: 58px;
   }
 `;
@@ -40,7 +38,7 @@ export const FormError = styled(ErrorMessage)`
 `;
 
 export const SectionTitle = styled.p`
-color: gray;
+  color: gray;
   /* color: ${(p) => p.theme.colors.accentColor}; */
   margin-bottom: 4px;
   font-size: 12px;
@@ -109,9 +107,8 @@ export const WrappInput = styled.div`
   }
 `;
 
-
 export const WrappMainInput = styled.div`
-position: relative;
+  position: relative;
   label {
     position: absolute;
     font-size: 14px;
@@ -121,7 +118,8 @@ position: relative;
     pointer-events: none;
    
     color: gray;
-  }`
+  }
+`;
 
 export const InputField = styled.input`
   max-width: 165px;
@@ -136,19 +134,14 @@ export const InputField = styled.input`
   /* cursor: text; */
   &::-webkit-inner-spin-button,
   &::-webkit-outer-spin-button {
-    display: none; 
+    display: none;
   }
-
- 
 
   &:focus,
   &:hover {
     outline: none;
     border-color: ${(p) => p.theme.colors.orangeColor};
   }
-
-
-   
 `;
 
 export const WrapperRadio = styled.div`
@@ -246,9 +239,9 @@ export const Button = styled.button`
   padding: 12px 40px;
   border-radius: 12px;
   background: ${(p) => p.theme.colors.orangeColor};
-  color: #EFEDE8;
+  color: #efede8;
 
-  &:disabled{
+  &:disabled {
     color: rgba(239, 237, 232, 0.6);
     cursor: default;
   }
@@ -258,6 +251,7 @@ export const Button = styled.button`
     padding: 16px 50px;
   }
 `;
+
 
 
 

@@ -10,7 +10,7 @@ import {
     StartIcon, 
 } from './ExercisesItem.styled';
 
-import icons from '../../images/sprite.svg';
+import icons from '../../images/sprite/sprite.svg';
 import { NavLink } from 'react-router-dom';
 
 export const ExercisesItem = ({ card, toogleModal }) => {
@@ -26,7 +26,7 @@ export const ExercisesItem = ({ card, toogleModal }) => {
           <StartIcon>
             <svg fill="#efede8">
               {' '}
-              <use href={icons + '#icon-arrow-right'}></use>
+              <use href={icons + '#icon-arrow'}></use>
             </svg>
           </StartIcon>
         </NavLink>
@@ -35,7 +35,7 @@ export const ExercisesItem = ({ card, toogleModal }) => {
         <CaloriesIcon>
           <svg >
             
-            <use href={`${icons}#icon-run-exercises`}></use>
+            <use href={`${icons}#icon-icon`}></use>
           </svg>
         </CaloriesIcon>
         <ExercisesTitle>{card.name}</ExercisesTitle>

@@ -28,7 +28,6 @@ export const WrappInput = styled.div`
   .calendar-icon use {
     content: url('${sprite}#icon-calendar-white');
   } */
-
 `;
 export const TitleWrapper = styled.button`
   width: 195px;
@@ -47,7 +46,7 @@ export const TitleWrapper = styled.button`
 
 export const IconSvg = styled.svg`
   position: absolute;
- 
+
   top: 14px;
   right: 14px;
 `;
