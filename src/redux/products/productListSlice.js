@@ -29,15 +29,14 @@ export const productSlice = createSlice({
 });
 
 function ListFulfilled(state, { payload }) {
-  
   state.isLoading = false;
   state.maxPage = payload.maxPage;
-  if (state.productsPage === 1  && state.items.length == 0) {
-    state.items.push(...payload.data);}
-    if (state.productsPage > 1  ) {
-      state.items.push(...payload.data)
-    }
-
+  if (state.productsPage === 1 && state.items.length == 0) {
+    state.items.push(...payload.data);
+  }
+  if (state.productsPage > 1) {
+    state.items.push(...payload.data);
+  }
 }
 
 function pending(state) {
@@ -50,4 +49,3 @@ function rejected(state) {
 
 export const productListReducer = productSlice.reducer;
 export const { changeProductsPage, changeProductsReset } = productSlice.actions;
-

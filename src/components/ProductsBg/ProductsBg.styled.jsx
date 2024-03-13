@@ -7,11 +7,10 @@ export const ProductsBackgroundImage = styled.div`
     position: relative;
     z-index: 0;
     max-width: 1440px;
-    min-height: 807px;
+    height: 716px;
     background-size: contain;
     margin: 0 auto;
     width: 100%;
-    height: 100%;
     background-repeat: no-repeat;
     background-position: bottom right;
     background-image: image-set(

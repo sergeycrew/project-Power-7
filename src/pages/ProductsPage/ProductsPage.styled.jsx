@@ -1,15 +1,27 @@
 import styled from 'styled-components';
 
+export const WrapperPagePadding = styled.div`
+  padding-top: ${(p) => p.theme.spacing(10)};
+  padding-bottom: ${(p) => p.theme.spacing(20)};
+
+  @media screen and (min-width: 768px) {
+    padding-top: ${(p) => p.theme.spacing(18)};
+    padding-bottom: ${(p) => p.theme.spacing(12)};
+  }
+
+  @media screen and (min-width: 1440px) {
+    padding-bottom: ${(p) => p.theme.spacing(20)};
+  }
+`;
+
 export const WrapperFilters = styled.div`
   display: flex;
   justify-content: space-between;
   flex-direction: column;
   margin-bottom: ${(p) => p.theme.spacing(10)};
-  padding-top: 40px;
 
   @media screen and (min-width: 768px) {
     margin-bottom: ${(p) => p.theme.spacing(8)};
-    padding-top: 72px;
   }
 
   @media screen and (min-width: 1440px) {

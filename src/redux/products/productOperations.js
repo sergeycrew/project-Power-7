@@ -13,15 +13,17 @@ const getRecommended = (type) => {
   }
 };
 const getParams = ({
-  filter: { category = '', title = '', type = '' },
+  filter: { category = '', title: titleFull = '', type = '' },
+  products: { productsPage: page = 1, productsLimit: limit },
   auth = '',
 }) => {
   const blood = auth.user.blood;
   const recommended = getRecommended(type);
+  const title = titleFull.trim();
   if (recommended === true || recommended === false) {
-    return { category, title, blood, recommended };
+    return { category, title, blood, recommended, page, limit };
   } else {
-    return { category, title, blood };
+    return { category, title, blood, page, limit };
   }
 };
 
@@ -30,12 +32,9 @@ export const fetchProducts = createAsyncThunk(
   async (_, thunkAPI) => {
     const state = thunkAPI.getState();
     const params = getParams(state);
-    // const { products } = thunkAPI.getState();
     try {
-    
-        const response = await axios.get(`products/all?&page=${state.products.productsPage}&limit=${state.products.productsLimit}`, { params });
+      const response = await axios.get(`products/all`, { params });
       return response.data;
-      
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
