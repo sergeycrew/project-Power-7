@@ -19,6 +19,10 @@ padding: 0;
   align-items: center;
   color: ${(p) => p.theme.colors.whiteColor};
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* @media screen and (min-width: 1440px) {
+  margin-bottom: 36px;
+  } */
   &:hover {
     color: ${(p) => p.theme.colors.orangeColor};
   }

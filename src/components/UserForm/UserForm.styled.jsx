@@ -35,7 +35,8 @@ export const FormError = styled(ErrorMessage)`
 `;
 
 export const SectionTitle = styled.p`
-  color: ${(p) => p.theme.colors.accentColor};
+color: gray;
+  /* color: ${(p) => p.theme.colors.accentColor}; */
   margin-bottom: 4px;
   font-size: 12px;
   @media screen and (min-width: 768px) {
@@ -92,12 +93,13 @@ export const WrappInput = styled.div`
       top 0.2s,
       left 0.2s,
       transform 0.2s;
-    color: ${(p) => p.theme.colors.accentColor};
+    /* color: ${(p) => p.theme.colors.accentColor}; */
+    color: gray;
   }
 
   input[type='number']:focus + label,
   input[type='number']:not(:placeholder-shown) + label {
-    color: ${(p) => p.theme.colors.accentColor};
+    color: gray;
     transform: translateY(-44px);
   }
 `;
@@ -115,7 +117,7 @@ export const InputField = styled.input`
   /* cursor: text; */
   &::-webkit-inner-spin-button,
   &::-webkit-outer-spin-button {
-    display: none; /* Скрываем стандартные кнопки ввода */
+    display: none; 
   }
 
  

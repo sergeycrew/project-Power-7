@@ -17,8 +17,7 @@ export const Container = styled.div`
   }
 
   @media screen and (min-width: 1440px) {
-    /* margin-left: 96px;
-    margin-right: 96px; */
+   /* padding-bottom: 36px; */
   }
 `;
 
@@ -80,7 +79,7 @@ export const UserWrap = styled.div`
  @media screen and (min-width: 768px) and (max-width: 1439px) {margin: auto;
     width: 439px;
   }
-  /* @media screen and (min-width: 1440px) {
-   margin-left: 50px;
-  } */
+  @media screen and (min-width: 1440px) {
+    padding-bottom: 36px;
+  }
 `
