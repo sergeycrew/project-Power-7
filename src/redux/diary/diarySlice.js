@@ -4,9 +4,16 @@ import {
   deleteExercise,
   deleteProduct,
 } from './diaryOperations';
+import {
+  logOut,
+  logIn,
+  register,
+  GoogleSignIn,
+  refreshUser,
+} from '../auth/authOperation';
 
 const initialState = {
-  currentDate: Date.now(),
+  currentDate: 0,
   diaryInfo: {
     burnedCalories: 0,
     consumedCalories: 0,
@@ -16,6 +23,15 @@ const initialState = {
     isLoadingDiary: false,
     error: null,
   },
+};
+
+const handleLogOutFulfilled = (state) => {
+  state.diaryInfo = initialState.diaryInfo;
+  state.currentDate = 0;
+};
+
+const updateCurrentDate = (state) => {
+  state.currentDate = Date.now();
 };
 
 const handlePending = (state) => {
@@ -41,7 +57,11 @@ const handleFetchAllFulfilled = (state, { payload }) => {
 const handleDeleteProductFulfilled = (state, { payload }) => {
   state.diaryInfo.isLoadingDiary = false;
   state.diaryInfo.error = null;
-  state.diaryInfo.products = payload.data.products;
+
+  const newArrProducts = state.diaryInfo.products.filter(
+    (product) => product._id !== payload.products
+  );
+  state.diaryInfo.products = newArrProducts;
   state.diaryInfo.consumedCalories = payload.data.consumedCalories;
 };
 
@@ -49,7 +69,11 @@ const handleDeleteExerciseFulfilled = (state, { payload }) => {
   state.diaryInfo.isLoadingDiary = false;
   state.diaryInfo.error = null;
 
-  state.diaryInfo.exercises = payload.data.exercises;
+  const newArrExercises = state.diaryInfo.exercises.filter(
+    (exercise) => exercise._id !== payload.exercises
+  );
+
+  state.diaryInfo.exercises = newArrExercises;
   state.diaryInfo.doneExercisesTime = payload.data.doneExercisesTime;
   state.diaryInfo.burnedCalories = payload.data.burnedCalories;
 };
@@ -75,6 +99,11 @@ export const diarySlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
+      .addCase(register.fulfilled, updateCurrentDate)
+      .addCase(logIn.fulfilled, updateCurrentDate)
+      .addCase(GoogleSignIn.fulfilled, updateCurrentDate)
+      .addCase(logOut.fulfilled, handleLogOutFulfilled)
+      .addCase(refreshUser.fulfilled, updateCurrentDate)
       .addCase(fetchAllDairyInfo.pending, handlePending)
       .addCase(fetchAllDairyInfo.fulfilled, handleFetchAllFulfilled)
       .addCase(fetchAllDairyInfo.rejected, handleRejected)

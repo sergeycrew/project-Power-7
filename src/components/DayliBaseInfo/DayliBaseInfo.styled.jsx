@@ -8,7 +8,6 @@ color: white;
   font-style: normal;
   font-weight: 400;
   line-height: 18px;
-  
 `;
 
 export const Container = styled.div`
@@ -23,7 +22,7 @@ export const Container = styled.div`
   /* flex-shrink: 0; */
   border-radius: 12px;
   border: 1px solid rgba(239, 237, 232, 0.2);
-  background-color: ${p => p.theme.colors.orangeColor};
+  background-color: ${(p) => p.theme.colors.orangeColor};
 
   @media screen and (min-width: 768px) and (max-width: 1439px) {
     max-width: 209px;
@@ -45,12 +44,13 @@ export const Container = styled.div`
 export const Svg = styled.svg`
   width: 16px;
   height: 16px;
-  /* fill: ${p => p.theme.colors.orangeLightColor};
-  stroke: ${p => p.theme.colors.orangeLightColor}; */
+  /* fill: ${(p) => p.theme.colors.orangeLightColor};
+  stroke: ${(p) => p.theme.colors.orangeLightColor}; */
 `;
 
 export const Amount = styled.p`
- color: ${p => p.theme.colors.whiteColor};
+  color: ${(p) => p.theme.colors.whiteColor};
+
   font-family: 'RobotoBold';
   font-size: 18px;
   line-height: 1.3;
@@ -61,6 +61,7 @@ export const Amount = styled.p`
 `;
 
 export const Wrap = styled.div`
-display: flex;
-align-items: center;
-gap: 8px;`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+`;
