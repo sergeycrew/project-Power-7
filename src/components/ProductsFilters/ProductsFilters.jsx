@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { changeFilter } from '../../redux/products/filterSlice';
 import { useFormik } from 'formik';
 import Select from 'react-select';
-import sprite from '../../images/sprite.svg';
+import sprite from '../../images/sprite/sprite.svg';
 import {
   StyledForm,
   Field,
@@ -84,13 +84,13 @@ export const ProductsFilters = () => {
           }}
         >
           <SvgX>
-            <use href={`${sprite}#icon-x`}></use>
+            <use href={`${sprite}#x2`}></use>
           </SvgX>
         </BtnCancel>
       )}
       <BtnSearch type="submit">
         <SvgSearch>
-          <use href={`${sprite}#icon-search`}></use>
+          <use href={`${sprite}#search`}></use>
         </SvgSearch>
       </BtnSearch>
 
