@@ -2,14 +2,19 @@ import styled from 'styled-components';
 import { ErrorMessage, Form } from 'formik';
 
 export const Container = styled.div`
-  margin-top: 20px;
+  margin-top: 40px;
+
+
 
   @media screen and (min-width: 768px) {
-    margin-top: 40px;
+    margin-top: 64px;
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
     width: 700px;
+  } 
+   @media screen and (min-width: 1440px) {
+    margin-top: 58px;
   }
 `;
 
@@ -103,6 +108,24 @@ export const WrappInput = styled.div`
     transform: translateY(-44px);
   }
 `;
+
+
+export const WrappMainInput = styled.div`
+position: relative;
+  label {
+    position: absolute;
+    font-size: 14px;
+    top: -30%;
+    left: 14px;
+    /* transform: translateY(-50%); */
+    pointer-events: none;
+    /* transition:
+      top 0.2s,
+      left 0.2s,
+      transform 0.2s; */
+    /* color: ${(p) => p.theme.colors.accentColor}; */
+    color: gray;
+  }`
 
 export const InputField = styled.input`
   max-width: 165px;

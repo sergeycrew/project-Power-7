@@ -66,8 +66,8 @@ margin-left: auto;
 margin-top: 32px;
 justify-content: center;
 /*  */
-/* width: 70px;
-  height: 20px; */
+width: 70px;
+  height: 20px;
 
   @media screen and (min-width: 768px) {
     width: 78px;
