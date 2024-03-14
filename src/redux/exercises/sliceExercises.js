@@ -7,7 +7,7 @@ import {
 
 const handlePending = (state) => {
   state.loading = true;
-  // state.exercises = [];
+
 };
 
 const handleRejected = (state, action) => {

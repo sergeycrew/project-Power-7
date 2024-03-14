@@ -15,15 +15,16 @@ export const ModalWrapper = styled.div`
 
 export const InputWrapper = styled.div`
   position: relative;
-
+ width: 287px;
+ 
    @media screen and (min-width: 374px) {
-    width: 287px;
-    height: 34px;
+   
   };
 
   
   @media screen and (min-width: 768px) {
-    width: 415px;
+    width: 415px;  
+     height: 34px;
   }
 `;
 
