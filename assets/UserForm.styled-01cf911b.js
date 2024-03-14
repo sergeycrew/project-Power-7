@@ -1,4 +1,4 @@
-import{u as e}from"./index-0c3acf8a.js";import{F as r,E as t}from"./formik.esm-12f7b185.js";const a=e.div`
+import{u as e}from"./index-b51feb05.js";import{F as t,E as i}from"./formik.esm-17ede76a.js";const a=e.div`
   margin-top: 40px;
 
   @media screen and (min-width: 768px) {
@@ -11,12 +11,12 @@ import{u as e}from"./index-0c3acf8a.js";import{F as r,E as t}from"./formik.esm-1
   @media screen and (min-width: 1440px) {
     margin-top: 58px;
   }
-`,p=e(r)`
+`,p=e(t)`
   /* margin-top: 20px; */
 
   @media screen and (min-width: 768px) {
   }
-`,d=e(t)`
+`,l=e(i)`
   position: absolute;
   top: 48px;
   left: 0;
@@ -37,7 +37,7 @@ import{u as e}from"./index-0c3acf8a.js";import{F as r,E as t}from"./formik.esm-1
   @media screen and (min-width: 768px) {
     font-size: 14px;
   }
-`;const l=e.input`
+`;const s=e.input`
   max-width: 335px;
   width: 100%;
   padding: 14px;
@@ -58,7 +58,7 @@ import{u as e}from"./index-0c3acf8a.js";import{F as r,E as t}from"./formik.esm-1
   @media screen and (min-width: 768px) and (max-width: 1439px) {
     max-width: 341px;
   }
-`,s=e.div`
+`,d=e.div`
   display: inline-flex;
   align-items: flex-end;
   margin-top: 20px;
@@ -75,7 +75,7 @@ import{u as e}from"./index-0c3acf8a.js";import{F as r,E as t}from"./formik.esm-1
     position: absolute;
     font-size: 14px;
     top: 50%;
-    left: 14px;
+    left: 7px;
     transform: translateY(-50%);
     pointer-events: none;
     transition:
@@ -97,14 +97,10 @@ import{u as e}from"./index-0c3acf8a.js";import{F as r,E as t}from"./formik.esm-1
     position: absolute;
     font-size: 14px;
     top: -30%;
-    left: 14px;
-    /* transform: translateY(-50%); */
+    left: 7px;
+
     pointer-events: none;
-    /* transition:
-      top 0.2s,
-      left 0.2s,
-      transform 0.2s; */
-    /* color: ${o=>o.theme.colors.accentColor}; */
+   
     color: gray;
   }
 `,g=e.input`
@@ -129,7 +125,7 @@ import{u as e}from"./index-0c3acf8a.js";import{F as r,E as t}from"./formik.esm-1
     border-color: ${o=>o.theme.colors.orangeColor};
   }
 `,h=e.div`
-  margin-top: 30px;
+  margin-top: 42px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -214,7 +210,7 @@ import{u as e}from"./index-0c3acf8a.js";import{F as r,E as t}from"./formik.esm-1
     flex-direction: column;
     gap: 8px;
   }
-`,u=e.button`
+`,f=e.button`
   margin: 40px 0px 44px 20px;
   padding: 12px 40px;
   border-radius: 12px;
@@ -230,25 +226,17 @@ import{u as e}from"./index-0c3acf8a.js";import{F as r,E as t}from"./formik.esm-1
     margin: 40px 0px 54px 0;
     padding: 16px 50px;
   }
-`;e.button`
-  margin: 40px 0px 44px 20px;
-  /* margin-left: 10px ; */
-  padding: 12px 40px;
-  border-radius: 12px;
-  background: ${o=>o.theme.colors.orangeColor};
-  color: #efede8;
+`,u=e.p`
+position: absolute;
+font-family: 'Roboto', sans-serif;
+font-size: 14px;
+font-weight: 400;
+line-height: 18px;
+color: gray;
+top: -25px;
+left: -1px;
+/* letter-spacing: 0px; */
+text-align: left;
 
-  /* .hidden {
-  display: none;
-} */
 
-  &:disabled {
-    color: rgba(239, 237, 232, 0.6);
-    cursor: default;
-    display: none;
-  }
-  @media screen and (min-width: 768px) {
-    margin: 40px 0px 54px 20px;
-    padding: 16px 50px;
-  }
-`;export{u as B,a as C,d as F,g as I,p as S,m as W,l as a,s as b,c,x as d,h as e,b as f};
+`;export{f as B,a as C,l as F,g as I,u as R,p as S,m as W,s as a,d as b,c,x as d,h as e,b as f};
