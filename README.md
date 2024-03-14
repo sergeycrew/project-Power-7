@@ -1,5 +1,3 @@
-# React & Node.js Team Project
-
 ## About The Project Power Pulse
 
 Welcome to our Calorie Tracker & Fitness Manager Web App! This application helps users track their daily calorie consumption and manage their fitness journey by selecting exercises and food products to eat. Whether you're trying to lose weight, maintain a healthy lifestyle, or build muscle, our app provides the tools you need to achieve your fitness goals.
@@ -29,17 +27,21 @@ Mobile Support: Responsive design ensures seamless usage on mobile devices, allo
 ![Presentation3](./src/assets/readme/mobile.gif)
 
 ### Built With
-* [![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)]
-* [![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)]
-* [![Redux](https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white)]
-* [![style: styled-components](https://img.shields.io/badge/style-%F0%9F%92%85%20styled--components-orange.svg?colorB=daa357&colorA=db748e)]
-* [![MongoDB](https://img.shields.io/badge/MongoDB-47A248.svg?style=for-the-badge&logo=MongoDB&logoColor=white)]
-* [![Express.js](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge)]
-* [![JSONWebToken](https://img.shields.io/badge/JSON%20Web%20Tokens-000000.svg?style=for-the-badge&logo=JSON-Web-Tokens&logoColor=white)]
-* [![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)]
-* [![GitHub](https://badgen.net/badge/icon/github?icon=github&label)]
-* [![Visual Studio](https://badgen.net/badge/icon/visualstudio?icon=visualstudio&label)]
-* [![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)]
+* ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+* ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+* ![Redux](https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white)
+* ![style: styled-components](https://img.shields.io/badge/style-%F0%9F%92%85%20styled--components-orange.svg?colorB=daa357&colorA=db748e)
+* ![MongoDB](https://img.shields.io/badge/MongoDB-47A248.svg?style=for-the-badge&logo=MongoDB&logoColor=white)
+* ![Express.js](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge)
+* ![JSONWebToken](https://img.shields.io/badge/JSON%20Web%20Tokens-000000.svg?style=for-the-badge&logo=JSON-Web-Tokens&logoColor=white)
+* ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
+* ![GitHub](https://badgen.net/badge/icon/github?icon=github&label)
+* ![Visual Studio](https://badgen.net/badge/icon/visualstudio?icon=visualstudio&label)
+* ![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)
+
+# React & Node.js Team Project
+
+Important! As this is a non-commercial project, our server is hosted on a free hosting service, which may cause longer loading times after periods of inactivity.
 
 # Frontend Developers
 - [Sergey Bodnariuk **Team Lead & Developer**](https://github.com/sergeycrew)
