@@ -39,13 +39,12 @@ export const DaySwitch = () => {
             <s.SwitchButton
               type="button"
               disabled={isPreviousButtonDisabled()}
-              style={{ opacity: isPreviousButtonDisabled() ? '0.2' : '1' }}
               onClick={() => {
                 dispatch(previousDay());
               }}
               aria-label="previous-day"
             >
-              <s.SwitchButtonIcon>
+              <s.SwitchButtonIcon disabled={isPreviousButtonDisabled()}>
                 <use href={`${icons}#icon-chevron-left`}></use>
               </s.SwitchButtonIcon>
             </s.SwitchButton>

@@ -1,5 +1,9 @@
 export const selectIsLoadingDiary = (state) =>
   state.diary.diaryInfo.isLoadingDiary;
+export const selectIsLoadingProducts = (state) =>
+  state.diary.diaryInfo.isLoadingProducts;
+export const selectIsLoadingExercises = (state) =>
+  state.diary.diaryInfo.isLoadingExercises;
 export const selectError = (state) => state.diary.diaryInfo.error;
 export const selectCurrentDate = (state) => state.diary.currentDate;
 export const selectBurnedCalories = (state) =>
