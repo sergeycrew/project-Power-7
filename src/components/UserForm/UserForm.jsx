@@ -13,7 +13,7 @@ import RadioOption from '../UserRadio/UserRadio';
 import { useState } from 'react';
 
 const UserForm = () => {
-  const navigateTo = useNavigate();
+  //const navigateTo = useNavigate();
   const dispatch = useDispatch();
   const user = useSelector(selectUser);
 
