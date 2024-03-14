@@ -1,9 +1,14 @@
-import{u as e}from"./index-1285c29c.js";import{F as t,E as i}from"./formik.esm-e7e6e7e1.js";const a=e.div`
+import{u as e}from"./index-8ed53a7e.js";import{F as t,E as r}from"./formik.esm-d429b59e.js";const a=e.div`
   margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 36px;
 
   @media screen and (min-width: 768px) {
     margin-top: 64px;
-    display: flex;
+      flex-wrap: nowrap;
+      gap: 0;
+ 
     align-items: flex-end;
     justify-content: space-between;
     width: 700px;
@@ -16,7 +21,7 @@ import{u as e}from"./index-1285c29c.js";import{F as t,E as i}from"./formik.esm-e
 
   @media screen and (min-width: 768px) {
   }
-`,l=e(i)`
+`,l=e(r)`
   position: absolute;
   top: 48px;
   left: 0;
@@ -41,7 +46,8 @@ import{u as e}from"./index-1285c29c.js";import{F as t,E as i}from"./formik.esm-e
   max-width: 335px;
   width: 100%;
   padding: 14px;
-  margin-bottom: 14px;
+  /* margin-bottom: 14px; */
+  
   align-items: center;
   gap: 10px;
   border-radius: 12px;
@@ -96,7 +102,7 @@ import{u as e}from"./index-1285c29c.js";import{F as t,E as i}from"./formik.esm-e
   label {
     position: absolute;
     font-size: 14px;
-    top: -30%;
+    top: -40%;
     left: 7px;
 
     pointer-events: none;
@@ -202,7 +208,7 @@ import{u as e}from"./index-1285c29c.js";import{F as t,E as i}from"./formik.esm-e
   .radio-input:checked + .radio-label::after {
     opacity: 1;
   }
-`,b=e.div`
+`,f=e.div`
   margin-top: 40px;
 
   @media screen and (min-width: 768px) {
@@ -210,7 +216,7 @@ import{u as e}from"./index-1285c29c.js";import{F as t,E as i}from"./formik.esm-e
     flex-direction: column;
     gap: 8px;
   }
-`,f=e.button`
+`,b=e.button`
   margin: 40px 0px 44px 20px;
   padding: 12px 40px;
   border-radius: 12px;
@@ -239,4 +245,4 @@ left: -1px;
 text-align: left;
 
 
-`;export{f as B,a as C,l as F,g as I,u as R,p as S,m as W,s as a,d as b,c,x as d,h as e,b as f};
+`;export{b as B,a as C,l as F,g as I,u as R,p as S,m as W,s as a,d as b,c,x as d,h as e,f};
