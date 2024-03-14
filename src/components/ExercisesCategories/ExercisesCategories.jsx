@@ -1,8 +1,5 @@
 import * as s from './ExercisesCategories.styled';
-import {  useEffect } from 'react';
-
-
-
+import { useEffect } from 'react';
 
 import { ExerciseCard } from 'components/ExerciseCard/ExerciseCard';
 
@@ -13,7 +10,10 @@ import {
   selectMaxCategoriesPage,
   selectPaginCategories,
 } from '../../redux/exercises/selectorsExercises';
-import { changeCategoriesLimit, changeCategoriesPage } from '../../redux/exercises/sliceExercises';
+import {
+  changeCategoriesLimit,
+  changeCategoriesPage,
+} from '../../redux/exercises/sliceExercises';
 import { WrapperRadio } from '../UserForm/UserForm.styled';
 import { useMediaQuery } from '@mui/system';
 
@@ -23,7 +23,11 @@ export const ExercisesCategories = ({ handleSetExName }) => {
 
   const maxPage = useSelector(selectMaxCategoriesPage);
   const pagePagin = useSelector(selectCategoriesPage);
-  const isTabletScreen = useMediaQuery('(min-width: 768px) and (max-width: 1440px)');
+  const isTabletScreen = useMediaQuery(
+    '(min-width: 768px) and (max-width: 1439px)'
+  );
+
+  const isMobileScreen = useMediaQuery('(max-width: 767px)');
 
   useEffect(() => {
     if (isTabletScreen) {
@@ -31,14 +35,19 @@ export const ExercisesCategories = ({ handleSetExName }) => {
     } else {
       dispatch(changeCategoriesLimit(10));
     }
-}, [dispatch, isTabletScreen]);
+  }, [dispatch, isTabletScreen]);
 
-  useEffect(()=>{
-dispatch(fetchExercisesCategory())
-  },[dispatch])
+  useEffect(() => {
+    dispatch(fetchExercisesCategory());
+  }, [dispatch]);
 
-
-
+  const handlePaginationClick = (page) => {
+    // Scroll up when pagination button is clicked and media width is 320px
+    if (isMobileScreen || isTabletScreen) {
+      window.scrollTo({ top: 80, behavior: 'smooth' });
+    }
+    dispatch(changeCategoriesPage(page));
+  };
 
   return (
     <div>
@@ -63,7 +72,7 @@ dispatch(fetchExercisesCategory())
                 id={page}
                 value={page}
                 checked={pagePagin === page}
-                onChange={() => dispatch(changeCategoriesPage(page))}
+                onChange={() => handlePaginationClick(page)}
               />
               <label className="radio-label" htmlFor={page}></label>
             </div>
