@@ -1,23 +1,21 @@
 // radiobuttons
 import * as Yup from 'yup';
-import { Formik, Field} from 'formik';
+import { Formik, Field } from 'formik';
 import * as s from './UserForm.styled';
+import { useNavigate } from 'react-router-dom';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { selectUser } from '../../redux/auth/authSelectors';
-import {
-  updateUserParams
-} from '../../redux/auth/authOperation';
-
+import { updateUserParams } from '../../redux/auth/authOperation';
 
 import { CustomDataPicker } from '../UserDataPicker/UserDataPicker';
 import RadioOption from '../UserRadio/UserRadio';
 import { useState } from 'react';
 
 const UserForm = () => {
+  const navigateTo = useNavigate();
   const dispatch = useDispatch();
   const user = useSelector(selectUser);
-
 
   const bloodOpt = [
     { id: '1', value: '1', label: '1' },
@@ -90,6 +88,7 @@ const UserForm = () => {
   const handleSubmit = (values) => {
     dispatch(updateUserParams(values));
     setBtnActive(false);
+    navigateTo('/diary');
   };
   const [btnActive, setBtnActive] = useState(false);
   const handleChanger = () => {
@@ -102,7 +101,6 @@ const UserForm = () => {
       validationSchema={ValidationSchema}
       onSubmit={handleSubmit}
       validateOnChange={true}
-
     >
       {(formik) => (
         <s.StyledForm onChange={handleChanger}>
@@ -114,7 +112,6 @@ const UserForm = () => {
                 placeholder="Your name"
                 as={s.Input}
                 required
-     
               />
               <label htmlFor="name">Name</label>
               <s.FormError name="name" component="span" />
@@ -175,8 +172,6 @@ const UserForm = () => {
             </s.WrappInput>
             <CustomDataPicker
               selectedDate={formik.values.birthday}
-             
-
               setSelectedDate={(date) => {
                 handleChanger();
                 formik.setFieldValue('birthday', date.toISOString());
