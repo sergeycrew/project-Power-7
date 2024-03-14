@@ -2,7 +2,7 @@
 import * as Yup from 'yup';
 import { Formik, Field } from 'formik';
 import * as s from './UserForm.styled';
-import { useNavigate } from 'react-router-dom';
+//import { useNavigate } from 'react-router-dom';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { selectUser } from '../../redux/auth/authSelectors';
@@ -88,7 +88,7 @@ const UserForm = () => {
   const handleSubmit = (values) => {
     dispatch(updateUserParams(values));
     setBtnActive(false);
-    navigateTo('/diary');
+    //navigateTo('/diary');
   };
   const [btnActive, setBtnActive] = useState(false);
   const handleChanger = () => {
