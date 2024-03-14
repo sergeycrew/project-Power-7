@@ -4,27 +4,20 @@ import icon from '../../images/sprite/sprite.svg';
 import { GoogleSignInButton } from '../../components/GoogleSignIn/GoogleSignIn';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-//import { refreshUser } from '../../redux/auth/authOperation';
+
 import { GoogleSignIn } from '../../redux/auth/authOperation';
 
-//import { useLocation } from 'react-router-dom';
-
 const WelcomePage = () => {
-  //const params = useLocation();
   const dispatch = useDispatch();
   const url = window.location;
   const accessToken = new URLSearchParams(url.search).get('accesstoken');
   const refreshToken = new URLSearchParams(url.search).get('refreshtoken');
-  
-
-
- 
 
   useEffect(() => {
     const refetch = async () => {
       if (accessToken && refreshToken) {
         dispatch(GoogleSignIn({ tokens: { accessToken, refreshToken } }));
-      } 
+      }
     };
 
     refetch();

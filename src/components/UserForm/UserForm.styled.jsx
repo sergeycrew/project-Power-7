@@ -3,10 +3,15 @@ import { ErrorMessage, Form } from 'formik';
 
 export const Container = styled.div`
   margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 36px;
 
   @media screen and (min-width: 768px) {
     margin-top: 64px;
-    display: flex;
+      flex-wrap: nowrap;
+      gap: 0;
+ 
     align-items: flex-end;
     justify-content: space-between;
     width: 700px;
@@ -50,7 +55,8 @@ export const Input = styled.input`
   max-width: 335px;
   width: 100%;
   padding: 14px;
-  margin-bottom: 14px;
+  /* margin-bottom: 14px; */
+  
   align-items: center;
   gap: 10px;
   border-radius: 12px;
@@ -112,7 +118,7 @@ export const WrappMainInput = styled.div`
   label {
     position: absolute;
     font-size: 14px;
-    top: -30%;
+    top: -40%;
     left: 7px;
 
     pointer-events: none;
