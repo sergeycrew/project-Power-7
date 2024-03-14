@@ -6,6 +6,7 @@ import { CountdownCircleTimer } from 'react-countdown-circle-timer';
 import { toast } from 'react-toastify';
 import { featchAddExercises } from '../../redux/exercises/operationsExercises';
 import { useDispatch } from 'react-redux';
+import avacado from '../../images/avocado-1x.png'
 
 export const ModalTrening = ({
   onToogle,
@@ -110,7 +111,7 @@ export const ModalTrening = ({
       <>
         <s.DivColumn>
           <s.ImgDiv>
-            <s.ImgGif src={exerciseInfo.gifUrl} alt="Working out" />
+            <s.ImgGif src={exerciseInfo.gifUrl || avacado } alt="Working out" />
           </s.ImgDiv>
           <s.DivTimer>
             <s.Text>Time</s.Text>
@@ -167,7 +168,7 @@ export const ModalTrening = ({
             {Object.entries(exerciseInfo)
               .filter(
                 ([key]) =>
-                  key !== 'gifUrl' && key !== 'burnedCalories' && key !== '_id'
+                  key !== 'gifUrl' && key !== 'burnedCalories' && key !== '_id' && key !== 'time'
               )
               .map(([key, value]) => (
                 <s.ItemTrening key={value}>
