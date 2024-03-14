@@ -1,9 +1,14 @@
 import avocado from '../../images/avocado-1x.png';
 import * as s from './ModalSuccessProduct.styled';
 import sprite from '../../images/sprite/sprite.svg';
+import { useSelector } from 'react-redux';
+import { selectCategoriesImg } from '../../redux/products/productsSelectors';
+import { DiaryLoader } from '../DiaryLoader/DiaryLoader';
 
 export const ModalSuccessProduct = ({ calories, onClose }) => {
+const img = useSelector(selectCategoriesImg)
   return (
+    
     <s.CustomModale
       modalStyles={{ maxWidth: '430px', width: '100%', height: '384px' }}
       modalTabletStyles={{ width: '430px', height: '439px' }}
@@ -11,7 +16,8 @@ export const ModalSuccessProduct = ({ calories, onClose }) => {
       onClose={onClose}
     >
       <s.Wrapper>
-        <s.Img src={avocado} alt="Category Image" />
+     <s.Img src={img} alt="Category Image" />
+        
         <s.TextWrapper>
           <s.Title>Well done</s.Title>
           <ul>

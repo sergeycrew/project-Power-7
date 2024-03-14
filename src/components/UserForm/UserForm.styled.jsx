@@ -89,7 +89,7 @@ export const WrappInput = styled.div`
     position: absolute;
     font-size: 14px;
     top: 50%;
-    left: 14px;
+    left: 7px;
     transform: translateY(-50%);
     pointer-events: none;
     transition:
@@ -113,14 +113,10 @@ export const WrappMainInput = styled.div`
     position: absolute;
     font-size: 14px;
     top: -30%;
-    left: 14px;
-    /* transform: translateY(-50%); */
+    left: 7px;
+
     pointer-events: none;
-    /* transition:
-      top 0.2s,
-      left 0.2s,
-      transform 0.2s; */
-    /* color: ${(p) => p.theme.colors.accentColor}; */
+   
     color: gray;
   }
 `;
@@ -149,7 +145,7 @@ export const InputField = styled.input`
 `;
 
 export const WrapperRadio = styled.div`
-  margin-top: 30px;
+  margin-top: 42px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -256,25 +252,22 @@ export const Button = styled.button`
   }
 `;
 
-export const ButtonVerify = styled.button`
-  margin: 40px 0px 44px 20px;
-  /* margin-left: 10px ; */
-  padding: 12px 40px;
-  border-radius: 12px;
-  background: ${(p) => p.theme.colors.orangeColor};
-  color: #efede8;
 
-  /* .hidden {
-  display: none;
-} */
 
-  &:disabled {
-    color: rgba(239, 237, 232, 0.6);
-    cursor: default;
-    display: none;
-  }
-  @media screen and (min-width: 768px) {
-    margin: 40px 0px 54px 20px;
-    padding: 16px 50px;
-  }
-`;
+
+
+
+export const RadioTitle = styled.p`
+position: absolute;
+font-family: 'Roboto', sans-serif;
+font-size: 14px;
+font-weight: 400;
+line-height: 18px;
+color: gray;
+top: -25px;
+left: -1px;
+/* letter-spacing: 0px; */
+text-align: left;
+
+
+`

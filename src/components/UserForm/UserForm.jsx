@@ -1,20 +1,18 @@
 // radiobuttons
 import * as Yup from 'yup';
-import { Formik, Field, ErrorMessage } from 'formik';
+import { Formik, Field} from 'formik';
 import * as s from './UserForm.styled';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { selectIsLoggedIn, selectUser } from '../../redux/auth/authSelectors';
+import { selectUser } from '../../redux/auth/authSelectors';
 import {
-  updateUserParams,
-  userVerifyAgain,
+  updateUserParams
 } from '../../redux/auth/authOperation';
 
-// import user from '../../jsonFromBd/userParams.json'
+
 import { CustomDataPicker } from '../UserDataPicker/UserDataPicker';
 import RadioOption from '../UserRadio/UserRadio';
 import { useState } from 'react';
-
 
 const UserForm = () => {
   const dispatch = useDispatch();
@@ -103,12 +101,6 @@ const UserForm = () => {
     setBtnActive(true);
   };
 
-  
-
-
-
- 
-
   return (
     <Formik
       initialValues={initialValues}
@@ -121,7 +113,6 @@ const UserForm = () => {
         <s.StyledForm onChange={handleChanger}>
           <s.Container>
             <s.WrappMainInput style={{ width: '100%' }}>
-
               <Field
                 name="name"
                 type="text"
@@ -134,7 +125,6 @@ const UserForm = () => {
               <s.FormError name="name" component="span" />
             </s.WrappMainInput>
             <s.WrappMainInput style={{ width: '100%' }}>
-    
               <s.Input
                 type="text"
                 name="email"
@@ -202,7 +192,14 @@ const UserForm = () => {
 
           <s.WrapperRadio>
             <div style={{ display: 'flex', marginRight: '20px' }}>
-              <div style={{ display: 'flex', marginRight: '20px' }}>
+              <div
+                style={{
+                  display: 'flex',
+                  marginRight: '20px',
+                  position: 'relative',
+                }}
+              >
+                <s.RadioTitle>Blood</s.RadioTitle>
                 {bloodOpt.map((option) => (
                   <RadioOption
                     key={option.id}
@@ -254,7 +251,6 @@ const UserForm = () => {
             >
               Save
             </s.Button>
-      
           </div>
         </s.StyledForm>
       )}
@@ -262,11 +258,11 @@ const UserForm = () => {
   );
 };
 export default UserForm;
-      // <s.ButtonVerify
-      //         type="submit"
-      //         disabled={buttonDisabled}
-      //         onClick={sendVerify}
-      //         style={{ display: user.verify ? 'none' : 'inline-block' }}
-      //       >
-      //         {verifyBtnContant}
-      //       </s.ButtonVerify>
+// <s.ButtonVerify
+//         type="submit"
+//         disabled={buttonDisabled}
+//         onClick={sendVerify}
+//         style={{ display: user.verify ? 'none' : 'inline-block' }}
+//       >
+//         {verifyBtnContant}
+//       </s.ButtonVerify>

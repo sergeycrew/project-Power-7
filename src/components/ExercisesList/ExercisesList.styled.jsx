@@ -25,33 +25,22 @@ export const BtnMore = styled.button`
   justify-content: center;
   align-items: center;
   /* width: 100%; */
-  width: 136px;
+  width: 166px;
+  border-radius: 12px;
+  border: 1px solid rgba(239, 237, 232, 0.2);
   /* height: 25px; */
   /* padding: 10px 20px; */
-  padding: 0;
-  margin-top: 20px;
+  padding: 10px 27px 10px 27px;
+  /* margin-top: 5px; */
   font-family: 'Roboto', sans-serif;
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
   line-height: 1.28;
-  &&::after {
-    display: block;
-    content: '';
-    position: absolute;
-    /* width: 100%; */
-    width: 95px;
-    height: 4px;
-    left: 20;
-    bottom: -8px;
-
-    background-color: #ef8964;
-    border-radius: 2px;
-
-    @media screen and (min-width: 768px) {
-      bottom: 0px;
-    }
+  &:hover {
+    border-color: ${p => p.theme.colors.hoverColor};
   }
+
 `;
 export const MainExercisesContainer = styled.div`
   &::-webkit-scrollbar {

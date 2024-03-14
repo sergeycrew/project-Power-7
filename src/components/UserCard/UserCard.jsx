@@ -1,9 +1,12 @@
 import * as s from './UserCard.styled';
 import sprite from '../../images/sprite/sprite.svg';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectUser, selectUserDataComplete } from '../../redux/auth/authSelectors';
+import {
+  selectUser,
+  selectUserDataComplete,
+} from '../../redux/auth/authSelectors';
 // import { useState } from 'react';
-import { updateUserAvatar } from '../../redux/auth/authOperation';
+import { updateUserAvatar, userVerifyAgain } from '../../redux/auth/authOperation';
 import { useState } from 'react';
 // import React, {} from 'react';
 // import axios from 'axios';
@@ -21,7 +24,6 @@ const UserCard = () => {
   const avatarShown = user.avatarUrl ? avatarImg : avatarDef;
   // const [selectedFile, setSelectedFile] = useState(null)
 
-
   const successImg = (
     <s.VerSvg>
       <use href={`${sprite}#success`}></use>
@@ -33,7 +35,6 @@ const UserCard = () => {
     </s.NotVerSvg>
   );
 
-  
   const handleFileChange = (e) => {
     //    dispatch(e.target.files[0]);
     dispatch(updateUserAvatar(e.target.files[0]));
@@ -44,32 +45,24 @@ const UserCard = () => {
   const [remainingTime, setRemainingTime] = useState(null);
   const [timerExpired, setTimerExpired] = useState(false);
 
-
   const verifyContent = buttonDisabled
     ? `Try again in ${remainingTime}`
     : timerExpired
     ? 'Send again'
-    : (
-        
-          'Verify'
-          
-      );
+    : 'Verify';
 
-    //   <>
-    //   Verify
-    //   {errorImg}
-    // </>
+  //   <>
+  //   Verify
+  //   {errorImg}
+  // </>
 
-  const  sucsescontent =  'Verified'
-//   <>
-//   Verified
-//   {successImg}
-// </>
-
+  const sucsescontent = 'Verified';
+  //   <>
+  //   Verified
+  //   {successImg}
+  // </>
 
   const isVerifyed = user.verify ? sucsescontent : verifyContent;
-  
-
 
   const startTimer = () => {
     clearInterval(timer);
@@ -91,16 +84,12 @@ const UserCard = () => {
     );
   };
 
-
- 
-
   const sendVerify = () => {
     startTimer();
 
     const email = user.email;
 
-    // dispatch(userVerifyAgain({email}));
-
+    dispatch(userVerifyAgain({email}));
   };
 
   return (
@@ -114,15 +103,15 @@ const UserCard = () => {
           name="fileInput"
           style={{ display: 'none' }}
           onChange={handleFileChange}
-        //   disabled={!user.verify}
+          //   disabled={!user.verify}
         ></input>
         <s.Label
           htmlFor="fileInput"
-          style={{ display: user.verify ? 'none' : 'inline-block' }} ///////////////////////
+          style={{ display: !user.verify ? 'none' : 'inline-block' }} ///////////////////////
           // disabled={!user.verify}
         >
           <s.UplSvg
-        //   disabled={user.verify}
+          //   disabled={user.verify}
           >
             <use href={`${sprite}#add`}></use>
           </s.UplSvg>
@@ -135,7 +124,13 @@ const UserCard = () => {
         type="submit"
         disabled={buttonDisabled || user.verify}
         onClick={sendVerify}
-        style={{ color: user.verify ? '#3cbf61' : buttonDisabled ? 'rgba(239, 237, 232, 0.9)' : 'tomato' }}
+        style={{
+          color: user.verify
+            ? '#3cbf61'
+            : buttonDisabled
+            ? 'rgba(239, 237, 232, 0.9)'
+            : 'tomato',
+        }}
         // style={{ display: user.verify ? 'none' : 'inline-block' }}
       >
         {isVerifyed}

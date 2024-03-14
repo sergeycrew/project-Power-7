@@ -79,13 +79,13 @@ export const ExercisesListByCategory = () => {
               toogleModal={toogleModal}
             />
           ))}
-        </s.ExercisesList>
+
         
         {!isLoading && maxPage !== exrPage && (
         <s.BtnMore type='button' onClick={() => fetchMoreData()}>
          Load More</s.BtnMore>
         )}
-    
+            </s.ExercisesList>
    
       </s.MainExercisesContainer>
       {isModalOpen && (

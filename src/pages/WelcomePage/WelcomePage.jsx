@@ -15,14 +15,16 @@ const WelcomePage = () => {
   const url = window.location;
   const accessToken = new URLSearchParams(url.search).get('accesstoken');
   const refreshToken = new URLSearchParams(url.search).get('refreshtoken');
+  
 
-  console.log(accessToken, refreshToken);
+
+ 
 
   useEffect(() => {
     const refetch = async () => {
       if (accessToken && refreshToken) {
         dispatch(GoogleSignIn({ tokens: { accessToken, refreshToken } }));
-      }
+      } 
     };
 
     refetch();

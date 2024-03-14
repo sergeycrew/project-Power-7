@@ -17,25 +17,35 @@ const ExercisesPage = lazy(() => import('pages/ExercisesPage/ExercisesPage'));
 //const ErrorPage = lazy(() => import('pages/ErrorPage/ErrorPage'));
 
 import { useAuth } from './hooks';
-import { currentUser, refreshUser } from './redux/auth/authOperation';
+import { Verify, currentUser, refreshUser } from './redux/auth/authOperation';
 import { useDispatch, useSelector } from 'react-redux';
 import { Loader } from './components/Loader/Loader';
 import { selectUserDataComplete } from './redux/auth/authSelectors';
 
 function App() {
-  const { isRefreshing, isLoggedIn } = useAuth();
+  const { isRefreshing, isLoggedIn, isLoading } = useAuth();
   const userParams = useSelector(selectUserDataComplete);
   const redirectLink = userParams ? '/diary' : '/profile';
   const dispatch = useDispatch();
+  const currentLoading = isLoggedIn && !isLoading;
+  const url = window.location;
+  const verifyToken = new URLSearchParams(url.search).get('verificationToken');
+
   useEffect(() => {
+    const refetch = async () => {
+      if (verifyToken) {
+        dispatch(Verify(verifyToken))
+      }
+    };
+    refetch();
     dispatch(refreshUser());
     if (isLoggedIn) {
       dispatch(currentUser());
     }
-  }, [dispatch, isLoggedIn]);
+  }, [dispatch, isLoggedIn, verifyToken]);
 
-  // return (
-  return isRefreshing ? (
+  // return ( && currentLoading
+  return isRefreshing   ? (
     <Loader />
   ) : (
     <>

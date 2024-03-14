@@ -6,6 +6,12 @@ export const categoriesSlice = createSlice({
   initialState: {
     categories: [],
     isLoading: false,
+    img: '',
+  },
+  reducers: {
+    addImg(state, action){
+      state.img = action.payload
+    }
   },
 
   extraReducers: (builder) =>
@@ -16,9 +22,10 @@ export const categoriesSlice = createSlice({
 });
 
 function CategoriesFulfilled(state, { payload }) {
-  state.categories = payload.map(({ title }) => ({
+  state.categories = payload.map(({ title, img }) => ({
     value: title,
     label: title.charAt(0).toUpperCase() + title.slice(1),
+    img: img
   }));
   state.isLoading = false;
 }
@@ -32,3 +39,4 @@ function rejected(state) {
 }
 
 export const categoriesReducer = categoriesSlice.reducer;
+export const { addImg } = categoriesSlice.actions;
