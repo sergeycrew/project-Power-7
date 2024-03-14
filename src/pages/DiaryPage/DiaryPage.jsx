@@ -12,6 +12,8 @@ import {
   selectProducts,
   selectExercises,
   selectIsLoadingDiary,
+  selectIsLoadingProducts,
+  selectIsLoadingExercises,
 } from '../../redux/diary/diarySelectors';
 import { DiaryLoader } from '../../components/DiaryLoader/DiaryLoader';
 
@@ -21,6 +23,8 @@ const DiaryPage = () => {
   const products = useSelector(selectProducts);
   const exercises = useSelector(selectExercises);
   let isLoading = useSelector(selectIsLoadingDiary);
+  let isLoadingProducts = useSelector(selectIsLoadingProducts);
+  let isLoadingExercises = useSelector(selectIsLoadingExercises);
 
   useEffect(() => {
     dispatch(fetchAllDairyInfo(currentDate.toString()));
@@ -36,7 +40,7 @@ const DiaryPage = () => {
         <s.DiaryItemContainer>
           <DiaryItem title="Products" link="Add product" to="/products">
             <s.ItemsContainer>
-              {isLoading ? (
+              {isLoading || isLoadingProducts ? (
                 <DiaryLoader />
               ) : !isLoading && products.length === 0 ? (
                 <s.NotFoundText>Not found products</s.NotFoundText>
@@ -53,7 +57,7 @@ const DiaryPage = () => {
           </DiaryItem>
           <DiaryItem title="Exercises" link="Add exercise" to="/exercises">
             <s.ItemsContainer>
-              {isLoading ? (
+              {isLoading || isLoadingExercises ? (
                 <DiaryLoader />
               ) : !isLoading && exercises.length === 0 ? (
                 <s.NotFoundText>Not found exercises</s.NotFoundText>

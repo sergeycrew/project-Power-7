@@ -293,5 +293,9 @@ export const CalendarGlobalStyles = createGlobalStyle`
 //   .WrappInput .calendar-icon use {
 //     content: url('${sprite}#icon-calendar-white');
 //   }
+
+.react-datepicker__day--disabled {
+    cursor: not-allowed !important;
+  }
   
 `;

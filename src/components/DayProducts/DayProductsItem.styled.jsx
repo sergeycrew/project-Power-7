@@ -138,7 +138,42 @@ export const DeleteButton = styled.button`
 export const DeleteIcon = styled.svg`
   height: 20px;
   width: 20px;
-  fill: ${(p) => p.theme.colors.orangeLightColor};
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    animation: shake 3s;
+  }
+
+  @keyframes shake {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    10% {
+      transform: rotate(-5deg);
+    }
+
+    20% {
+      transform: rotate(5deg);
+    }
+
+    30% {
+      transform: rotate(-5deg);
+    }
+
+    40% {
+      transform: rotate(5deg);
+    }
+
+    50% {
+      transform: rotate(0deg);
+      stroke: wheat;
+    }
+
+    100% {
+      transform: rotate(0deg);
+    }
+  }
 `;
 
 export const ItemProductWrapper = styled.div`

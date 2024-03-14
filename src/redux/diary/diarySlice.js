@@ -21,6 +21,8 @@ const initialState = {
     products: [],
     exercises: [],
     isLoadingDiary: false,
+    isLoadingProducts: false,
+    isLoadingExercises: false,
     error: null,
   },
 };
@@ -39,8 +41,28 @@ const handlePending = (state) => {
   state.diaryInfo.error = null;
 };
 
+const handlePendingDeleteProduct = (state) => {
+  state.diaryInfo.isLoadingProducts = true;
+  state.diaryInfo.error = null;
+};
+
+const handlePendingDeleteExercise = (state) => {
+  state.diaryInfo.isLoadingExercises = true;
+  state.diaryInfo.error = null;
+};
+
 const handleRejected = (state, action) => {
   state.diaryInfo.isLoadingDiary = false;
+  state.diaryInfo.error = action.payload;
+};
+
+const handleRejectedDeleteProduct = (state, action) => {
+  state.diaryInfo.isLoadingProducts = false;
+  state.diaryInfo.error = action.payload;
+};
+
+const handleRejectedDeleteExercise = (state, action) => {
+  state.diaryInfo.isLoadingExercises = false;
   state.diaryInfo.error = action.payload;
 };
 
@@ -55,7 +77,7 @@ const handleFetchAllFulfilled = (state, { payload }) => {
 };
 
 const handleDeleteProductFulfilled = (state, { payload }) => {
-  state.diaryInfo.isLoadingDiary = false;
+  state.diaryInfo.isLoadingProducts = false;
   state.diaryInfo.error = null;
 
   const newArrProducts = state.diaryInfo.products.filter(
@@ -66,7 +88,7 @@ const handleDeleteProductFulfilled = (state, { payload }) => {
 };
 
 const handleDeleteExerciseFulfilled = (state, { payload }) => {
-  state.diaryInfo.isLoadingDiary = false;
+  state.diaryInfo.isLoadingExercises = false;
   state.diaryInfo.error = null;
 
   const newArrExercises = state.diaryInfo.exercises.filter(
@@ -107,12 +129,12 @@ export const diarySlice = createSlice({
       .addCase(fetchAllDairyInfo.pending, handlePending)
       .addCase(fetchAllDairyInfo.fulfilled, handleFetchAllFulfilled)
       .addCase(fetchAllDairyInfo.rejected, handleRejected)
-      .addCase(deleteProduct.pending, handlePending)
+      .addCase(deleteProduct.pending, handlePendingDeleteProduct)
       .addCase(deleteProduct.fulfilled, handleDeleteProductFulfilled)
-      .addCase(deleteProduct.rejected, handleRejected)
-      .addCase(deleteExercise.pending, handlePending)
+      .addCase(deleteProduct.rejected, handleRejectedDeleteProduct)
+      .addCase(deleteExercise.pending, handlePendingDeleteExercise)
       .addCase(deleteExercise.fulfilled, handleDeleteExerciseFulfilled)
-      .addCase(deleteExercise.rejected, handleRejected);
+      .addCase(deleteExercise.rejected, handleRejectedDeleteExercise);
   },
 });
 

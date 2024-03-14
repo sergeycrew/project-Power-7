@@ -1,4 +1,4 @@
-import { styled } from 'styled-components';
+import styled from 'styled-components';
 import 'react-datepicker/dist/react-datepicker-cssmodules.css';
 
 export const Wrapper = styled.button`
@@ -17,8 +17,9 @@ export const Wrapper = styled.button`
   gap: 8px;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-  &:hover {
-    color: ${(p) => p.theme.colors.orangeLightColor};
+  &:hover,
+  &:focus {
+    color: rgba(239, 137, 100, 0.885);
   }
 
   @media screen and (min-width: 768px) {
@@ -37,11 +38,18 @@ export const SwitchButton = styled.button`
 export const SwitchButtonIcon = styled.svg`
   width: 16px;
   height: 16px;
-
+  fill: ${(p) => p.theme.colors.whiteColor};
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-  &:hover {
-    fill: ${(p) => p.theme.colors.orangeLightColor};
+  ${(p) =>
+    p.disabled &&
+    `
+    opacity: 0.2;
+    cursor: not-allowed;
+  `}
+
+  &:hover, &:focus {
+    ${(p) => !p.disabled && `fill: ${p.theme.colors.orangeLightColor};`}
   }
 `;
 
