@@ -18,11 +18,17 @@ export const register = createAsyncThunk(
     try {
       const { data } = await axios.post('users/register', credentials);
       setAuthHeader(data.tokens.accessToken);
-      toast.success('Registration is successful');
+      setTimeout(() => {
+        toast.success('Registration is successful');
+      }, 3000);
+  
+      setTimeout(() => {
+        toast.success('We sent you a verification Email');
+      }, 4000);
       return data;
     } catch (error) {
       toast.error('Oops, something went wrong! Try again later.');
-      console.log(error.message);
+  
       return rejectWithValue(error.message);
     }
   }
@@ -34,11 +40,14 @@ export const logIn = createAsyncThunk(
     try {
       const { data } = await axios.post('users/login', credentials);
       setAuthHeader(data.tokens.accessToken);
-      toast.success('Login is successful');
+ 
+      setTimeout(() => {
+        toast.success('Login is successful');
+      }, 3000);
       return data;
     } catch (error) {
       toast.error('Oops, something went wrong! Try again later.');
-      console.log(error.message);
+
       return rejectWithValue(error.message);
     }
   }

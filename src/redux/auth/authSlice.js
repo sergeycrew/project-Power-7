@@ -73,10 +73,7 @@ const handleCurrentUserPending = (state) => {
 };
 
 const handleCurrentUserRejected = (state, { payload }) => {
-  // state.user = initialUser;
-  // state.token = '';
-  // state.isLoggedIn = false;
-  // state.isRefreshing = false;
+
   state.error = payload;
   state.isLoading = false;
 };
@@ -85,10 +82,7 @@ const handleCurrentUserFulfilled = (state, { payload }) => {
   state.user = payload;
   state.isLoading = false;
 
-  // state.token = payload.tokens.refreshToken;
-  // state.isLoggedIn = true;
-  // state.isRefreshing = false;
-  // state.error = null;
+
 };
 
 const handleUpdateUserParamsPending = (state) => {

@@ -5,7 +5,7 @@ export const LogoWrapper = styled(Link)`
   display: flex;
   align-items: center;
   gap: 8px;
-  z-index: 10050;
+  z-index: 1000;
 `;
 
 export const LogoIcon = styled.svg`
