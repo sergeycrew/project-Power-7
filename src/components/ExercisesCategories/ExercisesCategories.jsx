@@ -1,8 +1,5 @@
 import * as s from './ExercisesCategories.styled';
-import {  useEffect } from 'react';
-
-
-
+import { useEffect } from 'react';
 
 import { ExerciseCard } from 'components/ExerciseCard/ExerciseCard';
 
@@ -13,7 +10,10 @@ import {
   selectMaxCategoriesPage,
   selectPaginCategories,
 } from '../../redux/exercises/selectorsExercises';
-import { changeCategoriesLimit, changeCategoriesPage } from '../../redux/exercises/sliceExercises';
+import {
+  changeCategoriesLimit,
+  changeCategoriesPage,
+} from '../../redux/exercises/sliceExercises';
 import { WrapperRadio } from '../UserForm/UserForm.styled';
 import { useMediaQuery } from '@mui/system';
 
@@ -23,7 +23,9 @@ export const ExercisesCategories = ({ handleSetExName }) => {
 
   const maxPage = useSelector(selectMaxCategoriesPage);
   const pagePagin = useSelector(selectCategoriesPage);
-  const isTabletScreen = useMediaQuery('(min-width: 768px) and (max-width: 1440px)');
+  const isTabletScreen = useMediaQuery(
+    '(min-width: 768px) and (max-width: 1439px)'
+  );
 
   useEffect(() => {
     if (isTabletScreen) {
@@ -31,14 +33,11 @@ export const ExercisesCategories = ({ handleSetExName }) => {
     } else {
       dispatch(changeCategoriesLimit(10));
     }
-}, [dispatch, isTabletScreen]);
+  }, [dispatch, isTabletScreen]);
 
-  useEffect(()=>{
-dispatch(fetchExercisesCategory())
-  },[dispatch])
-
-
-
+  useEffect(() => {
+    dispatch(fetchExercisesCategory());
+  }, [dispatch]);
 
   return (
     <div>
