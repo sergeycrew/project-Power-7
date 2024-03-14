@@ -27,6 +27,8 @@ export const ExercisesCategories = ({ handleSetExName }) => {
     '(min-width: 768px) and (max-width: 1439px)'
   );
 
+  const isMobileScreen = useMediaQuery('(max-width: 767px)');
+
   useEffect(() => {
     if (isTabletScreen) {
       dispatch(changeCategoriesLimit(9));
@@ -38,6 +40,14 @@ export const ExercisesCategories = ({ handleSetExName }) => {
   useEffect(() => {
     dispatch(fetchExercisesCategory());
   }, [dispatch]);
+
+  const handlePaginationClick = (page) => {
+    // Scroll up when pagination button is clicked and media width is 320px
+    if (isMobileScreen || isTabletScreen) {
+      window.scrollTo({ top: 80, behavior: 'smooth' });
+    }
+    dispatch(changeCategoriesPage(page));
+  };
 
   return (
     <div>
@@ -62,7 +72,7 @@ export const ExercisesCategories = ({ handleSetExName }) => {
                 id={page}
                 value={page}
                 checked={pagePagin === page}
-                onChange={() => dispatch(changeCategoriesPage(page))}
+                onChange={() => handlePaginationClick(page)}
               />
               <label className="radio-label" htmlFor={page}></label>
             </div>
