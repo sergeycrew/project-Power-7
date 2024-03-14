@@ -28,7 +28,7 @@ const exercisesSlice = createSlice({
     exercisesLimit: 20,
     loading: false,
     error: null,
-    maxPage: ''
+    maxPage: 1,
   },
   reducers: {
     changeFilter(state, action) {

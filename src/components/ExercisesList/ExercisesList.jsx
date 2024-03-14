@@ -15,6 +15,7 @@ import { ExercisesItem } from '../ExersisesItem/ExercisesItem';
 import { changeExercisesPage, isCategoryPicked, resetExercisesPage } from '../../redux/exercises/sliceExercises';
 
 import { featchAllExercises } from '../../redux/exercises/operationsExercises';
+import { LoaderTransp } from '../LoadeTrans/LoaderTrans';
 
 
 export const ExercisesListByCategory = () => {
@@ -43,10 +44,9 @@ export const ExercisesListByCategory = () => {
   const onClick = () => {
     dispatch(isCategoryPicked(''));
     dispatch(resetExercisesPage())
-    // dispatch(changeExercisesLimit(-20))
+
   };
 
-  // const [items, setItems] = useState(Array.from({ length: 20 }));
   const fetchMoreData = () => {
 
       dispatch(changeExercisesPage(1))
@@ -65,7 +65,7 @@ export const ExercisesListByCategory = () => {
       </s.BackBtn>
      
       <s.MainExercisesContainer> 
-
+      {isLoading && <LoaderTransp/>}
     
      <s.ExercisesList>
      

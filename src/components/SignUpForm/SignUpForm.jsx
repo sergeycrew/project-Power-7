@@ -12,7 +12,7 @@ import {
   selectIsLoading,
 } from '../../redux/auth/authSelectors';
 
-const emailPattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+const emailPattern = /^[a-z0-9._%+-]+@[a-zA-Z0-9]+.[a-zA-Z0-9]+$/;
 
 const registerSchema = Yup.object().shape({
   name: Yup.string().trim().required('Name is required'),

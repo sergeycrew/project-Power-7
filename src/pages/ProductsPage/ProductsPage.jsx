@@ -5,7 +5,7 @@ import {
   fetchCategories,
 } from '../../redux/products/productOperations';
 import {
-  selectContainsProducts,
+  selectContainsProducts, selectIsLoading, selectProducts,
 
 } from '../../redux/products/productsSelectors';
 
@@ -17,10 +17,12 @@ import * as s from './ProductsPage.styled';
 import { Container } from 'styles/container';
 import { ProductsBackground } from '../../components/ProductsBg/ProductsBg';
 import { changeProductsReset } from '../../redux/products/productListSlice';
+import {  LoaderTransp } from '../../components/LoadeTrans/LoaderTrans';
 
 const ProductsPage = () => {
   const dispatch = useDispatch();
-  const containsProducts = useSelector(selectContainsProducts);
+  const containsProducts = useSelector(selectProducts);
+  const isLoading = useSelector(selectIsLoading)
 
   useEffect(() => {
     dispatch(fetchCategories());
@@ -37,7 +39,9 @@ const ProductsPage = () => {
             <s.Title>Products</s.Title>
             <ProductsFilters />
           </s.WrapperFilters>
-          {containsProducts ? <ProductList /> : <ProductListEmpty />}
+          {isLoading && <LoaderTransp />}
+          {containsProducts.length === 0 && !isLoading && <ProductListEmpty />}
+          {containsProducts .length > 0 && <ProductList />}
         </Container>
       </s.WrapperPagePadding>
     </ProductsBackground>
