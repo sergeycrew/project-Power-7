@@ -3,7 +3,6 @@ import sprite from '../../images/sprite/sprite.svg';
 import { CustomModal } from 'components/CustomModal/CustomModal';
 import { useEffect, useState } from 'react';
 import { CountdownCircleTimer } from 'react-countdown-circle-timer';
-// import { addWorkout } from '../../jsonFromBd/testApi';
 import { toast } from 'react-toastify';
 import { featchAddExercises } from '../../redux/exercises/operationsExercises';
 import { useDispatch } from 'react-redux';
@@ -19,7 +18,6 @@ export const ModalTrening = ({
   const [isPlaying, setIsPlaying] = useState(false);
   const [isSecond, setIsSecond] = useState(0);
   const [isCalories, setIsCalories] = useState(0);
-  // const [isRound, setIsRound] = useState(0);
   const [roundCounter, setRoundCounter] = useState(children);
   const dispatch = useDispatch();
 
@@ -43,7 +41,6 @@ export const ModalTrening = ({
     } else if (isSecond === roundCounter) {
       setIsPlaying(false);
       setRoundCounter((roundCounter) => roundCounter + children);
-      // setIsRound((isRound) => isRound + 1);
     }
 
     return () => clearInterval(interval);
@@ -169,7 +166,7 @@ export const ModalTrening = ({
           <s.ListTrening>
             {Object.entries(exerciseInfo)
               .filter(
-                ([key, value]) =>
+                ([key]) =>
                   key !== 'gifUrl' && key !== 'burnedCalories' && key !== '_id'
               )
               .map(([key, value]) => (

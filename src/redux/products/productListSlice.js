@@ -15,7 +15,7 @@ export const productSlice = createSlice({
     changeProductsPage(state, action) {
       state.productsPage += action.payload;
     },
-    changeProductsReset(state, action) {
+    changeProductsReset(state) {
       state.productsPage = 1;
       state.items = [];
     },

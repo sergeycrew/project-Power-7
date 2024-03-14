@@ -1,4 +1,4 @@
-import { useSelector } from 'react-redux';
+
 
 import { StatisticsInfo } from '../StatisticsInfo/StatisticsInfo';
 import { HomeBackgroundImage } from './HomeBackgroung.styled';

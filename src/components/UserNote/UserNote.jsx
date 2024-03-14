@@ -1,5 +1,5 @@
 import * as s from './UserNote.styled';
-// import sprite from '../../images/sprite.svg';
+
 import sprite from '../../images/sprite/sprite.svg';
 
 const UserNote = () => {

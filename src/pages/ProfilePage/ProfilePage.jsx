@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import DailyBaseInfo from '../../components/DayliBaseInfo/DayliBaseInfo';
 import UserCard from '../../components/UserCard/UserCard';
 import UserForm from '../../components/UserForm/UserForm';
@@ -32,12 +32,12 @@ const ProfilePage = () => {
           <UserCard />
           <s.WrappInfo>
             <DailyBaseInfo
-              iconId="icon-fork-knife"
+              iconId="food"
               text="Daily calorie intake"
               value={user.bmr}
             />
             <DailyBaseInfo
-              iconId="icon-dumbbell"
+              iconId="dumbbell"
               text="Daily physical activity"
               value={user.timeSport}
               amoutName="min"

@@ -1,23 +1,14 @@
 import styled from 'styled-components';
-import { Logout } from '../../components/Logout/Logout';
-// import { Link } from 'react-router-dom';
 
 export const Container = styled.div`
- /* margin-left: 20px; */
-  /* margin-right: 20px; */
-  /* padding-top: 40px; */
-
-  /* @media screen and (min-width: 768px) {
-    padding-top: 72px;
-  } */
+ 
 
   @media screen and (min-width: 768px) and (max-width: 1439px) {
-    /* margin-left: 32px; */
-    /* margin-right: 32px; */
+  
   }
 
   @media screen and (min-width: 1440px) {
-   /* padding-bottom: 36px; */
+
   }
 `;
 
@@ -62,10 +53,7 @@ export const WrappForm = styled.div`
 export const LogoutWrap = styled.div`
 margin-top: 32px;
 margin-left: auto;
-/* margin-left: auto;
-margin-top: 32px;
-justify-content: center;
-/*  */
+
 width: 70px;
   height: 20px;
 

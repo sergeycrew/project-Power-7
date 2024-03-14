@@ -50,7 +50,7 @@ export const UplSvg = styled.svg`
   height: 24px;
   position: relative;
   /* top: -13px; */
-  left: 0px;
+  /* left: -1px; */
 
   @media screen and (min-width: 768px) {
     width: 32px;
@@ -64,10 +64,10 @@ export const Label = styled.label`
   position: absolute;
   top: -13px;
   left: -12px;
-  /* right: -17px; */
+  
 
   @media screen and (min-width: 768px) {
-    left: -14.5px;
+    left: -15px;
     height: 32px;
     top: -17.5px;
   }

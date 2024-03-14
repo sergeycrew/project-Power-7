@@ -1,10 +1,8 @@
-// import { CustomModal } from 'components/CustomModal/CustomModal';
-// import { MainButton } from 'components/MainButton/MainButton';
 import thumb_up from '../../images/thumb-up-1x.png';
 import * as s from './ModalExercise.styled';
 import sprite from '../../images/sprite/sprite.svg';
 
-export const ModalExercise = ({ time, calories, onClick, onClose }) => {
+export const ModalExercise = ({ time, calories, onClose }) => {
   return (
     <s.CustomModale
       modalStyles={{ maxWidth: '430px', width: '100%', height: '384px' }}

@@ -9,7 +9,6 @@ import {
   selectProductsPage,
 } from '../../redux/products/productsSelectors';
 import { AddProductToDiary } from '../ModalAddProduct/ModalAddProduct';
-import { Loader } from '../Loader/Loader';
 import { ModalSuccessProduct } from '../ModalSuccessProduct/ModalSuccessProduct';
 import { BtnMore } from '../ExercisesList/ExercisesList.styled';
 import { changeProductsPage } from '../../redux/products/productListSlice';

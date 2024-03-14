@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { CustomModal } from 'components/CustomModal/CustomModal';
-// import { MainButton } from '../MainButton/MainButton';
+
 
 
 export const CustomModale = styled(CustomModal)`

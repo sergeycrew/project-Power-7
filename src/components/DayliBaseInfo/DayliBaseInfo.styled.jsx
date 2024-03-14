@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Text = styled.p`
 color: white;
-  /* color: rgba(239, 237, 232, 0.8); */
+
   font-family: 'RobotoRegular';
   font-size: 12px;
   font-style: normal;
@@ -19,7 +19,6 @@ export const Container = styled.div`
   padding: 14px;
   align-items: flex-start;
   gap: 8px;
-  /* flex-shrink: 0; */
   border-radius: 12px;
   border: 1px solid rgba(239, 237, 232, 0.2);
   background-color: ${(p) => p.theme.colors.orangeColor};
@@ -42,10 +41,9 @@ export const Container = styled.div`
 `;
 
 export const Svg = styled.svg`
-  width: 16px;
-  height: 16px;
-  /* fill: ${(p) => p.theme.colors.orangeLightColor};
-  stroke: ${(p) => p.theme.colors.orangeLightColor}; */
+  width: 20px;
+  height: 20px;
+
 `;
 
 export const Amount = styled.p`
