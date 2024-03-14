@@ -5,8 +5,7 @@ import bg_img2_page from '../../images/desktopImages/exercises-desktop-2x.png';
 
 export const ExrBackgroundImage = styled.div`
   @media (min-width: 1440px) {
-    /* position: absolute; */
-    /* left: 200px; */
+    
     z-index: 0;
     max-width: 1440px;
     margin: 0 auto;
@@ -21,4 +20,4 @@ export const ExrBackgroundImage = styled.div`
   }
 `;
 
-// ${(props) => props.theme.modal320Styles}
+

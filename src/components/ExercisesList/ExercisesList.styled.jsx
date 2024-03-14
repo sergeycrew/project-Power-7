@@ -24,14 +24,13 @@ export const BtnMore = styled.button`
   margin-left: auto;
   justify-content: center;
   align-items: center;
-  /* width: 100%; */
+
   width: 166px;
   border-radius: 12px;
   border: 1px solid rgba(239, 237, 232, 0.2);
-  /* height: 25px; */
-  /* padding: 10px 20px; */
+
   padding: 10px 27px 10px 27px;
-  /* margin-top: 5px; */
+
   font-family: 'Roboto', sans-serif;
   font-size: 20px;
   font-style: normal;

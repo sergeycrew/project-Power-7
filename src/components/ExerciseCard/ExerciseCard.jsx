@@ -11,18 +11,6 @@ export const ExerciseCard = ({ title, filter, photo }) => {
   const [imageLoaded, setImageLoaded] = useState(false);
   const [textVisible, setTextVisible] = useState(false);
 
-  // useEffect(() => {
-  //   if (photo) {
-  //     const img = new Image();
-  //     img.src = photo;
-  //     img.onload = () => {
-  //       setImageLoaded(true);
-  //       setTimeout(() => {
-  //         setTextVisible(true);
-  //       }, 100); 
-  //     };
-  //   }
-  // }, [photo]);
   useEffect(() => {
     if (photo) {
       const img = new Image();
@@ -44,8 +32,9 @@ export const ExerciseCard = ({ title, filter, photo }) => {
       <s.ExerciseCardWrapper >
       {!photo || !imageLoaded ? ( 
           <DiaryLoader /> 
-        ) : (
-      <s.Image src={photo ? photo : images} alt={title}  />)}
+        ) : (<s.Image src={photo} alt={title}  />)}
+ 
+      
         <s.ExerciseDescription style={{ visibility: textVisible ? 'visible' : 'hidden' }}>
           <s.ExerciseTitle >
             {title}
@@ -56,3 +45,4 @@ export const ExerciseCard = ({ title, filter, photo }) => {
     </s.ExercisesLi>
   );
 };
+     // <s.Image src={photo ? photo : images} alt={title}  />)}

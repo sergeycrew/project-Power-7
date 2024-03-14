@@ -8,7 +8,7 @@ export const ExercisesLi = styled.li`
 export const Image = styled.img`
   z-index: 0;
   display: block;
-  /* position: relative; */
+
   border: 1px solid rgba(239, 237, 232, 0.2);
   border-radius: 12px;
   height: 206px;
@@ -41,13 +41,9 @@ export const ExerciseDescription = styled.div`
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
   text-align: center;
-  /* margin-top: 81px; */
-  /* margin-bottom: 81px; */
+  
 
-  @media screen and (min-width: 768px) {
-    /* margin-top: 77px; */
-    /* margin-bottom: 77px; */
-  }
+  
 `;
 export const ExerciseTitle = styled.div`
   margin: 0;

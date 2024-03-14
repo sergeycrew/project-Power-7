@@ -23,18 +23,17 @@ import { Loader } from './components/Loader/Loader';
 import { selectUserDataComplete } from './redux/auth/authSelectors';
 
 function App() {
-  const { isRefreshing, isLoggedIn, isLoading } = useAuth();
+  const { isRefreshing, isLoggedIn } = useAuth();
   const userParams = useSelector(selectUserDataComplete);
   const redirectLink = userParams ? '/diary' : '/profile';
   const dispatch = useDispatch();
-  const currentLoading = isLoggedIn && !isLoading;
   const url = window.location;
   const verifyToken = new URLSearchParams(url.search).get('verificationToken');
 
   useEffect(() => {
     const refetch = async () => {
       if (verifyToken) {
-        dispatch(Verify(verifyToken))
+        dispatch(Verify(verifyToken));
       }
     };
     refetch();
@@ -44,8 +43,7 @@ function App() {
     }
   }, [dispatch, isLoggedIn, verifyToken]);
 
-  // return ( && currentLoading
-  return isRefreshing   ? (
+  return isRefreshing ? (
     <Loader />
   ) : (
     <>
@@ -54,36 +52,42 @@ function App() {
           <Route
             index
             element={
-              <PublicRoute redirectTo={redirectLink} component={<WelcomePage />} />
+              <PublicRoute
+                redirectTo={redirectLink}
+                component={<WelcomePage />}
+              />
             }
           />
-          {/* <Route index element={<WelcomePage />} /> */}
+
           <Route
             path="/signUp"
             element={
               <PublicRoute redirectTo="/profile" component={<SignUpPage />} />
             }
           />
-          {/* <Route path="/signUp" element={<SignUpPage />} /> */}
+
           <Route
             path="/signIn"
             element={
-              <PublicRoute redirectTo={redirectLink} component={<SignInPage />} />
+              <PublicRoute
+                redirectTo={redirectLink}
+                component={<SignInPage />}
+              />
             }
           />
-          {/* <Route path="/signIn" element={<SignInPage />} /> */}
+
           <Route
             path="/diary"
             element={<PrivateRoute redirectTo="/" component={<DiaryPage />} />}
           />
-          {/* <Route path="/diary" element={<DiaryPage />} /> */}
+
           <Route
             path="/products"
             element={
               <PrivateRoute redirectTo="/" component={<ProductsPage />} />
             }
           />
-          {/* <Route path="/products" element={<ProductsPage />}/> */}
+
           <Route
             path="/exercises"
             element={
@@ -96,8 +100,6 @@ function App() {
               <PrivateRoute redirectTo="/" component={<ProfilePage />} />
             }
           />
-          {/* <Route path="/profile" element={<ProfilePage />} /> */}
-          {/* <Route path="*" element={<ErrorPage />} /> */}
         </Route>
         <Route path="/notfound" element={<ErrorPage />} />
         <Route path="*" element={<Navigate to="/notfound" />} />

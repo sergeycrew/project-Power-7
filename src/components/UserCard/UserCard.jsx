@@ -1,16 +1,13 @@
 import * as s from './UserCard.styled';
 import sprite from '../../images/sprite/sprite.svg';
 import { useDispatch, useSelector } from 'react-redux';
+import { selectUser } from '../../redux/auth/authSelectors';
+
 import {
-  selectUser,
-  selectUserDataComplete,
-} from '../../redux/auth/authSelectors';
-// import { useState } from 'react';
-import { updateUserAvatar, userVerifyAgain } from '../../redux/auth/authOperation';
+  updateUserAvatar,
+  userVerifyAgain,
+} from '../../redux/auth/authOperation';
 import { useState } from 'react';
-// import React, {} from 'react';
-// import axios from 'axios';
-// import { useSelector } from 'react-redux';
 
 const UserCard = () => {
   const dispatch = useDispatch();
@@ -22,21 +19,8 @@ const UserCard = () => {
   );
   const avatarImg = <s.Avatar src={user.avatarUrl} alt="Avatar" />;
   const avatarShown = user.avatarUrl ? avatarImg : avatarDef;
-  // const [selectedFile, setSelectedFile] = useState(null)
-
-  const successImg = (
-    <s.VerSvg>
-      <use href={`${sprite}#success`}></use>
-    </s.VerSvg>
-  );
-  const errorImg = (
-    <s.NotVerSvg>
-      <use href={`${sprite}#not-success`}></use>
-    </s.NotVerSvg>
-  );
 
   const handleFileChange = (e) => {
-    //    dispatch(e.target.files[0]);
     dispatch(updateUserAvatar(e.target.files[0]));
   };
 
@@ -51,16 +35,7 @@ const UserCard = () => {
     ? 'Send again'
     : 'Verify';
 
-  //   <>
-  //   Verify
-  //   {errorImg}
-  // </>
-
   const sucsescontent = 'Verified';
-  //   <>
-  //   Verified
-  //   {successImg}
-  // </>
 
   const isVerifyed = user.verify ? sucsescontent : verifyContent;
 
@@ -89,7 +64,7 @@ const UserCard = () => {
 
     const email = user.email;
 
-    dispatch(userVerifyAgain({email}));
+    dispatch(userVerifyAgain({ email }));
   };
 
   return (
@@ -103,16 +78,12 @@ const UserCard = () => {
           name="fileInput"
           style={{ display: 'none' }}
           onChange={handleFileChange}
-          //   disabled={!user.verify}
         ></input>
         <s.Label
           htmlFor="fileInput"
-          style={{ display: !user.verify ? 'none' : 'inline-block' }} ///////////////////////
-          // disabled={!user.verify}
+          style={{ display: !user.verify ? 'none' : 'inline-block' }}
         >
-          <s.UplSvg
-          //   disabled={user.verify}
-          >
+          <s.UplSvg>
             <use href={`${sprite}#add`}></use>
           </s.UplSvg>
         </s.Label>
@@ -131,7 +102,6 @@ const UserCard = () => {
             ? 'rgba(239, 237, 232, 0.9)'
             : 'tomato',
         }}
-        // style={{ display: user.verify ? 'none' : 'inline-block' }}
       >
         {isVerifyed}
       </s.ButtonVerify>

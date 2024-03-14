@@ -1,6 +1,5 @@
 import * as s from './DayliBaseInfo.styled';
-// import { PropTypes } from '@mui/material';
-import sprite from '../../images/sprite.svg';
+import sprite from '../../images/sprite/sprite.svg';
 
 const DailyBaseInfo = ({ iconId, text, value=0, amoutName }) => {
 

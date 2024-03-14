@@ -6,7 +6,7 @@ import {
 } from '../../redux/products/productOperations';
 import {
   selectContainsProducts,
-  selectIsLoading,
+
 } from '../../redux/products/productsSelectors';
 
 import { ProductsFilters } from '../../components/ProductsFilters/ProductsFilters';
@@ -17,12 +17,11 @@ import * as s from './ProductsPage.styled';
 import { Container } from 'styles/container';
 import { ProductsBackground } from '../../components/ProductsBg/ProductsBg';
 import { changeProductsReset } from '../../redux/products/productListSlice';
-import { DiaryLoader } from '../../components/DiaryLoader/DiaryLoader';
 
 const ProductsPage = () => {
   const dispatch = useDispatch();
   const containsProducts = useSelector(selectContainsProducts);
-  const isLoading = useSelector(selectIsLoading);
+
   useEffect(() => {
     dispatch(fetchCategories());
     dispatch(changeProductsReset());
@@ -38,13 +37,7 @@ const ProductsPage = () => {
             <s.Title>Products</s.Title>
             <ProductsFilters />
           </s.WrapperFilters>
-          {isLoading ? (
-            <DiaryLoader />
-          ) : containsProducts ? (
-            <ProductList />
-          ) : (
-            <ProductListEmpty />
-          )}
+          {containsProducts ? <ProductList /> : <ProductListEmpty />}
         </Container>
       </s.WrapperPagePadding>
     </ProductsBackground>

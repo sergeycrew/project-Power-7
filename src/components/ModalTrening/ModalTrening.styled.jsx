@@ -48,7 +48,7 @@ export const DivTimer = styled.div`
 `;
 
 export const Button = styled.button`
-  /* padding: 5px; */
+  
   border-radius: 5px;
   display: flex;
   background: #e6533c;
@@ -72,7 +72,7 @@ export const Svg = styled.svg`
 
 export const Text = styled.p`
   color: rgba(239, 237, 232, 0.4);
-  /* font-feature-settings: 'clig' off, 'liga' off; */
+
   font-family: 'Roboto', sans-serif;
   font-size: 10px;
   font-style: normal;
@@ -94,7 +94,7 @@ export const List = styled.ul`
 
 export const NameItem = styled.p`
   color: rgba(239, 237, 232, 0.4);
-  font-feature-settings: 'clig' off, 'liga' off;
+
   font-family: 'Roboto', sans-serif;
   font-size: 12px;
   font-style: normal;
@@ -108,7 +108,7 @@ export const NameItem = styled.p`
 
 export const ValueItem = styled.p`
   color: #efede8;
-  /* font-feature-settings: 'clig' off, 'liga' off; */
+
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
   font-style: normal;

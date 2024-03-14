@@ -96,14 +96,11 @@ const handleUpdateUserParamsPending = (state) => {
 };
 const handleUpdateUserParamsRejected = (state, { payload }) => {
   state.isLoggedIn = true;
-  // state.goToParams = false;
   state.error = payload;
 };
 const handleUpdateUserParamsFulfilled = (state, { payload }) => {
   state.user = payload;
   state.isLoggedIn = true;
-  // state.goToParams = false;
-  // state.token = payload.token;
   state.error = null;
 };
 
@@ -112,14 +109,11 @@ const handleUpdateUserAvatarPending = (state) => {
 };
 const handleUpdateUserAvatarRejected = (state, { payload }) => {
   state.isLoggedIn = true;
-  state.goToParams = false;
   state.error = payload;
 };
 const handleUpdateUserAvatarFulfilled = (state, { payload }) => {
   state.user.avatarUrl = payload;
   state.isLoggedIn = true;
-  state.goToParams = false;
-  // state.token = payload.token;
   state.error = null;
 };
 
@@ -128,15 +122,11 @@ const handleUserVerifyAgainPending = (state) => {
 };
 const handleUserVerifyAgainRejected = (state, { payload }) => {
   state.isLoggedIn = true;
-  state.goToParams = false;
   state.error = payload;
 };
-const handleUserVerifyAgainFulfilled = (state, { payload }) => {
-  // state.user = payload.user.email;
-  // state.user = payload.user;
+const handleUserVerifyAgainFulfilled = (state) => {
+
   state.isLoggedIn = true;
-  state.goToParams = false;
-  // state.token = payload.token;
   state.error = null;
 };
 

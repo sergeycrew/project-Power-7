@@ -1,6 +1,6 @@
 import * as s from './ExercisesCategories.styled';
-import { useCallback, useEffect } from 'react';
-import { useState } from 'react';
+import {  useEffect } from 'react';
+
 
 
 
@@ -10,9 +10,6 @@ import { fetchExercisesCategory } from '../../redux/exercises/operationsExercise
 import { useDispatch, useSelector } from 'react-redux';
 import {
   selectCategoriesPage,
-  selectCategory,
-  // selectCategoryPicked,
-  selectFilter,
   selectMaxCategoriesPage,
   selectPaginCategories,
 } from '../../redux/exercises/selectorsExercises';

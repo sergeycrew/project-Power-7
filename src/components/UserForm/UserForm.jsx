@@ -17,7 +17,7 @@ import { useState } from 'react';
 const UserForm = () => {
   const dispatch = useDispatch();
   const user = useSelector(selectUser);
-  console.log(user);
+
 
   const bloodOpt = [
     { id: '1', value: '1', label: '1' },
@@ -76,8 +76,6 @@ const UserForm = () => {
       .required('Desired weight is required'),
     birthday: Yup.date().required('Birthday is required'),
   });
-  //   const userBirth = new Date(user.birthday)//////////
-  //   const formattedDate = parseISO(user.birthday);
 
   const initialValues = {
     name: user.name || 'Name',
@@ -90,14 +88,11 @@ const UserForm = () => {
     levelActivity: (user.levelActivity ?? '1').toString() || '1',
   };
   const handleSubmit = (values) => {
-    // const sendData = {
-    //   ...values,
-    // };
     dispatch(updateUserParams(values));
     setBtnActive(false);
   };
   const [btnActive, setBtnActive] = useState(false);
-  const handleChanger = (e) => {
+  const handleChanger = () => {
     setBtnActive(true);
   };
 
@@ -107,7 +102,7 @@ const UserForm = () => {
       validationSchema={ValidationSchema}
       onSubmit={handleSubmit}
       validateOnChange={true}
-      //   handleChange = {(e)=> handleChanger(e)}
+
     >
       {(formik) => (
         <s.StyledForm onChange={handleChanger}>
@@ -119,7 +114,7 @@ const UserForm = () => {
                 placeholder="Your name"
                 as={s.Input}
                 required
-                // defaultValue={user.name}
+     
               />
               <label htmlFor="name">Name</label>
               <s.FormError name="name" component="span" />
@@ -180,11 +175,10 @@ const UserForm = () => {
             </s.WrappInput>
             <CustomDataPicker
               selectedDate={formik.values.birthday}
-              //   isOpen={true}
+             
 
               setSelectedDate={(date) => {
                 handleChanger();
-                // const formattedDate = parseISO(date.toISOString());
                 formik.setFieldValue('birthday', date.toISOString());
               }}
             />
@@ -258,11 +252,3 @@ const UserForm = () => {
   );
 };
 export default UserForm;
-// <s.ButtonVerify
-//         type="submit"
-//         disabled={buttonDisabled}
-//         onClick={sendVerify}
-//         style={{ display: user.verify ? 'none' : 'inline-block' }}
-//       >
-//         {verifyBtnContant}
-//       </s.ButtonVerify>

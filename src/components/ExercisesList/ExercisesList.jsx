@@ -3,19 +3,17 @@ import * as s from './ExercisesList.styled';
 import { useState } from 'react';
 import icons from '../../images/sprite/sprite.svg';
 
-import { useLocation, useParams } from 'react-router-dom';
+
 
 import { ModalTrening } from 'components/ModalTrening/ModalTrening';
-import { toast } from 'react-toastify';
+
 import 'react-toastify/dist/ReactToastify.css';
 import { ModalExercise } from 'components/ModalExercise/ModalExercise';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectCategoryPicked, selectExercises, selectExercisesLimit, selectExercisesPage, selectLoading, selectMaxPage } from '../../redux/exercises/selectorsExercises';
+import { selectCategoryPicked, selectExercises,  selectExercisesPage, selectLoading, selectMaxPage } from '../../redux/exercises/selectorsExercises';
 import { ExercisesItem } from '../ExersisesItem/ExercisesItem';
-import { changeExercisesLimit, changeExercisesPage, isCategoryPicked, resetExercisesPage } from '../../redux/exercises/sliceExercises';
-import { DiaryLoader } from '../DiaryLoader/DiaryLoader';
-import { Loader } from '../Loader/Loader';
-import InfiniteScroll from 'react-infinite-scroll-component';
+import { changeExercisesPage, isCategoryPicked, resetExercisesPage } from '../../redux/exercises/sliceExercises';
+
 import { featchAllExercises } from '../../redux/exercises/operationsExercises';
 
 

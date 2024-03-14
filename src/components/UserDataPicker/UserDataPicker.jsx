@@ -9,19 +9,16 @@ import {
 import sprite from '../../images/sprite/sprite.svg';
 import { InputField } from '../UserForm/UserForm.styled';
 import 'react-datepicker/dist/react-datepicker-cssmodules.css';
-// import * as s from './UserDataPicker.styled'
-// import 'react-datepicker/dist/react-datepicker.css';
+
 
 export const CustomDataPicker = ({ selectedDate, setSelectedDate }) => {
-  //   const [selectedDate, setSelectedDate] = useState(new Date());
+
 
   const handleDateChange = (date) => {
     setSelectedDate(date);
     closeCalendar();
   };
-  // const toggleCalendar = () => {
-  //     setIsOpen(prev => !prev);
-  //   }
+
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -55,15 +52,6 @@ export const CustomDataPicker = ({ selectedDate, setSelectedDate }) => {
         onClickOutside={closeCalendar}
         cursor="pointer"
 
-        // popperModifiers={{
-        //               preventOverflow: {
-        //                 enabled: true,
-        //                 escapeWithReference: false,
-        //                 boundariesElement: 'viewport',
-        //               },
-        //             }}
-
-        // onClick={toggleCalendar}
       />
 
       <CalendarGlobalStyles />

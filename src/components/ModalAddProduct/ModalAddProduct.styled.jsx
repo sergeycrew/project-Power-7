@@ -96,9 +96,7 @@ export const Placeholder = styled.span`
   }
 `;
 
-// export const CaloriesWrapper = styled.div`
-//   display: flex;
-// `;
+
 
 export const PCalories = styled.p`
   color: ${(p) => p.theme.colors.captionColor};

@@ -72,7 +72,7 @@ export const currentUser = createAsyncThunk(
     }
   }
 );
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 export const updateUserAvatar = createAsyncThunk(
   'users/updateAvatar',
   async (file, thunkAPI) => {
@@ -80,7 +80,7 @@ export const updateUserAvatar = createAsyncThunk(
       const formData = new FormData();
       formData.append('avatar', file);
       toast.success('Avatar is updated');
-      const { data } = await axios.patch('users/updateAvatar', formData);
+     await axios.patch('users/updateAvatar', formData);
       return URL.createObjectURL(file);
       // return data;
     } catch (error) {
@@ -117,7 +117,7 @@ export const userVerifyAgain = createAsyncThunk(
     }
   }
 );
-// credentials
+
 
 export const refreshUser = createAsyncThunk(
   'users/refresh',
@@ -158,11 +158,11 @@ export const Verify = createAsyncThunk(
     try {
       await axios.get(`users/verify/${credentials}`);
       toast.success('Verifycation successful');
-      return
+      return;
     } catch (error) {
       toast.error('Oops, something went wrong! Try again later.');
-    
-      return ;
+
+      return thunkApi.rejectWithValue(error.message);
     }
   }
 );
