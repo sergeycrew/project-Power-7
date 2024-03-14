@@ -21,14 +21,14 @@ export const register = createAsyncThunk(
       setTimeout(() => {
         toast.success('Registration is successful');
       }, 3000);
-  
+
       setTimeout(() => {
         toast.success('We sent you a verification Email');
       }, 4000);
       return data;
     } catch (error) {
-      toast.error('Oops, something went wrong! Try again later.');
-  
+      toast.error(error.response.data.message);
+
       return rejectWithValue(error.message);
     }
   }
@@ -40,13 +40,13 @@ export const logIn = createAsyncThunk(
     try {
       const { data } = await axios.post('users/login', credentials);
       setAuthHeader(data.tokens.accessToken);
- 
+
       setTimeout(() => {
         toast.success('Login is successful');
       }, 3000);
       return data;
     } catch (error) {
-      toast.error('Oops, something went wrong! Try again later.');
+      toast.error(error.response.data.message);
 
       return rejectWithValue(error.message);
     }
@@ -59,7 +59,10 @@ export const logOut = createAsyncThunk(
     try {
       await axios.post('users/logout');
       clearAuthHeader();
-      toast.success('Logout is successful');
+
+      setTimeout(() => {
+        toast.success('Logout is successful');
+      }, 3000);
     } catch (error) {
       toast.error('Oops, something went wrong! Try again later.');
       console.log(error.message);
@@ -89,7 +92,7 @@ export const updateUserAvatar = createAsyncThunk(
       const formData = new FormData();
       formData.append('avatar', file);
       toast.success('Avatar is updated');
-     await axios.patch('users/updateAvatar', formData);
+      await axios.patch('users/updateAvatar', formData);
       return URL.createObjectURL(file);
       // return data;
     } catch (error) {
@@ -127,7 +130,6 @@ export const userVerifyAgain = createAsyncThunk(
   }
 );
 
-
 export const refreshUser = createAsyncThunk(
   'users/refresh',
   async (_, thunkApi) => {
@@ -153,6 +155,10 @@ export const GoogleSignIn = createAsyncThunk(
   async (credentials, thunkApi) => {
     try {
       setAuthHeader(credentials.tokens.accessToken);
+
+      setTimeout(() => {
+        toast.success('Login is successful');
+      }, 3000);
       return credentials.tokens.refreshToken;
     } catch (error) {
       toast.error('Oops, something went wrong! Try again later.');

@@ -5,7 +5,7 @@ import {
   fetchCategories,
 } from '../../redux/products/productOperations';
 import {
-  selectContainsProducts, selectIsLoading, selectProducts,
+   selectIsLoading, selectProducts,
 
 } from '../../redux/products/productsSelectors';
 
