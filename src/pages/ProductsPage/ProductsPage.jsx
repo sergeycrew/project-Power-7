@@ -33,9 +33,9 @@ const ProductsPage = () => {
   }, [dispatch]);
 
   return (
-    <Container>
-      <ProductsBackground>
-        <s.WrapperPagePadding>
+    <ProductsBackground>
+      <s.WrapperPagePadding>
+        <Container>
           <s.WrapperFilters>
             <s.Title>Products</s.Title>
             <ProductsFilters />
@@ -45,9 +45,9 @@ const ProductsPage = () => {
           )}
           {containsProducts.length === 0 && !isLoading && <ProductListEmpty />}
           {containsProducts.length > 0 && <ProductList />}
-        </s.WrapperPagePadding>{' '}
-      </ProductsBackground>
-    </Container>
+        </Container>
+      </s.WrapperPagePadding>
+    </ProductsBackground>
   );
 };
 
