@@ -18,7 +18,6 @@ import { Container } from 'styles/container';
 import { ProductsBackground } from '../../components/ProductsBg/ProductsBg';
 import { changeProductsReset } from '../../redux/products/productListSlice';
 import { LoaderTransp } from '../../components/LoadeTrans/LoaderTrans';
-import { Loader } from '../../components/Loader/Loader';
 
 const ProductsPage = () => {
   const dispatch = useDispatch();
