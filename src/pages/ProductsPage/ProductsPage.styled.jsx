@@ -1,17 +1,17 @@
 import styled from 'styled-components';
 
 export const WrapperPagePadding = styled.div`
-/* background-color: #040404; */
-  margin-top: ${(p) => p.theme.spacing(10)};
-  margin-bottom: ${(p) => p.theme.spacing(20)};
+  /* background-color: #040404; */
+  padding-top: ${(p) => p.theme.spacing(10)};
+  padding-bottom: ${(p) => p.theme.spacing(20)};
 
   @media screen and (min-width: 768px) {
-    margin-top: ${(p) => p.theme.spacing(18)};
-    margin-bottom: ${(p) => p.theme.spacing(12)};
+    padding-top: ${(p) => p.theme.spacing(18)};
+    padding-bottom: ${(p) => p.theme.spacing(12)};
   }
 
   @media screen and (min-width: 1440px) {
-    margin-bottom: ${(p) => p.theme.spacing(20)};
+    padding-bottom: ${(p) => p.theme.spacing(20)};
   }
 `;
 
