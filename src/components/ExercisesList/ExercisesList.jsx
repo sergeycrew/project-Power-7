@@ -3,20 +3,27 @@ import * as s from './ExercisesList.styled';
 import { useState } from 'react';
 import icons from '../../images/sprite/sprite.svg';
 
-
-
 import { ModalTrening } from 'components/ModalTrening/ModalTrening';
 
 import 'react-toastify/dist/ReactToastify.css';
 import { ModalExercise } from 'components/ModalExercise/ModalExercise';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectCategoryPicked, selectExercises,  selectExercisesPage, selectLoading, selectMaxPage } from '../../redux/exercises/selectorsExercises';
+import {
+  selectCategoryPicked,
+  selectExercises,
+  selectExercisesPage,
+  selectLoading,
+  selectMaxPage,
+} from '../../redux/exercises/selectorsExercises';
 import { ExercisesItem } from '../ExersisesItem/ExercisesItem';
-import { changeExercisesPage, isCategoryPicked, resetExercisesPage } from '../../redux/exercises/sliceExercises';
+import {
+  changeExercisesPage,
+  isCategoryPicked,
+  resetExercisesPage,
+} from '../../redux/exercises/sliceExercises';
 
 import { featchAllExercises } from '../../redux/exercises/operationsExercises';
 import { LoaderTransp } from '../LoadeTrans/LoaderTrans';
-
 
 export const ExercisesListByCategory = () => {
   const dispatch = useDispatch();
@@ -35,25 +42,22 @@ export const ExercisesListByCategory = () => {
   };
 
   const exercises = useSelector(selectExercises);
-  const isLoading = useSelector(selectLoading)
+  const isLoading = useSelector(selectLoading);
   // const exercisesLimit = useSelector(selectExercisesLimit)
-  const category = useSelector(selectCategoryPicked)
-  const exrPage = useSelector(selectExercisesPage)
-  const maxPage = useSelector(selectMaxPage)
+  const category = useSelector(selectCategoryPicked);
+  const exrPage = useSelector(selectExercisesPage);
+  const maxPage = useSelector(selectMaxPage);
 
   const onClick = () => {
     dispatch(isCategoryPicked(''));
-    dispatch(resetExercisesPage())
-
+    dispatch(resetExercisesPage());
   };
 
   const fetchMoreData = () => {
-
-      dispatch(changeExercisesPage(1))
-      // dispatch(changeExercisesLimit(20))
-      dispatch(featchAllExercises(category))
-    };
-  
+    dispatch(changeExercisesPage(1));
+    // dispatch(changeExercisesLimit(20))
+    dispatch(featchAllExercises(category));
+  };
 
   return (
     <div style={{ position: 'relative' }}>
@@ -63,14 +67,14 @@ export const ExercisesListByCategory = () => {
         </svg>
         Back
       </s.BackBtn>
-     
-      <s.MainExercisesContainer> 
-      {isLoading && <LoaderTransp/>}
-    
-     <s.ExercisesList>
-     
+
+      <s.MainExercisesContainer>
+        {isLoading && (
+          <LoaderTransp positionPc={{ transform: 'translateX(-16.5%)' }} />
+        )}
+
+        <s.ExercisesList>
           {exercises?.map((card) => (
-            
             <ExercisesItem
               key={card._id}
               card={card}
@@ -78,13 +82,12 @@ export const ExercisesListByCategory = () => {
             />
           ))}
 
-        
-        {!isLoading && maxPage !== exrPage && (
-        <s.BtnMore type='button' onClick={() => fetchMoreData()}>
-         Load More</s.BtnMore>
-        )}
-            </s.ExercisesList>
-   
+          {!isLoading && maxPage !== exrPage && (
+            <s.BtnMore type="button" onClick={() => fetchMoreData()}>
+              Load More
+            </s.BtnMore>
+          )}
+        </s.ExercisesList>
       </s.MainExercisesContainer>
       {isModalOpen && (
         <ModalTrening

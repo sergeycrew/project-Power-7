@@ -7,16 +7,14 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const MainLayout = () => {
-
-  return  (
-
+  return (
     <Layout>
       <Header />
 
-        <Suspense fallback={<Loader />}>
-          <Outlet />
-        </Suspense>
- 
+      <Suspense fallback={<Loader />}>
+        <Outlet />
+      </Suspense>
+
       <ToastContainer
         position="top-right"
         autoClose={5000}
@@ -28,8 +26,8 @@ const MainLayout = () => {
         draggable
         pauseOnHover
         theme="dark"
+        style={{ zIndex: 99999 }}
       />
-      
     </Layout>
   );
 };
