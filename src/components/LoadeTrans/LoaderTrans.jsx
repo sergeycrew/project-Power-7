@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const LoaderTrans = styled.div`
   position: absolute;
-
+  top: 0px;
   left: 0px;
 
   width: 100%;
@@ -13,10 +13,7 @@ const LoaderTrans = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  ${(props) => props.theme.position}
-  @media screen and (min-width: 768px) {
-    ${(props) => props.theme.positionTablet}
-  }
+
   @media screen and (min-width: 1440px) {
     ${(props) => props.theme.positionPc}
   }

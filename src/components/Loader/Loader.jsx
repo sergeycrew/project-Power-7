@@ -1,4 +1,3 @@
-
 import { InfinitySpin } from 'react-loader-spinner';
 import styled from 'styled-components';
 
@@ -13,6 +12,7 @@ const FullScreenLoader = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  /* z-index: 9999; */
 `;
 
 export const Loader = () => {
