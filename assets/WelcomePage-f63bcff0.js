@@ -1,4 +1,4 @@
-import{u as r,j as e,i as c,a as l,r as h,G as d}from"./index-2761ab88.js";import{H as x,M as g,a as p,T as m,b as u,A as f,L as j,c as t,S as w,d as k,I as S}from"./WelcomePage.styled-96b713bc.js";import"./DiaryLoader-e696dad3.js";const I=r.button`
+import{u as r,j as e,i as c,a as l,r as h,G as d}from"./index-281f9ba2.js";import{H as x,M as g,a as p,T as m,b as u,A as f,L as j,c as t,S as w,d as k,I as S}from"./WelcomePage.styled-b629680e.js";import"./DiaryLoader-5c9273b1.js";const I=r.button`
   width: 100%;
   height: 100%;
   background-color: transparent;
