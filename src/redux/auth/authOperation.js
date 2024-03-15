@@ -65,7 +65,7 @@ export const logOut = createAsyncThunk(
       }, 3000);
     } catch (error) {
       toast.error('Oops, something went wrong! Try again later.');
-      console.log(error.message);
+
       return rejectWithValue(error.message);
     }
   }
@@ -110,7 +110,7 @@ export const updateUserParams = createAsyncThunk(
       const { data } = await axios.put('users/update', params);
       return data;
     } catch (error) {
-      toast.error('Oops, something went wrong! Try again later.');
+      toast.error(error.response.data.message);
       return thunkAPI.rejectWithValue(error.message);
     }
   }

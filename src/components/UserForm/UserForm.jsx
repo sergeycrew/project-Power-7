@@ -80,7 +80,7 @@ const UserForm = () => {
     height: user.height || '',
     currentWeight: user.currentWeight || '',
     desiredWeight: user.desiredWeight || '',
-    birthday: user.birthday || '2005-01-01',
+    birthday: user.birthday || '2000-01-01',
     blood: (user.blood ?? '1').toString() || '1',
     sex: user.sex || 'male',
     levelActivity: (user.levelActivity ?? '1').toString() || '1',

@@ -17,7 +17,7 @@ const initialUser = {
   height: '',
   currentWeight: '',
   desiredWeight: '',
-  birthday: '01.01.1900',
+  birthday: '01.01.2000',
   blood: 1,
   sex: 'male',
   levelActivity: 1,
@@ -73,7 +73,6 @@ const handleCurrentUserPending = (state) => {
 };
 
 const handleCurrentUserRejected = (state, { payload }) => {
-
   state.error = payload;
   state.isLoading = false;
 };
@@ -81,8 +80,6 @@ const handleCurrentUserRejected = (state, { payload }) => {
 const handleCurrentUserFulfilled = (state, { payload }) => {
   state.user = payload;
   state.isLoading = false;
-
-
 };
 
 const handleUpdateUserParamsPending = (state) => {
@@ -119,7 +116,6 @@ const handleUserVerifyAgainRejected = (state, { payload }) => {
   state.error = payload;
 };
 const handleUserVerifyAgainFulfilled = (state) => {
-
   state.isLoggedIn = true;
   state.error = null;
 };
