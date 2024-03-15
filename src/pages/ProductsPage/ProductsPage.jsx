@@ -18,6 +18,7 @@ import { Container } from 'styles/container';
 import { ProductsBackground } from '../../components/ProductsBg/ProductsBg';
 import { changeProductsReset } from '../../redux/products/productListSlice';
 import { LoaderTransp } from '../../components/LoadeTrans/LoaderTrans';
+import { Loader } from '../../components/Loader/Loader';
 
 const ProductsPage = () => {
   const dispatch = useDispatch();
@@ -32,23 +33,21 @@ const ProductsPage = () => {
   }, [dispatch]);
 
   return (
-    <ProductsBackground>
-      <s.WrapperPagePadding>
-        <Container>
+    <Container>
+      <ProductsBackground>
+        <s.WrapperPagePadding>
           <s.WrapperFilters>
             <s.Title>Products</s.Title>
             <ProductsFilters />
           </s.WrapperFilters>
           {isLoading && (
-            <LoaderTransp
-              positionPc={{ transform: 'translateX(-14.5%)', top: '0' }}
-            />
+            <LoaderTransp positionPc={{ transform: 'translateX(-16%)' }} />
           )}
           {containsProducts.length === 0 && !isLoading && <ProductListEmpty />}
           {containsProducts.length > 0 && <ProductList />}
-        </Container>
-      </s.WrapperPagePadding>
-    </ProductsBackground>
+        </s.WrapperPagePadding>{' '}
+      </ProductsBackground>
+    </Container>
   );
 };
 
