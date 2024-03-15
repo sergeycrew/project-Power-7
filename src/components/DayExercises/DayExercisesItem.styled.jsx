@@ -4,7 +4,7 @@ export const ProductsContainer = styled.ul`
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
-  margin-top: -5px;
+  margin-top: -4px;
 
   @media screen and (min-width: 768px) {
     gap: 8px;
